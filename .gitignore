@@ -24,6 +24,11 @@ _audit/gorsel-boyut.json
 # Eski taslaklar
 _arsiv/
 
+# Ortam değişkenleri — gerçek değerler depoya girmez, .env.example örnektir
+.env
+.env.local
+.env*.local
+
 # Sistem
 Thumbs.db
 .DS_Store
