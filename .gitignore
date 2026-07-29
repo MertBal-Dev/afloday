@@ -1,0 +1,34 @@
+# Playwright / denetim geçici çıktıları
+.playwright-mcp/
+*.png
+!site/assets/img/**/*.png
+!_audit/**/*.png
+
+# Denetim ara dosyaları (üretilebilir — _audit/*.mjs betikleriyle yeniden oluşturulur)
+_audit/orijinal/
+_audit/govde/
+_audit/probe/
+_audit/frames/
+_audit/q/
+_audit/tmp/
+_audit/scan/
+_audit/scan2/
+_audit/first/
+_audit/ai/
+_audit/frames*/
+_audit/*.jpeg
+_audit/*.jpg
+_audit/orijinal-gorseller.json
+_audit/gorsel-boyut.json
+
+# Eski taslaklar
+_arsiv/
+
+# Sistem
+Thumbs.db
+.DS_Store
+node_modules/
+
+# Keşif sırasında kullanılan tek seferlik görüntüleyiciler (üretimde işlevi yok)
+_audit/*.html
+_audit/cands.json

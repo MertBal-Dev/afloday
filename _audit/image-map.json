@@ -1,0 +1,5178 @@
+{
+  "pages": [
+    {
+      "page": "/hakkimizda",
+      "status": 200,
+      "imageCount": 36,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/afloday/afloday-hakkinda.jpg",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/iletisim",
+      "status": 200,
+      "imageCount": 4,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/katilim",
+      "status": 200,
+      "imageCount": 4,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/doga-temelli-egitimlerimiz",
+      "status": 200,
+      "imageCount": 36,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/afloday/atolye/diger-atolyeler.png",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/",
+      "status": 200,
+      "imageCount": 47,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/afloday/main/cicek-tasarim-hobi-atolyeleri.png",
+        "https://www.afloday.com/images/afloday/main/bitki-tasarim-hobi-atolyeleri.png",
+        "https://www.afloday.com/images/afloday/main/cocuk-hobi-atolyeleri.png",
+        "https://www.afloday.com/images/afloday/cicek-tasarimi-kurumsal-etkinlikler.jpg",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/bg4.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png",
+        "https://www.afloday.com/images/banner2/001.jpg",
+        "https://www.afloday.com/images/banner2/002.jpg",
+        "https://www.afloday.com/images/banner2/003.jpg",
+        "https://www.afloday.com/images/banner2/004.jpg",
+        "https://www.afloday.com/images/banner2/005.jpg",
+        "https://www.afloday.com/images/banner2/006.jpg",
+        "https://www.afloday.com/images/banner2/007.jpg",
+        "https://www.afloday.com/images/banner2/008.jpg"
+      ]
+    },
+    {
+      "page": "/dogadan-gelisim-atolyeleri",
+      "status": 200,
+      "imageCount": 40,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/kurumsal-hizmetler.png",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png",
+        "https://www.afloday.com/images/afloday/atolye-kurumsal/kurumsal-1.jpg",
+        "https://www.afloday.com/images/afloday/atolye-kurumsal/kurumsal-2.jpg",
+        "https://www.afloday.com/images/afloday/atolye-kurumsal/kurumsal-3.jpg",
+        "https://www.afloday.com/images/afloday/atolye-kurumsal/kurumsal-5.jpg"
+      ]
+    },
+    {
+      "page": "/ik",
+      "status": 200,
+      "imageCount": 4,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/gelecegi-tasarla",
+      "status": 200,
+      "imageCount": 80,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/surdur/011.jpg",
+        "https://www.afloday.com/images/surdur/010.jpg",
+        "https://www.afloday.com/images/surdur/020.jpg",
+        "https://www.afloday.com/images/surdur/001.jpg",
+        "https://www.afloday.com/images/surdur/s/001.jpg",
+        "https://www.afloday.com/images/surdur/002.jpg",
+        "https://www.afloday.com/images/surdur/s/002.jpg",
+        "https://www.afloday.com/images/surdur/003.jpg",
+        "https://www.afloday.com/images/surdur/s/003.jpg",
+        "https://www.afloday.com/images/surdur/004.jpg",
+        "https://www.afloday.com/images/surdur/s/004.jpg",
+        "https://www.afloday.com/images/surdur/005.jpg",
+        "https://www.afloday.com/images/surdur/s/005.jpg",
+        "https://www.afloday.com/images/surdur/006.jpg",
+        "https://www.afloday.com/images/surdur/s/006.jpg",
+        "https://www.afloday.com/images/surdur/007.jpg",
+        "https://www.afloday.com/images/surdur/s/007.jpg",
+        "https://www.afloday.com/images/surdur/008.jpg",
+        "https://www.afloday.com/images/surdur/s/008.jpg",
+        "https://www.afloday.com/images/surdur/009.jpg",
+        "https://www.afloday.com/images/surdur/s/009.jpg",
+        "https://www.afloday.com/images/surdur/s/010.jpg",
+        "https://www.afloday.com/images/surdur/s/011.jpg",
+        "https://www.afloday.com/images/surdur/012.jpg",
+        "https://www.afloday.com/images/surdur/s/012.jpg",
+        "https://www.afloday.com/images/surdur/013.jpg",
+        "https://www.afloday.com/images/surdur/s/013.jpg",
+        "https://www.afloday.com/images/surdur/014.jpg",
+        "https://www.afloday.com/images/surdur/s/014.jpg",
+        "https://www.afloday.com/images/surdur/015.jpg",
+        "https://www.afloday.com/images/surdur/s/015.jpg",
+        "https://www.afloday.com/images/surdur/016.jpg",
+        "https://www.afloday.com/images/surdur/s/016.jpg",
+        "https://www.afloday.com/images/surdur/017.jpg",
+        "https://www.afloday.com/images/surdur/s/017.jpg",
+        "https://www.afloday.com/images/surdur/018.jpg",
+        "https://www.afloday.com/images/surdur/s/018.jpg",
+        "https://www.afloday.com/images/surdur/019.jpg",
+        "https://www.afloday.com/images/surdur/s/019.jpg",
+        "https://www.afloday.com/images/surdur/021.jpg",
+        "https://www.afloday.com/images/surdur/s/021.jpg",
+        "https://www.afloday.com/images/surdur/022.jpg",
+        "https://www.afloday.com/images/surdur/s/022.jpg",
+        "https://www.afloday.com/images/surdur/023.jpg",
+        "https://www.afloday.com/images/surdur/s/023.jpg",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/gulumseyen-yarinlar-projesi",
+      "status": 200,
+      "imageCount": 59,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/12.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/12s.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/01.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/01s.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/02.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/02s.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/03.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/03s.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/04.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/04s.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/05.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/05s.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/06.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/06s.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/07.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/07s.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/08.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/08s.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/09.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/09s.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/10.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/10s.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/11.jpg",
+        "https://www.afloday.com/images/afloday/atolye-koruncuk/11s.jpg",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/dogadan-hobi-atolyeleri",
+      "status": 200,
+      "imageCount": 60,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/donemsel-konsept/001.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/001-s.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/002.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/002-s.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/003.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/003-s.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/004.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/004-s.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/005.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/005-s.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/006.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/006-s.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/007.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/007-s.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/008.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/008-s.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/009.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/009-s.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/010.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/010-s.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/011.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/011-s.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/012.jpg",
+        "https://www.afloday.com/images/donemsel-konsept/012-s.jpg",
+        "https://www.afloday.com/images/kurumsal-hizmetler.png",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/sosyal-sorumluluk-is-danismanligi",
+      "status": 200,
+      "imageCount": 38,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/sosyal/sosyal-sorumluluk.jpg",
+        "https://www.afloday.com/images/sosyal/ceylan-kalyon.jpg",
+        "https://www.afloday.com/images/kurumsal-hizmetler.png",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/kokedama-tasarim-atolyesi",
+      "status": 200,
+      "imageCount": 35,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/kokedama/01.jpg",
+        "https://www.afloday.com/images/0/kokedama/01s.jpg",
+        "https://www.afloday.com/images/0/kokedama/02.jpg",
+        "https://www.afloday.com/images/0/kokedama/02s.jpg",
+        "https://www.afloday.com/images/0/kokedama/03.jpg",
+        "https://www.afloday.com/images/0/kokedama/03s.jpg",
+        "https://www.afloday.com/images/0/kokedama/04.jpg",
+        "https://www.afloday.com/images/0/kokedama/04s.jpg",
+        "https://www.afloday.com/images/0/kokedama/05.jpg",
+        "https://www.afloday.com/images/0/kokedama/05s.jpg",
+        "https://www.afloday.com/images/0/kokedama/06.jpg",
+        "https://www.afloday.com/images/0/kokedama/06s.jpg",
+        "https://www.afloday.com/images/0/kokedama/07.jpg",
+        "https://www.afloday.com/images/0/kokedama/07s.jpg",
+        "https://www.afloday.com/images/0/kokedama/08.jpg",
+        "https://www.afloday.com/images/0/kokedama/08s.jpg",
+        "https://www.afloday.com/images/0/kokedama/09.jpg",
+        "https://www.afloday.com/images/0/kokedama/09s.jpg",
+        "https://www.afloday.com/images/0/kokedama/10.jpg",
+        "https://www.afloday.com/images/0/kokedama/10s.jpg",
+        "https://www.afloday.com/images/0/kokedama/11.jpg",
+        "https://www.afloday.com/images/0/kokedama/11s.jpg",
+        "https://www.afloday.com/images/0/kokedama/12.jpg",
+        "https://www.afloday.com/images/0/kokedama/12s.jpg",
+        "https://www.afloday.com/images/0/kokedama/13.jpg",
+        "https://www.afloday.com/images/0/kokedama/13s.jpg",
+        "https://www.afloday.com/images/0/kokedama/14.jpg",
+        "https://www.afloday.com/images/0/kokedama/14s.jpg",
+        "https://www.afloday.com/images/0/kokedama/15.jpg",
+        "https://www.afloday.com/images/0/kokedama/15s.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/kavanoz-teraryum-tasarim-atolyesi",
+      "status": 200,
+      "imageCount": 35,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/01.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/01s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/02.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/02s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/03.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/03s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/04.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/04s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/05.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/05s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/06.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/06s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/07.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/07s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/08.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/08s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/09.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/09s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/10.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/10s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/11.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/11s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/12.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/12s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/13.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/13s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/14.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/14s.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/15.jpg",
+        "https://www.afloday.com/images/0/kavanoz-teraryum/15s.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/doga-cerceve-tasarim-atolyesi",
+      "status": 200,
+      "imageCount": 5,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/mevsim-kapi-celengi-tasarimi-atolye",
+      "status": 200,
+      "imageCount": 45,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/kapi-celengi/001.jpg",
+        "https://www.afloday.com/images/0/kapi-celengi/001s.jpg",
+        "https://www.afloday.com/images/0/kapi-celengi/002.jpg",
+        "https://www.afloday.com/images/0/kapi-celengi/002s.jpg",
+        "https://www.afloday.com/images/0/kapi-celengi/003.jpg",
+        "https://www.afloday.com/images/0/kapi-celengi/003s.jpg",
+        "https://www.afloday.com/images/0/kapi-celengi/004.jpg",
+        "https://www.afloday.com/images/0/kapi-celengi/004s.jpg",
+        "https://www.afloday.com/images/0/kapi-celengi/005.jpg",
+        "https://www.afloday.com/images/0/kapi-celengi/005s.jpg",
+        "https://www.afloday.com/images/0/celeng/01.jpg",
+        "https://www.afloday.com/images/0/celeng/01s.jpg",
+        "https://www.afloday.com/images/0/celeng/02.jpg",
+        "https://www.afloday.com/images/0/celeng/02s.jpg",
+        "https://www.afloday.com/images/0/celeng/03.jpg",
+        "https://www.afloday.com/images/0/celeng/03s.jpg",
+        "https://www.afloday.com/images/0/celeng/04.jpg",
+        "https://www.afloday.com/images/0/celeng/04s.jpg",
+        "https://www.afloday.com/images/0/celeng/05.jpg",
+        "https://www.afloday.com/images/0/celeng/05s.jpg",
+        "https://www.afloday.com/images/0/celeng/06.jpg",
+        "https://www.afloday.com/images/0/celeng/06s.jpg",
+        "https://www.afloday.com/images/0/celeng/07.jpg",
+        "https://www.afloday.com/images/0/celeng/07s.jpg",
+        "https://www.afloday.com/images/0/celeng/08.jpg",
+        "https://www.afloday.com/images/0/celeng/08s.jpg",
+        "https://www.afloday.com/images/0/celeng/09.jpg",
+        "https://www.afloday.com/images/0/celeng/09s.jpg",
+        "https://www.afloday.com/images/0/celeng/10.jpg",
+        "https://www.afloday.com/images/0/celeng/10s.jpg",
+        "https://www.afloday.com/images/0/celeng/11.jpg",
+        "https://www.afloday.com/images/0/celeng/11s.jpg",
+        "https://www.afloday.com/images/0/celeng/12.jpg",
+        "https://www.afloday.com/images/0/celeng/12s.jpg",
+        "https://www.afloday.com/images/0/celeng/13.jpg",
+        "https://www.afloday.com/images/0/celeng/13s.jpg",
+        "https://www.afloday.com/images/0/celeng/14.jpg",
+        "https://www.afloday.com/images/0/celeng/14s.jpg",
+        "https://www.afloday.com/images/0/celeng/15.jpg",
+        "https://www.afloday.com/images/0/celeng/15s.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/sukulent-aranjman-atolyesi",
+      "status": 200,
+      "imageCount": 25,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/skulent-aranjman/01.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/01s.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/02.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/02s.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/03.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/03s.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/04.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/04s.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/05.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/05s.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/06.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/06s.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/07.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/07s.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/08.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/08s.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/09.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/09s.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/10.jpg",
+        "https://www.afloday.com/images/0/skulent-aranjman/10s.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/minyatur-bahce-tasarim-atolyesi",
+      "status": 200,
+      "imageCount": 25,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/minyatur-bahce/01.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/01s.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/02.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/02s.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/03.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/03s.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/04.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/04s.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/05.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/05s.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/06.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/06s.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/07.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/07s.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/08.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/08s.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/09.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/09s.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/10.jpg",
+        "https://www.afloday.com/images/0/minyatur-bahce/10s.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/kuru-cicek-fanus-tasarim-atolyesi",
+      "status": 200,
+      "imageCount": 25,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/fanus/01.jpg",
+        "https://www.afloday.com/images/0/fanus/01s.jpg",
+        "https://www.afloday.com/images/0/fanus/02.jpg",
+        "https://www.afloday.com/images/0/fanus/02s.jpg",
+        "https://www.afloday.com/images/0/fanus/03.jpg",
+        "https://www.afloday.com/images/0/fanus/03s.jpg",
+        "https://www.afloday.com/images/0/fanus/04.jpg",
+        "https://www.afloday.com/images/0/fanus/04s.jpg",
+        "https://www.afloday.com/images/0/fanus/05.jpg",
+        "https://www.afloday.com/images/0/fanus/05s.jpg",
+        "https://www.afloday.com/images/0/fanus/06.jpg",
+        "https://www.afloday.com/images/0/fanus/06s.jpg",
+        "https://www.afloday.com/images/0/fanus/07.jpg",
+        "https://www.afloday.com/images/0/fanus/07s.jpg",
+        "https://www.afloday.com/images/0/fanus/08.jpg",
+        "https://www.afloday.com/images/0/fanus/08s.jpg",
+        "https://www.afloday.com/images/0/fanus/09.jpg",
+        "https://www.afloday.com/images/0/fanus/09s.jpg",
+        "https://www.afloday.com/images/0/fanus/10.jpg",
+        "https://www.afloday.com/images/0/fanus/10s.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/taze-cicek-buket-aranjman-tasarim-atolyesi",
+      "status": 200,
+      "imageCount": 35,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/taze-cicek/001.jpg",
+        "https://www.afloday.com/images/0/taze-cicek/001s.jpg",
+        "https://www.afloday.com/images/0/taze-cicek/002.jpg",
+        "https://www.afloday.com/images/0/taze-cicek/002s.jpg",
+        "https://www.afloday.com/images/0/taze-cicek/003.jpg",
+        "https://www.afloday.com/images/0/taze-cicek/003s.jpg",
+        "https://www.afloday.com/images/0/taze-cicek/004.jpg",
+        "https://www.afloday.com/images/0/taze-cicek/004s.jpg",
+        "https://www.afloday.com/images/0/taze-cicek/005.jpg",
+        "https://www.afloday.com/images/0/taze-cicek/005s.jpg",
+        "https://www.afloday.com/images/0/buket/01.jpg",
+        "https://www.afloday.com/images/0/buket/01s.jpg",
+        "https://www.afloday.com/images/0/buket/02.jpg",
+        "https://www.afloday.com/images/0/buket/02s.jpg",
+        "https://www.afloday.com/images/0/buket/03.jpg",
+        "https://www.afloday.com/images/0/buket/03s.jpg",
+        "https://www.afloday.com/images/0/buket/04.jpg",
+        "https://www.afloday.com/images/0/buket/04s.jpg",
+        "https://www.afloday.com/images/0/buket/05.jpg",
+        "https://www.afloday.com/images/0/buket/05s.jpg",
+        "https://www.afloday.com/images/0/buket/06.jpg",
+        "https://www.afloday.com/images/0/buket/06s.jpg",
+        "https://www.afloday.com/images/0/buket/07.jpg",
+        "https://www.afloday.com/images/0/buket/07s.jpg",
+        "https://www.afloday.com/images/0/buket/08.jpg",
+        "https://www.afloday.com/images/0/buket/08s.jpg",
+        "https://www.afloday.com/images/0/buket/09.jpg",
+        "https://www.afloday.com/images/0/buket/09s.jpg",
+        "https://www.afloday.com/images/0/buket/10.jpg",
+        "https://www.afloday.com/images/0/buket/10s.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/cicek-aksesuar-tasarim-atolyesi",
+      "status": 200,
+      "imageCount": 43,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/cicek-aksesuar/01.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/01s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/02.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/02s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/03.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/03s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/04.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/04s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/05.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/05s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/06.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/06s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/07.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/07s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/08.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/08s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/09.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/09s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/10.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/10s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/11.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/11s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/12.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/12s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/13.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/13s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/14.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/14s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/15.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/15s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/16.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/16s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/17.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/17s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/18.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/18s.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/19.jpg",
+        "https://www.afloday.com/images/0/cicek-aksesuar/19s.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/cicek-cerceve-tasarim-atolyesi",
+      "status": 200,
+      "imageCount": 35,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/cerceve/01.jpg",
+        "https://www.afloday.com/images/0/cerceve/01s.jpg",
+        "https://www.afloday.com/images/0/cerceve/02.jpg",
+        "https://www.afloday.com/images/0/cerceve/02s.jpg",
+        "https://www.afloday.com/images/0/cerceve/03.jpg",
+        "https://www.afloday.com/images/0/cerceve/03s.jpg",
+        "https://www.afloday.com/images/0/cerceve/04.jpg",
+        "https://www.afloday.com/images/0/cerceve/04s.jpg",
+        "https://www.afloday.com/images/0/cerceve/05.jpg",
+        "https://www.afloday.com/images/0/cerceve/05s.jpg",
+        "https://www.afloday.com/images/0/cerceve/06.jpg",
+        "https://www.afloday.com/images/0/cerceve/06s.jpg",
+        "https://www.afloday.com/images/0/cerceve/07.jpg",
+        "https://www.afloday.com/images/0/cerceve/07s.jpg",
+        "https://www.afloday.com/images/0/cerceve/08.jpg",
+        "https://www.afloday.com/images/0/cerceve/08s.jpg",
+        "https://www.afloday.com/images/0/cerceve/09.jpg",
+        "https://www.afloday.com/images/0/cerceve/09s.jpg",
+        "https://www.afloday.com/images/0/cerceve/10.jpg",
+        "https://www.afloday.com/images/0/cerceve/10s.jpg",
+        "https://www.afloday.com/images/0/cerceve/11.jpg",
+        "https://www.afloday.com/images/0/cerceve/11s.jpg",
+        "https://www.afloday.com/images/0/cerceve/12.jpg",
+        "https://www.afloday.com/images/0/cerceve/12s.jpg",
+        "https://www.afloday.com/images/0/cerceve/13.jpg",
+        "https://www.afloday.com/images/0/cerceve/13s.jpg",
+        "https://www.afloday.com/images/0/cerceve/14.jpg",
+        "https://www.afloday.com/images/0/cerceve/14s.jpg",
+        "https://www.afloday.com/images/0/cerceve/15.jpg",
+        "https://www.afloday.com/images/0/cerceve/15s.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/mini-bahce-atolyesi-5-yas",
+      "status": 200,
+      "imageCount": 21,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/mini-bahce/01.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/01s.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/02.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/02s.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/03.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/03s.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/04.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/04s.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/05.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/05s.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/06.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/06s.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/07.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/07s.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/08.jpg",
+        "https://www.afloday.com/images/0/mini-bahce/08s.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/mini-kavanoz-teraryum-atolyesi-3-yas",
+      "status": 200,
+      "imageCount": 13,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/mini-kavanoz/01.jpg",
+        "https://www.afloday.com/images/0/mini-kavanoz/01s.jpg",
+        "https://www.afloday.com/images/0/mini-kavanoz/02.jpg",
+        "https://www.afloday.com/images/0/mini-kavanoz/02s.jpg",
+        "https://www.afloday.com/images/0/mini-kavanoz/03.jpg",
+        "https://www.afloday.com/images/0/mini-kavanoz/03s.jpg",
+        "https://www.afloday.com/images/0/mini-kavanoz/04.jpg",
+        "https://www.afloday.com/images/0/mini-kavanoz/04s.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/kus-evi-tasarim-atolyesi-5-yas",
+      "status": 200,
+      "imageCount": 19,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/kus-evi/001.jpg",
+        "https://www.afloday.com/images/0/kus-evi/001s.jpg",
+        "https://www.afloday.com/images/0/kus-evi/002.jpg",
+        "https://www.afloday.com/images/0/kus-evi/002s.jpg",
+        "https://www.afloday.com/images/0/kus-evi/003.jpg",
+        "https://www.afloday.com/images/0/kus-evi/003s.jpg",
+        "https://www.afloday.com/images/0/kus-evi/004.jpg",
+        "https://www.afloday.com/images/0/kus-evi/004s.jpg",
+        "https://www.afloday.com/images/0/kus-evi/005.jpg",
+        "https://www.afloday.com/images/0/kus-evi/005s.jpg",
+        "https://www.afloday.com/images/0/kus-evi/006.jpg",
+        "https://www.afloday.com/images/0/kus-evi/006s.jpg",
+        "https://www.afloday.com/images/0/kus-evi/007.jpg",
+        "https://www.afloday.com/images/0/kus-evi/007s.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/kalemlik-tasarim-atolyesi-5-yas",
+      "status": 200,
+      "imageCount": 7,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/kalemlik/kalemlik-1.jpg",
+        "https://www.afloday.com/images/0/kalemlik/kalemlik-2.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/doga-cerceve-atolyesi-5-yas",
+      "status": 200,
+      "imageCount": 19,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/0/doga-cerceve/01.jpg",
+        "https://www.afloday.com/images/0/doga-cerceve/01s.jpg",
+        "https://www.afloday.com/images/0/doga-cerceve/02.jpg",
+        "https://www.afloday.com/images/0/doga-cerceve/02s.jpg",
+        "https://www.afloday.com/images/0/doga-cerceve/03.jpg",
+        "https://www.afloday.com/images/0/doga-cerceve/03s.jpg",
+        "https://www.afloday.com/images/0/doga-cerceve/04.jpg",
+        "https://www.afloday.com/images/0/doga-cerceve/04s.jpg",
+        "https://www.afloday.com/images/0/doga-cerceve/05.jpg",
+        "https://www.afloday.com/images/0/doga-cerceve/05s.jpg",
+        "https://www.afloday.com/images/0/doga-cerceve/06.jpg",
+        "https://www.afloday.com/images/0/doga-cerceve/06s.jpg",
+        "https://www.afloday.com/images/0/doga-cerceve/07.jpg",
+        "https://www.afloday.com/images/0/doga-cerceve/07s.jpg",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/ceylan-kalyon",
+      "status": 200,
+      "imageCount": 38,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/ceylan-kalyon-afloday.jpg",
+        "https://www.afloday.com/images/afloday/ceylan-kalyon-linkedin.png",
+        "https://www.afloday.com/images/afloday/kurucu-3.jpg",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/tugce-hazinedar",
+      "status": 200,
+      "imageCount": 36,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/tugce-hazinedar.jpg",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/derya-akyazici-kalyon",
+      "status": 200,
+      "imageCount": 36,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/derya-akyazici-kalyon.jpg",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/elif-celikkol-duman",
+      "status": 200,
+      "imageCount": 37,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/elif-celikkol-duman.jpg",
+        "https://www.afloday.com/images/elif-celikkol-guman-link.png",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/alara-apaydin-saruhan",
+      "status": 200,
+      "imageCount": 37,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/alara-apaydin-saruhan.jpg",
+        "https://www.afloday.com/images/alara-link.png",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/zeynep-altunhan",
+      "status": 200,
+      "imageCount": 36,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/ekip/zeynep-altunhan.jpg",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    },
+    {
+      "page": "/muharrem-ozdemir",
+      "status": 200,
+      "imageCount": 36,
+      "images": [
+        "https://www.afloday.com/images/logo/favicon.png",
+        "https://www.afloday.com/images/logo/new-logo-1.png",
+        "https://www.afloday.com/images/muharrem-ozdemir.jpg",
+        "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+        "https://www.afloday.com/images/afloday/ref/hektas.png",
+        "https://www.afloday.com/images/afloday/ref/igsas.png",
+        "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+        "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+        "https://www.afloday.com/images/afloday/ref/bosch.png",
+        "https://www.afloday.com/images/afloday/ref/denizbank.png",
+        "https://www.afloday.com/images/afloday/ref/evyap.png",
+        "https://www.afloday.com/images/afloday/ref/floralfest.png",
+        "https://www.afloday.com/images/afloday/ref/ingbank.png",
+        "https://www.afloday.com/images/afloday/ref/skoda.png",
+        "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+        "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+        "https://www.afloday.com/images/afloday/ref/kule.png",
+        "https://www.afloday.com/images/afloday/ref/carousel.png",
+        "https://www.afloday.com/images/afloday/ref/workinton.png",
+        "https://www.afloday.com/images/afloday/ref/intertech.png",
+        "https://www.afloday.com/images/afloday/ref/starwood.png",
+        "https://www.afloday.com/images/afloday/ref/estelauder.png",
+        "https://www.afloday.com/images/afloday/ref/p-g.png",
+        "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+        "https://www.afloday.com/images/afloday/ref/kalekim.png",
+        "https://www.afloday.com/images/afloday/ref/pfizer.png",
+        "https://www.afloday.com/images/afloday/ref/capitol.png",
+        "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+        "https://www.afloday.com/images/afloday/ref/godiva.png",
+        "https://www.afloday.com/images/afloday/ref/autoliv.png",
+        "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+        "https://www.afloday.com/images/afloday/ref/aon.png",
+        "https://www.afloday.com/images/afloday/ref/trendyol.png",
+        "https://www.afloday.com/images/menu-logo.png",
+        "https://www.afloday.com/images/afloday/title-bg2.jpg",
+        "https://www.afloday.com/images/afloday/menu-bg.png"
+      ]
+    }
+  ],
+  "downloaded": [
+    {
+      "file": "logo__new-logo-1.png",
+      "url": "https://www.afloday.com/images/logo/new-logo-1.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/iletisim",
+        "/katilim",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/ik",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/kokedama-tasarim-atolyesi",
+        "/kavanoz-teraryum-tasarim-atolyesi",
+        "/doga-cerceve-tasarim-atolyesi",
+        "/mevsim-kapi-celengi-tasarimi-atolye",
+        "/sukulent-aranjman-atolyesi",
+        "/minyatur-bahce-tasarim-atolyesi",
+        "/kuru-cicek-fanus-tasarim-atolyesi",
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi",
+        "/cicek-aksesuar-tasarim-atolyesi",
+        "/cicek-cerceve-tasarim-atolyesi",
+        "/mini-bahce-atolyesi-5-yas",
+        "/mini-kavanoz-teraryum-atolyesi-3-yas",
+        "/kus-evi-tasarim-atolyesi-5-yas",
+        "/kalemlik-tasarim-atolyesi-5-yas",
+        "/doga-cerceve-atolyesi-5-yas",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__hektas.png",
+      "url": "https://www.afloday.com/images/afloday/ref/hektas.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "logo__favicon.png",
+      "url": "https://www.afloday.com/images/logo/favicon.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/iletisim",
+        "/katilim",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/ik",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/kokedama-tasarim-atolyesi",
+        "/kavanoz-teraryum-tasarim-atolyesi",
+        "/doga-cerceve-tasarim-atolyesi",
+        "/mevsim-kapi-celengi-tasarimi-atolye",
+        "/sukulent-aranjman-atolyesi",
+        "/minyatur-bahce-tasarim-atolyesi",
+        "/kuru-cicek-fanus-tasarim-atolyesi",
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi",
+        "/cicek-aksesuar-tasarim-atolyesi",
+        "/cicek-cerceve-tasarim-atolyesi",
+        "/mini-bahce-atolyesi-5-yas",
+        "/mini-kavanoz-teraryum-atolyesi-3-yas",
+        "/kus-evi-tasarim-atolyesi-5-yas",
+        "/kalemlik-tasarim-atolyesi-5-yas",
+        "/doga-cerceve-atolyesi-5-yas",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__afloday-hakkinda.jpg",
+      "url": "https://www.afloday.com/images/afloday/afloday-hakkinda.jpg",
+      "usedOn": [
+        "/hakkimizda"
+      ]
+    },
+    {
+      "file": "afloday__ref__igsas.png",
+      "url": "https://www.afloday.com/images/afloday/ref/igsas.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__yildizlar.png",
+      "url": "https://www.afloday.com/images/afloday/ref/yildizlar.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__bosch.png",
+      "url": "https://www.afloday.com/images/afloday/ref/bosch.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__evyap.png",
+      "url": "https://www.afloday.com/images/afloday/ref/evyap.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__floralfest.png",
+      "url": "https://www.afloday.com/images/afloday/ref/floralfest.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__denizbank.png",
+      "url": "https://www.afloday.com/images/afloday/ref/denizbank.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__ingbank.png",
+      "url": "https://www.afloday.com/images/afloday/ref/ingbank.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__skoda.png",
+      "url": "https://www.afloday.com/images/afloday/ref/skoda.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__yapikredi.png",
+      "url": "https://www.afloday.com/images/afloday/ref/yapikredi.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__tabi-tasarim.png",
+      "url": "https://www.afloday.com/images/afloday/ref/tabi-tasarim.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__akmerkez.png",
+      "url": "https://www.afloday.com/images/afloday/ref/akmerkez.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__koruncuk.png",
+      "url": "https://www.afloday.com/images/afloday/ref/koruncuk.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__workinton.png",
+      "url": "https://www.afloday.com/images/afloday/ref/workinton.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__kule.png",
+      "url": "https://www.afloday.com/images/afloday/ref/kule.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__carousel.png",
+      "url": "https://www.afloday.com/images/afloday/ref/carousel.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__intertech.png",
+      "url": "https://www.afloday.com/images/afloday/ref/intertech.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__starwood.png",
+      "url": "https://www.afloday.com/images/afloday/ref/starwood.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__estelauder.png",
+      "url": "https://www.afloday.com/images/afloday/ref/estelauder.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__p-g.png",
+      "url": "https://www.afloday.com/images/afloday/ref/p-g.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__make-my-day.png",
+      "url": "https://www.afloday.com/images/afloday/ref/make-my-day.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__pfizer.png",
+      "url": "https://www.afloday.com/images/afloday/ref/pfizer.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__kalekim.png",
+      "url": "https://www.afloday.com/images/afloday/ref/kalekim.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__capitol.png",
+      "url": "https://www.afloday.com/images/afloday/ref/capitol.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__sahibinden.png",
+      "url": "https://www.afloday.com/images/afloday/ref/sahibinden.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__godiva.png",
+      "url": "https://www.afloday.com/images/afloday/ref/godiva.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__autoliv.png",
+      "url": "https://www.afloday.com/images/afloday/ref/autoliv.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__pasabahce.png",
+      "url": "https://www.afloday.com/images/afloday/ref/pasabahce.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__aon.png",
+      "url": "https://www.afloday.com/images/afloday/ref/aon.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__ref__trendyol.png",
+      "url": "https://www.afloday.com/images/afloday/ref/trendyol.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__menu-bg.png",
+      "url": "https://www.afloday.com/images/afloday/menu-bg.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/iletisim",
+        "/katilim",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/ik",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/kokedama-tasarim-atolyesi",
+        "/kavanoz-teraryum-tasarim-atolyesi",
+        "/doga-cerceve-tasarim-atolyesi",
+        "/mevsim-kapi-celengi-tasarimi-atolye",
+        "/sukulent-aranjman-atolyesi",
+        "/minyatur-bahce-tasarim-atolyesi",
+        "/kuru-cicek-fanus-tasarim-atolyesi",
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi",
+        "/cicek-aksesuar-tasarim-atolyesi",
+        "/cicek-cerceve-tasarim-atolyesi",
+        "/mini-bahce-atolyesi-5-yas",
+        "/mini-kavanoz-teraryum-atolyesi-3-yas",
+        "/kus-evi-tasarim-atolyesi-5-yas",
+        "/kalemlik-tasarim-atolyesi-5-yas",
+        "/doga-cerceve-atolyesi-5-yas",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__title-bg2.jpg",
+      "url": "https://www.afloday.com/images/afloday/title-bg2.jpg",
+      "usedOn": [
+        "/hakkimizda",
+        "/doga-temelli-egitimlerimiz",
+        "/dogadan-gelisim-atolyeleri",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/kokedama-tasarim-atolyesi",
+        "/kavanoz-teraryum-tasarim-atolyesi",
+        "/doga-cerceve-tasarim-atolyesi",
+        "/mevsim-kapi-celengi-tasarimi-atolye",
+        "/sukulent-aranjman-atolyesi",
+        "/minyatur-bahce-tasarim-atolyesi",
+        "/kuru-cicek-fanus-tasarim-atolyesi",
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi",
+        "/cicek-aksesuar-tasarim-atolyesi",
+        "/cicek-cerceve-tasarim-atolyesi",
+        "/mini-bahce-atolyesi-5-yas",
+        "/mini-kavanoz-teraryum-atolyesi-3-yas",
+        "/kus-evi-tasarim-atolyesi-5-yas",
+        "/kalemlik-tasarim-atolyesi-5-yas",
+        "/doga-cerceve-atolyesi-5-yas",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "menu-logo.png",
+      "url": "https://www.afloday.com/images/menu-logo.png",
+      "usedOn": [
+        "/hakkimizda",
+        "/iletisim",
+        "/katilim",
+        "/doga-temelli-egitimlerimiz",
+        "/",
+        "/dogadan-gelisim-atolyeleri",
+        "/ik",
+        "/gelecegi-tasarla",
+        "/gulumseyen-yarinlar-projesi",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi",
+        "/kokedama-tasarim-atolyesi",
+        "/kavanoz-teraryum-tasarim-atolyesi",
+        "/doga-cerceve-tasarim-atolyesi",
+        "/mevsim-kapi-celengi-tasarimi-atolye",
+        "/sukulent-aranjman-atolyesi",
+        "/minyatur-bahce-tasarim-atolyesi",
+        "/kuru-cicek-fanus-tasarim-atolyesi",
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi",
+        "/cicek-aksesuar-tasarim-atolyesi",
+        "/cicek-cerceve-tasarim-atolyesi",
+        "/mini-bahce-atolyesi-5-yas",
+        "/mini-kavanoz-teraryum-atolyesi-3-yas",
+        "/kus-evi-tasarim-atolyesi-5-yas",
+        "/kalemlik-tasarim-atolyesi-5-yas",
+        "/doga-cerceve-atolyesi-5-yas",
+        "/ceylan-kalyon",
+        "/tugce-hazinedar",
+        "/derya-akyazici-kalyon",
+        "/elif-celikkol-duman",
+        "/alara-apaydin-saruhan",
+        "/zeynep-altunhan",
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "afloday__main__cicek-tasarim-hobi-atolyeleri.png",
+      "url": "https://www.afloday.com/images/afloday/main/cicek-tasarim-hobi-atolyeleri.png",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "file": "afloday__atolye__diger-atolyeler.png",
+      "url": "https://www.afloday.com/images/afloday/atolye/diger-atolyeler.png",
+      "usedOn": [
+        "/doga-temelli-egitimlerimiz"
+      ]
+    },
+    {
+      "file": "afloday__main__bitki-tasarim-hobi-atolyeleri.png",
+      "url": "https://www.afloday.com/images/afloday/main/bitki-tasarim-hobi-atolyeleri.png",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "file": "afloday__main__cocuk-hobi-atolyeleri.png",
+      "url": "https://www.afloday.com/images/afloday/main/cocuk-hobi-atolyeleri.png",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "file": "afloday__cicek-tasarimi-kurumsal-etkinlikler.jpg",
+      "url": "https://www.afloday.com/images/afloday/cicek-tasarimi-kurumsal-etkinlikler.jpg",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "file": "banner2__002.jpg",
+      "url": "https://www.afloday.com/images/banner2/002.jpg",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "file": "banner2__007.jpg",
+      "url": "https://www.afloday.com/images/banner2/007.jpg",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "file": "kurumsal-hizmetler.png",
+      "url": "https://www.afloday.com/images/kurumsal-hizmetler.png",
+      "usedOn": [
+        "/dogadan-gelisim-atolyeleri",
+        "/dogadan-hobi-atolyeleri",
+        "/sosyal-sorumluluk-is-danismanligi"
+      ]
+    },
+    {
+      "file": "banner2__008.jpg",
+      "url": "https://www.afloday.com/images/banner2/008.jpg",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "file": "afloday__atolye-kurumsal__kurumsal-1.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-kurumsal/kurumsal-1.jpg",
+      "usedOn": [
+        "/dogadan-gelisim-atolyeleri"
+      ]
+    },
+    {
+      "file": "afloday__bg4.jpg",
+      "url": "https://www.afloday.com/images/afloday/bg4.jpg",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "file": "afloday__atolye-kurumsal__kurumsal-3.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-kurumsal/kurumsal-3.jpg",
+      "usedOn": [
+        "/dogadan-gelisim-atolyeleri"
+      ]
+    },
+    {
+      "file": "afloday__atolye-kurumsal__kurumsal-2.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-kurumsal/kurumsal-2.jpg",
+      "usedOn": [
+        "/dogadan-gelisim-atolyeleri"
+      ]
+    },
+    {
+      "file": "afloday__atolye-kurumsal__kurumsal-5.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-kurumsal/kurumsal-5.jpg",
+      "usedOn": [
+        "/dogadan-gelisim-atolyeleri"
+      ]
+    },
+    {
+      "file": "surdur__010.jpg",
+      "url": "https://www.afloday.com/images/surdur/010.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__011.jpg",
+      "url": "https://www.afloday.com/images/surdur/011.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__020.jpg",
+      "url": "https://www.afloday.com/images/surdur/020.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__001.jpg",
+      "url": "https://www.afloday.com/images/surdur/001.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__001.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/001.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__002.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/002.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__002.jpg",
+      "url": "https://www.afloday.com/images/surdur/002.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__003.jpg",
+      "url": "https://www.afloday.com/images/surdur/003.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__003.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/003.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__004.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/004.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__004.jpg",
+      "url": "https://www.afloday.com/images/surdur/004.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__005.jpg",
+      "url": "https://www.afloday.com/images/surdur/005.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__005.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/005.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__006.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/006.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__007.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/007.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__006.jpg",
+      "url": "https://www.afloday.com/images/surdur/006.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__007.jpg",
+      "url": "https://www.afloday.com/images/surdur/007.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "banner2__006.jpg",
+      "url": "https://www.afloday.com/images/banner2/006.jpg",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "file": "surdur__s__008.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/008.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__009.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/009.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__008.jpg",
+      "url": "https://www.afloday.com/images/surdur/008.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__009.jpg",
+      "url": "https://www.afloday.com/images/surdur/009.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__010.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/010.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "banner2__005.jpg",
+      "url": "https://www.afloday.com/images/banner2/005.jpg",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "file": "surdur__s__011.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/011.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "banner2__004.jpg",
+      "url": "https://www.afloday.com/images/banner2/004.jpg",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "file": "surdur__s__012.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/012.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__013.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/013.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__014.jpg",
+      "url": "https://www.afloday.com/images/surdur/014.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__012.jpg",
+      "url": "https://www.afloday.com/images/surdur/012.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__014.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/014.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__013.jpg",
+      "url": "https://www.afloday.com/images/surdur/013.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__015.jpg",
+      "url": "https://www.afloday.com/images/surdur/015.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__015.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/015.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__016.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/016.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__017.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/017.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__016.jpg",
+      "url": "https://www.afloday.com/images/surdur/016.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__018.jpg",
+      "url": "https://www.afloday.com/images/surdur/018.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__019.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/019.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__018.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/018.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__021.jpg",
+      "url": "https://www.afloday.com/images/surdur/021.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__019.jpg",
+      "url": "https://www.afloday.com/images/surdur/019.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__017.jpg",
+      "url": "https://www.afloday.com/images/surdur/017.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__021.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/021.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__023.jpg",
+      "url": "https://www.afloday.com/images/surdur/023.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__022.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/022.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__s__023.jpg",
+      "url": "https://www.afloday.com/images/surdur/s/023.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "surdur__022.jpg",
+      "url": "https://www.afloday.com/images/surdur/022.jpg",
+      "usedOn": [
+        "/gelecegi-tasarla"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__12s.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/12s.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__01s.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/01s.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__02s.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/02s.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__01.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/01.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__12.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/12.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__04s.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/04s.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__03s.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/03s.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__03.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/03.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__05s.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/05s.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__02.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/02.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__04.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/04.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__06s.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/06s.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__05.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/05.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__07.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/07.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__07s.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/07s.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__08s.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/08s.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__09s.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/09s.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__08.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/08.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__10s.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/10s.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__06.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/06.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__09.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/09.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__10.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/10.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__11.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/11.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__002-s.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/002-s.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__003.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/003.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__003-s.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/003-s.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__004-s.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/004-s.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__004.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/004.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__005.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/005.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__005-s.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/005-s.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__006-s.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/006-s.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__006.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/006.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__007-s.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/007-s.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__007.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/007.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__008-s.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/008-s.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__008.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/008.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__009-s.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/009-s.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__009.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/009.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__010-s.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/010-s.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__010.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/010.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__011-s.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/011-s.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__011.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/011.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__012-s.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/012-s.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__012.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/012.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "sosyal__sosyal-sorumluluk.jpg",
+      "url": "https://www.afloday.com/images/sosyal/sosyal-sorumluluk.jpg",
+      "usedOn": [
+        "/sosyal-sorumluluk-is-danismanligi"
+      ]
+    },
+    {
+      "file": "sosyal__ceylan-kalyon.jpg",
+      "url": "https://www.afloday.com/images/sosyal/ceylan-kalyon.jpg",
+      "usedOn": [
+        "/sosyal-sorumluluk-is-danismanligi"
+      ]
+    },
+    {
+      "file": "0__kokedama__01s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/01s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "afloday__atolye-koruncuk__11s.jpg",
+      "url": "https://www.afloday.com/images/afloday/atolye-koruncuk/11s.jpg",
+      "usedOn": [
+        "/gulumseyen-yarinlar-projesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__02.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/02.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__01.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/01.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__001-s.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/001-s.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "0__kokedama__02s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/02s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__002.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/002.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "donemsel-konsept__001.jpg",
+      "url": "https://www.afloday.com/images/donemsel-konsept/001.jpg",
+      "usedOn": [
+        "/dogadan-hobi-atolyeleri"
+      ]
+    },
+    {
+      "file": "0__kokedama__03s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/03s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__04s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/04s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__03.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/03.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__05s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/05s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__05.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/05.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__06s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/06s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__07s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/07s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__08s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/08s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__07.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/07.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__06.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/06.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__08.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/08.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "banner2__001.jpg",
+      "url": "https://www.afloday.com/images/banner2/001.jpg",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "file": "0__kokedama__09s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/09s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__10s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/10s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__04.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/04.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__09.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/09.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__11s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/11s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__12s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/12s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__13s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/13s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__14s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/14s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__15s.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/15s.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__15.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/15.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__01s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/01s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__14.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/14.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__02s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/02s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__13.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/13.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__02.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/02.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__01.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/01.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__11.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/11.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kokedama__10.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/10.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__03s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/03s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__04s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/04s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__05s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/05s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__04.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/04.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__03.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/03.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__06s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/06s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__07s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/07s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__05.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/05.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__07.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/07.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__09s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/09s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__09.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/09.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__08s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/08s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__10s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/10s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__10.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/10.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__06.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/06.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__11s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/11s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__08.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/08.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__11.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/11.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__12s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/12s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__12.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/12.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__13s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/13s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__14s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/14s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__15s.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/15s.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__15.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/15.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kapi-celengi__001s.jpg",
+      "url": "https://www.afloday.com/images/0/kapi-celengi/001s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__14.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/14.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kapi-celengi__002s.jpg",
+      "url": "https://www.afloday.com/images/0/kapi-celengi/002s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__kapi-celengi__003s.jpg",
+      "url": "https://www.afloday.com/images/0/kapi-celengi/003s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__kapi-celengi__002.jpg",
+      "url": "https://www.afloday.com/images/0/kapi-celengi/002.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__kavanoz-teraryum__13.jpg",
+      "url": "https://www.afloday.com/images/0/kavanoz-teraryum/13.jpg",
+      "usedOn": [
+        "/kavanoz-teraryum-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__kapi-celengi__001.jpg",
+      "url": "https://www.afloday.com/images/0/kapi-celengi/001.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__kapi-celengi__005s.jpg",
+      "url": "https://www.afloday.com/images/0/kapi-celengi/005s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__kapi-celengi__003.jpg",
+      "url": "https://www.afloday.com/images/0/kapi-celengi/003.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__kapi-celengi__005.jpg",
+      "url": "https://www.afloday.com/images/0/kapi-celengi/005.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__01s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/01s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__02s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/02s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__03s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/03s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__02.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/02.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__04s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/04s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__04.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/04.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__01.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/01.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__05s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/05s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__05.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/05.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__06s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/06s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__03.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/03.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__07s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/07s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__07.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/07.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__08s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/08s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__09s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/09s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__09.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/09.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__10.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/10.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__10s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/10s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__08.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/08.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__11s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/11s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__06.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/06.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__11.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/11.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__12s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/12s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__13s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/13s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__kapi-celengi__004s.jpg",
+      "url": "https://www.afloday.com/images/0/kapi-celengi/004s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__kapi-celengi__004.jpg",
+      "url": "https://www.afloday.com/images/0/kapi-celengi/004.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__14s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/14s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__01.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/01.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__01s.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/01s.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__02.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/02.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__02s.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/02s.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__celeng__15.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/15.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__14.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/14.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__celeng__13.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/13.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__03s.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/03s.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__03.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/03.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__04s.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/04s.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__05s.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/05s.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__04.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/04.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__06s.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/06s.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__celeng__12.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/12.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__07s.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/07s.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__05.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/05.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__07.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/07.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__08s.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/08s.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__09s.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/09s.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__09.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/09.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__06.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/06.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__10s.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/10s.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__01.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/01.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__10.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/10.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__01s.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/01s.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__skulent-aranjman__08.jpg",
+      "url": "https://www.afloday.com/images/0/skulent-aranjman/08.jpg",
+      "usedOn": [
+        "/sukulent-aranjman-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__02s.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/02s.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__04s.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/04s.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__02.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/02.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__03s.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/03s.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__03.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/03.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__05s.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/05s.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__06s.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/06s.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__05.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/05.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__04.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/04.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__07s.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/07s.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__07.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/07.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__09s.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/09s.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__10.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/10.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__10s.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/10s.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__01.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/01.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__01s.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/01s.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__08s.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/08s.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__06.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/06.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__08.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/08.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__minyatur-bahce__09.jpg",
+      "url": "https://www.afloday.com/images/0/minyatur-bahce/09.jpg",
+      "usedOn": [
+        "/minyatur-bahce-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__03s.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/03s.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__02s.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/02s.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__04.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/04.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__02.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/02.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__04s.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/04s.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__05s.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/05s.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__06s.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/06s.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__06.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/06.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__05.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/05.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__07s.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/07s.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__03.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/03.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__07.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/07.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__09s.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/09s.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__08s.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/08s.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__08.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/08.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__09.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/09.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__10.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/10.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__fanus__10s.jpg",
+      "url": "https://www.afloday.com/images/0/fanus/10s.jpg",
+      "usedOn": [
+        "/kuru-cicek-fanus-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__taze-cicek__001s.jpg",
+      "url": "https://www.afloday.com/images/0/taze-cicek/001s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__taze-cicek__002s.jpg",
+      "url": "https://www.afloday.com/images/0/taze-cicek/002s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__taze-cicek__003s.jpg",
+      "url": "https://www.afloday.com/images/0/taze-cicek/003s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__taze-cicek__002.jpg",
+      "url": "https://www.afloday.com/images/0/taze-cicek/002.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__taze-cicek__004s.jpg",
+      "url": "https://www.afloday.com/images/0/taze-cicek/004s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__taze-cicek__004.jpg",
+      "url": "https://www.afloday.com/images/0/taze-cicek/004.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__taze-cicek__001.jpg",
+      "url": "https://www.afloday.com/images/0/taze-cicek/001.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__taze-cicek__005s.jpg",
+      "url": "https://www.afloday.com/images/0/taze-cicek/005s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__taze-cicek__003.jpg",
+      "url": "https://www.afloday.com/images/0/taze-cicek/003.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__taze-cicek__005.jpg",
+      "url": "https://www.afloday.com/images/0/taze-cicek/005.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__01.jpg",
+      "url": "https://www.afloday.com/images/0/buket/01.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__01s.jpg",
+      "url": "https://www.afloday.com/images/0/buket/01s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__02s.jpg",
+      "url": "https://www.afloday.com/images/0/buket/02s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__02.jpg",
+      "url": "https://www.afloday.com/images/0/buket/02.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__03s.jpg",
+      "url": "https://www.afloday.com/images/0/buket/03s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__03.jpg",
+      "url": "https://www.afloday.com/images/0/buket/03.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__04s.jpg",
+      "url": "https://www.afloday.com/images/0/buket/04s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__05s.jpg",
+      "url": "https://www.afloday.com/images/0/buket/05s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__06s.jpg",
+      "url": "https://www.afloday.com/images/0/buket/06s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__06.jpg",
+      "url": "https://www.afloday.com/images/0/buket/06.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__07s.jpg",
+      "url": "https://www.afloday.com/images/0/buket/07s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__08.jpg",
+      "url": "https://www.afloday.com/images/0/buket/08.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__08s.jpg",
+      "url": "https://www.afloday.com/images/0/buket/08s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__09s.jpg",
+      "url": "https://www.afloday.com/images/0/buket/09s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__09.jpg",
+      "url": "https://www.afloday.com/images/0/buket/09.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__10.jpg",
+      "url": "https://www.afloday.com/images/0/buket/10.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__10s.jpg",
+      "url": "https://www.afloday.com/images/0/buket/10s.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__01s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/01s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__07.jpg",
+      "url": "https://www.afloday.com/images/0/buket/07.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__01.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/01.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__04.jpg",
+      "url": "https://www.afloday.com/images/0/buket/04.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__02.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/02.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__02s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/02s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__03s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/03s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__03.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/03.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__04s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/04s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__04.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/04.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__05s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/05s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__05.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/05.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__buket__05.jpg",
+      "url": "https://www.afloday.com/images/0/buket/05.jpg",
+      "usedOn": [
+        "/taze-cicek-buket-aranjman-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__06s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/06s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__06.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/06.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__07.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/07.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__08s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/08s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__07s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/07s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__09s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/09s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__09.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/09.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__08.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/08.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__10s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/10s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__11s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/11s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__10.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/10.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__11.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/11.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__13s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/13s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__12s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/12s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__13.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/13.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__12.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/12.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__14s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/14s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__15s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/15s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__14.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/14.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__16s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/16s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__17s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/17s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__18s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/18s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__17.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/17.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__16.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/16.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__19s.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/19s.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__18.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/18.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__19.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/19.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cicek-aksesuar__15.jpg",
+      "url": "https://www.afloday.com/images/0/cicek-aksesuar/15.jpg",
+      "usedOn": [
+        "/cicek-aksesuar-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__01s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/01s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__02s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/02s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__03s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/03s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__04s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/04s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__04.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/04.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__05s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/05s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__05.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/05.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__06.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/06.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__06s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/06s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__07s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/07s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__07.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/07.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__01.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/01.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__08s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/08s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__02.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/02.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__08.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/08.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__09s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/09s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__10s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/10s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__03.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/03.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__10.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/10.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__11s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/11s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__11.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/11.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__12s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/12s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__09.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/09.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__13.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/13.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__13s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/13s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__12.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/12.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__14s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/14s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__14.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/14.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__cerceve__15s.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/15s.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__01s.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/01s.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__cerceve__15.jpg",
+      "url": "https://www.afloday.com/images/0/cerceve/15.jpg",
+      "usedOn": [
+        "/cicek-cerceve-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__02s.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/02s.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__03s.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/03s.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__01.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/01.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__04s.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/04s.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__02.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/02.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__04.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/04.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__06s.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/06s.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__05s.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/05s.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__07s.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/07s.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__05.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/05.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__06.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/06.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__08s.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/08s.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__07.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/07.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-kavanoz__01s.jpg",
+      "url": "https://www.afloday.com/images/0/mini-kavanoz/01s.jpg",
+      "usedOn": [
+        "/mini-kavanoz-teraryum-atolyesi-3-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__03.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/03.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-kavanoz__02s.jpg",
+      "url": "https://www.afloday.com/images/0/mini-kavanoz/02s.jpg",
+      "usedOn": [
+        "/mini-kavanoz-teraryum-atolyesi-3-yas"
+      ]
+    },
+    {
+      "file": "0__mini-kavanoz__03s.jpg",
+      "url": "https://www.afloday.com/images/0/mini-kavanoz/03s.jpg",
+      "usedOn": [
+        "/mini-kavanoz-teraryum-atolyesi-3-yas"
+      ]
+    },
+    {
+      "file": "0__mini-kavanoz__04.jpg",
+      "url": "https://www.afloday.com/images/0/mini-kavanoz/04.jpg",
+      "usedOn": [
+        "/mini-kavanoz-teraryum-atolyesi-3-yas"
+      ]
+    },
+    {
+      "file": "0__mini-kavanoz__04s.jpg",
+      "url": "https://www.afloday.com/images/0/mini-kavanoz/04s.jpg",
+      "usedOn": [
+        "/mini-kavanoz-teraryum-atolyesi-3-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__001.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/001.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__001s.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/001s.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-kavanoz__03.jpg",
+      "url": "https://www.afloday.com/images/0/mini-kavanoz/03.jpg",
+      "usedOn": [
+        "/mini-kavanoz-teraryum-atolyesi-3-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__002s.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/002s.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-bahce__08.jpg",
+      "url": "https://www.afloday.com/images/0/mini-bahce/08.jpg",
+      "usedOn": [
+        "/mini-bahce-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-kavanoz__02.jpg",
+      "url": "https://www.afloday.com/images/0/mini-kavanoz/02.jpg",
+      "usedOn": [
+        "/mini-kavanoz-teraryum-atolyesi-3-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__002.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/002.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__003s.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/003s.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__004s.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/004s.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__mini-kavanoz__01.jpg",
+      "url": "https://www.afloday.com/images/0/mini-kavanoz/01.jpg",
+      "usedOn": [
+        "/mini-kavanoz-teraryum-atolyesi-3-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__004.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/004.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__005s.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/005s.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__005.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/005.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__006s.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/006s.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__003.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/003.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__007s.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/007s.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__kalemlik__kalemlik-1.jpg",
+      "url": "https://www.afloday.com/images/0/kalemlik/kalemlik-1.jpg",
+      "usedOn": [
+        "/kalemlik-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__007.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/007.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__01s.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/01s.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__kus-evi__006.jpg",
+      "url": "https://www.afloday.com/images/0/kus-evi/006.jpg",
+      "usedOn": [
+        "/kus-evi-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__01.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/01.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__02s.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/02s.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__02.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/02.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__03s.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/03s.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__04s.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/04s.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__04.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/04.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__kalemlik__kalemlik-2.jpg",
+      "url": "https://www.afloday.com/images/0/kalemlik/kalemlik-2.jpg",
+      "usedOn": [
+        "/kalemlik-tasarim-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__05s.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/05s.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__06s.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/06s.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__05.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/05.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__06.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/06.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__07s.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/07s.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__07.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/07.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "afloday__ceylan-kalyon-linkedin.png",
+      "url": "https://www.afloday.com/images/afloday/ceylan-kalyon-linkedin.png",
+      "usedOn": [
+        "/ceylan-kalyon"
+      ]
+    },
+    {
+      "file": "0__doga-cerceve__03.jpg",
+      "url": "https://www.afloday.com/images/0/doga-cerceve/03.jpg",
+      "usedOn": [
+        "/doga-cerceve-atolyesi-5-yas"
+      ]
+    },
+    {
+      "file": "tugce-hazinedar.jpg",
+      "url": "https://www.afloday.com/images/tugce-hazinedar.jpg",
+      "usedOn": [
+        "/tugce-hazinedar"
+      ]
+    },
+    {
+      "file": "elif-celikkol-guman-link.png",
+      "url": "https://www.afloday.com/images/elif-celikkol-guman-link.png",
+      "usedOn": [
+        "/elif-celikkol-duman"
+      ]
+    },
+    {
+      "file": "derya-akyazici-kalyon.jpg",
+      "url": "https://www.afloday.com/images/derya-akyazici-kalyon.jpg",
+      "usedOn": [
+        "/derya-akyazici-kalyon"
+      ]
+    },
+    {
+      "file": "ceylan-kalyon-afloday.jpg",
+      "url": "https://www.afloday.com/images/ceylan-kalyon-afloday.jpg",
+      "usedOn": [
+        "/ceylan-kalyon"
+      ]
+    },
+    {
+      "file": "alara-apaydin-saruhan.jpg",
+      "url": "https://www.afloday.com/images/alara-apaydin-saruhan.jpg",
+      "usedOn": [
+        "/alara-apaydin-saruhan"
+      ]
+    },
+    {
+      "file": "alara-link.png",
+      "url": "https://www.afloday.com/images/alara-link.png",
+      "usedOn": [
+        "/alara-apaydin-saruhan"
+      ]
+    },
+    {
+      "file": "ekip__zeynep-altunhan.jpg",
+      "url": "https://www.afloday.com/images/ekip/zeynep-altunhan.jpg",
+      "usedOn": [
+        "/zeynep-altunhan"
+      ]
+    },
+    {
+      "file": "muharrem-ozdemir.jpg",
+      "url": "https://www.afloday.com/images/muharrem-ozdemir.jpg",
+      "usedOn": [
+        "/muharrem-ozdemir"
+      ]
+    },
+    {
+      "file": "elif-celikkol-duman.jpg",
+      "url": "https://www.afloday.com/images/elif-celikkol-duman.jpg",
+      "usedOn": [
+        "/elif-celikkol-duman"
+      ]
+    },
+    {
+      "file": "afloday__kurucu-3.jpg",
+      "url": "https://www.afloday.com/images/afloday/kurucu-3.jpg",
+      "usedOn": [
+        "/ceylan-kalyon"
+      ]
+    },
+    {
+      "file": "0__celeng__15s.jpg",
+      "url": "https://www.afloday.com/images/0/celeng/15s.jpg",
+      "usedOn": [
+        "/mevsim-kapi-celengi-tasarimi-atolye"
+      ]
+    },
+    {
+      "file": "0__kokedama__12.jpg",
+      "url": "https://www.afloday.com/images/0/kokedama/12.jpg",
+      "usedOn": [
+        "/kokedama-tasarim-atolyesi"
+      ]
+    },
+    {
+      "file": "banner2__003.jpg",
+      "url": "https://www.afloday.com/images/banner2/003.jpg",
+      "usedOn": [
+        "/"
+      ]
+    }
+  ],
+  "failed": []
+}

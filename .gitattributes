@@ -1,0 +1,7 @@
+# Metin dosyalarında satır sonu normalizasyonu
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.mp4 binary
+*.pdf binary
