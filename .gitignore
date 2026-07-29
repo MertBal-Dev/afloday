@@ -32,3 +32,4 @@ node_modules/
 # Keşif sırasında kullanılan tek seferlik görüntüleyiciler (üretimde işlevi yok)
 _audit/*.html
 _audit/cands.json
+_audit/ogsec/

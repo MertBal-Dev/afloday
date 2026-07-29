@@ -265,12 +265,15 @@ export function logoWall(limit = 20) {
    Tıklanınca tam ekran ışık kutusu açılır (afloday.js). */
 export function galeriBolumu(images, ad) {
   if (!images.length) return '';
+  /* Izgarada 300px küçük resim, ışık kutusunda afloday.com'un tam boy sürümü:
+     assets/img/afloday/0/<klasor>/01s.jpg → assets/img/afloday/tam/<klasor>/01.jpg */
+  const tam = (src) => src.replace('/afloday/0/', '/afloday/tam/').replace(/s\.jpg$/i, '.jpg');
   return `
   <section class="section rule-top">
     <div class="wrap">
       ${opener('Atölyeden', 'Kareler', `${ad} atölyesinden ${images.length} kare.`)}
       <div class="galeri" data-lightbox style="margin-top:clamp(32px,4vw,56px)">
-        ${images.map((src, i) => `<button class="galeri-hucre" type="button" data-full="${src}" aria-label="${ad} — ${i + 1}. fotoğrafı büyüt">
+        ${images.map((src, i) => `<button class="galeri-hucre" type="button" data-full="${tam(src)}" aria-label="${ad} — ${i + 1}. fotoğrafı büyüt">
           <img src="${src}" alt="${ad} atölyesinden kare ${i + 1}" loading="lazy" width="600" height="600">
         </button>`).join('\n        ')}
       </div>
@@ -317,7 +320,7 @@ export function plate({ href, img, alt, code, tag, name, note, dl, ratio = '' })
         </a>`;
 }
 
-export function layout({ title, desc, current, body, ogImage = 'assets/img/hero/hero-buket.jpg', schema = null, canonical = '', pad = false }) {
+export function layout({ title, desc, current, body, ogImage = 'assets/img/brand/og-kapak.jpg', schema = null, canonical = '', pad = false }) {
   const jsonLd = schema ? `\n<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>` : '';
   return `<!doctype html>
 <html lang="tr">
@@ -333,6 +336,9 @@ export function layout({ title, desc, current, body, ogImage = 'assets/img/hero/
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${desc}">
 <meta property="og:image" content="${site.url}/${ogImage}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Afloday — Çiçekli Bir Gün. Doğadan Gelişim Atölyesi.">
 <meta property="og:url" content="${site.url}/${canonical}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#E9E9E0">
