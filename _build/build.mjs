@@ -1263,7 +1263,11 @@ add('404.html', layout({
 ${urls.map(u => `  <url><loc>${site.url}/${u}</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>${u === '' ? '1.0' : u.startsWith('atolye-') ? '0.6' : '0.8'}</priority></url>`).join('\n')}
 </urlset>
 `);
-  add('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${site.url}/sitemap.xml\n`);
+  // Önizleme dağıtımında arama motorları taramasın — müşterinin gerçek
+  // sitesiyle rekabet etmesin, link arama sonuçlarına sızmasın.
+  add('robots.txt', process.env.PREVIEW === '1'
+    ? 'User-agent: *\nDisallow: /\n'
+    : `User-agent: *\nAllow: /\n\nSitemap: ${site.url}/sitemap.xml\n`);
 }
 
 /* ====================================================================== */

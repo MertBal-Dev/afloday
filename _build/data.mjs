@@ -5,7 +5,9 @@ export const site = {
   name: 'Afloday',
   legal: 'Afloday | Doğadan Gelişim Atölyesi',
   tagline: 'Doğadan Gelişim Atölyesi',
-  url: 'https://www.afloday.com',
+  /* Önizleme dağıtımlarında SITE_URL ile geçersiz kılınır; böylece
+     og:image ve canonical yayınlandığı adrese işaret eder. */
+  url: (process.env.SITE_URL || 'https://www.afloday.com').replace(/\/$/, ''),
   email: 'info@afloday.com',
   phones: ['0216 510 2809', '0538 490 0727', '0532 213 4476'],
   address: {

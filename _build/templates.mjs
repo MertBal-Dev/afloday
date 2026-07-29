@@ -336,6 +336,7 @@ export function layout({ title, desc, current, body, ogImage = 'assets/img/hero/
 <meta property="og:url" content="${site.url}/${canonical}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#E9E9E0">
+${process.env.PREVIEW === '1' ? '<meta name="robots" content="noindex, nofollow">' : ''}
 <link rel="icon" href="assets/img/brand/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
