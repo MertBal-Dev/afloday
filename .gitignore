@@ -38,3 +38,6 @@ node_modules/
 _audit/*.html
 _audit/cands.json
 _audit/ogsec/
+
+# Teklif belgesi — fiyat ve ticari koşullar içerir, depoya girmez
+_teklif/

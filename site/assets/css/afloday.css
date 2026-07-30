@@ -837,7 +837,13 @@ a.ledger-row:hover .ledger-name { color: var(--carmine); }
   .duo-a { grid-column: 1 / 7; }
   .duo-b { grid-column: 8 / 13; margin-top: clamp(56px, 12vw, 176px); }
   .duo-wide { grid-column: 1 / 9; }
-  .duo-side { grid-column: 10 / 13; align-self: end; }
+  /* Görsel metnin başıyla hizalanır ve uzun metinlerde okurla birlikte iner.
+     Alta hizalıydı; Ceylan Kalyon gibi uzun biyografilerde üstünde 1200px'e
+     varan ölü alan bırakıyordu. */
+  .duo-side {
+    grid-column: 9 / 13; align-self: start;
+    position: sticky; top: calc(var(--hdr-h) + var(--s4));
+  }
 }
 
 /* --- 10. Dizin listesi --------------------------------------------------- */
