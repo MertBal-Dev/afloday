@@ -88,22 +88,6 @@ ${heroVideo({
     </div>
   </section>
 
-  <!-- REFERANSLAR — orijinal sitede olduğu gibi: "Referanslarımız" başlığı
-       altında logo duvarı. Marka adları metin olarak iddia edilmiyor. -->
-  <section class="section rule-top">
-    <div class="wrap">
-      <div class="opener" data-reveal>
-        <div class="opener-head">
-          <p class="eyebrow">Afloday</p>
-          <h2 class="h2">Referanslarımız</h2>
-        </div>
-        <div></div>
-        <div class="opener-rule"></div>
-      </div>
-      ${logoWall(30)}
-    </div>
-  </section>
-
   <!-- İKİ YOL — asimetrik ikili, ızgara ritmini kırar -->
   <section class="section">
     <div class="wrap">
@@ -133,6 +117,28 @@ ${heroVideo({
     </div>
   </section>
 
+  <!-- KATALOG RAYI — yatay kaydırma, dikey monotonluğu kırar -->
+  <section class="section rule-top">
+    <div class="wrap">
+      ${opener(`Katalog · ${workshops.length} atölye`, 'Atölye kataloğundan', 'Çiçek tasarım, bitki tasarım ve çocuk hobi atölyeleri.')}
+    </div>
+    <div class="rail-wrap" style="margin-top:clamp(40px,5vw,72px)">
+      <div class="rail">
+        ${rail.map(w => `<a class="plate" href="atolye-${w.slug}.html">
+          <div class="plate-frame"><img src="${W(w.img)}" alt="${w.alt}" loading="lazy" width="900" height="900"></div>
+          <div class="plate-label">
+            <p class="plate-acc"><span>${cats[w.cat].short}</span><span>${w.age || 'Yetişkin'}</span></p>
+            <h3 class="plate-name">${w.title}</h3>
+          </div>
+        </a>`).join('\n        ')}
+      </div>
+      <div class="wrap"><p class="rail-hint">Kaydırarak gezin · ${workshops.length} kayıttan 8'i</p></div>
+    </div>
+    <div class="wrap" style="margin-top:var(--s6)">
+      <a class="btn btn-ghost" href="atolyeler.html" data-reveal>Tüm kataloğu gör</a>
+    </div>
+  </section>
+
   <!-- TAM TAŞAN KIRILIM -->
   ${bleed({
     images: [
@@ -154,28 +160,6 @@ ${heroVideo({
           <span class="index-meta">Detay</span>
         </a>`).join('\n        ')}
       </div>
-    </div>
-  </section>
-
-  <!-- KATALOG RAYI — yatay kaydırma, dikey monotonluğu kırar -->
-  <section class="section rule-top">
-    <div class="wrap">
-      ${opener(`Katalog · ${workshops.length} atölye`, 'Atölye kataloğundan', 'Çiçek tasarım, bitki tasarım ve çocuk hobi atölyeleri.')}
-    </div>
-    <div class="rail-wrap" style="margin-top:clamp(40px,5vw,72px)">
-      <div class="rail">
-        ${rail.map(w => `<a class="plate" href="atolye-${w.slug}.html">
-          <div class="plate-frame"><img src="${W(w.img)}" alt="${w.alt}" loading="lazy" width="900" height="900"></div>
-          <div class="plate-label">
-            <p class="plate-acc"><span>${cats[w.cat].short}</span><span>${w.age || 'Yetişkin'}</span></p>
-            <h3 class="plate-name">${w.title}</h3>
-          </div>
-        </a>`).join('\n        ')}
-      </div>
-      <div class="wrap"><p class="rail-hint">Kaydırarak gezin · ${workshops.length} kayıttan 8'i</p></div>
-    </div>
-    <div class="wrap" style="margin-top:var(--s6)">
-      <a class="btn btn-ghost" href="atolyeler.html" data-reveal>Tüm kataloğu gör</a>
     </div>
   </section>
 
@@ -222,7 +206,23 @@ ${heroVideo({
     </div>
   </section>
 
-  </section>`;
+  </section>  <!-- REFERANSLAR — orijinal sitede olduğu gibi: "Referanslarımız" başlığı
+       altında logo duvarı. Marka adları metin olarak iddia edilmiyor. -->
+  <section class="section rule-top">
+    <div class="wrap">
+      <div class="opener" data-reveal>
+        <div class="opener-head">
+          <p class="eyebrow">Afloday</p>
+          <h2 class="h2">Referanslarımız</h2>
+        </div>
+        <div></div>
+        <div class="opener-rule"></div>
+      </div>
+      ${logoWall(30)}
+    </div>
+  </section>
+
+`;
 
   add('index.html', layout({
     title: 'Afloday — Doğadan Gelişim ve Hobi Atölyeleri',
