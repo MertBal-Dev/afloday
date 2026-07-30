@@ -48,25 +48,43 @@ ${heroVideo({
     posterAlt: 'Sabah ışığının ağaçların arasından süzüldüğü orman; eğrelti otları, yosun ve pembe kır çiçekleri',
   })}
 
-  <!-- TANITIM FİLMİ — orijinal sitedeki YouTube videosu -->
+  <!-- TANITIM FİLMİ — orijinal anasayfada video, yanındaki iki cümleyle
+       birlikte duruyor. "Film / Konu" gibi künye etiketleri orijinalde yok. -->
   <section class="section rule-top" id="tanitim">
     <div class="wrap">
-      ${opener('Tanıtım filmi', 'Geleceği Doğadan Tasarla', 'Doğa temelli eğitim yaklaşımımızı anlatan filmimiz.')}
-      <div class="split" style="margin-top:clamp(40px,5vw,72px); align-items:start">
+      <div class="film">
         <div class="video" data-reveal>
           <iframe src="https://www.youtube-nocookie.com/embed/${assets.youtubeId}?iv_load_policy=3&rel=0"
             title="${assets.youtubeTitle}" loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <div class="stack-l" data-reveal style="--d:120ms">
-          <dl class="meta">
-            <div><dt>Film</dt><dd>Afloday_Geleceği Doğadan Tasarla_Doğa Temelli Eğitimler</dd></div>
-            <div><dt>Konu</dt><dd>Doğa temelli eğitimler</dd></div>
-          </dl>
-          <p class="body">Doğanın milyarlarca yıllık bilgeliğinin, günümüzün en karmaşık zorluklarına nasıl sürdürülebilir cevaplar sunduğunu anlatıyoruz.</p>
-          <div><a class="link" href="https://www.youtube.com/watch?v=${assets.youtubeId}" rel="noopener">YouTube'da izle</a></div>
+        <div class="film-yazi" data-reveal style="--d:120ms">
+          <p>Doğa temasıyla koçluk dokunuşlarıyla aktif öğrenme desteği sağlayan atölyelerle <strong>gelişimi</strong>, dakikalar sürse de doğaya dönüş imkânı sunduğumuz hobi edinme atölyeleriyle <strong>eğlence, sosyalleşme, yaratıcı düşünmeyi</strong> destekliyoruz.</p>
+          <p>Doğadan ilham alarak tasarladığımız özgün ürünleri ise <strong>&ldquo;Doğadan Tasarım Mağazası&rdquo;</strong> ile doğa aşıklarıyla buluşturuyoruz.</p>
+          <p><a class="link" href="https://www.youtube.com/watch?v=${assets.youtubeId}" rel="noopener">Filmi YouTube'da izle</a></p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATÖLYE DİZİNİ — afloday.com anasayfasında videonun hemen altında,
+       üç kategori başlığı ve 16 atölyenin tamamı bağlantı olarak duruyor. -->
+  <section class="section rule-top" id="dizin">
+    <div class="wrap">
+      <div class="dizin">
+        ${['cicek', 'bitki', 'cocuk'].map((k, i) => {
+    const list = byCat(k);
+    const gorsel = { cicek: 'cicek-tasarim-hobi-atolyeleri', bitki: 'bitki-tasarim-hobi-atolyeleri', cocuk: 'cocuk-hobi-atolyeleri' }[k];
+    return `<div class="dizin-kol" data-reveal="stagger">
+          <div class="dizin-bas">
+            <img src="assets/img/afloday/afloday/main/${gorsel}.png" alt="Afloday — ${cats[k].label}" loading="lazy" width="360" height="150">
+          </div>
+          <ul class="dizin-liste">
+            ${list.map(w => `<li><a href="atolye-${w.slug}.html">${w.title}${w.age ? ` <span>(${w.age})</span>` : ''}</a></li>`).join('')}
+          </ul>
+        </div>`;
+  }).join('')}
       </div>
     </div>
   </section>
@@ -172,9 +190,13 @@ ${heroVideo({
           <h2 class="d-l">Çiçeklerin, doğanın <em class="em">iyileştirici</em> etkisi.</h2>
         </div>
         <div class="stack-l body" data-reveal style="--d:120ms">
-          <p style="color:var(--field-muted)">Doğa temasıyla koçluk dokunuşlarıyla aktif öğrenme desteği sağlayan atölyelerle <strong>gelişimi</strong>, dakikalar sürse de doğaya dönüş imkânı sunduğumuz hobi edinme atölyeleriyle <strong>eğlence, sosyalleşme, yaratıcı düşünmeyi</strong> destekliyoruz.</p>
-          <p style="color:var(--field-muted)">Doğadan ilham alarak tasarladığımız özgün ürünleri ise <strong>&ldquo;Doğadan Tasarım Mağazası&rdquo;</strong> ile doğa aşıklarıyla buluşturuyoruz.</p>
-          <p style="color:var(--field-muted)">Afloday Doğadan Gelişim Atölyesi olarak; çiçeklerin, doğanın iyileştirici etkisini eğitimle, atölyeyle, özgün tasarımlarla iş ve yaşam alanlarına taşıyoruz.</p>
+          <p class="lede" style="color:var(--field-muted)">Afloday Doğadan Gelişim Atölyesi olarak; çiçeklerin, doğanın iyileştirici etkisini eğitimle, atölyeyle, özgün tasarımlarla iş ve yaşam alanlarına taşıyoruz.</p>
+          <figure class="plate" style="margin:0">
+            <div class="plate-frame plate-frame-wide">
+              <img src="assets/img/afloday/afloday/cicek-tasarimi-kurumsal-etkinlikler.jpg" alt="Kurumsal etkinlikte çiçek tasarımı yapan katılımcılar" loading="lazy" width="600" height="562">
+            </div>
+          </figure>
+          <p><a class="link" href="${site.social.instagram}" rel="noopener">instagram.com/afloday</a></p>
         </div>
       </div>
     </div>
