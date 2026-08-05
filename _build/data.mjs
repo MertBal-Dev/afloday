@@ -22,63 +22,83 @@ export const site = {
   },
 };
 
+/* Canlı afloday.com adresleri — 4 Ağustos 2026'da Playwright ile siteden
+   okundu, belirsizler HTTP durum koduyla sınandı. Tahmin yok.
+
+   Sayfalar aşağıdaki eski dosya adlarıyla üretiliyor; yazılmadan hemen önce
+   build.mjs bu tabloyu uygulayıp hem dosya adını hem içerideki bağlantıları
+   canlı adrese çeviriyor. Böylece şablonlarda tek tek adres düzenlemek
+   gerekmiyor ve eşleme tek yerden yönetiliyor.
+
+   Amaç Ceylan Hanım'ın en net isteği: sayfa adresleri birebir korunacak ki
+   arama sonuçları bozulmasın. Uzantılar vercel.json'daki cleanUrls ile düşüyor. */
+export const canliAdres = new Map([
+  /* Ekip — slug'lar zaten uyuşuyor, yalnızca "ekip-" öneki düşüyor */
+  ['ekip-ceylan-kalyon', 'ceylan-kalyon'],
+  ['ekip-tugce-hazinedar', 'tugce-hazinedar'],
+  ['ekip-derya-akyazici-kalyon', 'derya-akyazici-kalyon'],
+  ['ekip-elif-celikkol-duman', 'elif-celikkol-duman'],
+  ['ekip-alara-apaydin-saruhan', 'alara-apaydin-saruhan'],
+  ['ekip-zeynep-altunhan', 'zeynep-altunhan'],
+  ['ekip-muharrem-ozdemir', 'muharrem-ozdemir'],
+
+  /* Atölyeler — canlıda uzun açıklayıcı adresler kullanılıyor */
+  ['atolye-mevsim-kapi-celengi', 'mevsim-kapi-celengi-tasarimi-atolye'],
+  ['atolye-kuru-cicek-fanus', 'kuru-cicek-fanus-tasarim-atolyesi'],
+  ['atolye-cicek-aksesuar', 'cicek-aksesuar-tasarim-atolyesi'],
+  ['atolye-dogal-tutsu-herbaryum', 'dogal-tutsu-herbaryum-tasarim-atolyesi'],
+  ['atolye-taze-cicek-buket', 'taze-cicek-buket-aranjman-tasarim-atolyesi'],
+  ['atolye-cicek-cerceve', 'cicek-cerceve-tasarim-atolyesi'],
+  ['atolye-kokedama', 'kokedama-tasarim-atolyesi'],
+  ['atolye-minyatur-bahce', 'minyatur-bahce-tasarim-atolyesi'],
+  ['atolye-sukulent-aranjman', 'sukulent-aranjman-atolyesi'],
+  ['atolye-kavanoz-teraryum', 'kavanoz-teraryum-tasarim-atolyesi'],
+  ['atolye-doga-cerceve', 'doga-cerceve-tasarim-atolyesi'],
+  ['atolye-mini-kavanoz-teraryum', 'mini-kavanoz-teraryum-atolyesi-3-yas'],
+  ['atolye-mini-bahce', 'mini-bahce-atolyesi-5-yas'],
+  ['atolye-kus-evi', 'kus-evi-tasarim-atolyesi-5-yas'],
+  ['atolye-kalemlik', 'kalemlik-tasarim-atolyesi-5-yas'],
+  ['atolye-cocuk-doga-cerceve', 'doga-cerceve-atolyesi-5-yas'],
+
+  /* Kurumsal ve projeler */
+  ['kurumsal-hobi-atolyeleri', 'dogadan-hobi-atolyeleri'],
+  ['doga-temelli-egitimler', 'doga-temelli-egitimlerimiz'],
+  ['proje-gelecegi-yesil-tasarla', 'gelecegi-tasarla'],
+  ['proje-gulumseyen-yarinlar', 'gulumseyen-yarinlar-projesi'],
+
+  /* Adresi zaten birebir olanlar: index, hakkimizda, iletisim, katilim, ik.
+     Bizde olup canlıda olmayan yeni sayfalar (atolyeler, surdurulebilirlik,
+     blog, kvkk) tabloya girmiyor; yeni adres oldukları için SEO riski yok. */
+]);
+
+/* Menü — 4 Ağustos 2026 belgesi satır 381-388 sekiz madde veriyor:
+   Anasayfa · Hakkımızda · Geleceği Doğadan Tasarla · Doğa Temelli
+   Eğitimlerimiz · Kurumsal Hizmetler · Sürdürülebilirlik · Galeri · İletişim
+   Sıra belgedeki gibi. "Hobi Atölyeleri Kataloğu" belgede yok, kalktı;
+   16 atölye sayfası zaten iptal edildi.
+
+   DÜZ SEKİZ MADDE — alt menü yok. Önceki hâlde afloday.com'un üç seviyeli
+   menüsü taşınıyordu (24 bağlantı); belge alt madde tanımlamıyor. Kalkan
+   bağlantıların hepsi başka yoldan erişilebilir durumda:
+     · 7 ekip sayfası      → /hakkimizda#ekip
+     · 3 kurumsal alt sayfa → /kurumsal ve kendi sayfaları
+     · 2 sürdürülebilirlik projesi → /surdurulebilirlik
+     · İnsan Kaynakları    → footer ve mobil çekmece
+   Hepsi footer'da da duruyor, kaybolan adres yok.
+   Panellerdeki alt başlıklar (`ozet`, `not`) belgede geçmiyordu; madde 24'te
+   "kaynaksız" işaretlenen metinlerin bir bölümü bunlardı, birlikte kalktı. */
 export const nav = [
   { href: 'index.html', label: 'Anasayfa' },
-  {
-    href: 'hakkimizda.html', label: 'Hakkımızda',
-    ozet: 'Çiçeklerin, doğanın iyileştirici etkisini eğitimle, atölyeyle, özgün tasarımlarla iş ve yaşam alanlarına taşıyoruz.',
-    children: [
-      { href: 'hakkimizda.html', label: 'Afloday Hakkında', not: 'Ne yaptığımız ve nasıl çalıştığımız' },
-      {
-        href: 'hakkimizda.html#ekip', label: 'Ekibimiz', not: '7 eğitmen, koç ve danışman',
-        children: [
-          { href: 'ekip-ceylan-kalyon.html', label: 'Ceylan Kalyon (Kurucu)' },
-          { href: 'ekip-tugce-hazinedar.html', label: 'Tuğçe Hazinedar' },
-          { href: 'ekip-derya-akyazici-kalyon.html', label: 'Derya Akyazıcı Kalyon' },
-          { href: 'ekip-elif-celikkol-duman.html', label: 'Elif Çelikkol Duman' },
-          { href: 'ekip-alara-apaydin-saruhan.html', label: 'Alara Apaydın Saruhan' },
-          { href: 'ekip-zeynep-altunhan.html', label: 'Zeynep Altunhan' },
-          { href: 'ekip-muharrem-ozdemir.html', label: 'Muharrem Özdemir' },
-        ],
-      },
-    ],
-  },
-  {
-    href: 'kurumsal.html', label: 'Kurumsal Hizmetler',
-    ozet: 'Kurum kültürü ve çalışan yetkinlik gelişimi kapsamında, konsept geliştirerek koçluk yaklaşımıyla.',
-    children: [
-      { href: 'kurumsal.html#gelisim', label: 'Doğadan Gelişim Atölyeleri', not: 'Konu odaklı, koçluk yaklaşımlı gelişim programları' },
-      { href: 'kurumsal-hobi-atolyeleri.html', label: 'Doğadan Hobi Atölyeleri', not: 'Kuruma özel dönemsel konsept atölyeleri — 9 proje örneği' },
-      { href: 'kurumsal.html#sosyal', label: 'Sosyal Sorumluluk & İş Danışmanlığı', not: 'Proje tasarımı, süreç danışmanlığı, raporlama' },
-    ],
-  },
-  {
-    href: 'atolyeler.html', label: 'Hobi Atölyeleri Kataloğu',
-    ozet: 'Doğa temasını koruduğumuz, yaratıcılığa ve keyifli vakit geçirtmeye odaklandığımız 16 atölye.',
-    children: [
-      { href: 'atolyeler.html#cicek', label: 'Çiçek Tasarım Hobi Atölyeleri', not: '6 atölye', cat: 'cicek' },
-      { href: 'atolyeler.html#bitki', label: 'Bitki Tasarım Hobi Atölyeleri', not: '5 atölye', cat: 'bitki' },
-      { href: 'atolyeler.html#cocuk', label: 'Çocuk Hobi Atölyeleri', not: '5 atölye · +3 ve +5 yaş', cat: 'cocuk' },
-    ],
-  },
+  { href: 'hakkimizda.html', label: 'Hakkımızda' },
+  { href: 'proje-gelecegi-yesil-tasarla.html', label: 'Geleceği Doğadan Tasarla' },
   { href: 'doga-temelli-egitimler.html', label: 'Doğa Temelli Eğitimlerimiz' },
-  {
-    href: 'surdurulebilirlik.html', label: 'Sürdürülebilirlik',
-    ozet: 'Paylaştıkça var olacağımızı düşünüyoruz. İki sürdürülebilirlik projesi yürütüyoruz.',
-    children: [
-      { href: 'proje-gelecegi-yesil-tasarla.html', label: 'Geleceği Yeşil Tasarla Projesi', not: 'Çevresel sürdürülebilirlik ve davranış değişikliği' },
-      { href: 'proje-gulumseyen-yarinlar.html', label: 'Gülümseyen Yarınlar Projesi', not: 'Koruncuk Vakfı ile çocuk hakları — 2019’dan beri' },
-    ],
-  },
-  {
-    href: 'iletisim.html', label: 'İletişim',
-    ozet: 'Bir “TIK” yakındayız.',
-    children: [
-      { href: 'iletisim.html', label: 'İletişim', not: 'Form, telefon, adres ve harita' },
-      { href: 'katilim.html', label: 'Atölye Katılımı', not: 'Atölye seçerek randevu talebi' },
-      { href: 'ik.html', label: 'İnsan Kaynakları', not: 'Özgeçmiş gönderimi' },
-    ],
-  },
+  { href: 'kurumsal.html', label: 'Kurumsal Hizmetler' },
+  { href: 'surdurulebilirlik.html', label: 'Sürdürülebilirlik' },
+  /* Belge "Galeri"yi menüde anıyor ama sayfa tanımlamıyor; içeriğini
+     klasör adı söylüyor (WeTransfer arşivindeki "Galeri" klasörü).
+     Gerekçe: docs/afloday-sorular-2026-08-04.md · madde 23. */
+  { href: 'galeri.html', label: 'Galeri' },
+  { href: 'iletisim.html', label: 'İletişim' },
 ];
 
 
@@ -87,9 +107,13 @@ export const assets = {
   youtubeId: 'asJG04Q9QUI',
   youtubeTitle: 'Afloday — Geleceği Doğadan Tasarla · Doğa Temelli Eğitim',
   pdfs: {
-    gelisim: { url: 'https://www.afloday.com/images/dogadan-gelisim-atolyeleri.pdf', label: 'Doğadan Gelişim Atölyeleri — PDF sunum' },
-    egitim: { url: 'https://www.afloday.com/images/doga-temelli-egitimler-icerik.pdf', label: 'Doğa Temelli Eğitimler — içerik dokümanı' },
-    tasarla: { url: 'https://www.afloday.com/images/gelecegi-dogadan-tasarla-2025.pdf', label: 'Geleceği Doğadan Tasarla 2025' },
+    /* PDF'ler canlı afloday.com'da duruyordu ve mutlak adresle bağlanıyordu.
+       A kaydı Vercel'e döndüğü an ikisi de 404 verecekti — eski sunucuda
+       kalıyorlar, yeni sunucuda yoklar. Üçü de indirilip `assets/docs/`
+       altına alındı, bağlantılar göreli oldu. */
+    gelisim: { url: 'assets/docs/dogadan-gelisim-atolyeleri.pdf', label: 'Doğadan Gelişim Atölyeleri — PDF sunum' },
+    egitim: { url: 'assets/docs/doga-temelli-egitimler-icerik.pdf', label: 'Doğa Temelli Eğitimler — içerik dokümanı' },
+    tasarla: { url: 'assets/docs/gelecegi-dogadan-tasarla-2025.pdf', label: 'Geleceği Doğadan Tasarla 2025' },
   },
   maps: 'https://maps.google.com/?q=K%C3%BC%C3%A7%C3%BCksu+Cad.+Antasya+Residence+No%3A64A%2F15+%C3%9Cmraniye+%C4%B0stanbul',
 };
@@ -742,3 +766,128 @@ export const about = {
     "Doğa temasını koruyarak; bitkilerle, çiçeklerle tasarladığımız tasarım ürünlerini <strong>\u201cAfloday Doğadan Tasarım Mağazası\u201d</strong> ile doğa aşıklarıyla buluşturuyoruz. Tasarım ürünlerimizi online mağazalarımızdan ve Etiler\u2019deki tasarım atölyemizde bulabilir, sipariş verebilirsiniz.",
   ],
 };
+
+/* ======================================================================
+   4 AĞUSTOS 2026 İÇERİK BELGESİ
+   Kaynak: Afloday_WEB Sayfası Metinler_04082026.docx
+   Metinler belgeden birebir alınmıştır. Kısaltma, yeniden yazma, ekleme yok.
+   Görsel adları belgede geçen dosya adlarıdır.
+   ====================================================================== */
+
+/* Hero — 3 dönen slayt. Müşteri isteği: metin görselin üzerinde yazacak.
+   Orman videosu açılışta kalıyor, slaytlar videodan sonra geliyor.
+
+   `odak`: görsel tam ekranı kaplarken kırpılıyor; bu nokta kırpmanın neyi
+   koruyacağını söylüyor. CSS'teki object-position ile aynı okuma — soldan ve
+   ÜSTTEN yüzde. Merkez kırpma birinci slaytta kadının yüzünü kesiyordu. */
+export const heroSlaytlari = [
+  {
+    id: 'kurumsal-gelisim',
+    etiket: 'DOĞADAN İLHAMLA KURUMSAL GELİŞİM',
+    baslik: 'Geleceği Doğadan Tasarlıyoruz',
+    altBaslik: 'Kurumlara, bireylere ve çocuklara; doğanın 3,8 milyar yıllık bilgeliğinden ilham alan, deneyimsel eğitim ve gelişim programları sunuyoruz.',
+    /* Adresler iç dosya adlarıyla yazılıyor; build.mjs yazmadan hemen önce
+       canliAdres tablosundan geçirip canlı adrese çeviriyor. */
+    birincilButon: { yazi: 'Eğitim Programlarını İncele', href: 'doga-temelli-egitimler.html' },
+    ikincilButon: { yazi: 'Eğitim içi Doğadan Deneyimsel Öğrenme Atölyeleri', href: 'kurumsal-hobi-atolyeleri.html' },
+    gorsel: 'rest-after-work-office-beautiful-young-business-woman-black-suit-is-sitting-park-lawn-smiling-women-s-shoes-foreground.jpg',
+    alt: 'Parkta, iş kıyafetiyle çimenlikte oturan, gülümseyen genç profesyonel kadın',
+    /* Kadının başı görselin üst %15'inde; merkez kırpma onu kesiyordu. */
+    odak: [50, 25],
+  },
+  {
+    id: 'deneyimsel-ogrenme',
+    etiket: 'DOĞADAN İLHAMLA DENEYİMSEL ÖĞRENME',
+    baslik: 'Öğrenmek Deneyimle Kalıcı Olur',
+    altBaslik: 'Doğadan malzemelerle, aktif ve deneyimsel atölyelerle; eğitim programlarımızı teoride bırakmıyor, somut bir deneyime dönüştürüyoruz.',
+    birincilButon: null,
+    ikincilButon: null,
+    gorsel: 'Resim1.jpg',
+    alt: 'Doğaya uzanan, elinde fidan tutan yakın plan el',
+    /* El üst yarıda; kırpma alttaki boş çimenden yensin. */
+    odak: [50, 38],
+  },
+  {
+    id: 'kisisel-surdurulebilirlik',
+    etiket: 'DOĞADAN İLHAMLA KİŞİSEL SÜRDÜRÜLEBİLİRLİK',
+    baslik: 'İnsan Kendi Senfonisini Kendi Tamamlamalı',
+    altBaslik: 'Kurum stratejileri paralelinde; kurum çalışanlarına Kadın, Çocuk, Çevre ve İş Dünyası penceresinden; doğadan ilhamla kendi davranış ve alışkanlıklarını dönüştürmelerine rehberlik ediyoruz.',
+    birincilButon: { yazi: 'Geleceği Doğadan Tasarla Hareketi’ni Keşfet', href: 'proje-gelecegi-yesil-tasarla.html' },
+    ikincilButon: null,
+    gorsel: 'abstract-woman-hands-touching-music-notes-nature-background-music-concept.jpg',
+    alt: 'Doğa arka planında, ellerden yükselen nota motifleri',
+    /* Kare görsel; geniş ekranda yüksekliğin yarısı kırpılıyor.
+       El ve notalar orta bantta, hafif yukarı kaydırmak ikisini de tutuyor. */
+    odak: [50, 45],
+  },
+];
+
+/* Değer önerisi şeridi — hero'nun hemen altı, 3 sütun */
+export const degerOnerisi = {
+  gorsel: 'earth-day-environment-concept-eco-concept.jpg',
+  alt: 'Dünya günü ve çevre bilinci temalı görsel',
+  sutunlar: [
+    {
+      baslik: 'Kurumsal Eğitim & Gelişim Programları',
+      metin: 'Doğadan ilhamla tasarlanmış, yetkinlik odaklı eğitim modülleriyle ekiplerinizin duygusal dayanıklılığını, iletişimini, iş birliğini ve yaratıcılığını güçlendiriyoruz.',
+    },
+    {
+      baslik: 'Doğadan Deneyimsel Öğrenme',
+      metin: 'Aktif ve deneyimsel öğrenme prensipleriyle; doğadan malzemeler ve atölye pratikleriyle desteklenen, teoride kalmayan, kalıcı öğrenme deneyimleri sunuyoruz.',
+    },
+    {
+      baslik: 'Kişisel Sürdürülebilirlik',
+      metin: 'Kadın, Çocuk, Çevre ve İş Dünyası penceresinden; bireylerin doğadan ilhamla kendi davranış ve alışkanlıklarını dönüştürmesine rehberlik ediyoruz.',
+    },
+  ],
+};
+
+/* "Neden Doğa Temelli Gelişim?" — 4 istatistik kutusu.
+   Belgedeki not: "Sade, büyük punto rakamlar + tek cümlelik açıklama; arka planda
+   hafif doğa dokusu, fotoğraf yoğunluğu düşük tutulmalı ki veri okunabilir kalsın." */
+export const istatistikler = {
+  baslik: 'Neden Doğa Temelli Gelişim?',
+  ustEtiket: 'Amaç',
+  /* Belge satır 54 arka planda "hafif doğa dokusu (yaprak/toprak deseni)"
+     istiyor; 55. satırda kendi eklediği görsel ise iş insanı elleri. Tarife
+     uyan doku ayrıca üretildi. Eski dosya yerinde duruyor, geri dönülebilir. */
+  gorsel: 'dogal-zemin-dokusu.jpg',
+  alt: 'Bir araya gelmiş ellerle dayanışmayı simgeleyen ekip görseli',
+  kutular: [
+    { rakam: '%59', metin: 'Z kuşağı çalışanların, iş teklifini kabul etmeden önce markanın çevresel politikalarını araştırma oranı.', kaynak: 'Deloitte' },
+    { rakam: '%88', metin: 'Güçlü amaç duygusuna sahip şirketlerde kendini motive/sadık hisseden çalışan oranı.', kaynak: '' },
+    { rakam: '%76', metin: 'Kuruluşunun sürdürülebilirlik vizyonundan haberdar olan çalışan oranı.', kaynak: 'Gallup' },
+    { rakam: '%58', metin: 'Etkili iş birliğine sahip ekiplerin verimlilik artışı.', kaynak: 'Korn Ferry, 2021-2023' },
+  ],
+};
+
+/* Marka metodolojisi — değer önerisinin hemen altı */
+export const metodoloji = {
+  baslik: 'Eğitim Metodolojimiz: Kök Sal · Sorumluluk Al · Birlikte Yeşer',
+  giris: 'Tüm eğitim tasarımımız, bir bitkinin hayatta kalma ve serpilme sürecinden ilham alan 3 aşamalı bir paterne dayanır — bu, sadece doğanın değil, bağlılığı yüksek, proaktif ve verimli çalışanların da temel başarı formülüdür.',
+  gorsel: 'beautiful-landscape-with-tree.jpg',
+  alt: 'Geniş bir ovada tek başına duran ağaç',
+  asamalar: [
+    {
+      no: 1,
+      ad: 'KÖK SALMAK',
+      slogan: 'Derinleşmeden Yükselemezsin',
+      metin: 'Gerçek büyüme yukarı değil, aşağı doğru başlar. “Ben” egosunun sınırlarından çıkıp “Biz” bilincine uyanmaktır — bireyin, ait olduğu kurum kültürünü ve değerlerini gerçekten sahiplenmesidir.',
+    },
+    {
+      no: 2,
+      ad: 'SORUMLULUK ALMAK',
+      slogan: 'Akışını Bulan Nehir Ol',
+      metin: 'Ekosistemin bir parçası olmak, rüzgârda savrulmak değildir. Bir nehrin denize ulaşma kararlılığıyla kendi yatağını bulması gibi; proaktif davranarak kendi potansiyeli ve etki alanı içinde inisiyatif kullanmaktır.',
+    },
+    {
+      no: 3,
+      ad: 'BİRLİKTE YEŞERMEK',
+      slogan: 'Rekabet Değil, Simbiyoz',
+      metin: 'Orman, ağaçların toplamından fazlasıdır — köklerin altında birbirini besleyen devasa bir zekadır. Kendini geliştirirken ekosistemi de besleyerek yukarı taşımaktır; en güçlü olan değil, en iyi bağ kuran hayatta kalır.',
+    },
+  ],
+};
+
+/* Beş eğitim programı ve deneyim vitrini ayrı dosyada — data.mjs şişmesin */
+export { egitimler, deneyimVitrini } from './egitimler.mjs';

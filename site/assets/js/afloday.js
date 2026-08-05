@@ -225,6 +225,103 @@
     }, { passive: false });
   });
 
+  /* --- Anasayfa slaydı ---------------------------------------------------
+     Kareler çapraz geçişle dönüyor. Duraklatma dört yolla oluyor: fare üstteyken,
+     odak içerideyken, sekme arkadayken ve düğmeyle. Azaltılmış hareket
+     tercihinde otomatik geçiş hiç başlamıyor; kareler yine çeteleyle geziliyor.
+     Süre CSS'teki dolum animasyonuyla aynı değerden besleniyor. */
+  document.querySelectorAll('[data-slayt]').forEach(function (slayt) {
+    var kareler = [].slice.call(slayt.querySelectorAll('.slayt-kare'));
+    var cetel = [].slice.call(slayt.querySelectorAll('[data-slayt-git]'));
+    var no = slayt.querySelector('[data-slayt-no]');
+    var durdurBtn = slayt.querySelector('[data-slayt-duraklat]');
+    if (kareler.length < 2) return;
+
+    var SURE = 6000, GECIS = 1200;
+    var i = 0, sayac = null, elle = false;
+    slayt.style.setProperty('--slayt-sure', SURE + 'ms');
+    slayt.style.setProperty('--slayt-gecis', GECIS + 'ms');
+
+    function iki(n) { return n < 10 ? '0' + n : String(n); }
+
+    function goster(y) {
+      var eski = i;
+      i = (y + kareler.length) % kareler.length;
+      kareler.forEach(function (k, n) {
+        var aktif = n === i;
+        k.setAttribute('data-aktif', aktif ? 'evet' : 'hayir');
+        /* Çıkan kare, daire açılımı bitene kadar altta duruyor; kaldırılırsa
+           açılan dairenin dışında boşluk görünür. */
+        if (n === eski && n !== i) k.setAttribute('data-onceki', 'evet');
+        else k.removeAttribute('data-onceki');
+        if (aktif) { k.removeAttribute('aria-hidden'); k.removeAttribute('tabindex'); }
+        else { k.setAttribute('aria-hidden', 'true'); k.setAttribute('tabindex', '-1'); }
+      });
+      /* Animasyonu baştan başlat — aynı sınıf yeniden atandığında tarayıcı
+         kendiliğinden tekrarlamıyor. */
+      var yeni = kareler[i];
+      yeni.style.animation = 'none';
+      void yeni.offsetWidth;
+      yeni.style.animation = '';
+      cetel.forEach(function (b, n) {
+        if (n === i) b.setAttribute('aria-current', 'true');
+        else b.removeAttribute('aria-current');
+      });
+      if (no) no.textContent = iki(i + 1);
+      /* Dolum animasyonunu baştan başlat: yeniden akış zorlanmazsa
+         tarayıcı aynı animasyonu sürdürüyor ve çubuk dolu kalıyor. */
+      var c = cetel[i] && cetel[i].firstElementChild;
+      if (c) { c.style.animation = 'none'; void c.offsetWidth; c.style.animation = ''; }
+    }
+
+    function basla() {
+      if (reduced || elle) return;
+      dur();
+      sayac = setInterval(function () { goster(i + 1); }, SURE);
+      slayt.setAttribute('data-durdu', 'hayir');
+    }
+    function dur() {
+      if (sayac) { clearInterval(sayac); sayac = null; }
+      slayt.setAttribute('data-durdu', 'evet');
+    }
+
+    cetel.forEach(function (b) {
+      b.addEventListener('click', function () {
+        goster(parseInt(b.getAttribute('data-slayt-git'), 10) || 0);
+        if (!elle) basla();
+      });
+    });
+
+    if (durdurBtn) {
+      durdurBtn.addEventListener('click', function () {
+        elle = !elle;
+        durdurBtn.setAttribute('aria-pressed', elle ? 'true' : 'false');
+        durdurBtn.textContent = elle ? 'Devam et' : 'Duraklat';
+        if (elle) dur(); else basla();
+      });
+      if (reduced) durdurBtn.hidden = true;
+    }
+
+    /* Klavye: sol/sağ ok karelerde gezdiriyor */
+    slayt.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { goster(i + 1); e.preventDefault(); }
+      else if (e.key === 'ArrowLeft') { goster(i - 1); e.preventDefault(); }
+    });
+
+    slayt.addEventListener('mouseenter', dur);
+    slayt.addEventListener('mouseleave', function () { if (!elle) basla(); });
+    slayt.addEventListener('focusin', dur);
+    slayt.addEventListener('focusout', function () {
+      if (!elle && !slayt.contains(document.activeElement)) basla();
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) dur(); else if (!elle) basla();
+    });
+
+    goster(0);
+    basla();
+  });
+
   /* --- Demo formları ------------------------------------------------------ */
   document.querySelectorAll('form[data-demo]').forEach(function (form) {
     form.addEventListener('submit', function (e) {
@@ -245,44 +342,180 @@
     el.textContent = new Date().getFullYear();
   });
 
-  /* --- Galeri ışık kutusu ------------------------------------------------ */
+  /* --- Galeri ışık kutusu & Awwwards etkileşimleri ---------------------- */
   (function () {
     var lb = document.getElementById('lb');
-    var cells = [].slice.call(document.querySelectorAll('.galeri-hucre'));
-    if (!lb || !cells.length) return;
+    var app = document.querySelector('[data-galeri-app]');
+    var sahne = document.querySelector('[data-galeri-sahne]');
+
+    /* --- Floating Cursor Badge Indicator (Fare Takipçisi) --- */
+    var cursorBadge = document.createElement('div');
+    cursorBadge.className = 'cursor-badge';
+    cursorBadge.setAttribute('aria-hidden', 'true');
+    cursorBadge.textContent = 'BÜYÜT ↗';
+    document.body.appendChild(cursorBadge);
+
+    var cardSelector = '.galeri-hucre, .serit-panel, .galeri-home-kart, .galeri-awwwards-kart, .slider-card';
+
+    if (!reduced && !window.matchMedia('(hover: none)').matches) {
+      document.addEventListener('mousemove', function (e) {
+        var card = e.target.closest(cardSelector);
+        if (card) {
+          cursorBadge.style.left = e.clientX + 'px';
+          cursorBadge.style.top = e.clientY + 'px';
+          var customText = card.getAttribute('data-no') ? ('FOTO ' + card.getAttribute('data-no') + ' · BÜYÜT ↗') : 'BÜYÜT ↗';
+          cursorBadge.textContent = customText;
+          cursorBadge.classList.add('is-active');
+        } else {
+          cursorBadge.classList.remove('is-active');
+        }
+      });
+    }
+
+    /* --- Duraklat düğmesi ---------------------------------------------------
+       Şerit 36 saniyede bir tur atıyor ve yalnız fareyle duruyordu. Klavye
+       ya da dokunmatik kullanan için durdurmanın yolu yoktu; WCAG 2.2.2
+       beş saniyeden uzun otomatik hareketin durdurulabilmesini istiyor. */
+    document.querySelectorAll('[data-galeri-durdur]').forEach(function (btn) {
+      var kap = btn.closest('[data-galeri-app]');
+      if (!kap) return;
+      var etiket = btn.querySelector('[data-durdur-metin]') || btn;
+      btn.addEventListener('click', function () {
+        var durdu = kap.getAttribute('data-durdu') === 'true';
+        kap.setAttribute('data-durdu', durdu ? 'false' : 'true');
+        btn.setAttribute('aria-pressed', durdu ? 'false' : 'true');
+        etiket.textContent = durdu ? 'Duraklat' : 'Devam et';
+      });
+    });
+
+    /* --- Kategori Filtreleme Mantığı --- */
+    if (app && sahne) {
+      var filterBtns = app.querySelectorAll('.galeri-filtre-btn');
+      var layoutBtns = app.querySelectorAll('.galeri-duzen-btn');
+      var items = [].slice.call(sahne.querySelectorAll('.galeri-awwwards-kart'));
+
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+
+          var cat = btn.getAttribute('data-filter');
+          sahne.classList.add('is-filtering');
+
+          setTimeout(function () {
+            items.forEach(function (item) {
+              var itemCat = item.getAttribute('data-kategori');
+              if (cat === 'all' || itemCat === cat) {
+                item.classList.remove('is-hidden');
+              } else {
+                item.classList.add('is-hidden');
+              }
+            });
+            sahne.classList.remove('is-filtering');
+          }, 150);
+        });
+      });
+
+      /* --- Görünüm Modu Değiştirici (Izgara vs Şerit) --- */
+      layoutBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          layoutBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          var mode = btn.getAttribute('data-duzen');
+
+          if (mode === 'serit') {
+            sahne.classList.remove('izgara-layout');
+            sahne.classList.add('serit-layout');
+          } else {
+            sahne.classList.remove('serit-layout');
+            sahne.classList.add('izgara-layout');
+          }
+        });
+      });
+    }
+
+    /* --- Yenilenmiş Işık Kutusu (Fullscreen Interactive Lightbox) --- */
+    if (!lb) return;
     var img = lb.querySelector('.lb-img');
-    var sayac = lb.querySelector('.lb-sayac');
+    var sayac = lb.querySelector('#lb-sayac, .lb-sayac');
+    var caption = lb.querySelector('#lb-caption');
     var i = 0, sonOdak = null;
 
+    function getActiveCells() {
+      var all = [].slice.call(document.querySelectorAll(cardSelector));
+      return all.filter(function (c) {
+        /* Sonsuz şerit kesintisiz görünsün diye kareleri iki kez basıyor.
+           Kopyalar sayılırsa ışık kutusu "5 / 42" diyor ve ok tuşları aynı
+           fotoğrafı iki kez geziyordu. */
+        if (c.hasAttribute('data-kopya')) return false;
+        return c.offsetWidth > 0 && c.offsetHeight > 0 && !c.classList.contains('is-hidden');
+      });
+    }
+
     function goster(n) {
+      var cells = getActiveCells();
+      if (!cells.length) return;
       i = (n + cells.length) % cells.length;
       var c = cells[i];
-      img.src = c.getAttribute('data-full');
-      img.alt = c.querySelector('img').alt;
-      sayac.textContent = (i + 1) + ' / ' + cells.length;
+      img.src = c.getAttribute('data-full') || c.getAttribute('data-src') || '';
+      img.alt = (c.querySelector('img') && c.querySelector('img').alt) || '';
+      
+      var capText = c.getAttribute('data-caption') || img.alt || 'Afloday Galeri';
+      if (caption) caption.textContent = capText;
+      if (sayac) sayac.textContent = (i + 1) + ' / ' + cells.length;
     }
-    function ac(n) {
+
+    function ac(cell) {
+      var cells = getActiveCells();
+      var n = cells.indexOf(cell);
+      if (n < 0) n = 0;
       sonOdak = document.activeElement;
-      goster(n); lb.hidden = false;
+      goster(n);
+      lb.hidden = false;
+      lb.setAttribute('aria-hidden', 'false');
       document.body.classList.add('lb-acik');
-      lb.querySelector('.lb-kapat').focus();
+      var kapatBtn = lb.querySelector('.lb-kapat');
+      if (kapatBtn) kapatBtn.focus();
     }
+
     function kapat() {
-      lb.hidden = true; img.src = '';
+      lb.hidden = true;
+      lb.setAttribute('aria-hidden', 'true');
+      if (img) img.src = '';
       document.body.classList.remove('lb-acik');
       if (sonOdak) sonOdak.focus();
     }
-    cells.forEach(function (c, n) { c.addEventListener('click', function () { ac(n); }); });
-    lb.querySelector('.lb-kapat').addEventListener('click', kapat);
-    lb.querySelector('.lb-onceki').addEventListener('click', function () { goster(i - 1); });
-    lb.querySelector('.lb-sonraki').addEventListener('click', function () { goster(i + 1); });
-    lb.addEventListener('click', function (e) { if (e.target === lb) kapat(); });
+
+    document.addEventListener('click', function (e) {
+      var card = e.target.closest(cardSelector);
+      if (card && card.hasAttribute('data-full')) {
+        e.preventDefault();
+        ac(card);
+      }
+    });
+
+    var kapatBtn = lb.querySelector('.lb-kapat');
+    if (kapatBtn) kapatBtn.addEventListener('click', kapat);
+    var oncekiBtn = lb.querySelector('.lb-onceki');
+    if (oncekiBtn) oncekiBtn.addEventListener('click', function () { goster(i - 1); });
+    var sonrakiBtn = lb.querySelector('.lb-sonraki');
+    if (sonrakiBtn) sonrakiBtn.addEventListener('click', function () { goster(i + 1); });
+
+    lb.addEventListener('click', function (e) {
+      if (e.target === lb || e.target.classList.contains('lb-stage') || e.target.classList.contains('lb-img-wrap')) kapat();
+    });
+
     document.addEventListener('keydown', function (e) {
       if (lb.hidden) return;
       if (e.key === 'Escape') kapat();
       else if (e.key === 'ArrowLeft') goster(i - 1);
       else if (e.key === 'ArrowRight') goster(i + 1);
     });
+
     // Dokunmatik kaydırma
     var x0 = null;
     lb.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
@@ -302,6 +535,403 @@
     var guncelle = function () { out.textContent = alan.value.length; };
     alan.addEventListener('input', guncelle);
     guncelle();
+  });
+
+
+  /* --- Hero slaydı: cam kırılması geçişi ---------------------------------
+     Tasarım kaynağı: 21st.dev · lumina-interactive-list.
+     Shader kaynaktaki `glassEffect` ile birebir; merkezden büyüyen daire,
+     kenarda ışık kırılması, renk sapması ve sıvı akış.
+
+     Kaynakta Three.js + GSAP CDN'den ~650 KB iniyordu. Efektin tamamı tek bir
+     fragment shader olduğu için burada düz WebGL kullanılıyor: tam ekran bir
+     dörtgen ve aynı shader. Görsel sonuç aynı, eklenen ağırlık sıfır.
+     Kaynaktaki diğer dört efekt (frost/ripple/plasma/timeshift) zaten boş
+     mix() döndürüyordu, alınmadı.
+
+     WebGL yoksa ya da shader derlenmezse hiçbir şey olmuyor: alttaki <img>
+     kareleri görünür kalıyor ve CSS daire açılımı geçişi devralıyor. */
+  document.querySelectorAll('[data-hslayt]').forEach(function (kok) {
+    var kareler = [].slice.call(kok.querySelectorAll('.slide-media-kare'));
+    var yazilar = [].slice.call(kok.querySelectorAll('.slide-copy'));
+    var gitler = [].slice.call(kok.querySelectorAll('[data-hslayt-git]'));
+    var no = kok.querySelector('[data-hslayt-no]');
+    var durdurBtn = kok.querySelector('[data-hslayt-duraklat]');
+    var tuval = kok.querySelector('[data-hslayt-tuval]');
+    if (kareler.length < 2) return;
+
+    /* Kaynaktaki SLIDER_CONFIG değerleri. Cam ayarları referans belgesindeki
+       "Subtle ile Default arası" notuna göre biraz yumuşatıldı — Afloday'in
+       dili sakin, kaynaktaki moda çekimi kadar sert değil. */
+    var SURE = 5000;       // autoSlideSpeed
+    var GECIS = 2500;      // transitionDuration
+    var CAM = {
+      refraction: 0.8, chromatic: 0.7, clarity: 1.15, edgeGlow: 0.85, flow: 0.9,
+      global: 1.0, speed: 1.0, distortion: 1.0
+    };
+
+    var i = 0, sayac = null, elle = false, gecisAnim = null;
+    kok.style.setProperty('--hslayt-sure', SURE + 'ms');
+    kok.style.setProperty('--hslayt-gecis', GECIS + 'ms');
+
+    function iki(n) { return n < 10 ? '0' + n : String(n); }
+
+    /* ---- WebGL katmanı ---- */
+    var gl = null, prog = null, uni = {}, dokular = [], cizimSurer = false;
+
+    var VS =
+      'attribute vec2 aPos; varying vec2 vUv;' +
+      'void main(){ vUv = aPos * 0.5 + 0.5; gl_Position = vec4(aPos, 0.0, 1.0); }';
+
+    var FS = [
+      'precision highp float;',
+      'uniform sampler2D uTexture1, uTexture2;',
+      'uniform float uProgress;',
+      'uniform vec2 uResolution, uTexture1Size, uTexture2Size;',
+      'uniform vec2 uFocus1, uFocus2;',
+      'uniform float uGlobalIntensity, uSpeedMultiplier, uDistortionStrength;',
+      'uniform float uGlassRefractionStrength, uGlassChromaticAberration;',
+      'uniform float uGlassBubbleClarity, uGlassEdgeGlow, uGlassLiquidFlow;',
+      'varying vec2 vUv;',
+      /* Görseli kutuya "cover" gibi oturtur. Kaynakta kırpma hep merkezden
+         (0.5) alınıyordu; burada odak noktası dışarıdan geliyor, böylece
+         tam ekranda öznenin kesilmesi engelleniyor. focus=0.5,0.5 verilirse
+         davranış kaynakla birebir aynı. */
+      'vec2 getCoverUV(vec2 uv, vec2 textureSize, vec2 focus){',
+      '  vec2 s = uResolution / textureSize;',
+      '  float scale = max(s.x, s.y);',
+      '  vec2 scaledSize = textureSize * scale;',
+      '  vec2 offset = (uResolution - scaledSize) * focus;',
+      '  return (uv * uResolution - offset) / scaledSize;',
+      '}',
+      'void main(){',
+      '  vec2 uv = vUv; float progress = uProgress;',
+      '  float time = progress * 5.0 * uSpeedMultiplier;',
+      '  vec2 uv1 = getCoverUV(uv, uTexture1Size, uFocus1);',
+      '  vec2 uv2 = getCoverUV(uv, uTexture2Size, uFocus2);',
+      '  float maxR = length(uResolution) * 0.85;',
+      '  float br = progress * maxR;',
+      '  vec2 p = uv * uResolution; vec2 c = uResolution * 0.5;',
+      '  float d = length(p - c); float nd = d / max(br, 0.001);',
+      '  float param = smoothstep(br + 3.0, br - 3.0, d);',
+      '  vec4 img;',
+      '  if (param > 0.0) {',
+      '    float ro = 0.08 * uGlassRefractionStrength * uDistortionStrength * uGlobalIntensity',
+      '             * pow(smoothstep(0.3 * uGlassBubbleClarity, 1.0, nd), 1.5);',
+      '    vec2 dir = (d > 0.0) ? (p - c) / d : vec2(0.0);',
+      '    vec2 distUV = uv2 - dir * ro;',
+      '    distUV += vec2(sin(time + nd * 10.0), cos(time * 0.8 + nd * 8.0))',
+      '            * 0.015 * uGlassLiquidFlow * uSpeedMultiplier * nd * param;',
+      '    float ca = 0.02 * uGlassChromaticAberration * uGlobalIntensity',
+      '             * pow(smoothstep(0.3, 1.0, nd), 1.2);',
+      '    img = vec4(texture2D(uTexture2, distUV + dir * ca * 1.2).r,',
+      '               texture2D(uTexture2, distUV + dir * ca * 0.2).g,',
+      '               texture2D(uTexture2, distUV - dir * ca * 0.8).b, 1.0);',
+      '    float rim = smoothstep(0.95, 1.0, nd) * (1.0 - smoothstep(1.0, 1.01, nd));',
+      '    img.rgb += rim * 0.08 * uGlassEdgeGlow * uGlobalIntensity;',
+      '  } else { img = texture2D(uTexture2, uv2); }',
+      '  vec4 oldImg = texture2D(uTexture1, uv1);',
+      '  if (progress > 0.95) img = mix(img, texture2D(uTexture2, uv2), (progress - 0.95) / 0.05);',
+      '  gl_FragColor = mix(oldImg, img, param);',
+      '}'
+    ].join('\n');
+
+    function derle(tur, kaynak) {
+      var s = gl.createShader(tur);
+      gl.shaderSource(s, kaynak);
+      gl.compileShader(s);
+      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { gl.deleteShader(s); return null; }
+      return s;
+    }
+
+    function dokuYap(img) {
+      var t = gl.createTexture();
+      gl.bindTexture(gl.TEXTURE_2D, t);
+      gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+      /* Fotoğraflar ikinin kuvveti ölçüde değil; mipmap ve tekrar kapalı olmalı. */
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      return { doku: t, en: img.naturalWidth, boy: img.naturalHeight };
+    }
+
+    /* data-odak "50,25" biçiminde, CSS object-position gibi soldan ve ÜSTTEN
+       yüzde. Shader'da doku y ekseni ters çevrili (UNPACK_FLIP_Y), bu yüzden
+       y burada 1'den çıkarılıyor. */
+    function odakAl(n) {
+      var ham = (kareler[n].getAttribute('data-odak') || '50,50').split(',');
+      var x = (parseFloat(ham[0]) || 50) / 100;
+      var y = (parseFloat(ham[1]) || 50) / 100;
+      return [x, 1 - y];
+    }
+
+    function webglKur() {
+      if (reduced || !tuval) return false;
+      try {
+        gl = tuval.getContext('webgl', { antialias: false, alpha: false })
+          || tuval.getContext('experimental-webgl');
+      } catch (e) { gl = null; }
+      if (!gl) return false;
+
+      var vs = derle(gl.VERTEX_SHADER, VS), fs = derle(gl.FRAGMENT_SHADER, FS);
+      if (!vs || !fs) return false;
+      prog = gl.createProgram();
+      gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return false;
+      gl.useProgram(prog);
+
+      var buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+      var loc = gl.getAttribLocation(prog, 'aPos');
+      gl.enableVertexAttribArray(loc);
+      gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+      ['uTexture1', 'uTexture2', 'uProgress', 'uResolution', 'uTexture1Size', 'uTexture2Size',
+        'uFocus1', 'uFocus2',
+        'uGlobalIntensity', 'uSpeedMultiplier', 'uDistortionStrength',
+        'uGlassRefractionStrength', 'uGlassChromaticAberration',
+        'uGlassBubbleClarity', 'uGlassEdgeGlow', 'uGlassLiquidFlow'
+      ].forEach(function (n) { uni[n] = gl.getUniformLocation(prog, n); });
+
+      gl.uniform1i(uni.uTexture1, 0);
+      gl.uniform1i(uni.uTexture2, 1);
+      gl.uniform1f(uni.uGlobalIntensity, CAM.global);
+      gl.uniform1f(uni.uSpeedMultiplier, CAM.speed);
+      gl.uniform1f(uni.uDistortionStrength, CAM.distortion);
+      gl.uniform1f(uni.uGlassRefractionStrength, CAM.refraction);
+      gl.uniform1f(uni.uGlassChromaticAberration, CAM.chromatic);
+      gl.uniform1f(uni.uGlassBubbleClarity, CAM.clarity);
+      gl.uniform1f(uni.uGlassEdgeGlow, CAM.edgeGlow);
+      gl.uniform1f(uni.uGlassLiquidFlow, CAM.flow);
+      return true;
+    }
+
+    function olcule() {
+      if (!gl) return;
+      /* Piksel oranı 2'de sınırlı: 3x ekranlarda kazanç görünmezken
+         doldurma maliyeti iki katına çıkıyor. */
+      var oran = Math.min(window.devicePixelRatio || 1, 2);
+      var en = Math.round(tuval.clientWidth * oran);
+      var boy = Math.round(tuval.clientHeight * oran);
+      if (!en || !boy) return;
+      if (tuval.width !== en || tuval.height !== boy) { tuval.width = en; tuval.height = boy; }
+      gl.viewport(0, 0, en, boy);
+      gl.uniform2f(uni.uResolution, en, boy);
+    }
+
+    function ciz(ilerleme, a, b) {
+      if (!gl || !dokular[a] || !dokular[b]) return;
+      olcule();
+      gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, dokular[a].doku);
+      gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, dokular[b].doku);
+      gl.uniform2f(uni.uTexture1Size, dokular[a].en, dokular[a].boy);
+      gl.uniform2f(uni.uTexture2Size, dokular[b].en, dokular[b].boy);
+      var oa = odakAl(a), ob = odakAl(b);
+      gl.uniform2f(uni.uFocus1, oa[0], oa[1]);
+      gl.uniform2f(uni.uFocus2, ob[0], ob[1]);
+      gl.uniform1f(uni.uProgress, ilerleme);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    }
+
+    /* Kaynaktaki GSAP "power2.inOut" easing'inin karşılığı */
+    function kolay(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+
+    function camGecisi(eski, yeni) {
+      if (gecisAnim) cancelAnimationFrame(gecisAnim);
+      var bas = performance.now();
+      cizimSurer = true;
+      (function adim(simdi) {
+        var t = Math.min((simdi - bas) / GECIS, 1);
+        ciz(kolay(t), eski, yeni);
+        if (t < 1) gecisAnim = requestAnimationFrame(adim);
+        else {
+          /* Geçiş bitti: yeni kare tek başına duruyor, çizim duruyor.
+             Kaynakta render() hiç durmuyordu; boşuna GPU yakmıyoruz. */
+          ciz(0, yeni, yeni);
+          gecisAnim = null; cizimSurer = false;
+        }
+      })(bas);
+    }
+
+    function dokulariYukle() {
+      var imgler = kareler.map(function (k) { return k.querySelector('img'); });
+      var hazir = imgler.every(function (im) { return im && im.complete && im.naturalWidth; });
+      if (!hazir) return false;
+      dokular = imgler.map(dokuYap);
+      return true;
+    }
+
+    /* ---- Ortak durum ---- */
+    function goster(y, gecisli) {
+      var eski = i;
+      i = (y + kareler.length) % kareler.length;
+      if (i === eski && gecisli) return;
+
+      kareler.forEach(function (k, n) {
+        k.setAttribute('data-aktif', n === i ? 'evet' : 'hayir');
+        if (n === eski && n !== i) k.setAttribute('data-onceki', 'evet');
+        else k.removeAttribute('data-onceki');
+      });
+      /* CSS daire açılımını baştan başlat (WebGL yoksa görünen geçiş bu) */
+      var yeniKare = kareler[i];
+      yeniKare.style.animation = 'none'; void yeniKare.offsetWidth; yeniKare.style.animation = '';
+
+      yazilar.forEach(function (w, n) {
+        var aktif = n === i;
+        w.setAttribute('data-aktif', aktif ? 'evet' : 'hayir');
+        if (aktif) w.removeAttribute('aria-hidden'); else w.setAttribute('aria-hidden', 'true');
+        w.querySelectorAll('a').forEach(function (a) {
+          if (aktif) a.removeAttribute('tabindex'); else a.setAttribute('tabindex', '-1');
+        });
+        /* Harf açılımını baştan başlat */
+        if (aktif) { w.querySelectorAll('.slide-title-harf').forEach(function (h) {
+          h.style.animation = 'none'; void h.offsetWidth; h.style.animation = '';
+        }); }
+      });
+
+      gitler.forEach(function (b, n) {
+        if (n === i) b.setAttribute('aria-current', 'true');
+        else b.removeAttribute('aria-current');
+      });
+      if (no) no.textContent = iki(i + 1);
+
+      var dolgu = gitler[i] && gitler[i].querySelector('.slide-progress-fill');
+      if (dolgu) { dolgu.style.animation = 'none'; void dolgu.offsetWidth; dolgu.style.animation = ''; }
+
+      if (gl && dokular.length) camGecisi(eski, i);
+    }
+
+    function basla() {
+      if (reduced || elle) return;
+      dur();
+      sayac = setInterval(function () { goster(i + 1, true); }, SURE);
+      kok.setAttribute('data-durdu', 'hayir');
+    }
+    function dur() {
+      if (sayac) { clearInterval(sayac); sayac = null; }
+      kok.setAttribute('data-durdu', 'evet');
+    }
+
+    gitler.forEach(function (b) {
+      b.addEventListener('click', function () {
+        goster(parseInt(b.getAttribute('data-hslayt-git'), 10) || 0, true);
+        if (!elle) basla();
+      });
+    });
+
+    if (durdurBtn) {
+      durdurBtn.addEventListener('click', function () {
+        elle = !elle;
+        durdurBtn.setAttribute('aria-pressed', elle ? 'true' : 'false');
+        durdurBtn.textContent = elle ? 'Devam et' : 'Duraklat';
+        if (elle) dur(); else basla();
+      });
+      if (reduced) durdurBtn.hidden = true;
+    }
+
+    kok.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { goster(i - 1, true); if (!elle) basla(); }
+      else if (e.key === 'ArrowRight') { goster(i + 1, true); if (!elle) basla(); }
+      else return;
+      e.preventDefault();
+    });
+
+    /* Üzerine gelince ve odak içerideyken duruyor — hareketli içerik gereği */
+    kok.addEventListener('mouseenter', dur);
+    kok.addEventListener('mouseleave', function () { if (!elle) basla(); });
+    kok.addEventListener('focusin', dur);
+    kok.addEventListener('focusout', function () {
+      if (!kok.contains(document.activeElement) && !elle) basla();
+    });
+
+    /* Sekme arkaya alınınca sayaç da çizim de duruyor */
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        dur();
+        if (gecisAnim) { cancelAnimationFrame(gecisAnim); gecisAnim = null; cizimSurer = false; }
+      } else if (!elle) basla();
+    });
+
+    window.addEventListener('resize', function () {
+      if (gl && !cizimSurer) ciz(0, i, i);
+    });
+
+    /* Görünürken çalış, görünmezken dur */
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting) { if (!elle) basla(); }
+          else dur();
+        });
+      }, { threshold: 0.25 }).observe(kok);
+    } else {
+      basla();
+    }
+
+    /* Önce bağlam, sonra dokular: dokuYap() gl'i kullanıyor, sıra tersine
+       dönerse null üzerinde createTexture çağrılır. Görseller henüz
+       yüklenmediyse `load` olayında yeniden deneniyor.
+       Herhangi bir adım tökezlerse CSS daire açılımı geçişi taşımaya devam
+       ediyor — slayt hiçbir durumda kırık kalmıyor. */
+    function hazirla() {
+      var imgler = kareler.map(function (k) { return k.querySelector('img'); });
+      var gorselHazir = imgler.every(function (im) { return im && im.complete && im.naturalWidth; });
+      if (!gorselHazir) return false;
+      if (!webglKur()) { gl = null; return true; }
+      if (!dokulariYukle()) { gl = null; return true; }
+      kok.setAttribute('data-webgl', 'evet');
+      ciz(0, i, i);
+      return true;
+    }
+    if (!hazirla()) {
+      window.addEventListener('load', hazirla, { once: true });
+    }
+  });
+
+
+  /* --- Akordeon (etkinlik atölye kategorileri) ---------------------------
+     Birden fazla panel aynı anda açık kalabiliyor: kullanıcı iki kategoriyi
+     karşılaştırmak isteyebilir, açtığını kapatmak onun kararı.
+     Yükseklik CSS'te 0fr → 1fr ile çözülüyor; burada yalnızca durum var. */
+  document.querySelectorAll('[data-akordeon]').forEach(function (kutu) {
+    var ogeler = [].slice.call(kutu.querySelectorAll('.akordeon-oge'));
+    var dugmeler = ogeler.map(function (o) { return o.querySelector('.akordeon-dugme'); });
+
+    function ayarla(oge, ac) {
+      oge.setAttribute('data-acik', ac ? 'true' : 'false');
+      oge.querySelector('.akordeon-dugme').setAttribute('aria-expanded', ac ? 'true' : 'false');
+    }
+
+    dugmeler.forEach(function (btn, i) {
+      btn.addEventListener('click', function () {
+        var oge = ogeler[i];
+        ayarla(oge, oge.getAttribute('data-acik') !== 'true');
+      });
+
+      /* Klavye: başlıklar arasında ok tuşlarıyla gezinme —
+         WAI-ARIA akordeon deseninin beklediği davranış. */
+      btn.addEventListener('keydown', function (e) {
+        var hedef = null;
+        if (e.key === 'ArrowDown') hedef = dugmeler[(i + 1) % dugmeler.length];
+        else if (e.key === 'ArrowUp') hedef = dugmeler[(i - 1 + dugmeler.length) % dugmeler.length];
+        else if (e.key === 'Home') hedef = dugmeler[0];
+        else if (e.key === 'End') hedef = dugmeler[dugmeler.length - 1];
+        if (!hedef) return;
+        e.preventDefault();
+        hedef.focus();
+      });
+    });
+
+    /* Kapalı bir panelin içindeki bağlantıya adresten gelinirse panel açılır.
+       Ayrıca panel içinden bir öğe odak alırsa (Ctrl+F sonrası sekme gibi)
+       kapalı kalmasın. */
+    kutu.addEventListener('focusin', function (e) {
+      var oge = e.target.closest('.akordeon-oge');
+      if (oge && !e.target.closest('.akordeon-dugme')) ayarla(oge, true);
+    });
   });
 
 })();

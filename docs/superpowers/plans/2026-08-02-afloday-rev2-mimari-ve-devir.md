@@ -8,6 +8,118 @@
 
 ---
 
+## Durum — 4 Ağustos 2026 akşamı
+
+**İş bağlandı**, koşullar kapandı, **kapsam belgesi geldi.**
+
+```
+Bedel        20.000 TL (KDV dahil) · site + blog + panel, tek paket
+Fatura       tek fatura, site yayına alındığında
+Bakım        ilk 3 ay dahil · 3. ayın sonunda yıllık bedel birlikte belirlenecek
+Teslim       site: erişimden sonra 3-4 iş günü · blog + panel: en geç 3 hafta
+```
+
+**Beklenen tek şey:** alan adı yönetimine erişim (cPanel). Sayaç o gün başlıyor.
+**Teknik muhatap:** Hasan Basri Ünlü.
+
+### Tamamlananlar
+
+- ✅ Canlı siteden 34 adres çıkarıldı, HTTP durumlarıyla doğrulandı
+- ✅ `canliAdres` tablosu — 34/34 adres birebir karşılanıyor
+- ✅ `cleanUrls`, uzantılar düştü
+- ✅ Anasayfa slaydı, daire açılımlı geçişle
+- ✅ **Next.js taşıması bitti** — 37 sayfa üretiliyor, gövdeler statik sürümle
+      **birebir aynı** (37/37 karşılaştırıldı), sitemap ve robots Next tarafında,
+      `vercel.json` `out/` çıktısına göre güncellendi
+
+---
+
+## KAPSAM — 4 Ağustos 2026 tarihli içerik belgesi
+
+`Afloday_WEB Sayfası Metinler_04082026.docx` · 65.000 karakter · 540 paragraf.
+**Bundan sonrası bu belgeye göre yapılıyor.** Belgede ne yazıyorsa o.
+
+### Konumlandırma değişti
+
+```
+ESKİ      Çiçek ve bitki hobi atölyeleri · bireysel müşteri
+YENİ      Kurumsal eğitim ve gelişim · B2B · doğa temelli metodoloji
+```
+
+Sayfa sayısı azalıyor, **iş azalmıyor.** Atölye kataloğu, künye defteri ve 16
+atölye sayfası siliniyor; yerine çok daha yoğun, tamamen yeni bölümler geliyor.
+
+### Yeni site haritası — 16 sayfa
+
+| Adres | Durum | İçerik |
+|---|---|---|
+| `/` | yenilenecek | tamamen yeni anasayfa |
+| `/hakkimizda` | yenilenecek | yeni hikâye, vizyon, misyon, "Neden Doğa?" |
+| `/doga-temelli-egitimlerimiz` | yenilenecek | **5 eğitim programı**, her biri derinlemesine |
+| `/sosyal-sorumluluk-is-danismanligi` | yenilenecek | baştan yazıldı, istatistik + referanslar |
+| `/gelecegi-tasarla` | yenilenecek | metin değişecek |
+| `/gulumseyen-yarinlar-projesi` | OK | dokunulmuyor |
+| `/iletisim` `/ik` | OK | dokunulmuyor |
+| 7 ekip sayfası | OK | yalnızca `ceylan-kalyon` metni değişecek |
+| **Doğadan Etkinlik Atölye Deneyimleri** | **YENİ SAYFA** | atölyeler burada kategori olarak |
+
+**Karar bekleyen:** Yeni sayfanın adresi. Öneri: iptal edilen
+`/dogadan-hobi-atolyeleri` adresi bu sayfaya verilsin — kavramsal olarak onun
+yerine geçiyor ve o adresin arama değeri korunmuş olur.
+
+### İptal edilen 19 adres ve yönlendirme hedefleri
+
+```
+16 atölye sayfası            →  Doğadan Etkinlik Atölye Deneyimleri
+/katilim                     →  /iletisim
+/dogadan-gelisim-atolyeleri  →  /doga-temelli-egitimlerimiz
+/dogadan-hobi-atolyeleri     →  Doğadan Etkinlik Atölye Deneyimleri (ya da o olur)
+```
+
+Anasayfaya toplu yönlendirme yapılmıyor; her adres konusuna en yakın sayfaya gidiyor.
+
+### Anasayfanın yeni bölümleri
+
+1. **Hero — 3 dönen slayt, metin görselin üzerinde.** Müşterinin açık isteği:
+   *"Metinlerin görsellerin üzerine yazılmasını istiyoruz."* Her slaytta üst
+   etiket, H1, alt başlık, birincil/ikincil buton var. Orman videosu açılışta
+   kalıyor, slaytlar sonrasında geliyor.
+2. **Değer önerisi şeridi** — 3 sütun
+3. **"Neden Doğa Temelli Gelişim?"** — kaynaklı 4 istatistik kutusu
+   (Deloitte %59 · %88 · Gallup %76 · Korn Ferry %58)
+4. **"Kök Sal · Sorumluluk Al · Birlikte Yeşer"** — 3 aşamalı marka metodolojisi
+5. **5 eğitim programı vitrini**
+6. **Doğadan Deneyimsel Öğrenme Atölyeleri** — 4 vitrin kartı
+
+### Eğitim programları — her biri aynı iskeleti taşıyor
+
+```
+Açılış Sahnesi          hikâye ile giriş
+Doğadan Öğrendiğimiz Ders
+Bu Eğitimle Güçlenen Kaslar     4 madde
+İş Hayatına Yansıması
+Dolaylı Sosyal Hayata Yansıması
+Program Bilgileri       format · süre · hedef kitle · hedef yetkinlikler
+```
+
+Beş program: Duygusal Dayanıklılık · İletişim Dili · Takım Ruhu ·
+Yaratıcı Düşünme · Değişimin Doğası ve Liderlik.
+
+### Görseller
+
+```
+Seçilmiş Olanlar     24 dosya  194 MB   ← belgede adı geçenler, ASIL KAYNAK
+Doğadan Etkinlik     71 dosya  184 MB
+Galeri               21 dosya   11 MB
+Diğer Görseller     136 dosya  1.3 GB   ← kütüphane, seçmeli kullanılacak
+```
+
+"Seçilmiş Olanlar" içindeki dosya adları belgede birebir geçiyor; hangi bölüme
+hangi görselin geleceği belli. **Tanesi ~8 MB, web için ~200 KB'a inmeli.**
+Boyutlandırma + WebP dönüşümü zorunlu, aksi hâlde sayfa açılmaz.
+
+---
+
 ## Kararlar ve gerekçeleri
 
 **Hazır içerik yönetim sistemi kullanılmıyor.** Sanity ve Payload değerlendirildi, ikisi de elendi. Müşteri kendi alan adında, kendi kullanıcılarıyla açılan bir panel istiyor; dışarıdaki bir servise yönlendirilmek istemiyor. Ayrıca geliştirici Supabase ile kurulu panel deneyimine sahip, yeni bir çatı öğrenmek hız kazandırmaz.
@@ -56,39 +168,88 @@ Aylık bakım alınmazsa bu projeye kimse bakmayacak. Kırılabilecek yerler ve 
 
 ---
 
-## Fazlar
+## İş sırası
 
-Sıra bozulmamalı. Her faz kendi başına çalışan bir çıktı bırakır.
+Next.js taşıması bitti; bundan sonrası içerik ve yeni bölümler. Sıra bozulmamalı,
+her adım kendi başına çalışan bir çıktı bırakıyor.
 
-### Faz 0 — Hesaplar
+### Adım 1 — İçeriği veriye dök *(temel iş)*
 
-Afloday'in e-postasıyla Vercel ve Supabase hesapları açılır, geliştirici ekip üyesi olarak eklenir. cPanel giriş bilgileri Afloday'den alınır.
+`docx` içeriği `_build/data.mjs`'e yapılandırılıyor. Yeni veri kümeleri:
 
-### Faz 1 — Next.js iskeleti ve tasarımın taşınması
+```
+heroSlaytlari        3 slayt · eyebrow, h1, alt başlık, butonlar, görsel
+degerOnerisi         3 sütun
+istatistikler        4 kutu · rakam, açıklama, kaynak
+metodoloji           3 aşama · Kök Sal / Sorumluluk Al / Birlikte Yeşer
+egitimler            5 program · tam iskelet (açılış sahnesi → program bilgileri)
+etkinlikKategorileri Sürdürülebilirlik, İç iletişim, Mevsim, Özel gün,
+                     Gönüllülük, Ürün lansmanı
+hakkimizdaYeni       hikâye, vizyon, misyon, "Neden Doğa?"
+sosyalSorumlulukYeni istatistik, hizmetler, çalışma modeli, "Bizi farklı kılan"
+```
 
-Next.js kurulur, `afloday.css` olduğu gibi içeri alınır, mevcut şablonlar bileşenlere çevrilir, kalan 19 sayfa üretilir. İçerik bu aşamada hâlâ dosyada.
+**Kural:** Metin belgede ne yazıyorsa o. Kısaltma, yeniden yazma, ekleme yok.
 
-**Bitti sayılma ölçütü:** 19 sayfa mevcut önizlemeyle görsel olarak aynı, masaüstü ve mobilde taşma yok.
+**Bitti ölçütü:** Belgedeki her başlık verinin içinde karşılığını buluyor.
 
-### Faz 2 — Supabase ve panel
+### Adım 2 — Görselleri işle
 
-Veri modeli kurulur, giriş sistemi bağlanır, `/admin` altında sayfa metinleri, ekip üyeleri ve görseller düzenlenebilir hâle getirilir. Görsel yükleme ve kırpma bu fazda.
+24 "Seçilmiş" görsel + belgede adı geçenler. Her biri için:
+en fazla 1920px genişlik, WebP + JPG yedeği, ~200 KB hedef.
 
-**Bitti sayılma ölçütü:** Panelden bir metin ve bir görsel değiştirildiğinde site güncelleniyor.
+**Bitti ölçütü:** Toplam görsel yükü 5 MB'ın altında, hiçbiri 300 KB'ı geçmiyor.
 
-### Faz 3 — Blog
+### Adım 3 — Sayfa haritasını 16'ya indir
 
-Blog liste ve yazı sayfaları, zengin metin editörü, LinkedIn paylaşım düğmesi, seçilmiş LinkedIn gönderilerinin sitede gösterimi.
+İptal edilen 19 adres siliniyor, `vercel.json`'a kalıcı yönlendirmeleri giriyor.
+Yeni "Doğadan Etkinlik Atölye Deneyimleri" sayfası ekleniyor.
 
-### Faz 4 — Adres eşleme
+**Bitti ölçütü:** Kalan 16 adres 200, iptal edilen 19 adres 301 dönüyor ve
+hedefleri doğru.
 
-Kalan 17 adres orijinal siteyle birebir eşlenir. `/dogadan-gelisim-atolyeleri` ve `/sosyal-sorumluluk-is-danismanligi` şu an tek sayfada birleşik, adreslerini korumak için ikiye ayrılır. Silinen 17 adres için kalıcı yönlendirme kurulur; her biri konusuna en yakın sayfaya gider, anasayfaya toplu yönlendirme yapılmaz.
+### Adım 4 — Yeni anasayfa bölümleri
 
-**Bitti sayılma ölçütü:** `afloday.vercel.app` üzerinde kalan 17 adres 200, silinen 17 adres 301 dönüyor ve hedefleri doğru.
+Değer önerisi şeridi, istatistik kutuları, metodoloji, eğitim vitrini,
+atölye vitrini. Mevcut tasarım dili korunuyor.
 
-### Faz 5 — Yayın
+### Adım 5 — İç sayfalar
 
-Aşağıdaki DNS bölümü uygulanır.
+`/doga-temelli-egitimlerimiz` (5 program), `/sosyal-sorumluluk-is-danismanligi`,
+`/hakkimizda`, `/gelecegi-tasarla`, yeni etkinlik sayfası.
+
+### Adım 6 — Hero slaydı
+
+3 slayt, **metin görselin üzerinde** — müşterinin açık isteği. Orman videosu
+açılışta kalıyor. WebGL geçiş sürümü bu adımda değerlendiriliyor *(Faz 1b)*.
+
+### Adım 7 — Formlar, KVKK, yayın hazırlığı
+
+Formların gerçek gönderime bağlanması, KVKK sayfaları *(metin Afloday'den)*,
+DNS adımları.
+
+### Faz 1b — Anasayfa slaydı: WebGL sürümü
+
+Geliştirici 21st.dev'den bir bileşen seçti: merkezden büyüyen daireyle açılan,
+cam kırılması efektli geçiş. Bileşen olduğu gibi alınmıyor, **uyarlanıyor.**
+
+| Sorun | Ne yapılacak |
+|---|---|
+| Three.js + GSAP CDN'den (~650 KB) | npm'den seçmeli (~200 KB), `dynamic` + `ssr:false`, yalnızca slayt görününce |
+| Tam ekran | Hero bandına sınırlanacak |
+| Siyah + altın + Cormorant | Afloday paleti, Newsreader + Jost |
+| Demo görselleri | Belgede seçilmiş gerçek görseller |
+| 5 efektin 4'ü boş | Yalnızca `glass` tutulacak |
+| Erişilebilirlik yok | Duraklat, klavye, azaltılmış hareket |
+| Render hiç durmuyor | Görünmezken ve sekme arkadayken duracak |
+
+**Geri düşüş:** WebGL yoksa ya da azaltılmış hareket açıksa bugünkü CSS daire
+açılımı devreye giriyor. İkisi aynı işaretlemeyi kullanıyor.
+
+### Sonraki aşama — panel ve blog
+
+Supabase kurulumu, `/admin` paneli, blog. Teklifin 2. aşaması, üç haftalık süre
+site yayına alındığı gün başlıyor.
 
 ---
 
@@ -110,7 +271,11 @@ cpanel           A       5.253.141.186     panel
 autodiscover     A       5.253.141.186     Outlook otomatik kurulum
 autoconfig       A       5.253.141.186     Thunderbird otomatik kurulum
 MX                       afloday.com       e-postanın gideceği yer
+TXT (SPF)  v=spf1 include:_spf2.trwww.com include:_spf.trwww.com -all
 ```
+
+**SPF kaydı var ve düzgün yapılandırılmış** (`-all` ile bitiyor). Taşımada
+dokunulmayacak.
 
 **Tehlike:** MX kaydı `afloday.com`'un kendisini gösteriyor. Sitenin A kaydı değiştirildiği an e-posta da yeni sunucuya gitmeye çalışır ve tamamen kesilir.
 
@@ -158,28 +323,73 @@ Değerler Vercel ekranından kopyalanır, ezberden yazılmaz.
 
 ---
 
-## Fiyat
+## Fiyat — anlaşılan koşullar
+
+4 Ağustos 2026'da mutabık kalındı. Önceki 30.000'lik teklif geçersiz.
 
 ```
-Site (yeni site haritasına göre)          12.500 TL
-Blog + Yönetici Paneli                    28.000 TL
-──────────────────────────────────────────────────
-Toplam                                    40.500 TL
-
-Aylık bakım                                1.500 TL / ay
+Toplam                     20.000 TL (KDV dahil)
+                           site + blog + yönetici paneli, tek paket
+Fatura                     tek fatura, site yayına alındığında
+Bakım · ilk 3 ay           dahil
+Bakım · sonrası            isteğe bağlı, taahhüt yok
+                           3. ayın sonunda yıllık bedel birlikte belirlenecek
 ```
 
-Panelli sistemde güvenlik güncellemeleri ihmal edilemez; bakım artık isteğe bağlı bir ek değil, sistemin gereği. Satış argümanı bu.
+**Müşterinin kendi önerisi:** *"İlk 3 ay siz bizim sizi ne kadar meşgul
+ettiğimizi görün. Sonrasında birlikte bakım anlaşması için yıllık bir ücret
+belirleyelim."* Mevcut sağlayıcılarıyla da böyle çalışıyorlar — yıllık bakım ve
+revize bedeli var, ekstra işler için ara ödeme yapıyorlar.
+
+**3. ay görüşmesine hazırlık:** Site ilk günden hata izleme sistemine bağlanacak.
+Üç ayın sonunda "yılda 2-3 çağrı" tahmini yerine gerçek veriyle konuşulacak:
+kaç hata yakalandı, kaçı kullanıcıya yansımadan düzeltildi.
+
+**Fatura düzeni:** Kendi şirketi olmadığı için fatura bir yakının ortağının şahıs
+şirketinden kesilecek. Ödeme faturayı kesen hesaba gitmeli. Fatura teslimden
+sonraki 7 gün içinde kesilir, tahsilat beklenmez. Vergi payı işten önce yazılı
+olarak netleştirilmeli.
 
 ---
 
-## Müşteriden beklenen cevaplar
+## Altyapı sahipliği — dikkat edilecek nokta
 
-Görev düzeyinde uygulama planı bunlar netleşince yazılacak.
+Mevcut sitenin altyapısı, **yerine geçilen ajansın kontrolünde:**
 
-1. `/butik-cicekcilik` ve `/atolye-workshop` şu an yayında ama site haritasında yok. Kaldırılacak mı?
-2. 16 atölye sayfası silinince o metinler nereye gidecek?
-3. "Doğadan Gelişim Atölyeleri" satırının durumu Excel'de boş.
-4. Sürdürülebilirlik sayfası listede yok.
-5. Blogda kaç yazıyla başlanacak, kategori ayrımı olacak mı?
-6. cPanel giriş bilgileri kimde?
+```
+byflash.com          mevcut siteyi yapan ajans (site altbilgisinde yazıyor)
+byserver.net         aynı ekibin barındırma kolu · kurumsal sayfası boş
+5.253.141.186        site + e-posta + ns3 + ns4 + ajansın diğer müşterileri
+                     hepsi TEK makinede
+```
+
+Yani cPanel, DNS ve nameserver'ların tamamı ByFlash/ByServer'da. Erişim talebi
+oradan geçecekse süreç geliştiricinin hızına değil, işini kaybeden bir ajansın
+iş birliğine bağlı kalır.
+
+**Bu yüzden erken sorulacaklar:**
+1. cPanel giriş bilgileri Afloday'de mi, ajansta mı?
+2. Alan adı kimin adına kayıtlı — Afloday mı, ajans mı?
+
+İkincisi kritik: alan adı ajans adına kayıtlıysa nameserver değiştirme yetkisi
+bile onlarda olur.
+
+---
+
+## Afloday'den beklenen cevaplar
+
+**Acil — işi bloke ediyor**
+
+1. **cPanel giriş bilgileri** — sayaç bunun geldiği gün başlıyor. *(Hasan Basri Ünlü)*
+2. **Alan adı kayıt firması ve hesap kimde** — nameserver yetkisi için.
+
+**İçerik kararları**
+
+3. İptal edilen 17 atölye sayfasından **hangi 7'si** Etkinlik olarak kalacak?
+4. `/katilim` Excel'de İPTAL işaretli ama sitede kurulu — gerçekten kalkacak mı?
+5. Metni değişecek 6 sayfanın yeni metinleri ne zaman gelir?
+6. `/atolye-takvimi`, `/atolye-workshop`, `/butik-cicekcilik` canlıda 200 dönüyor
+   ama Excel'de hiç yok. Ne olacaklar?
+7. Blogda kaç yazıyla başlanacak, kategori ayrımı olacak mı?
+8. KVKK aydınlatma metni ve çerez politikası metinleri (hukukçularından).
+9. Panele ilk girecek kişinin e-posta adresi.

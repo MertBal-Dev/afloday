@@ -1,5 +1,8 @@
 /* AFLODAY — sayfa kabuğu ve paylaşılan bileşenler. */
 import { site, nav, refs, assets } from './data.mjs';
+import { slug as gorselSlug } from './gorsel-hazirla.mjs';
+import { etkinlikGorselleri } from './etkinlik-gorselleri.mjs';
+import { atolyeSayisi } from './etkinlikler.mjs';
 
 const PHONE_E164 = { '0216 510 2809': '+902165102809', '0538 490 0727': '+905384900727', '0532 213 4476': '+905322134476' };
 
@@ -98,7 +101,8 @@ export function footer() {
       <h2 class="d-l" data-reveal>Bir <em class="em">&ldquo;TIK&rdquo;</em> yakındayız.</h2>
       <div class="btn-row" data-reveal style="--d:80ms">
         <a class="btn btn-primary" href="iletisim.html">İletişim Formu</a>
-        <a class="btn btn-ghost" href="katilim.html">Etkinlik Katılımı</a>
+        <!-- Eskiden /katilim'a gidiyordu; o sayfa envanterde İPTAL. -->
+        <a class="btn btn-ghost" href="kurumsal-hobi-atolyeleri.html">Etkinlik Atölye Deneyimleri</a>
       </div>
     </div>
   </div>
@@ -118,24 +122,29 @@ export function footer() {
         </address>
         <p><a class="link" href="${assets.maps}" rel="noopener">Yol tarifi için tıklayın</a></p>
       </div>
+      <!-- Sütun başlıkları menünün ana dallarını izliyor; iptal edilen
+           atölye kataloğu bağlantıları kalktı. -->
       <div>
-        <p class="ftr-head">Doğadan Hobi Atölyeleri</p>
+        <p class="ftr-head">Geleceği Doğadan Tasarla</p>
         <ul>
-          <li><a href="atolyeler.html#cicek">Çiçek Tasarım Hobi Atölyeleri</a></li>
-          <li><a href="atolyeler.html#bitki">Bitki Tasarım Hobi Atölyeleri</a></li>
-          <li><a href="atolyeler.html#cocuk">Çocuk Hobi Atölyeleri</a></li>
+          <li><a href="proje-gelecegi-yesil-tasarla.html">Geleceği Doğadan Tasarla Hareketi</a></li>
+          <li><a href="proje-gelecegi-yesil-tasarla.html#cevre">Çevre · Toprak</a></li>
+          <li><a href="proje-gelecegi-yesil-tasarla.html#kadin">Kadın · Su</a></li>
+          <li><a href="proje-gelecegi-yesil-tasarla.html#cocuk">Çocuk · Ateş</a></li>
+          <li><a href="proje-gelecegi-yesil-tasarla.html#is-dunyasi">İş Dünyası · Hava</a></li>
           <li><a href="doga-temelli-egitimler.html">Doğa Temelli Eğitimlerimiz</a></li>
-          <li><a href="surdurulebilirlik.html">Sürdürülebilirlik</a></li>
         </ul>
       </div>
       <div>
         <p class="ftr-head">Kurumsal Hizmetler</p>
         <ul>
-          <li><a href="kurumsal.html#gelisim">Doğadan Gelişim Atölyeleri</a></li>
-          <li><a href="kurumsal-hobi-atolyeleri.html">Doğadan Hobi Atölyeleri</a></li>
-          <li><a href="kurumsal.html#sosyal">Sosyal Sorumluluk &amp; İş Danışmanlığı</a></li>
+          <li><a href="kurumsal.html#deneyimsel-ogrenme">Doğadan Deneyimsel Öğrenme Atölyeleri</a></li>
+          <li><a href="kurumsal-hobi-atolyeleri.html">Doğadan Etkinlik Atölye Deneyimleri</a></li>
+          <li><a href="sosyal-sorumluluk-is-danismanligi.html">Sosyal Sorumluluk &amp; İş Danışmanlığı</a></li>
           <li><a href="hakkimizda.html">Afloday Hakkında</a></li>
           <li><a href="hakkimizda.html#ekip">Ekibimiz</a></li>
+          <li><a href="surdurulebilirlik.html">Sürdürülebilirlik</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
         </ul>
         <p class="ftr-head" style="margin-top:var(--s5)">Takip Edeyim</p>
         <ul>
@@ -158,7 +167,7 @@ export function footer() {
    `index` hero içindeki gerçek içerik: kataloğa açılan numaralı minik levhalar. */
 /* Video hero — kendi sunucumuzda barındırılan sessiz döngü.
    `lines` sağ alttaki iş kolu satırları; `kicker` üst künye. */
-export function heroVideo({ kicker, heading, lede, cta, lines = [], video, poster, posterAlt }) {
+export function heroVideo({ kicker, heading, lede, cta, lines = [], video, poster, posterAlt, asagi = '#tanitim' }) {
   return `<section class="hero-video" data-mode="video">
     <div class="hero-video-media">
       <img src="${poster}" alt="${posterAlt}" width="1920" height="1080" fetchpriority="high">
@@ -180,7 +189,7 @@ export function heroVideo({ kicker, heading, lede, cta, lines = [], video, poste
       </div>` : ''}
     </div>
 
-    <a class="hero-in" href="#tanitim" aria-label="Aşağı kaydır"><span></span></a>
+    <a class="hero-in" href="${asagi}" aria-label="Aşağı kaydır"><span></span></a>
   </section>`;
 }
 
@@ -241,6 +250,146 @@ export function bleed({ images, quote, cite }) {
   </figure>`;
 }
 
+/* Anasayfa slaydı — hero'nun hemen altında dönen kareler.
+   Kareler sitedeki gerçek sayfalara açılıyor, başlıklar veri dosyasından geliyor;
+   slayta özel yazılmış metin yok. Numaralandırma süsleme değil: kaçıncı karede
+   olunduğunu söylüyor, yani gerçekten sıra bilgisi taşıyor.
+   Otomatik geçiş üzerine gelince ve odaklanınca duruyor, duraklatma düğmesi var
+   (hareketli içerik için erişilebilirlik gereği). Azaltılmış hareket tercihinde
+   geçiş hiç başlamıyor, kareler yine düğmelerle gezilebiliyor. */
+export function slayt(slides) {
+  const iki = (n) => String(n).padStart(2, '0');
+  return `<section class="slayt" data-slayt aria-roledescription="slayt" aria-label="Atölye ve programlardan kareler">
+    <div class="wrap">
+      <div class="slayt-sahne">
+        ${slides.map(({ href, img, alt, tur, ad }, i) => `<a class="slayt-kare" href="${href}" data-aktif="${i === 0 ? 'evet' : 'hayir'}"${i ? ' aria-hidden="true" tabindex="-1"' : ''}>
+          <img src="${img}" alt="${alt}" width="1600" height="900"${i ? ' loading="lazy"' : ''}>
+          <span class="slayt-etiket">
+            <b>${tur}</b>
+            <span>${ad}</span>
+          </span>
+        </a>`).join('\n        ')}
+      </div>
+
+      <div class="slayt-alt">
+        <p class="slayt-sayac"><b data-slayt-no>${iki(1)}</b><span>/ ${iki(slides.length)}</span></p>
+        <div class="slayt-cetel">
+          ${slides.map((s, i) => `<button type="button" data-slayt-git="${i}" aria-label="${i + 1}. kare: ${s.ad}"${i === 0 ? ' aria-current="true"' : ''}><span></span></button>`).join('\n          ')}
+        </div>
+        <button class="slayt-duraklat" type="button" data-slayt-duraklat aria-pressed="false">Duraklat</button>
+      </div>
+    </div>
+  </section>`;
+}
+
+/* Anasayfa slaydı — cam kırılması geçişi.
+   Tasarım kaynağı: 21st.dev · lumina-interactive-list (docs/referans/Not.md).
+   Kaynağın düzeni ve sınıf adları birebir korunuyor:
+
+     .slider-wrapper      tam kaplayan sahne
+       .webgl-canvas      cam geçişinin çizildiği katman
+       .slide-number      sıra sayacı (01)
+       .slide-total       toplam (03)
+       .slide-content     ortada başlık + açıklama
+       .slides-navigation altta her slayt için ilerleme çizgisi ve adı
+
+   Bizde değişenler ve gerekçeleri:
+   · THREE + GSAP CDN'den ~650 KB inmiyor. Efektin tamamı tek bir fragment
+     shader; shader kaynaktakiyle birebir, düz WebGL ile çiziliyor. Görünen
+     sonuç aynı, eklenen ağırlık sıfır. (Karar zaten planın Faz 1b'sinde.)
+   · 6 demo görseli yerine belgedeki 3 Afloday slaydı.
+   · Kaynakta yalnız başlık + açıklama var; belge her slayt için üst etiket ve
+     buton da veriyor, onlar da aynı dilde yerleştirildi.
+   · Siyah/altın/Cormorant yerine Afloday paleti ve Newsreader + Jost.
+   · Duraklat düğmesi, ok tuşları, azaltılmış hareket desteği eklendi.
+   · WebGL yoksa CSS daire açılımı devralıyor.
+
+   Video hero yukarıda olduğu gibi duruyor; bu bölüm onun altında.
+   Metin görselin üzerinde — müşterinin açık isteği.
+
+   Başlıklar H1 değil. Belge her slayt için "Ana Başlık (H1)" diyor ama sayfanın
+   H1'i yukarıdaki video hero'da duruyor ve bir sayfada tek H1 olur. Slayt
+   başlıkları H2; görünüş aynı, belge düzeni bozulmuyor. */
+export function heroSlayt(slaytlar) {
+  const iki = (n) => String(n).padStart(2, '0');
+
+  /* Harf harf açılım — kaynaktaki splitText'in karşılığı. Gecikme CSS'te
+     --i ile hesaplanıyor, GSAP'a gerek kalmıyor. Görünen metin aria'dan
+     gizli: ekran okuyucu 40 ayrı harf yerine cümleyi bir kez okusun.
+
+     Harfler kelimelere sarılıyor: her harf tek başına inline-block olsaydı
+     tarayıcı iki harf arasından satır bölebilirdi ve uzun Türkçe başlıklar
+     kelime ortasından kırılıyordu ("Ka / lıcı"). Kelime kabuğu nowrap,
+     aralarında gerçek boşluk var; satır yalnız kelime aralarında bölünüyor. */
+  const kacir = (h) => (h === '<' ? '&lt;' : h === '&' ? '&amp;' : h);
+  const harfle = (metin) => {
+    let n = 0;
+    return metin
+      .split(' ')
+      .map((kelime) =>
+        `<span class="slide-title-kelime">${[...kelime]
+          .map((h) => `<span class="slide-title-harf" style="--i:${n++}">${kacir(h)}</span>`)
+          .join('')}</span>`,
+      )
+      .join(' ');
+  };
+
+  /* Odak noktası hem CSS geri düşüşüne (object-position) hem shader'a
+     (data-odak) veriliyor; iki katman aynı kırpmayı yapsın. */
+  const kare = (s, i) => `<div class="slide-media-kare" data-aktif="${i === 0 ? 'evet' : 'hayir'}"
+          data-odak="${(s.odak || [50, 50]).join(',')}">
+          ${resim({ gorsel: s.gorsel, alt: s.alt, oncelik: i === 0, odak: s.odak })}
+        </div>`;
+
+  const kopya = (s, i) => {
+    const baslik = `<span class="sr-only">${s.baslik}</span><span aria-hidden="true">${harfle(s.baslik)}</span>`;
+    const butonlar = [s.birincilButon, s.ikincilButon].filter(Boolean);
+    return `<div class="slide-copy" data-aktif="${i === 0 ? 'evet' : 'hayir'}"${i ? ' aria-hidden="true"' : ''}>
+            <p class="slide-eyebrow">${s.etiket}</p>
+            <h2 class="slide-title">${baslik}</h2>
+            <p class="slide-description">${s.altBaslik}</p>
+            ${butonlar.length
+        ? `<div class="slide-actions">
+              ${butonlar.map((b, n) => `<a class="btn ${n === 0 ? 'btn-primary' : 'btn-ghost'}" href="${b.href}"${i ? ' tabindex="-1"' : ''}>${b.yazi}</a>`).join('\n              ')}
+            </div>`
+        : ''}
+          </div>`;
+  };
+
+  return `<section class="slider-wrapper" data-hslayt aria-roledescription="slayt"
+      aria-label="Afloday hizmet hatları">
+    <canvas class="webgl-canvas" data-hslayt-tuval aria-hidden="true"></canvas>
+
+    <!-- Geri düşüş katmanı: WebGL çalışırsa gizleniyor, çalışmazsa
+         geçişi CSS daire açılımı devralıyor. -->
+    <div class="slide-media">
+      ${slaytlar.map(kare).join('\n      ')}
+    </div>
+    <div class="slide-scrim" aria-hidden="true"></div>
+
+    <span class="slide-number" data-hslayt-no>${iki(1)}</span>
+    <span class="slide-total">${iki(slaytlar.length)}</span>
+
+    <div class="slide-content">
+      <div class="wrap">
+        <div class="slide-copies">
+          ${slaytlar.map(kopya).join('\n          ')}
+        </div>
+      </div>
+    </div>
+
+    <nav class="slides-navigation" aria-label="Slayt seçimi">
+      <div class="wrap slides-navigation-in">
+        ${slaytlar.map((s, i) => `<button class="slide-nav-item" type="button" data-hslayt-git="${i}"${i === 0 ? ' aria-current="true"' : ''}>
+          <span class="slide-progress-line"><span class="slide-progress-fill"></span></span>
+          <span class="slide-nav-title">${s.etiket}</span>
+        </button>`).join('\n        ')}
+        <button class="slide-pause" type="button" data-hslayt-duraklat aria-pressed="false">Duraklat</button>
+      </div>
+    </nav>
+  </section>`;
+}
+
 /* Sürekli akan referans şeridi */
 export function marquee(limit = 30) {
   return `<div class="marquee" aria-label="Birlikte çalıştığımız kurumlar">
@@ -271,9 +420,11 @@ export function galeriBolumu(images, ad) {
   return `
   <section class="section rule-top">
     <div class="wrap">
-      ${opener('Atölyeden', 'Kareler', `${ad} atölyesinden ${images.length} kare.`)}
+      ${/* Açıklama cümlesi yoktu: ne belgede ne canlı sitede geçiyor.
+           Kare sayısı etiket olarak zaten `plateNo` alanında duruyor. */ ''}
+      ${opener('Atölyeden', 'Kareler', '')}
       <div class="galeri" data-lightbox style="margin-top:clamp(32px,4vw,56px)">
-        ${images.map((src, i) => `<button class="galeri-hucre" type="button" data-full="${tam(src)}" aria-label="${ad} — ${i + 1}. fotoğrafı büyüt">
+        ${images.map((src, i) => `<button class="galeri-hucre" type="button" data-full="${tam(src)}" data-no="${String(i + 1).padStart(2, '0')}" aria-label="${ad} — ${i + 1}. fotoğrafı büyüt">
           <img src="${src}" alt="${ad} atölyesinden kare ${i + 1}" loading="lazy" width="600" height="600">
         </button>`).join('\n        ')}
       </div>
@@ -283,13 +434,254 @@ export function galeriBolumu(images, ad) {
 
 /* Işık kutusu kabuğu — sayfada galeri varsa gövdenin sonuna eklenir */
 export function lightbox() {
-  return `<div class="lb" id="lb" hidden>
-  <button class="lb-kapat" type="button" aria-label="Kapat"></button>
-  <button class="lb-onceki" type="button" aria-label="Önceki"></button>
-  <img class="lb-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="1600" height="1200">
-  <button class="lb-sonraki" type="button" aria-label="Sonraki"></button>
-  <p class="lb-sayac"></p>
+  return `<div class="lb" id="lb" hidden aria-hidden="true" role="dialog" aria-label="Görsel Büyütme Modalı">
+  <div class="lb-header">
+    <span class="lb-caption" id="lb-caption">Afloday Galeri</span>
+    <span class="lb-sayac" id="lb-sayac">01 / 21</span>
+    <button class="lb-kapat" type="button" aria-label="Galeriyi kapat"><span>Kapat &times;</span></button>
+  </div>
+  <div class="lb-stage">
+    <button class="lb-onceki" type="button" aria-label="Önceki fotoğraf"><span>&larr;</span></button>
+    <div class="lb-img-wrap">
+      <img class="lb-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="1600" height="1200">
+    </div>
+    <button class="lb-sonraki" type="button" aria-label="Sonraki fotoğraf"><span>&rarr;</span></button>
+  </div>
 </div>`;
+}
+
+/* 4 Ağustos belgesinin görselleri — gorsel-hazirla.mjs bunları
+   assets/img/rev2/ altına WebP ve JPG olarak yazıyor. Veri dosyalarında
+   kaynak dosya adı duruyor (belgede o adla geçiyor), yol burada kuruluyor.
+
+   `boy` yalnızca yer ayırmak için; gerçek oran korunduğu için çerçeveleme
+   CSS'teki object-fit ile yapılıyor. */
+export function resim({ gorsel, alt, klasor = 'secilmis', sinif = '', kucuk = false, oncelik = false, odak = null }) {
+  const s = `assets/img/rev2/${klasor}/${gorselSlug(gorsel)}`;
+  const genislik = kucuk ? 800 : 1600;
+  /* Alt metin boşsa görsel süstür: ekran okuyucu atlasın diye açıkça
+     işaretleniyor. Denetim (verify.mjs) işaretsiz boş alt'ı hata sayıyor. */
+  const dekor = !alt ? ' role="presentation"' : '';
+  /* Odak noktası: object-fit:cover kırparken neyin korunacağı. */
+  const konum = odak ? ` style="object-position:${odak[0]}% ${odak[1]}%"` : '';
+  return `<picture${sinif ? ` class="${sinif}"` : ''}>
+            <source type="image/webp" srcset="${s}-800.webp 800w, ${s}.webp 1600w"
+                    sizes="${kucuk ? '(max-width: 900px) 100vw, 50vw' : '100vw'}">
+            <img src="${s}.jpg" alt="${alt}"${dekor}${konum} width="${genislik}" height="${Math.round(genislik * 0.667)}"
+                 ${oncelik ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'}>
+          </picture>`;
+}
+
+function kategoriGalerisi(k) {
+  const hepsi = etkinlikGorselleri[k.id] || [];
+  const kareler = hepsi.filter((g) => !g.kapak);
+  if (!kareler.length) return '';
+  return `
+            <div class="akordeon-galeri">
+              <p class="eyebrow">${k.ad} · ${hepsi.length} kare</p>
+              <div class="galeri" data-lightbox>
+                ${kareler.map((g, i) => `<button class="galeri-hucre" type="button"
+                  data-full="assets/img/rev2/${g.slug}.jpg"
+                  data-no="${String(i + 1).padStart(2, '0')}"
+                  aria-label="${k.ad} — ${i + 1}. fotoğrafı büyüt">
+                  <img src="assets/img/rev2/${g.slug}-800.webp" alt="${k.ad} kapsamındaki atölyelerden kare ${i + 1}"
+                       loading="lazy" width="800" height="800">
+                </button>`).join('\n                ')}
+              </div>
+            </div>`;
+}
+
+/* SONSUZ KAYAN GALERİ ŞERİDİ
+   Tasarım kullanıcıya ait: iki satır, ters yönlerde kesintisiz akış,
+   kartın üzerine gelince duraklama ve büyüme, alt köşede levha rozeti.
+   Düzen ve his korundu; beş kusur giderildi.
+
+   1 · KATEGORİ ETİKETLERİ KALKTI. `getGaleriKategori` fotoğrafları sıra
+       numarasına göre "Kurumsal Eğitim / Atölye Deneyimi / Doğadan Kareler"
+       diye etiketliyordu. Bu adlar ne 4 Ağustos belgesinde ne afloday.com'da
+       geçiyor; üstelik hangi karenin hangi kategoriye ait olduğu hiçbir
+       kaynakta yazmıyor, index'e göre atanıyordu. Rozette levha numarası
+       kaldırıldı; kart artık tamamen fotoğraf. Sıra bilgisi ışık kutusunun
+       sayacında zaten var (`data-no` özniteliği duruyor, oradan okunuyor).
+
+   2 · KOPYALAR IŞIK KUTUSUNDAN AYRILDI. Kesintisiz döngü için dizi iki kez
+       basılıyor; ışık kutusu 21 yerine 42 kart sayıyordu, sayaç "5 / 42"
+       diyor ve ok tuşları aynı fotoğrafı iki kez geziyordu. Kopyalar artık
+       `data-kopya` taşıyor: ekran okuyucudan ve sekme sırasından çıkarıldı,
+       ışık kutusu da onları atlıyor.
+
+   3 · DURAKLAT DÜĞMESİ EKLENDİ. Hareket 36 saniye sürüyor ve yalnız fareyle
+       duruyordu; klavye ve dokunmatikte durdurmanın yolu yoktu (WCAG 2.2.2).
+
+   4 · ODAK HALKASI GERİ GELDİ — CSS'te `outline:none` vardı.
+
+   5 · BAŞLIK METNİ KAYNAĞA ÇEKİLDİ. "Sonsuz Kayan Galeri Arşivi" ve
+       "Fare ile üzerine gelince..." uydurmaydı; ikincisi ayrıca yalnız fare
+       kullananı anlatıyordu. Yerine belgedeki sayfa adı ve kare sayısı. */
+
+/* `oncelik` — şeridin ilk kartları hemen yüklenir.
+   Sonsuz şeritte `loading="lazy"` tek başına yetmiyor: kartlar yatayda
+   kayarken görüş alanına girdikçe yükleniyor, kullanıcı boş kutuların
+   geçtiğini görüyor. Ölçüldü: bölüme kaydırdıktan sonra bile 42 karttan
+   yalnız 6'sı yüklüydü, birincisi hiç yüklenmemişti. */
+const galeriKart = (g, no, kopya, oncelik = false) => `<button class="slider-card" type="button"
+            data-full="assets/img/rev2/${g.slug}.jpg"
+            data-no="${no}"${kopya ? ' data-kopya aria-hidden="true" tabindex="-1"' : ''}
+            aria-label="${no}. fotoğrafı büyüt">
+            <span class="slider-card-media">
+              <img src="assets/img/rev2/${g.slug}-800.webp" alt="Afloday arşivinden kare ${no}"
+                   decoding="async"
+                   loading="${oncelik ? 'eager' : 'lazy'}" width="600" height="750">
+            </span>
+          </button>`;
+
+/* Bir şerit: kareler iki kez basılır, ikinci tur kopya işaretli.
+   `-50%` kaydırması tam bir tur demek, o yüzden kopya sayısı birebir olmalı. */
+function sonsuzSerit(kareler, { yon = 'left', ilk = 0 } = {}) {
+  const iki = (n) => String(n).padStart(2, '0');
+  /* 1440px'te 250px'lik kartlardan ~6 tanesi görünüyor; 8 kart güvenli pay. */
+  const tur = (kopya) => kareler
+    .map((g, i) => galeriKart(g, iki(ilk + i + 1), kopya, !kopya && i < 8)).join('\n        ');
+  return `<div class="infinite-slider-wrapper">
+      <div class="infinite-slider-track track-${yon}">
+        ${tur(false)}
+        ${tur(true)}
+      </div>
+    </div>`;
+}
+
+const durdurDugmesi = `<button class="galeri-durdur" type="button" data-galeri-durdur aria-pressed="false">
+        <span data-durdur-metin>Duraklat</span>
+      </button>`;
+
+/* ANASAYFA VİTRİNİ — tek satır, /galeri'ye açılan tanıtım */
+export function homeGaleriVitrin(kareler) {
+  return `<div class="galeri-infinite-app" data-galeri-app data-lightbox>
+    <div class="galeri-bar">
+      <p class="eyebrow" style="margin:0">Galeri · ${kareler.length} kare</p>
+      ${durdurDugmesi}
+    </div>
+    ${sonsuzSerit(kareler, { yon: 'left' })}
+  </div>`;
+}
+
+/* /galeri SAYFASI — iki satır, ters yönlerde */
+export function awwwardsGaleri(kareler) {
+  const yarisi = Math.ceil(kareler.length / 2);
+  /* `galeri-sayfa-serit` tempoyu 36s'den 72s'ye indiriyor (CSS). */
+  return `<div class="galeri-infinite-app galeri-sayfa-serit" data-galeri-app data-lightbox>
+    <div class="galeri-bar" data-reveal>
+      <p class="eyebrow" style="margin:0">Galeri · ${kareler.length} kare</p>
+      ${durdurDugmesi}
+    </div>
+    ${sonsuzSerit(kareler.slice(0, yarisi), { yon: 'left', ilk: 0 })}
+    ${sonsuzSerit(kareler.slice(yarisi), { yon: 'right', ilk: yarisi })}
+  </div>`;
+}
+
+/* GENİŞLEYEN ŞERİT — 21st.dev `gallery-animation` uyarlaması.
+   Mekanik kaynaktakiyle aynı: paneller eşit paylaşır, birinin üzerine
+   gelince o `flex:2`ye çıkar, komşuları `flex:.5`e iner; üzerinde
+   olunmayan panel koyu perdeyle geride durur.
+
+   Uyarlama, hero slaydında yaptığımızın aynısı:
+   · framer-motion yok — geçiş CSS `flex-grow` ile, bağımlılık eklenmiyor
+   · `rounded-md` yok — köşe yuvarlaması tasarım dilinde yasak
+   · hover JS'e bağlı değil, `:hover` seçicisiyle; klavye için `:focus-within`
+   · dokunmatikte hover olmadığı için dar ekranda ızgaraya düşüyor (CSS)
+
+   Kaynak 4 görsel için tasarlanmış; 21 kareyi tek satıra dizmek her paneli
+   ekranın %4'üne indiriyordu. Bu yüzden `satir` kadar parçaya bölünüyor. */
+export function genisleyenSerit(kareler, { satir = 7, altYazi = 'Afloday atölyelerinden kare' } = {}) {
+  const parcalar = [];
+  for (let i = 0; i < kareler.length; i += satir) parcalar.push(kareler.slice(i, i + satir));
+
+  return `<div class="serit-yigin" data-lightbox>
+        ${parcalar.map((parca, p) => `<div class="serit">
+          ${parca.map((g, i) => {
+    const no = p * satir + i + 1;
+    return `<button class="serit-panel" type="button"
+            data-full="assets/img/rev2/${g.slug}.jpg"
+            data-no="${String(no).padStart(2, '0')}"
+            aria-label="${no}. fotoğrafı büyüt">
+            <img src="assets/img/rev2/${g.slug}-800.webp" alt="${altYazi} ${no}"
+                 loading="lazy" width="800" height="800">
+          </button>`;
+  }).join('\n          ')}
+        </div>`).join('\n        ')}
+      </div>`;
+}
+
+export function akordeon(kategoriler, { idOn = 'ak' } = {}) {
+  const iki = (n) => String(n).padStart(2, '0');
+
+  const oge = (k, i) => {
+    const id = `${idOn}-${k.id}`;
+    /* Sayaç `etkinlikler.mjs`ten geliyor; başlık ile sayfa künyesinin
+       ayrışmaması için ikisi de aynı yardımcıyı kullanıyor. */
+    const sayi = atolyeSayisi(k);
+    const olcu = sayi ? `${sayi} atölye` : '';
+
+    const giris = k.giris.map((p) => `<p>${p}</p>`).join('\n              ');
+
+    const bilim = k.bilim
+      ? `<div class="akordeon-bilim">
+              <p class="eyebrow">${k.bilim.baslik}</p>
+              <ul>${k.bilim.maddeler.map((m) => `<li>${m}</li>`).join('\n                  ')}</ul>
+            </div>`
+      : '';
+
+    const liste = sayi
+      ? `<ol class="atolye-liste">
+              ${k.atolyeler.map((a, j) => `<li class="atolye">
+                <p class="atolye-no">${iki(j + 1)}</p>
+                <div class="atolye-govde">
+                  <h4 class="atolye-ad">${a.ad}</h4>
+                  <p class="atolye-metin">${a.metin}</p>
+                </div>
+              </li>`).join('\n              ')}
+            </ol>`
+      : '';
+
+    /* Gönüllülükte atölyeler tek tek anlatılmıyor, belgede tek satırda
+       sayılıyor. Uydurma açıklama yazmak yerine olduğu gibi listeleniyor. */
+    const uygulanabilir = k.uygulanabilir
+      ? `<div class="akordeon-uygulanabilir">
+              <p class="eyebrow">${k.uygulanabilirEtiketi}</p>
+              <ul>${k.uygulanabilir.map((a) => `<li>${a}</li>`).join('\n                  ')}</ul>
+            </div>`
+      : '';
+
+    return `<section class="akordeon-oge" data-acik="${i === 0 ? 'true' : 'false'}">
+        <h3 class="akordeon-baslik">
+          <button class="akordeon-dugme" type="button" id="${id}-bas" aria-expanded="${i === 0}" aria-controls="${id}">
+            <span class="akordeon-no">${iki(i + 1)}</span>
+            <span class="akordeon-ad">${k.ad}</span>
+            ${olcu ? `<span class="akordeon-olcu">${olcu}</span>` : '<span></span>'}
+            <span class="akordeon-isaret" aria-hidden="true"></span>
+          </button>
+        </h3>
+        <div class="akordeon-govde" id="${id}" role="region" aria-labelledby="${id}-bas">
+          <div class="akordeon-ic">
+            <div class="akordeon-giris">
+              ${k.girisEtiketi ? `<p class="eyebrow">${k.girisEtiketi}</p>` : ''}
+              ${giris}
+              ${bilim}
+              ${uygulanabilir}
+            </div>
+            <figure class="akordeon-kapak">
+              ${resim({ gorsel: k.gorsel, alt: k.alt, klasor: 'etkinlik', kucuk: true })}
+            </figure>
+            ${liste}
+            ${kategoriGalerisi(k)}
+          </div>
+        </div>
+      </section>`;
+  };
+
+  return `<div class="akordeon" data-akordeon>
+      ${kategoriler.map(oge).join('\n      ')}
+    </div>`;
 }
 
 /* Bölüm açılış bandı — sitedeki her ana bölüm bu diziyle başlar */
@@ -320,8 +712,52 @@ export function plate({ href, img, alt, code, tag, name, note, dl, ratio = '' })
         </a>`;
 }
 
-export function layout({ title, desc, current, body, ogImage = 'assets/img/brand/og-kapak.jpg', schema = null, canonical = '', pad = false }) {
-  const jsonLd = schema ? `\n<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n</script>` : '';
+/* Kurumun kimlik düğümü — her sayfada `publisher` olarak geçiyor.
+   Arama motoru bunu tek varlık olarak birleştiriyor; sayfa başına ayrı
+   Organization yazmaktansa `@id` ile aynısına işaret ediyoruz. */
+const KURUM_ID = () => `${site.url}/#kurum`;
+
+function varsayilanSema({ title, desc, canonical }) {
+  const yol = canonical.replace(/\/$/, '');
+  const kirinti = [{ '@type': 'ListItem', position: 1, name: 'Anasayfa', item: `${site.url}/` }];
+  if (yol) kirinti.push({ '@type': 'ListItem', position: 2, name: title.split('—')[0].trim(), item: `${site.url}/${yol}` });
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization', '@id': KURUM_ID(),
+        name: site.name, url: `${site.url}/`,
+        logo: `${site.url}/assets/img/brand/logo.png`,
+        email: site.email, telephone: '+90 216 510 2809',
+        address: {
+          '@type': 'PostalAddress', streetAddress: site.address.street,
+          addressLocality: site.address.locality, addressRegion: site.address.region,
+          postalCode: site.address.zip, addressCountry: 'TR',
+        },
+        sameAs: [site.social.instagram, site.social.youtube],
+      },
+      {
+        '@type': 'WebPage', '@id': `${site.url}/${yol}#sayfa`,
+        url: `${site.url}/${yol}`, name: title, description: desc,
+        inLanguage: 'tr-TR', isPartOf: { '@id': `${site.url}/#site` },
+        publisher: { '@id': KURUM_ID() },
+      },
+      {
+        '@type': 'WebSite', '@id': `${site.url}/#site`,
+        url: `${site.url}/`, name: site.name, inLanguage: 'tr-TR',
+        publisher: { '@id': KURUM_ID() },
+      },
+      { '@type': 'BreadcrumbList', itemListElement: kirinti },
+    ],
+  };
+}
+
+export function layout({ title, desc, current, body, ogImage = 'assets/img/og/og-kapak.jpg', schema = null, canonical = '', pad = false }) {
+  /* Sayfaya özel şema verilmemişse kurum + sayfa + kırıntı yolu üretiliyor.
+     Önceden 20 sayfanın 11'inde hiç yapılandırılmış veri yoktu. */
+  const kullanilan = schema || varsayilanSema({ title, desc, canonical });
+  const jsonLd = `\n<script type="application/ld+json">\n${JSON.stringify(kullanilan, null, 2)}\n</script>`;
   return `<!doctype html>
 <html lang="tr">
 <head>
@@ -360,7 +796,11 @@ ${body}
 </main>
 
 ${footer()}
-${body.includes('class="galeri"') ? lightbox() : ''}
+${/* İşaretin kendisine bakıyoruz, sınıf adına değil. Önceden `class="galeri"`
+     aranıyordu; genişleyen şerit (.serit-yigin) farklı sınıf kullandığı için
+     ışık kutusu sayfaya hiç eklenmiyor, panellere tıklanınca bir şey
+     olmuyordu. Izgara da şerit de `data-lightbox` taşıyor. */ ''}
+${body.includes('data-lightbox') ? lightbox() : ''}
 <script src="assets/js/afloday.js" defer></script>
 </body>
 </html>

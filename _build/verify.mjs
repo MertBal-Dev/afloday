@@ -11,6 +11,19 @@ const flag = (file, kind, detail) => problems.push({ file, kind, detail });
 
 const exists = async (p) => { try { await access(p); return true; } catch { return false; } };
 
+/* Adresler canlı afloday.com'daki gibi uzantısız (vercel.json → cleanUrls).
+   Bir bağlantıyı çözerken önce olduğu gibi, sonra ".html" ekleyerek bakılıyor;
+   "/" ise anasayfaya karşılık geliyor. */
+const cozumle = (href) => {
+  const yol = href.replace(/^\//, '');
+  if (!yol) return 'index.html';
+  return yol.endsWith('.html') ? yol : yol + '.html';
+};
+const hedefVar = async (href) => {
+  const y = cozumle(href);
+  return (await exists(path.join(SITE, y))) || (await exists(path.join(SITE, href.replace(/^\//, ''))));
+};
+
 let totalImgs = 0, totalLinks = 0;
 
 for (const file of files) {
@@ -42,8 +55,12 @@ for (const file of files) {
     const src = attrs.match(/src="([^"]+)"/)?.[1];
     const alt = attrs.match(/alt="([^"]*)"/);
     if (!src) { flag(file, 'IMG', 'src yok'); continue; }
+    /* Süs görselinin doğru alt metni boş alt metindir; ekran okuyucu onu
+       atlamalı. Niyetin unutkanlıktan ayrılması için role="presentation"
+       şart koşuluyor — işaretlenmemiş boş alt hâlâ hata. */
+    const dekor = /role="presentation"/.test(attrs);
     if (!alt) flag(file, 'IMG', `alt niteliği yok: ${src}`);
-    else if (!alt[1].trim()) flag(file, 'IMG', `alt boş: ${src}`);
+    else if (!alt[1].trim() && !dekor) flag(file, 'IMG', `alt boş: ${src}`);
     if (!/^https?:/.test(src) && !(await exists(path.join(SITE, src)))) {
       flag(file, 'IMG', `dosya yok: ${src}`);
     }
@@ -59,13 +76,13 @@ for (const file of files) {
     if (/^(https?:|mailto:|tel:|#)/.test(href)) continue;
     const [p] = href.split('#');
     if (!p) continue;
-    if (!(await exists(path.join(SITE, p)))) flag(file, 'LINK', `hedef yok: ${href}`);
+    if (!(await hedefVar(p))) flag(file, 'LINK', `hedef yok: ${href}`);
   }
 
   /* --- iç çapa hedefleri --- */
-  for (const m of html.matchAll(/href="([a-z0-9\-\.]*)#([a-zA-Z][\w\-]*)"/g)) {
+  for (const m of html.matchAll(/href="([a-z0-9\-\.\/]*)#([a-zA-Z][\w\-]*)"/g)) {
     const [, page, anchor] = m;
-    const target = page || file;
+    const target = page ? cozumle(page) : file;
     if (!(await exists(path.join(SITE, target)))) continue;
     const targetHtml = target === file ? html : await readFile(path.join(SITE, target), 'utf8');
     if (!new RegExp(`id="${anchor}"`).test(targetHtml)) {
@@ -73,8 +90,10 @@ for (const file of files) {
     }
   }
 
-  /* --- yer tutucu metin --- */
-  if (/lorem ipsum|TODO|FIXME|XXX|placeholder text/i.test(html)) {
+  /* --- yer tutucu metin ---
+     Sözcük sınırı şart: sınırsız arama "metodolojimiz" içindeki "todo"yu
+     yer tutucu sanıyordu. */
+  if (/lorem ipsum|\bTODO\b|\bFIXME\b|\bXXX\b|placeholder text/i.test(html)) {
     flag(file, 'İÇERİK', 'yer tutucu metin bulundu');
   }
 }

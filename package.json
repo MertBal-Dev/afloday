@@ -1,0 +1,38 @@
+{
+  "name": "afloday",
+  "version": "2.0.0",
+  "description": "afloday.com — Next.js ile statik dışa aktarım. Mimari: docs/mimari.md",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "node _build/varliklar.mjs && next dev",
+    "build": "node _build/varliklar.mjs && next build",
+    "start": "next start",
+    "dogrula": "node _build/verify.mjs",
+    "varliklar": "node _build/varliklar.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MertBal-Dev/afloday.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MertBal-Dev/afloday/issues"
+  },
+  "homepage": "https://github.com/MertBal-Dev/afloday#readme",
+  "private": "true",
+  "dependencies": {
+    "next": "15.5.22",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.2",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "typescript": "5.9.3"
+  }
+}
