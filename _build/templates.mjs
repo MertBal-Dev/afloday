@@ -3,6 +3,25 @@ import { site, nav, refs, assets } from './data.mjs';
 import { slug as gorselSlug } from './gorsel-hazirla.mjs';
 import { etkinlikGorselleri } from './etkinlik-gorselleri.mjs';
 import { atolyeSayisi } from './etkinlikler.mjs';
+import { createHash } from 'node:crypto';
+import { readFileSync as _oku } from 'node:fs';
+
+/* ÖNBELLEK DAMGASI
+   `vercel.json` /assets/* için `max-age=31536000, immutable` veriyor.
+   `immutable` tarayıcıya "bir yıl boyunca hiç sorma" demek — ve bu ancak
+   adres içerikle birlikte değişiyorsa doğrudur. `afloday.css` adresi hiç
+   değişmediği için dönen ziyaretçi YENİ HTML + ESKİ CSS alıyordu; yeni
+   bölümler stilsiz kalıp üst üste biniyordu. Ctrl+Shift+R düzeltiyordu,
+   ama ziyaretçiden bunu bekleyemeyiz.
+
+   Çözüm: adrese içerik özeti ekleniyor. CSS değişince adres değişiyor,
+   tarayıcı yeni dosyayı indiriyor; değişmediyse önbellekten okuyor. */
+const damga = (yol) => {
+  try { return createHash('md5').update(_oku(yol)).digest('hex').slice(0, 8); }
+  catch { return String(Date.now()); }   /* dosya yoksa derlemeyi durdurma */
+};
+const CSS_DAMGA = damga('site/assets/css/afloday.css');
+const JS_DAMGA = damga('site/assets/js/afloday.js');
 
 const PHONE_E164 = { '0216 510 2809': '+902165102809', '0538 490 0727': '+905384900727', '0532 213 4476': '+905322134476' };
 
@@ -783,7 +802,7 @@ ${process.env.PREVIEW === '1' ? '<meta name="robots" content="noindex, nofollow"
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..500&display=swap">
-<link rel="stylesheet" href="assets/css/afloday.css">
+<link rel="stylesheet" href="assets/css/afloday.css?v=${CSS_DAMGA}">
 <script>document.documentElement.classList.add('js');</script>${jsonLd}
 </head>
 <body>
@@ -801,7 +820,7 @@ ${/* İşaretin kendisine bakıyoruz, sınıf adına değil. Önceden `class="ga
      ışık kutusu sayfaya hiç eklenmiyor, panellere tıklanınca bir şey
      olmuyordu. Izgara da şerit de `data-lightbox` taşıyor. */ ''}
 ${body.includes('data-lightbox') ? lightbox() : ''}
-<script src="assets/js/afloday.js" defer></script>
+<script src="assets/js/afloday.js?v=${JS_DAMGA}" defer></script>
 </body>
 </html>
 `;
