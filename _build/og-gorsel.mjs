@@ -72,8 +72,19 @@ for (const [kaynak, ad, ox, oy] of ISLER) {
      <stop offset="100%" stop-color="#131A15" stop-opacity="0"/></linearGradient></defs>
      <rect width="1200" height="630" fill="url(#g)"/></svg>`);
 
+  /* LOGO YATAYDA ORTALI — WhatsApp'a göre.
+     WhatsApp küçük önizlemede 1200×630'u KAREYE kırpıyor ve merkezden
+     alıyor: görünen alan x 285–915 arası, yani ortadaki 630 piksel.
+     Logo sol altta (x 72) olduğunda bu kırpmanın tamamen dışında kalıyor
+     ve markasız bir yeşillik görünüyordu. Ortalanınca hem WhatsApp'ın kare
+     kırpmasında hem LinkedIn'in geniş önizlemesinde duruyor. */
+  const logo = await beyazLogo(320);
+  const logoEn = 320;
   await sharp(taban)
-    .composite([{ input: perde }, { input: await beyazLogo(300), top: 478, left: 72 }])
+    .composite([
+      { input: perde },
+      { input: logo, top: 452, left: Math.round((1200 - logoEn) / 2) },
+    ])
     .jpeg({ quality: 84, mozjpeg: true })
     .toFile(cikti);
 
