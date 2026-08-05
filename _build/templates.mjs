@@ -175,7 +175,12 @@ export function footer() {
     </div>
     <div class="wrap ftr-base">
       <span>© <span data-year>2026</span> ${site.legal}</span>
-      <span style="margin-left:auto">${site.tagline}</span>
+      <!-- Sağdaki yuva eskiden ByFlash Agency imzasının yeriydi. Şimdilik
+           boş: site.tagline buraya konunca "Doğadan Gelişim Atölyesi"
+           telif satırında zaten geçtiği için iki kez yazılıyordu.
+           Geliştirici imzası eklenecekse yeri burası.
+           NOT: bu blok bir şablon dizesinin içinde, yorumda ters tırnak
+           kullanma — dizeyi kapatıp derlemeyi kırıyor. -->
     </div>
   </div>
 </footer>`;
