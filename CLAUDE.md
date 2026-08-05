@@ -39,7 +39,16 @@ sunulmuştu. **Kural yazarken kaynağını da yaz.**
 | **Sormadan commit/push yok** | Kullanıcı | ✅ evet (nota bak) |
 | **34 canlı adres korunacak** | Excel envanteri, DURUM sütunu | ✅ evet |
 | Tailwind kurulmayacak | Mimari karar, `docs/mimari.md` | ⚙️ gerekçeli teknik tercih |
-| Saç teli çizgi, serif başlık, bronz etiket, karmen vurgu | — | ⚠️ **tercih**, kural değil |
+| Saç teli çizgi, serif başlık | — | ⚠️ **tercih**, kural değil |
+| **Yeni palet: ağırlıkta yeşil, turuncu vurgu** | Ceylan hanım, 5 Ağustos | ✅ evet |
+
+**Palet notu (5 Ağustos akşamı uygulandı).** Karmen `#A82B45` ve bronz
+`#7D5F31` kalktı. Yeni değerler yeni logonun Pantone'larından
+(`docs/marka/Pant1-3.png`): turuncu `#F05625`, yeşil `#428840`, haki
+`#958A54`. Nereye ne konacağı ölçülerek belirlendi — turuncu açık zeminde
+2.84:1 veriyor, metin olarak kullanılamıyor; koyu bantta 5.11:1 ile
+mükemmel. Bölüşüm: **açık zemin yeşil, koyu bant turuncu, etiketler
+koyulaştırılmış haki `#6E6540`.** Yeni renk eklerken bu eşikleri koru.
 
 **İçerik kuralının tam hâli:** sitedeki her cümle ya 4 Ağustos belgesinde ya da
 canlı afloday.com dökümünde geçmeli. Rakam, rozet, referans, istatistik uydurma

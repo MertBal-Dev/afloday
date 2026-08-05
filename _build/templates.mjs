@@ -117,7 +117,7 @@ export function footer() {
   return `<footer class="ftr">
   <div class="ftr-cta">
     <div class="wrap ftr-cta-in">
-      <h2 class="d-l" data-reveal>Bir <em class="em">&ldquo;TIK&rdquo;</em> yakındayız.</h2>
+      <h2 class="d-l" data-reveal>Bir <em class="em">&ldquo;TIK&rdquo;</em> yakındayız</h2>
       <div class="btn-row" data-reveal style="--d:80ms">
         <a class="btn btn-primary" href="iletisim.html">İletişim Formu</a>
         <!-- Eskiden /katilim'a gidiyordu; o sayfa envanterde İPTAL. -->

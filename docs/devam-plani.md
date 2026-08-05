@@ -9,14 +9,61 @@
 
 ## Şu an neredeyiz
 
-**Site bitti ve yayında.** `afloday.vercel.app` — Ceylan hanıma gönderildi,
-geri bildirim bekleniyor. Blog ve `/admin` paneline henüz başlanmadı.
+**Ceylan hanımın geri bildirimi geldi (5 Ağustos akşamı), uygulanıyor.**
+Blog ve `/admin` paneline henüz başlanmadı.
 
 ```
-Faz 1 · Site         ✅ bitti, müşteri incelemesinde
-Faz 2 · Blog + panel ⬜ başlanmadı  ← SIRADAKİ İŞ
+Faz 1 · Site         ✅ bitti
+Faz 1b· Geri bildirim ⏳ yapı ve ölçek bitti, renk + 3 karar bekliyor  ← BURADASIN
+Faz 2 · Blog + panel ⬜ başlanmadı
 Yayın · DNS geçişi   ⛔ cPanel erişimi bekleniyor
 ```
+
+### Geri bildirimde yapılanlar
+
+| Ceylan hanımın sözü | Ne yapıldı |
+|---|---|
+| "atölyeler çok yazı yazı kalmış, görseller altta word düzeni gibi" | Etkinlik sayfası ikiye ayrıldı: 7 kategori kartlı genel bakış + 7 ayrı kategori sayfası. Akordeon kalktı. |
+| "hepsini bir arada görebilir, tıklayınca içine girebiliriz" | `kat-izgara` — 7 kart tek ekranda, tıklayınca `etkinlik-<id>` sayfası |
+| "aralara görseller girebilir, üzerinde olabilir yazılar" | Kategori kapağı tam genişlik, ad fotoğrafın üzerinde. Gövde mozaik: atölye kartı ve fotoğraf eşit hücreler. |
+| "çok büyük büyük geldi" + "yazılar büyüyebilir, orantılı olmaları en doğrusu" | Başlık 120→68px, gövde 15→17/18px. Oran **8:1 → 3.9:1** |
+| "sayfalarda boşluklar da çok" | Bölüm dolgusu 108→78px |
+| "açılan ana menüde başlıklar çok büyük" | Drawer bağlantısı 31→20px (telefon) |
+| "10 atölye, 7 kişi ekip vs olmasın" | 4 sayaç rozeti kaldırıldı |
+| "başlıklardan sonra nokta olmasın" | 10 başlıktan nokta kaldırıldı |
+| "referans logoları en az iki katı büyüsün" | 32→64px, hücre ölçüsü buna göre |
+
+Kanıt: `verify.mjs` 0 sorun · `a11y.mjs` 0 bulgu · 34/34 adres · 5 ekran ×
+26 sayfa = 130 kontrolde yatay taşma yok.
+
+### Panel şeridi — "hepsi bir arada derli toplu"
+
+Ceylan hanım naregitim.com/cozumlerimiz'i gösterdikten sonra WhatsApp'ta
+netleştirdi: *"Büyüklük olarak değil şekil olarak demek istedim. Hepsi bir
+arada derli toplu."*
+
+Referansın şekli Playwright ile ölçüldü: 6 dikey panel uç uca, aralarında
+boşluk yok, yalnız saç teli çizgi; etiketler dikey; panele gelince arka
+plandaki illüstrasyonun tamamı değişiyor; sayfa 2.9 ekran. Telefonda 2×3
+ızgaraya dönüyor, illüstrasyon hücreler boyunca devam ediyor.
+
+Bizde uygulanan hâli `_build/panel-serit.mjs`: 7 etkinlik kategorisi ve 5
+eğitim programı artık boşluklu kart ızgarası değil, uç uca panel şeridi.
+Referansın sihri el yapımı suluboyalarda; bizde fotoğraf var, o yüzden
+arka plan değişimi yerine panelin kendi fotoğrafı duruyor ve üzerine
+gelince doygunluk/parlaklık açılıyor.
+
+### Fotoğraf-atölye eşlemesi — Ceylan hanıma sorulacak
+
+Kategori sayfalarında fotoğraflar atölye kartlarının YANINDA değil,
+onlarla aynı ızgarada eşit hücre olarak duruyor. Sebep: dosya adları
+hangi fotoğrafın hangi ATÖLYEYE ait olduğunu söylemiyor, yalnız
+kategoriyi söylüyor. "Bonsai Atölyesi" başlığının yanına rastgele kare
+koymak o karenin o atölyeden olduğunu iddia etmek olurdu.
+
+**Ceylan hanım hangi karenin hangi atölye olduğunu söylerse** eşleme
+`etkinlik-gorselleri.mjs` içinde tek satırla yapılır ve her atölye kendi
+fotoğrafıyla görünür.
 
 ---
 
