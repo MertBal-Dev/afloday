@@ -582,7 +582,7 @@ const durdurDugmesi = `<button class="galeri-durdur" type="button" data-galeri-d
 export function homeGaleriVitrin(kareler) {
   return `<div class="galeri-infinite-app" data-galeri-app data-lightbox>
     <div class="galeri-bar">
-      <p class="eyebrow" style="margin:0">Galeri · ${kareler.length} kare</p>
+      <p class="eyebrow" style="margin:0">Galeri</p>
       ${durdurDugmesi}
     </div>
     ${sonsuzSerit(kareler, { yon: 'left' })}
@@ -595,7 +595,7 @@ export function awwwardsGaleri(kareler) {
   /* `galeri-sayfa-serit` tempoyu 36s'den 72s'ye indiriyor (CSS). */
   return `<div class="galeri-infinite-app galeri-sayfa-serit" data-galeri-app data-lightbox>
     <div class="galeri-bar" data-reveal>
-      <p class="eyebrow" style="margin:0">Galeri · ${kareler.length} kare</p>
+      <p class="eyebrow" style="margin:0">Galeri</p>
       ${durdurDugmesi}
     </div>
     ${sonsuzSerit(kareler.slice(0, yarisi), { yon: 'left', ilk: 0 })}

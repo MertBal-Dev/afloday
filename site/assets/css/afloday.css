@@ -4127,3 +4127,103 @@ a.index-row .index-meta::after,
 .ftr-cta  { padding-block: clamp(44px, 5vw, 80px); }
 .ftr-main { padding-block: clamp(32px, 3.6vw, 60px); }
 .ftr-base { padding-block: clamp(16px, 1.8vw, 28px); }
+
+/* ==========================================================================
+   PENCERE GİRİŞİ — anlatı başlığın altına, görselin yanına
+   ──────────────────────────────────────────────────────────────────────────
+   Başlık bloğu 150px, yanındaki görsel 330px idi; sol sütunun altında
+   180 piksellik boşluk kalıyor, anlatı görselin altından yeniden
+   başlıyordu. "Sayfalarda boşluklar da çok" ve "metin, görsel, yazı yazı
+   gidiyor daha dinamik olabilir" — anlatı yukarı alındı.
+   ========================================================================== */
+.pencere-giris { display: grid; gap: var(--s4); align-content: start; }
+.pencere-blok-giris { margin: 0; }
+.pencere-blok-giris p:not(.eyebrow) { max-width: 54ch; }
+
+/* Görsel artık metnin yanında duruyor; sütun biraz genişleyip
+   metinle aynı yüksekliğe yaklaşıyor. */
+.pencere-bas { grid-template-columns: auto minmax(0, 1.25fr) minmax(0, 0.85fr); }
+.pencere-gorsel img { aspect-ratio: 4 / 5; object-fit: cover; }
+
+@media (max-width: 900px) {
+  .pencere-gorsel img { aspect-ratio: 3 / 2; }
+}
+
+/* Element rozeti inline-flex ama .pencere-giris bir grid; grid hücreleri
+   varsayılan olarak esniyor ve rozet sütunun tamamını kaplıyordu.
+   rozet sütunu kaplamasın: */
+.pencere-giris > .element-rozet { justify-self: start; }
+
+/* ==========================================================================
+   HİZMET HATTI TERS — "metin, görsel, yazı yazı gidiyor daha dinamik olabilir"
+   İki hizmet hattı da görseli sağa koyuyordu; sayfa aşağı inerken aynı
+   düzen tekrarlıyordu. İkincisinde taraflar yer değiştiriyor.
+   Hakkımızda sayfasındaki .hk-bolum-ters ile aynı mantık.
+   ========================================================================== */
+.hat-ters { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); }
+.hat-ters .hat-anlati { order: 2; }
+.hat-ters .hat-gorsel { order: 1; }
+
+@media (max-width: 860px) {
+  .hat-ters .hat-anlati, .hat-ters .hat-gorsel { order: 0; }
+}
+
+/* ==========================================================================
+   ODAK HALKASI — gerçek WCAG hatası düzeltmesi
+   ──────────────────────────────────────────────────────────────────────────
+   Odak halkası `--carmine` (turuncu #F05625) kullanıyordu. Krem zemin
+   #E9E9E0 üzerinde 2.84:1 veriyor; WCAG 1.4.11 (arayüz bileşeni) ve
+   2.4.11 (odak göstergesi) 3:1 istiyor. Sınıfta kalıyordu.
+
+   Metin kontrast denetimleri bunu yakalamıyor — odak halkası bir metin
+   rengi değil, `outline-color`. O yüzden "1020 ihlal giderildi" turunda
+   da görünmemişti.
+
+   #C6401A tek değerle iki zeminde de geçen tek ton:
+     krem #E9E9E0 üzerinde 4.14:1 ✓
+     koyu #131A15 üzerinde 3.50:1 ✓
+   (#A83A16 kremde 5.24 veriyor ama koyuda 2.77 ile kalıyor.)
+   ========================================================================== */
+:root { --odak: #C6401A; }
+
+:focus-visible { outline: 2px solid var(--odak); outline-offset: 3px; }
+
+.kat-kart:focus-visible,
+.kat-gezinme-oge:focus-visible,
+.mz-foto:focus-visible,
+.pserit-panel:focus-visible { outline-color: var(--odak); }
+
+/* ==========================================================================
+   ETİKET RENGİ HAKİYE DÖNÜYOR
+   ──────────────────────────────────────────────────────────────────────────
+   Palet A'da etiketleri nötr griye (#5C6158) çekmiştim. Yan yana bakınca
+   gri jenerik duruyor: büyük harf gri eyebrow her kurumsal şablonda var.
+   Haki #6B6340 logonun HARF rengi, yani markanın kendi tonu, ve krem
+   zeminde 4.94:1 ile küçük puntoda da geçiyor.
+
+   İlk denemede haki kirli görünmüştü; o zaman yanında doygun turuncu
+   düğmeler vardı ve üçü birden aynı sıcak bölgede çakışıyordu. Düğmeler
+   koyu mürekkebe geçince haki yerine oturdu.
+   ========================================================================== */
+:root { --bronze: #6B6340; }
+
+/* ==========================================================================
+   KÂĞIT TONU — zemin kâğıda yaklaşıyor
+   ──────────────────────────────────────────────────────────────────────────
+   Eski zemin #E9E9E0'de kırmızı ve yeşil kanal tam eşitti (233/233/224),
+   tonu 106.6°. Bu, kâğıt değil beton okuyor. Referans olarak bakılan
+   premium botanik/wellbeing sitelerinin hepsinde kademeli R>G>B rampası
+   var ve ton 76-92 arasında kümeleniyor.
+
+   #EBE7DB aynı açıklıkta kalıyor (bağıl parlaklık 0.8098 → 0.7993) ama
+   tonu 91.6'ya çekiyor. Bütün kontrast çiftleri yeniden hesaplandı,
+   hiçbiri eşiğin altına düşmüyor:
+     gövde 14.06:1 · soluk 5.14:1 · etiket 4.88:1 · yeşil 5.27:1 · odak 4.09:1
+   ========================================================================== */
+:root {
+  --mount:      #EBE7DB;
+  --plate:      #F4F1E7;
+  --plate-deep: #E0DBCB;
+  --rule:       #CFC9B9;
+  --rule-soft:  #DFDACB;
+}

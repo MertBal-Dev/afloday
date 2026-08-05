@@ -317,7 +317,7 @@ ${folio({
         <div class="opener-rule"></div>
       </div>
 
-      <div class="hat" style="margin-top:clamp(40px,5vw,72px)">
+      <div class="hat hat-ters" style="margin-top:clamp(40px,5vw,72px)">
         <div class="hat-anlati">
           ${etkinlik.paragraflar.map(p => `<p class="body" style="color:var(--field-muted)" data-reveal>${p}</p>`).join('\n          ')}
           <div class="btn-row" style="margin-top:clamp(24px,3vw,40px)" data-reveal>
@@ -829,12 +829,23 @@ ${davetBlok}`;
     <div class="wrap">
       <div class="pencere-bas" data-reveal>
         <p class="pencere-no">Pencere ${String(p.no).padStart(2, '0')}</p>
-        <div>
+        <div class="pencere-giris">
           ${/* Belge: "kartın üstünde şu an hangi elementte olduğumuzu
                gösteren bir element rozeti bulunur" */ ''}
           <p class="element-rozet">${ikon(p.ikon)}<span>${p.element}</span></p>
           <h2 class="pencere-ad">${p.ad}</h2>
           <p class="pencere-element">Doğa Elementi: ${p.element}</p>
+          ${/* ANLATI BURAYA TAŞINDI — 5 Ağustos geri bildirimi:
+               "sayfalarda boşluklar da çok" ve "metin, görsel, yazı yazı
+               gidiyor daha dinamik olabilir".
+               Başlık bloğu 150 piksel, yanındaki görsel 330 piksel; sol
+               sütunun altında 180 piksellik boşluk kalıyordu ve anlatı
+               görselin altından yeniden başlıyordu. Anlatı yukarı gelince
+               boşluk kapanıyor ve metin görselle yan yana duruyor. */ ''}
+          <div class="pencere-blok pencere-blok-giris">
+            <p class="eyebrow">Anlatı</p>
+            <p>${p.anlati}</p>
+          </div>
         </div>
         <figure class="pencere-gorsel">
           ${resim({ gorsel: p.gorsel, alt: p.alt, kucuk: true })}
@@ -843,10 +854,6 @@ ${davetBlok}`;
 
       <div class="pencere-govde">
         <div class="pencere-anlati">
-          <div class="pencere-blok" data-reveal>
-            <p class="eyebrow">Anlatı</p>
-            <p>${p.anlati}</p>
-          </div>
           <div class="pencere-blok" data-reveal>
             <p class="eyebrow">Ne Sunuyoruz</p>
             <p>${p.neSunuyoruz}</p>
@@ -1376,13 +1383,15 @@ for (const [i, t] of team.entries()) {
   const body = `
 ${folio({
     eyebrow: 'Ekip · Afloday',
-    plateNo: `Ekip ${String(i + 1).padStart(2, '0')} / ${team.length}`,
+    /* "Ekip 01 / 7" levha numarası kalktı — Ceylan hanım açıkça
+       "7 kişi ekip vs onlar olmasın" dedi. Hem sayfa künyesinde hem
+       sağ üst levhada iki kez görünüyordu. */
+    plateNo: 'Afloday',
     lines: [yeni ? yeni.tamAd : t.name],
     lede: yeni ? yeni.ozet : t.role,
     size: 'h1',
     buttons: '<a class="btn btn-ghost" href="hakkimizda.html#ekip">Tüm ekip</a>',
     meta: [
-      ['Kayıt', `Ekip ${String(i + 1).padStart(2, '0')} / ${team.length}`],
       ['Görev', t.role],
       ['Merkez', `${site.address.locality}, ${site.address.region}`],
       ['İletişim', `<a href="mailto:${site.email}" style="color:inherit">${site.email}</a>`],
@@ -1547,7 +1556,7 @@ ${/* Başlık sayfanın belgedeki adı (satır 387). Önceki hâli "Atölyelerde
      ölçüme takılmamıştı. */ ''}
 ${folio({
     eyebrow: 'Afloday',
-    plateNo: `${galeriRev2.length} kare`,
+    plateNo: 'Afloday arşivi',
     lines: ['<em class="em">Galeri</em>'],
     lede: '',
     size: 'd-xl',
