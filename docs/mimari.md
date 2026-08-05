@@ -78,3 +78,43 @@ Tahmini süre: 2-3 gün. Teslimden önce yapılmamalı.
    yuvarlaması yok, saç teli çizgi, serif başlık, bronz etiket, karmen vurgu.
 4. **Görseller boru hattından geçer.** Ham fotoğraf doğrudan `site/assets`
    altına konmaz; `gorsel-hazirla.mjs` boyut ve biçim sınırlarını uygular.
+
+---
+
+## Vercel yayını — neden `framework: null`
+
+İlk dağıtım şu hatayla düştü:
+
+```
+The file "/vercel/path0/out/routes-manifest.json" couldn't be found.
+```
+
+Sebep: `vercel.json` içinde `framework: "nextjs"` ile `outputDirectory: "out"`
+birlikte tanımlıydı. Next.js derleyicisi yapı dosyalarını (`routes-manifest.json`
+dahil) `outputDirectory` altında arar. Bizde `out/` statik dışa aktarımın
+çıktısı; `routes-manifest.json` ise `.next/` içinde kalıyor. Derleme başarılı
+oldu, dağıtım adımı dosyayı bulamadığı için patladı.
+
+**Çözüm: siteyi olduğu gibi, statik site olarak yayınlamak.**
+
+```json
+"framework": null,
+"outputDirectory": "out",
+"cleanUrls": true
+```
+
+`output: 'export'` zaten tamamen statik 20 HTML üretiyor; sunucu bileşeni,
+API rotası, ISR yok. Next çalışma zamanına ihtiyaç yok, dolayısıyla Next
+derleyicisini devreden çıkarmak hem daha az sürprizli hem de gerçekte
+yayınladığımız şeye dürüst.
+
+`cleanUrls: true` şart: dosyalar `hakkimizda.html` biçiminde ve canlı
+afloday.com adresleri uzantısız. Bu ayar `/hakkimizda` isteğini
+`hakkimizda.html`'e bağlar, `.html` biçimini de 301 ile temiz adrese
+yönlendirir. 34 canlı adres bu sayede korunuyor.
+
+**Faz 2 uyarısı:** blog ve `/admin` paneli sunucu tarafı isteyecek. O zaman
+`next.config.mjs` içindeki `output: 'export'` kalkacak ve `framework` tekrar
+`"nextjs"` olacak; `outputDirectory` satırı ise silinecek (Next derleyicisi
+kendi `.next/` dizinini kullanır). İkisini aynı anda tanımlamak bu hataya
+geri döner.

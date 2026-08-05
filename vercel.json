@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "nextjs",
+  "framework": null,
   "buildCommand": "npm run build",
   "outputDirectory": "out",
   "headers": [
@@ -15,23 +15,96 @@
     }
   ],
   "redirects": [
-    { "source": "/mevsim-kapi-celengi-tasarimi-atolye", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/kuru-cicek-fanus-tasarim-atolyesi", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/cicek-aksesuar-tasarim-atolyesi", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/dogal-tutsu-herbaryum-tasarim-atolyesi", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/taze-cicek-buket-aranjman-tasarim-atolyesi", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/cicek-cerceve-tasarim-atolyesi", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/kokedama-tasarim-atolyesi", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/minyatur-bahce-tasarim-atolyesi", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/sukulent-aranjman-atolyesi", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/kavanoz-teraryum-tasarim-atolyesi", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/doga-cerceve-tasarim-atolyesi", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/mini-kavanoz-teraryum-atolyesi-3-yas", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/mini-bahce-atolyesi-5-yas", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/kus-evi-tasarim-atolyesi-5-yas", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/kalemlik-tasarim-atolyesi-5-yas", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/doga-cerceve-atolyesi-5-yas", "destination": "/dogadan-hobi-atolyeleri", "permanent": true },
-    { "source": "/katilim", "destination": "/iletisim", "permanent": true },
-    { "source": "/dogadan-gelisim-atolyeleri", "destination": "/doga-temelli-egitimlerimiz", "permanent": true }
-  ]
+    {
+      "source": "/mevsim-kapi-celengi-tasarimi-atolye",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/kuru-cicek-fanus-tasarim-atolyesi",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/cicek-aksesuar-tasarim-atolyesi",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/dogal-tutsu-herbaryum-tasarim-atolyesi",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/taze-cicek-buket-aranjman-tasarim-atolyesi",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/cicek-cerceve-tasarim-atolyesi",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/kokedama-tasarim-atolyesi",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/minyatur-bahce-tasarim-atolyesi",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/sukulent-aranjman-atolyesi",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/kavanoz-teraryum-tasarim-atolyesi",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/doga-cerceve-tasarim-atolyesi",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/mini-kavanoz-teraryum-atolyesi-3-yas",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/mini-bahce-atolyesi-5-yas",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/kus-evi-tasarim-atolyesi-5-yas",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/kalemlik-tasarim-atolyesi-5-yas",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/doga-cerceve-atolyesi-5-yas",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
+    },
+    {
+      "source": "/katilim",
+      "destination": "/iletisim",
+      "permanent": true
+    },
+    {
+      "source": "/dogadan-gelisim-atolyeleri",
+      "destination": "/doga-temelli-egitimlerimiz",
+      "permanent": true
+    }
+  ],
+  "cleanUrls": true
 }
