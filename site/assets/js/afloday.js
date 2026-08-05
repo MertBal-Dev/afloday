@@ -188,7 +188,15 @@
           entry.target.classList.add('is-in');
           io.unobserve(entry.target);
         });
-      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+        /* threshold 0 ŞART — yüzde eşiği uzun bölümlerde hiç tetiklenmiyor.
+           Görünürlük oranı, ögenin yüksekliğine bölünerek hesaplanıyor:
+           telefonda 7935px'lik akordeon 844px'lik ekranda en fazla %10
+           görünebiliyor, %12 eşiğine hiç ulaşamıyordu. Sonuç: bölüm
+           kalıcı olarak opaklık 0'da kalıp boş görünüyordu (masaüstünde
+           aynı bölüm 2953px olduğu için %28'e çıkıp tetikleniyordu).
+           threshold 0 ile herhangi bir kesişme yeter; "ekrana girsin de
+           sonra açılsın" etkisini rootMargin veriyor. */
+      }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
 
       targets.forEach(function (el) {
         if (el.getAttribute('data-reveal') === 'stagger') {

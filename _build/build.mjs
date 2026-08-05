@@ -1564,7 +1564,14 @@ export const sayfalar = pages
        kuruyor, gövdeyi olduğu gibi basıyor — tasarım birebir korunuyor. */
     const al = (re) => (tam.match(re) || [, ''])[1];
     const govde = (tam.match(/<body[^>]*>([\s\S]*?)<\/body>/) || [, ''])[1]
-      .replace(/<script src="assets\/js\/afloday\.js"[^>]*><\/script>/, '')
+      /* Betik etiketi gövdeden ÇIKARILMALI: Next kabuğu (app/layout.tsx)
+         onu kendisi ekliyor. Burada kalırsa sayfada iki kez bulunur ve
+         betik iki kez çalışır — dinleyiciler iki kez bağlanıp tıklamayı
+         aç-kapa yapar (menü ve akordeon ölü görünür), WebGL ikinci bir
+         program kurup konsolu hata yağmuruna tutar.
+         `[^"]*` şart: önbellek damgası eklenince adres `afloday.js?v=...`
+         oldu ve eski tam-eşleşme deseni tutmayı bıraktı. */
+      .replace(/<script src="assets\/js\/afloday\.js[^"]*"[^>]*><\/script>/, '')
       .trim();
 
     return {
