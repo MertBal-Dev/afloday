@@ -1,0 +1,342 @@
+[
+  {
+    "path": "/",
+    "name": "anasayfa",
+    "title": "AFLODAY | Çiçekli Bir Gün",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 479,
+    "gorsel": 39,
+    "iframe": 1,
+    "pdf": 0
+  },
+  {
+    "path": "/hakkimizda",
+    "name": "hakkimizda",
+    "title": "Afloday",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 427,
+    "gorsel": 33,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/ceylan-kalyon",
+    "name": "ceylan-kalyon",
+    "title": "CEYLAN KALYON | Afloday",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 738,
+    "gorsel": 35,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/tugce-hazinedar",
+    "name": "tugce-hazinedar",
+    "title": "TUĞÇE HAZİNEDAR | Afloday",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 471,
+    "gorsel": 33,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/derya-akyazici-kalyon",
+    "name": "derya-akyazici-kalyon",
+    "title": "DERYA AKYAZICI KALYON | Afloday",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 425,
+    "gorsel": 33,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/elif-celikkol-duman",
+    "name": "elif-celikkol-duman",
+    "title": "ELİF ÇELİKKOL DUMAN | Afloday",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 494,
+    "gorsel": 34,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/alara-apaydin-saruhan",
+    "name": "alara-apaydin-saruhan",
+    "title": "ALARA APAYDIN SARUHAN | Afloday",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 475,
+    "gorsel": 34,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/zeynep-altunhan",
+    "name": "zeynep-altunhan",
+    "title": "ZEYNEP ALTUNHAN | Afloday",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 515,
+    "gorsel": 33,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/muharrem-ozdemir",
+    "name": "muharrem-ozdemir",
+    "title": "MUHARREM ÖZDEMİR | Afloday",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 551,
+    "gorsel": 33,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/dogadan-gelisim-atolyeleri",
+    "name": "dogadan-gelisim-atolyeleri",
+    "title": "Doğadan Gelişim Atölyeleri",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 561,
+    "gorsel": 37,
+    "iframe": 0,
+    "pdf": 1
+  },
+  {
+    "path": "/dogadan-hobi-atolyeleri",
+    "name": "dogadan-hobi-atolyeleri",
+    "title": "Doğadan Hobi Atölyeleri",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 688,
+    "gorsel": 45,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/sosyal-sorumluluk-is-danismanligi",
+    "name": "sosyal-sorumluluk-is-danismanligi",
+    "title": "Sosyal Sorumluluk &amp; İş Danışmanlığı",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 393,
+    "gorsel": 35,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/mevsim-kapi-celengi-tasarimi-atolye",
+    "name": "mevsim-kapi-celengi-tasarimi-atolye",
+    "title": "Mevsim Kapı Çelengi Tasarımı Atölyesi",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 429,
+    "gorsel": 22,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/kuru-cicek-fanus-tasarim-atolyesi",
+    "name": "kuru-cicek-fanus-tasarim-atolyesi",
+    "title": "Kuru Çiçek Fanus Tasarım Atölyesi",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 513,
+    "gorsel": 12,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/cicek-aksesuar-tasarim-atolyesi",
+    "name": "cicek-aksesuar-tasarim-atolyesi",
+    "title": "Çiçek Aksesuar Tasarım Atölyesi",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 483,
+    "gorsel": 21,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/dogal-tutsu-herbaryum-tasarim-atolyesi",
+    "name": "dogal-tutsu-herbaryum-tasarim-atolyesi",
+    "title": "Doğal Tütsü &amp; Herbaryum Tasarım Atölyesi",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 577,
+    "gorsel": 17,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/taze-cicek-buket-aranjman-tasarim-atolyesi",
+    "name": "taze-cicek-buket-aranjman-tasarim-atolyesi",
+    "title": "Taze Çiçek Buket &amp; Aranjman Tasarım Atölyesi",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 560,
+    "gorsel": 17,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/cicek-cerceve-tasarim-atolyesi",
+    "name": "cicek-cerceve-tasarim-atolyesi",
+    "title": "Çiçek Çerçeve Tasarım Atölyesi",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 554,
+    "gorsel": 17,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/kokedama-tasarim-atolyesi",
+    "name": "kokedama-tasarim-atolyesi",
+    "title": "Kokedama Tasarım Atölyesi",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 531,
+    "gorsel": 17,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/minyatur-bahce-tasarim-atolyesi",
+    "name": "minyatur-bahce-tasarim-atolyesi",
+    "title": "Minyatür Bahçe Tasarım Atölyesi",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 533,
+    "gorsel": 12,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/sukulent-aranjman-atolyesi",
+    "name": "sukulent-aranjman-atolyesi",
+    "title": "Sukulent Aranjman Atölyesi",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 506,
+    "gorsel": 12,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/kavanoz-teraryum-tasarim-atolyesi",
+    "name": "kavanoz-teraryum-tasarim-atolyesi",
+    "title": "Kavanoz Teraryum Tasarım Atölyesi",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 509,
+    "gorsel": 17,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/doga-cerceve-tasarim-atolyesi",
+    "name": "doga-cerceve-tasarim-atolyesi",
+    "title": "Doğa Çerçeve Tasarım Atölyesi",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 551,
+    "gorsel": 2,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/mini-kavanoz-teraryum-atolyesi-3-yas",
+    "name": "mini-kavanoz-teraryum-atolyesi-3-yas",
+    "title": "Mini Kavanoz Teraryum Atölyesi (+3 yaş)",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 462,
+    "gorsel": 6,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/mini-bahce-atolyesi-5-yas",
+    "name": "mini-bahce-atolyesi-5-yas",
+    "title": "Mini Bahçe Atölyesi (+5 yaş)",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 477,
+    "gorsel": 10,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/kus-evi-tasarim-atolyesi-5-yas",
+    "name": "kus-evi-tasarim-atolyesi-5-yas",
+    "title": "Kuş Evi Tasarım Atölyesi (+5 yaş)",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 464,
+    "gorsel": 9,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/kalemlik-tasarim-atolyesi-5-yas",
+    "name": "kalemlik-tasarim-atolyesi-5-yas",
+    "title": "Kalemlik Tasarım Atölyesi (+5 yaş)",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 445,
+    "gorsel": 4,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/doga-cerceve-atolyesi-5-yas",
+    "name": "doga-cerceve-atolyesi-5-yas",
+    "title": "Doğa Çerçeve Atölyesi (+5 yaş)",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 452,
+    "gorsel": 9,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/doga-temelli-egitimlerimiz",
+    "name": "doga-temelli-egitimlerimiz",
+    "title": "Doğa Temelli Eğitimlerimiz",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 660,
+    "gorsel": 33,
+    "iframe": 2,
+    "pdf": 2
+  },
+  {
+    "path": "/gelecegi-tasarla",
+    "name": "gelecegi-tasarla",
+    "title": "Geleceği Yeşil Tasarla Projesi | Sosyal Sorumluluk",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 1217,
+    "gorsel": 58,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/gulumseyen-yarinlar-projesi",
+    "name": "gulumseyen-yarinlar-projesi",
+    "title": "Gülümseyen Yarınlar Projesi | Sosyal Sorumluluk",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 611,
+    "gorsel": 44,
+    "iframe": 0,
+    "pdf": 0
+  },
+  {
+    "path": "/iletisim",
+    "name": "iletisim",
+    "title": "İletişim",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 388,
+    "gorsel": 2,
+    "iframe": 2,
+    "pdf": 0
+  },
+  {
+    "path": "/katilim",
+    "name": "katilim",
+    "title": "Atölye Katılımı",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 424,
+    "gorsel": 2,
+    "iframe": 2,
+    "pdf": 0
+  },
+  {
+    "path": "/ik",
+    "name": "ik",
+    "title": "İnsan Kaynakları",
+    "desc": "AFLODAY | Çiçek Tasarım Atölyesi",
+    "kelime": 410,
+    "gorsel": 2,
+    "iframe": 1,
+    "pdf": 0
+  }
+]

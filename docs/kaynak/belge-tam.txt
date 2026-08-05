@@ -1,0 +1,551 @@
+===== word/document.xml =====
+AFLODAY.COM
+Anasayfa Metinleri — Son Hâli
+Ana sayfa açılışı orman video ile olacak, video sonrasında dönen slidelar gelebilir.
+1. Hero Bölümü — 3 Dönen Slayt
+[TABLO BAŞI]
+[HÜCRE] Slayt 1 · Kurumsal Eğitim ve Gelişim (Ana Slayt)
+[TABLO SONU]
+Üst Etiket (Eyebrow):  DOĞADAN İLHAMLA KURUMSAL GELİŞİM
+Ana Başlık (H1):  Geleceği Doğadan Tasarlıyoruz
+Alt Başlık:  Kurumlara, bireylere ve çocuklara; doğanın 3,8 milyar yıllık bilgeliğinden ilham alan, deneyimsel eğitim ve gelişim programları sunuyoruz.
+Birincil Buton:  Eğitim Programlarını İncele
+İkincil Buton:  Eğitim içi Doğadan Deneyimsel Öğrenme Atölyeleri
+1.Görsel Önerisi:  Doğada, huzurlu ama profesyonel bir çalışan görseli (mevcut marka görseli — ağaca yaslanmış erkek/kadın profesyonel)
+ÖRNEK TASARIM aşağıdadır. Metinlerin görsellerin üzerine yazılmasını istiyoruz.
+rest-after-work-office-beautiful-young-business-woman-black-suit-is-sitting-park-lawn-smiling-women-s-shoes-foreground
+[TABLO BAŞI]
+[HÜCRE] Slayt 2 · / Doğadan Deneyimsel Öğrenme Atölyeleri
+[TABLO SONU]
+Üst Etiket (Eyebrow):  DOĞADAN İLHAMLA DENEYİMSEL ÖĞRENME
+Ana Başlık (H1):  Öğrenmek Deneyimle Kalıcı Olur
+Alt Başlık:  Doğadan malzemelerle, aktif ve deneyimsel atölyelerle; eğitim programlarımızı teoride bırakmıyor, somut bir deneyime dönüştürüyoruz.
+2.Görsel Önerisi:  Doğaya uzanan, bir fidan/dalı elinde tutan yakın plan bir el görseli — “dokunarak öğrenme” hissini doğrudan taşır
+Resim1
+[TABLO BAŞI]
+[HÜCRE] Slayt 3 · Kişisel Sürdürülebilirlik
+[TABLO SONU]
+Üst Etiket (Eyebrow):  DOĞADAN İLHAMLA KİŞİSEL SÜRDÜRÜLEBİLİRLİK
+Ana Başlık (H1):  İnsan Kendi Senfonisini Kendi Tamamlamalı
+Alt Başlık:  Kurum stratejileri paralelinde; kurum çalışanlarına Kadın, Çocuk, Çevre ve İş Dünyası penceresinden; doğadan ilhamla kendi davranış ve alışkanlıklarını dönüştürmelerine rehberlik ediyoruz.
+Birincil Buton:  Geleceği Doğadan Tasarla Hareketi’ni  Keşfet
+3.Görsel Önerisi:  Doğaya uzanan elden yükselen nota/ışık motifi (mevcut “senfoni” marka görseli) — başlıktaki “senfoni” metaforuyla birebir örtüşür
+abstract-woman-hands-touching-music-notes-nature-background-music-concept
+2. Değer Önerisi Şeridi
+[TABLO BAŞI]
+[HÜCRE] Hero'nun Hemen Altı — 3 Sütun
+[TABLO SONU]
+① Kurumsal Eğitim & Gelişim Programları
+Doğadan ilhamla tasarlanmış, yetkinlik odaklı eğitim modülleriyle ekiplerinizin duygusal dayanıklılığını, iletişimini, iş birliğini ve yaratıcılığını güçlendiriyoruz.
+② Doğadan Deneyimsel Öğrenme
+Aktif ve deneyimsel öğrenme prensipleriyle; doğadan malzemeler ve atölye pratikleriyle desteklenen, teoride kalmayan, kalıcı öğrenme deneyimleri sunuyoruz.
+③ Kişisel Sürdürülebilirlik
+Kadın, Çocuk, Çevre ve İş Dünyası penceresinden; bireylerin doğadan ilhamla kendi davranış ve alışkanlıklarını dönüştürmesine rehberlik ediyoruz.
+earth-day-environment-concept-eco-concept
+[TABLO BAŞI]
+[HÜCRE] Neden Doğa Temelli Gelişim?
+[TABLO SONU]
+Amaç
+Taslak İçerik (4 istatistik kutusu)
+%59 — Z kuşağı çalışanların, iş teklifini kabul etmeden önce markanın çevresel politikalarını araştırma oranı (Deloitte).
+%88 — Güçlü amaç duygusuna sahip şirketlerde kendini motive/sadık hisseden çalışan oranı.
+%76 — Kuruluşunun sürdürülebilirlik vizyonundan haberdar olan çalışan oranı (Gallup).
+%58 — Etkili iş birliğine sahip ekiplerin verimlilik artışı (Korn Ferry, 2021-2023).
+Görsel yönü: Sade, büyük punto rakamlar + tek cümlelik açıklama; arka planda hafif doğa dokusu (yaprak/toprak deseni), fotoğraf yoğunluğu düşük tutulmalı ki veri okunabilir kalsın.
+mockup-business-hands-together-collaboration-partnership-project-teamwork-support-space-employees-workers-with-gesture-solidarity-staff-group-with-motivation-goal
+3. Eğitim Metodolojimiz: Kök Sal · Sorumluluk Al · Birlikte Yeşer
+[TABLO BAŞI]
+[HÜCRE] Değer Önerisinin Hemen Altı — Marka Metodolojisi
+[TABLO SONU]
+Tüm eğitim tasarımımız, bir bitkinin hayatta kalma ve serpilme sürecinden ilham alan 3 aşamalı bir paterne dayanır — bu, sadece doğanın değil, bağlılığı yüksek, proaktif ve verimli çalışanların da temel başarı formülüdür.
+1 · KÖK SALMAK — Derinleşmeden Yükselemezsin
+Gerçek büyüme yukarı değil, aşağı doğru başlar. “Ben” egosunun sınırlarından çıkıp “Biz” bilincine uyanmaktır — bireyin, ait olduğu kurum kültürünü ve değerlerini gerçekten sahiplenmesidir.
+2 · SORUMLULUK ALMAK — Akışını Bulan Nehir Ol
+Ekosistemin bir parçası olmak, rüzgârda savrulmak değildir. Bir nehrin denize ulaşma kararlılığıyla kendi yatağını bulması gibi; proaktif davranarak kendi potansiyeli ve etki alanı içinde inisiyatif kullanmaktır.
+3 · BİRLİKTE YEŞERMEK — Rekabet Değil, Simbiyoz
+Orman, ağaçların toplamından fazlasıdır — köklerin altında birbirini besleyen devasa bir zekadır. Kendini geliştirirken ekosistemi de besleyerek yukarı taşımaktır; en güçlü olan değil, en iyi bağ kuran hayatta kalır.
+beautiful-landscape-with-tree
+Eğitim & Gelişim Programlarımız
+[TABLO BAŞI]
+[HÜCRE] Doğanın Gücüyle Duygusal Dayanıklılık ve Esneklik / Kırılmadan esneyen, kriz anında güçlenen ekipler
+[TABLO SONU]
+Doğanın 3,8 milyar yıllık adaptasyon stratejileriyle çalışanlarınız, bir bambu gibi zorluklar karşısında kırılmadan esnemeyi ve kaos ortamında profesyonel dengesini korumayı öğrenir.
+Stres Yönetimi   ·   Esneklik   ·   Duygusal Dayanıklılık
+Yüz Yüze / Online   ·   1–2 Gün
+close-up-executives-ready-start-running
+[TABLO BAŞI]
+[HÜCRE] Doğanın İletişim Yeteneğinden Öğreneceklerimiz / Görülmeyeni duyan, güvene dayalı bir iletişim kültürü
+[TABLO SONU]
+Doğadaki mikoriza ağı prensibinden ilhamla katılımcılar, yalnızca söyleneni değil söylenmeyeni de duymayı öğrenir; geri bildirim bir eleştiri değil, gelişimi besleyen bir veriye dönüşür.
+İletişim   ·   Empati   ·   Çatışma Yönetimi
+Yüz Yüze / Online   ·   1–2 Gün
+handshake-environmentalists-generative-ai
+[TABLO BAŞI]
+[HÜCRE] Doğanın Takım Ruhuyla İş Ekosistemi / Kopuk parçalar değil, tek organizma gibi çalışan takımlar
+[TABLO SONU]
+“Wood Wide Web” prensibiyle takımlarınızı birbirine kenetlenmiş kolektif bir zekaya dönüştürür; “benim işim bitti” kültüründen “biz başardık” kültürüne geçişi sağlar.
+İş Birliği   ·   Takım Ruhu   ·   Sonuç Odaklılık
+Yüz Yüze / Online   ·   1–2 Gün
+business-people-assembling-puzzle
+[TABLO BAŞI]
+[HÜCRE] Doğanın İlhamıyla Yaratıcı Düşünme / İsraf etmeyen, hatadan beslenen bir inovasyon kültürü
+[TABLO SONU]
+Biyomimikri prensipleriyle mental blokları aşan katılımcılar, “doğa israf etmez” yasasından ilhamla kısıtlı kaynaklarla sınırları zorlayan, yalın ve yaratıcı çözümler üretmeyi öğrenir.
+Yaratıcı Düşünme   ·   Değişim Yönetimi   ·   Problem Çözme
+Yüz Yüze / Online   ·   1–2 Gün
+WhatsApp Image 2026-07-22 at 14.29.50 (2)
+[TABLO BAŞI]
+[HÜCRE] Değişimin Doğası ve Liderlik Ekosistemi Eğitimi / Mevsimler değişir, kökler kalır
+[TABLO SONU]
+Yeniden yapılanma, rol değişikliği veya belirsizlik dönemlerinde çalışanlarınız, değişimi tehdit değil doğal bir döngü olarak görmeyi ve bu döngüde kendi değer ve amaçlarını kaybetmeden dönüşmeyi öğrenir.
+Değişim Yönetimi   ·   Denge   ·   Dönüşüm Liderliği
+Yüz Yüze / Online   ·   1–2 Gün
+double-exposure-businessman-suit-with-nature-digital-icons-symbolizing-innovation-environmental-consciousness
+5. Doğadan Deneyimsel Öğrenme Atölyeleri
+[TABLO BAŞI]
+[HÜCRE] Eğitim Modüllerinin Hemen Altı — “Yöntem” Katmanı
+[TABLO SONU]
+Üst Etiket (Eyebrow):  EĞİTİMİN SOMUT HALİ
+Başlık (H2):  Doğadan Deneyimsel Öğrenme Atölyeleri
+Alt Başlık:  Eğitim programlarımız teoride kalmaz. Doğadan malzemelerle, aktif ve deneyimsel atölyelerle; kurumunuzun ve çalışanlarınızın öğrendiğini somut bir deneyime dönüştürüyoruz.
+Öne Çıkan 4 Doğadan Öğrenme Deneyim (Homepage Vitrin Kartları)
+① Bitki Dikim Saksı Değişimi Atölyesi:  Yüz Yüze / Online · Deneyim
+Değişimin Doğası Liderlik Ekosistemi Eğitimi Uygulaması
+Değişim ve liderliği doğanın metaforlarıyla görünür kılan deneyimsel bir öğrenme uygulamasıdır. Katılımcılar; saksıyı değişim süreci, kökleri değerler ve konfor alanı, yeni toprağı kurum kültürü, su ve ışığı ise destek sistemleri ile motivasyon olarak ele alırken, seçtikleri doğal materyaller aracılığıyla kendi değişim yolculuklarını somutlaştırırlar.
+② Doğadan Mottolu Çerçeve Tasarım Atölyesi:  Yüz Yüze / Online · Deneyim
+Doğanın İlhamıyla Yaratıcı Düşünme Eğitimi
+Katılımcıların kurutulmuş çiçeklerle ilham veren bir mesajı tasarlarken yaratıcı düşünme ve tasarım odaklı düşünme becerilerini deneyimlediği uygulamalı bir öğrenme deneyimidir. Süreç içerisinde beklenmedik tasarım değişiklikleriyle karşılaşarak esneklik, farklı bakış açıları geliştirme ve birlikte üretme becerilerini de keşfederler.
+“KURUMSAL HİZMETLER” Sayfası
+[TABLO BAŞI]
+[HÜCRE] Doğadan Deneyimsel Öğrenme Atölyeleri || Doğadan Etkinlik Atölye Deneyimleri
+[HÜCRE] Kurum kültürü ve çalışan yetkinlik gelişimi hedefiyle, koçluk yaklaşımıyla tasarlanan, konu odaklı doğa temalı atölyeler. / Katılımcıları günlük rutinde sık karşılaşmadıkları doğal malzemelerle buluşturarak zihne yeni kayıtlar açar, yıllardır etkinliği kanıtlanmış aktif öğrenme metoduyla hedeflenen kurum kültürü/yetkinlik konusunu derinleştiririz. Bilişsel ve fiziksel becerileri eş zamanlı çalıştırarak değişim, liderlik, yaratıcı düşünme, iletişim, iş birliği ve problem çözmede fark yaratırız. / Eğitimlerde oyunlaştırılmış aktif öğrenmeye imkanı sunan, somut çıktı yaratan, eğitim içi uygulama olarak yüz yüze veya Türkiye geneli online (kit gönderimi + canlı destek) uygulanır. / Katılımcı & Kurum Faydası / Problem çözme pratiği / Rutin dışı beceriyle zihinsel esneklik / Yaratıcı düşünme / Somut başarı (ürün üretme) / Terapi — rahatlama, stres atma / Eğlence, sosyal aktivite / Sonuç odaklılık (iş sonucu görme) / İşe adaptasyon desteği / Odaklanma / Doğadan Deneyimsel Öğrenme Atölyeleri: / Mottolu Çerçeve Tasarım Atölyesi, Bitki Dikim Tasarım Atölyesi, Kavanoz Teraryum Tasarım Atölyesi, Çiçek Aksesuar Tasarım Atölyesi vb || Doğa temasını koruyan ama belirli bir mesaj/konu taşımayan, yaratıcılığa ve keyifli vakit geçirmeye odaklanan atölyeler — hedefimiz sadece çalışan motivasyonu. / Kurum ihtiyacına, mevsime veya özel günlere göre şekillenen dönemsel konseptlerle; motivasyon, özel gün etkinliği, iç iletişim ve işe adaptasyon projelerine katılımcıları doğaya yaklaştırarak onlara keyifli vakit geçirme imkanı sunar, eşlik ederiz. / Sürdürülebilirlik → İleri Dönüşüm Kavanoz Teraryum Tasarım Atölyesi, Bitki Akvaryumu Tasarım Atölyesi, Kupa Bahçe Tasarım Atölyesi / İç iletişim → Motivasyon / dönemsel stres → Mottolu Çerçeve Tasarım Atölyesi, Kuru Çiçek Fanus Tasarım Atölyesi, Minyatür Bahçe Atölyesi vb / Mevsim Konseptleri → Sonbahar Konsepti - Bal Kabağı Sukulent Atölyesi, Yılbaşı Kapı Çelengi Tasarım Atölyesi, Hasır Şapka Tasarım Atölyesi vb / Özel Günler → Babalar Günü  Kokedama Atölyesi, Kadınlar Günü Çiçek Aksesuar Atölyesi, 23 Nisan Ulusal Egemenlik ve Çocuk Bayramı Doğadan Çocuk Hobi Atölyeleri (Mini Kavanoz Teraryum, Ahşap Kuş Evi Tasarım, İlk Bitkim Dikim Atölyesi vb), Sevgililer Günü Aşk Bahçesi Tasarım Atölyesi, Çiçek Buket Tasarım Atölyesi vb. / Gönüllülük Atölyeleri → Gönüllülük Eğitim Semineri + Çiçek Aksesuar Tasarım Atölyesi + ilgili derneğe bağış (kurumsal gönüllülük) Gönüllülük Eğitim Semineri + Saksısız Bitki Yetiştirme Atölyesi +ilgili derneğe bağış (kurumsal gönüllülük) / Ürün lansmanı → Dekoratif Obje Tasarım Atölyesi (ambalajın  tasarıma  dönüşmesi) İlham veren Mini Ekosistem Teraryum Atölyesi vb.
+[TABLO SONU]
+“Kurumsal Sosyal Sorumluluk Projeleri ve Proje Danışmanlığı”
+Çalışanların %76'sı kurumunun sürdürülebilirlik vizyonundan haberdar — ama çoğu, kendi rolünün bu vizyona nasıl katkı sağladığını bilmiyor. %31'i ise daha fazla katkıda bulunmak istediğini söylüyor. Biz, tam olarak bu “farkındalık-eylem boşluğu”nu kapatmak için buradayız. Kısacası: sürdürülebilirlik ve sosyal sorumluluk, artık çalışan bağlılığının, yetenek çekme gücünün ve genel kurumsal performansın doğrudan bir parçası.
+Sosyal sorumluluk danışmanlığımızın temelinde yalnızca akademik bilgi veya kurumsal deneyim değil, yaklaşık 20 yıla yayılan aktif gönüllülük ve sosyal etki çalışmaları yer alıyor. Toplum Gönüllüleri Vakfı'ndan Save the Children'a, Bir Dilek Tut Derneği'nden Koruncuk Vakfı’na, LÖSEV’den GSK PULSE Global Gönüllülük Programı'na kadar birçok farklı yapıda hem sahada hem proje tasarımı ve yönetiminde aktif görev aldık.
+Kütüphaneleri iyileştirdik, köy okullarını dönüştürdük, ölüm riski taşıyan çocukların dileklerini gerçeğe dönüştürdük, çocuk hakları farkındalık projeleri geliştirdik, kök hücre bağışı kampanyaları yürüttük, bağımlılıkla mücadele projelerinin yaygınlaşmasına katkı sağladık ve savaşın etkilerini yaşamış çocuklarla çocuk koruma alanında çalıştık.
+Bugün kurumlara sunduğumuz danışmanlık; teorik önerilere değil, sahada sınanmış deneyime, paydaş yönetimine ve ölçülebilir sosyal etki üretme yaklaşımına dayanıyor. Bu sayede kurumların yalnızca görünürlük sağlayan değil, gerçekten değer üreten sosyal sorumluluk projeleri geliştirmelerine rehberlik ediyoruz.
+brainstorming-collaboration-successful-partnership-analysis-by-young-business-asian-people-working-office-workspace
+Hizmetlerimiz
+Jenerik, her kuruma aynı şablonu uygulayan bir sosyal sorumluluk danışmanlığı sunmuyoruz. Kurumunuzun sektörüne, çalışan profiline ve faaliyet gösterdiği bölgenin ülke/toplum istatistiklerine dayanan, kurum kültürünüze özel bir yol haritası tasarlıyoruz.
+[TABLO BAŞI]
+[HÜCRE] 1  ·  İhtiyaç Analizi ve Proje Tasarımı
+[TABLO SONU]
+Kurumunuzun bulunduğu bölgenin/sektörün güncel sosyal ve çevresel ihtiyaç verilerini analiz ederek, şirketinizin değerleriyle örtüşen, otantik ve etkili bir sosyal sorumluluk projesi tasarlıyoruz — rafta duran hazır bir şablon değil, sizin “senfoninize” uyan bir proje.
+[TABLO BAŞI]
+[HÜCRE] 2  ·  Proje Süreç Danışmanlığı
+[TABLO SONU]
+Fikirden uygulamaya kadar tüm süreçte yanınızdayız: paydaş yönetimi, zaman planlaması, kaynak optimizasyonu ve olası risklerin öngörülmesi. Projenizin sahadaki karşılığını, kağıt üzerindeki vaadiyle aynı tutuyoruz.
+future-robotics-concept
+[TABLO BAŞI]
+[HÜCRE] 3  ·  Gönüllülük Seminerleri
+[TABLO SONU]
+Çalışanlarınızın farkındalığını eyleme dönüştürme fırsatı sunuyoruz. Bu seminerlerde gönüllülüğü, insana, topluma katkılarını anlatarak başlıyoruz. Kurumsal Sosyal Sorumluluk Projesi’ni tanıtıyor, kurumumun vizyonunu, çalışanın bu vizyona katkısının değerini belirtiyoruz.  Bir yandan tam da yukarıdaki %31'lik “daha fazla katkı istiyorum” diyen bireylerin aradığı fırsatı yaratırken, hiç bilgisi olmayan bireyleri de gönüllülükle tanıştırıp görünür kılıyoruz.
+Çalışma Modelimiz
+Her proje aynı 4 adımlı, şeffaf süreçten geçer:
+1 · Dinleriz — İhtiyaç Analizi
+Kurumunuzun kültürünü, çalışan profilini anlar,  toplumun ve faaliyet gösterdiğiniz bölgenin ihtiyaçlarını analiz ederiz.
+2 · Tasarlarız — Proje Tasarımı
+Verilere ve kurum kültürünüze dayanan, size özel bir sosyal sorumluluk projesi ve/veya gönüllülük programı kurgularız.
+3 · Yanınızda Yürürüz — Süreç Danışmanlığı
+Uygulama boyunca paydaş yönetiminden lojistiğe kadar bir süre sürecin içinde kalırız.
+4 · Ölçer ve Anlatırız — Raporlama
+Projenin etkisini somut verilerle raporlar, kurumunuzun ESG (Çevresel, Sosyal, Yönetişim) anlatısını güçlendiririz.
+close-up-business-man-hands-typing-laptop-computer-conference
+Bizi Farklı Kılan Ne?
+Şablon çözümler sunmuyoruz; her projeyi, kurumun faaliyet gösterdiği bölgenin ve sektörün güncel verilerini analiz ederek tasarlıyoruz.
+Projeleri yalnızca kurgulamıyor; ihtiyaç analizinden paydaş yönetimine, gönüllü koordinasyonundan iletişim stratejisine ve sürdürülebilirlik planlamasına kadar tüm süreci birlikte yönetiyoruz.
+Kurumsal eğitim modüllerimizi ve deneyimsel atölyelerimizi projelerle entegre ediyor; sosyal sorumluluk çalışmalarını çalışan gelişim yolculuğunun doğal bir parçasına dönüştürüyoruz.
+Yaklaşık 20 yıllık aktif gönüllülük ve sosyal etki deneyimimizi her projeye taşıyoruz.
+Çocuk hakları, eğitim, sağlık, afet, gönüllülük ve toplumsal kalkınma gibi farklı alanlarda ödüllü ve yüksek etki yaratan projeler tasarlıyor, hayata geçiriyor ve yönetiyoruz.
+Toplum Gönüllüleri Vakfı, Bir Dilek Tut Derneği, Save the Children ve GSK PULSE gibi ulusal ve uluslararası yapılarda edindiğimiz saha deneyimini danışmanlık süreçlerimize yansıtıyoruz.
+Kurumların sosyal sorumluluk çalışmalarını yalnızca görünürlük sağlayan uygulamalar olmaktan çıkarıyor, ölçülebilir ve sürdürülebilir sosyal etki yaratan uzun vadeli stratejilere dönüştürüyoruz.
+Çünkü gerçek sosyal etkiyi, masa başında değil; sahada edindiğimiz deneyimle tasarlıyor, birlikte hayata geçiriyoruz.
+business-people-holding-plant-sprout-together-unity-as-csr-commitmentgyre
+“Hakkımızda” Sayfası
+“Doğa milyarlarca yıldır kriz yönetiyor, iş birliği kuruyor, iletişim sağlıyor ve durmadan kendini yeniliyor. Peki biz, bu bilgeliği neden kurumlarımıza ve kendi hayatımıza taşımıyoruz?”
+2018 yılında bu soruyla yola çıktık. 2018'den bugüne aynı soruyla yola devam ediyoruz
+massive-network-tree-roots-dominating-forest-ground
+Hikayemiz
+2018 yılında, doğanın ilhamını kurumlarla ve bireylerle paylaşma vizyonuyla küçük bir adım attık. Başlangıçta doğadan malzemelerle yapılan atölyelerle şekillenen bu yolculuk, kısa sürede çok daha büyük bir soruya dönüştü: Doğa, 3,8 milyar yıllık bir “Ar-Ge” laboratuvarı işletiyor — kaosun içinde düzen kuruyor, kaynağını optimize ediyor, kriz anlarında esnek kalıyor. Bu stratejileri iş dünyasına ve kişisel gelişime taşıyamaz mıydık?
+Bu soru bizi, atölyelerin ötesine; doğanın kadim bilgeliğini kurumsal yetkinliklere dönüştüren, araştırmaya dayalı bir eğitim ve gelişim metodolojisi oluşturmaya götürdü. Zamanla, yaklaşık 20 yıla dayanan gönüllülük ve sosyal etki deneyimimizi de bu yaklaşımla birleştirerek, kurumların toplumsal fayda üretme hedeflerini stratejik ve ölçülebilir sosyal sorumluluk projelerine dönüştüren danışmanlık hizmetimizi geliştirdik.
+Bugün geldiğimiz noktada; araştırmaya dayalı eğitim ve gelişim programlarımız, insanları doğaya yaklaştıran doğa temelli hobi atölyelerimiz, veri temelli sosyal sorumluluk proje danışmanlığımız ve "Geleceği Doğadan Tasarla" hareketimizle; kurumlara, çalışanlarına, çocuklarına ve topluma doğanın ilhamını taşımaya devam ediyoruz. Çünkü bizim için doğa yalnızca ilham veren bir öğretmen değil; daha güçlü kurumlar, daha bilinçli bireyler ve daha sürdürülebilir bir gelecek tasarlamanın da en güvenilir rehberidir.
+concept-energy-efficient-light-bulb
+Vizyonumuz
+Doğadan ilham alan yaklaşımlarla; kurumların, çalışanların ve çocukların potansiyellerini keşfetmelerine, değişime uyum sağlamalarına ve iş ile yaşamlarında daha bilinçli, daha uyumlu ve daha sürdürülebilir bir gelecek oluşturmalarına rehberlik etmek.
+man-hand-holding-compass-forest
+Misyonumuz
+Doğanın bilgeliğini bilimsel araştırmalar ve deneyimsel öğrenme yöntemleriyle birleştirerek; eğitim programları, doğa temelli atölyeler ve sosyal sorumluluk projeleri tasarlıyoruz. Amacımız, kurumların ve bireylerin öğrendiklerini günlük yaşamlarına ve iş dünyasına taşıyabilecekleri kalıcı deneyimler oluşturmaktır.
+double-exposure-woman-nature-sad-woman-combined-with-climate-change-sustainability-eco
+Neden Doğa?
+Çünkü doğa, milyonlarca yıldır değişime uyum sağlamanın, iş birliği kurmanın ve sürdürülebilir değer üretmenin en başarılı örneğidir İş hayatını; hayatta kalma mücadelesi verilen vahşi bir arena olarak değil, her parçanın birbirini görünmez ağlarla beslediği, yaşayan ve bütünsel bir ekosistem olarak görüyoruz.
+Sağlıklı kurumların da tıpkı doğadaki ekosistemler gibi güçlü iletişim, karşılıklı güven, çeşitlilik, iş birliği ve uyumla geliştiğine inanıyoruz. Biz de bu bilgeliği iş dünyasına taşıyarak kurumların ve bireylerin tükenmek yerine yeşermelerine, dağılmak yerine kök salmalarına rehberlik ediyoruz.
+beautiful-landscape-contained-photo-frame
+“Doğa Temelli Eğitimlerimiz” Sayfası
+Doğa, 3,8 milyar yıldır kriz yönetiyor, iletişim kuruyor, iş birliği yapıyor, yeniliyor ve değişiyor. Biz bu eğitimlerde, doğanın test edip onayladığı stratejileri kurumunuza taşıyoruz. Her modül, çalışanlarınızın hem iş hayatında hem de bunun doğal bir uzantısı olan sosyal hayatında güçlenmesini istediğimiz belirli “kasları” hedefler — çünkü gerçek gelişim, mesai saatiyle sınırlı kalmaz.
+[TABLO BAŞI]
+[HÜCRE] Doğanın Gücüyle Duygusal Dayanıklılık ve Esneklik / Bambu Gibi Esnemek, Kırılmadan Kalmak
+[TABLO SONU]
+Açılış Sahnesi
+Pazartesi sabahı, üst üste üç kriz toplantısı, bir müşteri şikâyeti ve henüz cevaplanmamış kırk e-posta… Ayşe daha masasına oturmadan “bugün de mi böyle olacak?” diye düşünür. Oysa o sabah, ofis penceresinin dışındaki söğüt ağacı sert rüzgârda eğilir, savrulur — ama kırılmaz. Çünkü kökleri derin, gövdesi esnektir.
+Doğadan Öğrendiğimiz Ders
+Doğa milyarlarca yıldır kriz yönetiyor: kuraklık, don, fırtına… Hayatta kalan tür en güçlü olan değil, en esnek olandır. Bambu en sert fırtınada bile yere yatar ama kırılmaz; çünkü direnmez, akışa katılır. Bu eğitim, çalışanlarınıza tam bu refleksi kazandırır: dirençli olmak katı durmak değil, doğru yerde esneyip doğru yerde köklenmektir.
+Bu Eğitimle Güçlenen Kaslar
+Stres Kası — baskı altında karar netliğini koruma
+Toparlanma Kası — bir aksilikten sonra hızla “sıfırlanabilme”
+Sınır Kası — tükenmeden önce sağlıklı “hayır” diyebilme
+Olumlu Bakış Kası — zorluğu tehdit değil veri olarak görme
+İş Hayatına Yansıması
+Ekipler kriz anında paniğe kapılmak yerine önceliklendirme yapabilir hale gelir; tükenmişlik belirtileri erken fark edilir ve yönetilir.
+Dolaylı Sosyal Hayata Yansıması
+İş yerinde biriken gerginlik eve taşınmaz; kişi akşam yorgun ama “boşalmış” değil “dolu” hisseder — aile ve arkadaşlık ilişkilerine daha fazla enerji kalır.
+Program Bilgileri
+Format:  Yüz Yüze / Online
+Süre:  1-2 Gün
+Hedef Kitle:  Tüm çalışanlar, özellikle yoğun tempoda çalışan ekipler
+Hedef Yetkinlikler:  Stres Yönetimi · Esneklik · Duygusal Dayanıklılık · Olumlu Düşünme
+close-up-executives-ready-start-running
+[TABLO BAŞI]
+[HÜCRE] Doğanın İletişim Dili Eğitimi / Kökler Gibi Sessizce Beslemek
+[TABLO SONU]
+Açılış Sahnesi
+Toplantıda Mehmet bir fikir söyler ama kimse gerçekten dinlemez; herkes kendi cevabını hazırlamakla meşguldür. Toplantı biter, hiçbir şey netleşmemiştir ama herkes “konuştuk” sanır. Oysa ormanda bir ağaç tehlikeyi fark ettiğinde, bu bilgi kök ağı üzerinden komşu ağaçlara saniyeler içinde ulaşır — net, kayıpsız, çarpıtılmadan.
+Doğadan Öğrendiğimiz Ders
+Mikoriza ağı ormanın “interneti”dir: ağaçlar birbirine yalnızca besin değil bilgi de gönderir. Bu iletişim net, zamanında ve karşılıklı güvene dayalıdır. Bu eğitim, katılımcılara “gürültüyü” değil “sinyali” iletmeyi öğretir: doğru zamanda, doğru zeminde, doğru mesajı vermek.
+Bu Eğitimle Güçlenen Kaslar
+Dinleme Kası — söylenmeyeni (ton, beden dili, duygu) fark etme
+Netlik Kası — mesajı niyet edildiği gibi iletebilme
+Geri Bildirim Kası — eleştiriyi saldırı değil besleyici veri olarak sunma/alma
+Empati Kası — karşı tarafın bakış açısını gerçekten anlama
+İş Hayatına Yansıması
+Yanlış anlaşılmalar azalır, toplantılar daha kısa sürede daha net kararlarla biter; geri bildirim kültürü savunmacılık değil gelişim yaratır.
+Dolaylı Sosyal Hayata Yansıması
+İş yerinde geliştirilen “gerçekten dinleme” becerisi, kişinin evdeki ve arkadaşlık ilişkilerindeki tartışmaları da yumuşatır — duyulduğunu hissetmek her ilişkide fark yaratır.
+Program Bilgileri
+Format:  Yüz Yüze / Online
+Süre:  1-2 Gün
+Hedef Kitle:  Tüm çalışanlar, yöneticiler, müşteriyle birebir çalışan ekipler
+Hedef Yetkinlikler:  İletişim · Dinleme · Empati · Çatışma Yönetimi · Güvenli Davranış
+handshake-environmentalists-generative-ai
+[TABLO BAŞI]
+[HÜCRE] Doğanın Takım Ruhuyla İş Ekosistemi Eğitimi / Orman Tek Bir Ağaçtan İbaret Değildir
+[TABLO SONU]
+Açılış Sahnesi
+Proje gecikir. Herkes kendi görevini tamamladığını söyler ama “bütün” ortaya çıkmamıştır; “benim işim bitti” cümlesi odada dolaşır durur. Ormanda ise hiçbir ağaç “benim işim bitti” demez — kökler suyu taşır, mantarlar besini dağıtır, yapraklar güneşi işler; hiçbiri diğerinden daha az önemli değildir.
+Doğadan Öğrendiğimiz Ders
+Orman, ağaçların toplamından fazlasıdır: köklerin altında birbirini besleyen devasa bir zekâdır (“Wood Wide Web”). En güçlü olan değil, en iyi bağ kuran hayatta kalır. Bu eğitim, ekiplere rekabeti değil tamamlayıcılığı öğretir.
+Bu Eğitimle Güçlenen Kaslar
+Güven Kası — hatanın cezalandırılmadığı, fikrin özgürce paylaşıldığı bir zemin kurma
+Rol Netliği Kası — kendi uzmanlığında derinleşip bütüne katkı sağlama
+Ortak Hedef Kası — dağınık enerjiyi aynı “ışığa” hizalama
+Dayanışma Kası — “benim eksiğim, senin fazlan” ile birbirini yukarı taşıma
+İş Hayatına Yansıması
+Projeler silo hâlinde değil bütünsel ilerler; ekip içi güven arttıkça karar alma hızı ve kalitesi yükselir.
+Dolaylı Sosyal Hayata Yansıması
+“Birlikte başarma” alışkanlığı kazanan kişi, ailesinde ve arkadaş gruplarında da sorumluluğu paylaşmaya, her şeyi tek başına taşımamaya daha yatkın hâle gelir.
+Program Bilgileri
+Format:  Yüz Yüze / Online
+Süre:  1-2 Gün
+Hedef Kitle:  Takımlar, proje ekipleri, departman içi/departmanlar arası gruplar
+Hedef Yetkinlikler:  İş Birliği · Takım Oyunu Oynama · Güvenli Davranış · Sonuç Odaklılık
+double-exposure-businessman-suit-with-nature-digital-icons-symbolizing-innovation-environmental-consciousness
+[TABLO BAŞI]
+[HÜCRE] Doğanın İlhamıyla Yaratıcı Düşünme Eğitimi / Doğa İsraf Etmez, Sadece Dönüştürür
+[TABLO SONU]
+Açılış Sahnesi
+Bir proje başarısız olur. Toplantıda kimse konuşmak istemez, çünkü “başarısızlık” kelimesi odada bir suçluluk havası yaratır. Oysa doğada “hata” diye bir şey yoktur — düşen bir yaprak toprağa geri döner ve bir sonraki filizin besinine dönüşür.
+Doğadan Öğrendiğimiz Ders
+Biyomimikri, doğanın milyonlarca yıllık Ar-Ge’sinden ilham alır: doğa asla israf etmez, her “atık” bir sonraki adımın yakıtıdır. Bu eğitim, katılımcılara başarısızlığı bir engel değil, bir sonraki doğru adımın gübresi olarak görmeyi öğretir.
+Bu Eğitimle Güçlenen Kaslar
+Cesaret Kası — yeni ve alışılmadık fikirleri söyleyebilme
+Yeniden Çerçeveleme Kası — hatayı “veri”ye, atığı kaynağa dönüştürme
+Yalınlık Kası — kısıtlı kaynakla maksimum çözüm üretme
+Uyum Kası — değişen koşullara hızla yön değiştirme
+İş Hayatına Yansıması
+Ekipler risk almaktan çekinmez; deneme-yanılma bir utanç kaynağı değil doğal bir süreç hâline gelir ve inovasyon hızlanır.
+Dolaylı Sosyal Hayata Yansıması
+Kişi kendi hayatındaki “başarısızlıkları” da daha az yargılayıcı bir gözle görmeye başlar — bu, özgüveni ve genel yaşam doyumunu olumlu etkiler.
+Program Bilgileri
+Format:  Yüz Yüze / Online
+Süre:  1-2 Gün
+Hedef Kitle:  İnovasyon/Ar-Ge ekipleri, tüm yaratıcı süreçlerde yer alan çalışanlar
+Hedef Yetkinlikler:  Tasarım Odaklı Düşünme · Yaratıcılık · Değişim Yönetimi
+creativity-design-process-graphics-concept
+[TABLO BAŞI]
+[HÜCRE] Değişimin Doğası ve Liderlik Ekosistemi Eğitimi / Mevsimler Değişir, Kökler Kalır
+[TABLO SONU]
+Açılış Sahnesi
+Şirket yeniden yapılanıyor. Roller değişiyor, bazı ekipler birleşiyor, bazı süreçler tamamen kayboluyor. Cem iki yıldır aynı masada oturuyordu; şimdi hem yeni bir ekip yönetecek hem kendi rolünü yeniden tanımlayacak. “Neye tutunacağım?” sorusu aklından geçiyor. Oysa doğada sonbahar geldiğinde ağaç yapraklarını bırakır — ama kök kalır, gövde kalır; ağaç “kendi olmaktan” çıkmaz, yalnızca formunu değiştirir.
+Doğadan Öğrendiğimiz Ders
+Mevsimler doğaya sürekli değişmesini dayatır; ama hiçbir ağaç bu değişimle yok olmaz — kökleri sabit kalır, kimliğini korur, yalnızca dışa dönük formunu uyarlar. Yangın sonrası ormanlarda bile toprak yeniden filizlenir; değişim sonun değil, yeni bir döngünün başlangıcıdır. Bu eğitim, katılımcılara değişimi tehdit değil doğal bir döngü olarak görmeyi ve bu döngüde “kök”lerini — değerlerini, amaçlarını — kaybetmeden dönüşmeyi öğretir.
+Bu Eğitimle Güçlenen Kaslar
+Denge Kası — belirsizlik içinde bile iç istikrarı koruma
+Bırakma Kası — artık işe yaramayan alışkanlığı/rolü bırakabilme
+Dönüşüm Liderliği Kası — değişimi başkalarına da güven verecek şekilde yönetme
+Kök Kası — değişirken bile kendi değer ve amacına bağlı kalma
+İş Hayatına Yansıması
+Yeniden yapılanma, rol değişikliği veya belirsizlik dönemlerinde çalışanlar dirençten çıkıp süreci yönlendiren aktif özneler hâline gelir; yöneticiler ekiplerine değişim sürecinde güven veren bir duruş sergiler.
+Dolaylı Sosyal Hayata Yansıması
+Değişimle kurulan bu sağlıklı ilişki, kişinin hayatındaki büyük dönüm noktalarında (taşınma, yeni şehir, ilişki değişiklikleri) da daha az kaygı, daha fazla uyum getirir.
+Program Bilgileri
+Format:  Yüz Yüze / Online
+Süre:  1-2 Gün
+Hedef Kitle:  Değişim/dönüşüm sürecindeki kurumlar, yöneticiler, liderlik pozisyonundaki çalışanlar
+Hedef Yetkinlikler:  Değişim Yönetimi · Denge · Esneklik · Dönüşüm Liderliği · Belirsizlikle Baş Etme
+double-exposure-businessman-suit-with-nature-digital-icons-symbolizing-innovation-environmental-consciousness
+“Geleceği Doğadan Tasarla Hareketi” Hub Sayfası
+1. Sayfa Akışı (Yukarıdan Aşağıya)
+① Hero — Senfoni Girişi
+Dünyamız, adeta bir senfoni gibi... Farklı sesler, farklı melodiler, hepsi bir araya gelerek büyüleyici bir uyum yaratıyor. Bu senfonide her sesin önemi var, her melodinin yeri var. Peki, ya bu senfonide bazı sesler duyulmuyorsa, bazı melodiler çalınmıyorsa?
+② Dört Elementin Tanıtımı
+“Bu senfoninin en önemli unsurlarının doğanın dört elementi ile yakından ilgili olduğunu biliyor muydunuz?”
+Çevre–Toprak / Kadın–Su / Çocuk–Ateş / İş Dünyası–Hava (eşleşmesi 4 küçük ikonla gösterilir. Bu blok, aşağıdaki 4 pencereye giden bir “harita” işlevi görür.)
+③ Dört Pencere — Anchor Kartlar
+Aynı sayfada 4 büyük kart (tıklanınca sayfa içinde ilgili bölüme kayar — anchor link). Her kart kendi rengini taşır ve kartın üstünde şu an hangi elementte olduğumuzu gösteren bir “element rozeti” bulunur.
+④ Her Pencere İçin Detaylı Bölüm
+Aşağıda 4 pencerenin her biri için: anlatı, sunduğumuz programlar/atölyeler listesi ve ilgili eğitim modülüne çapraz bağlantı yer alıyor.
+⑤ Kapanış — Ortak Zemin
+PDF'teki “Odaklanılan Gelişim Alanları” bölümü (Sürekli İletişim, Uyum & İş Birliği, EÇK, Esenlik, Sürekli Yenilenme, Çevresel Liderlik) burada kapanış olarak kullanılabilir — 4 pencerenin ortak paydası olan yetkinlik çerçevesini gösterir. Ardından CTA: “Kurumunuzun Senfonisini Tamamlamaya Hazır mısınız?” → İletişim / Teklif Al.
+Geleceği Doğadan Tasarla Hareketi bireyleri doğaya yaklaştırarak kendi potansiyellerini gerçekleştirmelerini destekler.
+Geleceği Doğadan Tasarla Hareketi Yaklaşımımız
+Kalıcı davranış değişikliği, tek bir eğitim ya da atölyeyle gerçekleşmez. Bu nedenle Geleceği Doğadan Tasarla programlarımızı; seminerler, deneyimsel atölyeler ve kurum içi iletişim çalışmalarıyla birbirini tamamlayan gelişim yolculukları olarak tasarlıyoruz.
+Programlarımız, davranış değişikliği alanında yaygın olarak kullanılan bilimsel modellerden ilham alarak tasarlanır. Araştırmalar, kalıcı davranış değişikliğinin tek seferlik eğitimlerle değil; belirli aralıklarla gerçekleşen tekrar eden temaslar ve uygulamalarla desteklendiğinde daha başarılı olduğunu göstermektedir. Bilimsel davranış değişikliği modellerinden ilham alarak, hedeflenen kazanım için en az 4 temas öneriyoruz. Her temas, katılımcının öğrendiklerini günlük yaşamına taşımasını destekler; belirli aralıklarla gerçekleşen bu süreç, farkındalığın kalıcı alışkanlıklara dönüşmesine katkı sağlar.
+İhtiyaca göre programlarımız  4, 8 veya yıl boyu devam eden temaslarla kurumunuza özel olarak planlanabilir.
+abstract-woman-hands-touching-music-notes-nature-background-music-concept
+[TABLO BAŞI]
+[HÜCRE] PENCERE 1 / Çevre / Doğa Elementi: Toprak
+[TABLO SONU]
+business-people-holding-plant-sprout-together-unity-as-csr-commitmentgyre
+Anlatı
+Toprak, yaşamın başladığı ve sürdüğü yerdir. Sessizce besler, korur ve geleceği bugünden inşa eder. Biz de çevreyi aynı bakış açısıyla ele alıyor; seminerlerimiz ve doğadan hobi atölyelerimizle kurumların ve bireylerin sürdürülebilir yaşam alışkanlıkları geliştirmelerine, karbon ayak izlerini azaltmalarına ve doğayla daha güçlü bir bağ kurmalarına katkı sağlıyoruz.
+Ne Sunuyoruz
+Kurumlara çevre farkındalık programları sunuyoruz: iklim değişikliği , kirlilik kaynakları, biyoçeşitlilik, sürdürülebilir kalkınma, enerji tasarrufu, su ve atık yönetimi konularında hem bilgi hem pratik beceri kazandıran seminer ve doğadan hobi  atölyeleri.
+Bu Pencerede Yer Alacak Programlar / Atölyeler
+Karbon Ayak İzimizi Azaltalım (Seminer)
+Akıllı Mutfak Akıllı Alışveriş (Seminer)
+Yeni Başlayanlar İçin Kentte Ekolojik Yaşam (Seminer)
+Sürdürülebilir Yaşam: Kompost Yapımı (Deneyim)
+Doğayla Kavuşma Zamanı: Orman Banyosu Etkinliği (Deneyim)
+Doğanın İlhamıyla Geri Dönüşüm Çiçek Aksesuar Tasarım Atölyesi (Deneyim)
+Sahi Bu Ne Demek Konuşma Serileri (Seminer)
+[TABLO BAŞI]
+[HÜCRE] PENCERE 2 / Kadın / Doğa Elementi: Su
+[TABLO SONU]
+day-holding-sale-consumerism-red-bag
+Anlatı
+Su, hem durgun derinliği hem de dalgaların gücüyle yaşamın akışını temsil eder. Kadın da tıpkı su gibi; uyum sağlayan, dönüştüren ve ilham veren bir güçtür. Bu nedenle seminerlerimiz ve doğadan hobi atölyelerimiz kadınların doğal liderlik ve girişimci ruhunu destekleyerek sürdürülebilir fikirleri hayata geçirmelerine odaklanır.
+Ne Sunuyoruz
+Kadınların bedenlerini ve zihinlerini en iyi şekilde kullanmalarını destekleyen fiziksel ve ruhsal sağlık gelişim programları sunuyoruz — egzersiz, beslenme, stres yönetimi, kişisel gelişim ve doğadan ilhamla üretim/atölye deneyimlerini bir araya getiriyoruz.
+Bu Pencerede Yer Alacak Programlar / Atölyeler
+Rahmin Bilge Yolu (Seminer)
+Minimalist Ebeveynlik (Seminer)
+Beslenmede Farkındalık (Seminer)
+Ekolojik Yaşam Yolu: Ne Yersek O'yuz Ne Giyersek O'yuz (Seminer)
+Aromaterapi ile Doğal Temizlik Atölyesi (Deneyim)
+Toprak Elementini Dengelemek: Güvende ve Sağlam Hissetmek (Seminer)
+Bir Ekosistem Tasarlıyoruz: Teraryum Atölyesi (Deneyim)
+Wabi-Sabi Felsefesiyle Saksısız Bitki Yetiştirme Atölyesi (Deneyim)
+“Kişisel Sürdürülebilirlik” değer önerisiyle doğrudan örtüşür; ayrıca kurumların kadın çalışan bağlılığı ve liderlik gelişim programlarına destekleyici bir modül olarak sunulabilir.
+[TABLO BAŞI]
+[HÜCRE] PENCERE 3 / Çocuk / Doğa Elementi: Ateş
+[TABLO SONU]
+curious-kids-participating-treasure-hunt (1)
+Anlatı
+Ateş, kadim öğretilerde yaşam enerjisinin, dönüşümün ve harekete geçme gücünün simgesidir. Çocuk da bu enerjiyi en doğal haliyle merakı, keşfetme isteği ve öğrenme heyecanıyla taşır. Doğadan hobi atölyelerimizle çocukların bu potansiyelini güçlendirirken, doğayla bağ kuran ve yaşadığı dünyaya karşı sorumluluk hisseden bireyler yetişmesine katkı sağlıyoruz.
+Ne Sunuyoruz
+4-14 yaş arası çocuklara yönelik, doğadan materyaller ve el sanatlarıyla desteklenen, eğlenceli ve interaktif beceri geliştirme atölyeleri sunuyoruz. Bu atölyeler aynı zamanda ebeveyn-çocuk birlikte katılımına da açık, özel gün etkinlikleri olarak kurgulanabilir.
+Bu Pencerede Yer Alacak Programlar / Atölyeler
+Kuş Evi Tasarım Atölyesi (Deneyim, 4-14 yaş)
+Mini Kavanoz Teraryum Atölyesi (Deneyim, 4-14 yaş)
+Saksısız Bitki Yetiştirme (Kokedama) Atölyesi (Deneyim, 4-14 yaş)
+Kağıt İleri Dönüşüm Atölyesi (Deneyim, 4-14 yaş)
+Minik Çiftçiler (Deneyim, 4-14 yaş)
+Doğadan Çerçeve Tasarım Atölyesi (Deneyim, 4-14 yaş)
+Bez Çanta Kişiselleştirme Atölyesi (Deneyim, 4-14 yaş)
+Çocuk ve Aile Etkinlikleri
+Kurumların aile günü, yaz kampı, bayram kutlamaları ve çocuklara yönelik özel gün etkinlikleri için doğadan ilham alan hazır programlar sunuyoruz. 23 Nisan Ulusal Egemenlik ve Çocuk Bayramı, 5 Haziran Dünya Çevre Günü gibi özel günleri, yalnızca kutlanan etkinlikler olmaktan çıkarıp çocukların doğayla bağ kurduğu anlamlı deneyimlere dönüştürüyoruz.
+Geleceği korumanın ilk adımı, çocukların doğayı tanıması ve sevmesidir. Çünkü insan, bağ kurduğu şeyi korumak ister. Doğadan ilham alan deneyimsel atölyelerimiz ve etkinliklerimizle çocukların doğayla kalıcı bir bağ kurmalarını desteklerken, kurumların sürdürülebilirlik ve sosyal etki hedeflerine de katkı sağlıyoruz.
+[TABLO BAŞI]
+[HÜCRE] PENCERE 4 / İş Dünyası / Doğa Elementi: Hava
+[TABLO SONU]
+businessman-using-laptop-park
+Anlatı
+Hava, görünmez bağların, iletişimin, hareketin ve çevikliğin simgesidir. Doğadaki ekosistemler, yaşamlarını sürekli etkileşim, iş birliği ve değişime uyum sayesinde sürdürür; biz de iş dünyasını aynı bakış açısıyla yaşayan bir ekosistem olarak görüyoruz. Değişimin kaçınılmaz olduğu iş dünyasında, kurumların da doğa gibi çevik, uyumlu ve öğrenen yapılar kurması gerektiğine inanıyoruz Bu nedenle doğadan ilham alan eğitimlerimiz ve deneyimsel atölyelerimizle kurumların iletişim kültürünü güçlendirmelerine, çevik çalışma anlayışını benimsemelerine ve değişimin mimarı olmalarına katkı sağlıyoruz.
+Ne Sunuyoruz
+Ne Sunuyoruz?
+Doğanın milyonlarca yıllık deneyiminden ilham alarak; iş dünyasının ihtiyaç duyduğu yetkinlikleri araştırmaya dayalı ve deneyimsel öğrenme yöntemleriyle geliştiriyoruz. Eğitimlerimiz, çalışanların kurumlarına aidiyet duymasını, sorumluluk almasını ve iş birliğiyle değer üreten ekipler oluşturmasını destekleyen bütünsel bir gelişim deneyimi sunuyor.
+Bu Pencerede Yer Alan Eğitimler Doğanın İletişim Dili Eğitimi
+Doğanın Gücüyle Duygusal Dayanıklılık ve Esneklik Eğitimi
+Doğanın Takım Ruhuyla İş Ekosistemi Eğitimi
+Doğanın İlhamıyla Yaratıcı Düşünme Eğitimi
+Değişimin Doğası ve Liderlik Ekosistemi Eğitimi Anasayfa
+Hakkımızda
+Geleceği Doğadan Tasarla
+Doğa Temelli Eğitimlerimiz
+Kurumsal Hizmetler
+Sürdürülebilirlik
+Galeri
+İletişim
+Web sitesinde aşağıda yer alan Referanslarımız marka logoları kalsın derim.
+Ceylan KALYON ÖZDEMİR
+Kariyer yolculuğu; kurumsal iletişim, iç iletişim, çalışan markası yaratma, marka iletişimi ve medya ilişkileri çerçevesinde süregeldi.
+Profesyonel kariyeri, 2002 yılında Dünya Göz Hastaneler Grubu’nda başladı.  Medya ilişkileri yönetimi ve iç iletişim alanlarında görev yaptı.  Ardından yayıncılık sektöründe ekonomi, yaşam dergi yayınlarıyla  editörlüğü deneyimleme fırsatı buldu.
+Çocuk Eğlence Sektörü’nde hizmet veren Smartplay’de kurumsal iletişim alanında görev yaptı. Ulusal markaların iletişim departmanlarına hizmet ederken uluslararası bir firmada görev yapma fırsatı buldu.
+İlaç sektöründe hizmet veren GSK’da (GlaxoSmithKline) İç İletişim, kurumsal İletişim alanında görev alarak İç ve Kurumsal İletişim Yöneticisi olarak birçok yerel ve global projede aktif görev aldı. Çalışan markası yaratma, çalışan kulüplerinin kurulması, yönetimi, kültür yönetimi projelerinde aktif görev aldı. İletişim profesyoneli olarak çalışırken, kariyerinin büyük bir kısmında sosyal sorumluluk projeleri yürütmüş, yönetmiş ve birçok projesi ödülle layık görülmüştür.
+Kariyerine eğitim sektöründe faaliyet gösteren MB Akademi’de Pazarlama İletişimi Direktörü ve profesyonel koç olarak devam etti. Kariyer yolculuğuna aldığı koçluk eğitimi ve katıldığı uluslararası bir gönüllülük projesi sonrası farklı bir yön veren Ceylan; sosyal sorumluluk proje danışmanlığı, çalışan markası yaratma, kurum içi kültür değişim yönetimi gibi alanlarda danışmanlık, eğitmenlik ve koçluk yaptı. Eğitim alanında görev yaparken botaniğe, doğaya olan ilgisini iletişim uzmanlığı ve eğitimle kariyer fırsatına dönüştürebilme fırsatı yakalayarak Afloday’i kurdu.
+2018 yılından beri kadın girişimci olarak Doğadan Gelişim Atölyeleri ile doğadan öğrendiklerini etkinlikler ve eğitimlerle insanlarla paylaşıyor, onları doğaya yaklaştırıyor.
+Üniversite yıllarında başlayan toplumsal gönüllülük faaliyetlerine çeşitli derneklerde devam ederken, 2019 yılından beri sevgi evlerindeki çocuklarla çevre koruma farkındalığı üzerine bir sosyal sorumluluk projesi yürütüyor.
+Marmara Üniversitesi İletişim Fakültesi ve Galatasaray Üniversitesi Pazarlama İletişimi yüksek lisans mezunu, ICF Koçluk Federasyonu onaylı koç olan Ceylan; 2018 yılından beri, insanların hayatlarını yeniden tasarlamalarına ilham verecek; doğayla tasarımın ve kişisel gelişimin birleştiği eğitimlerle kurumlara ve bireylere katkı sağlıyor.
+Uzmanlık Alanları
+Kurumsal İletişim
+Pazarlama İletişimi
+Koçluk
+Sosyal Sorumluluk & Sürdürülebilirlik Proje Tasarımı & Yönetimi
+Girişimcilik
+Doğadan İlham Alan Kişisel Gelişim Program Tasarımı
+Etkinlik ve Atölye Tasarımı & Moderasyonu
+Gönüllülük ve Sosyal Etki Geliştirme
+“KURUMSAL HİZMETLER” Sayfası/ Doğadan Etkinlik Atölye Deneyimleri / Anasayfa
+Doğadan Etkinlik Atölye Deneyimleri
+İnsan ile doğa arasındaki bağı yeniden güçlendirmek için doğadan ilham alan, doğal malzemelerle tasarlanmış deneyimler geliştiriyoruz. Katılımcıları yalnızca üretmeye değil; doğayı hissetmeye, onunla yeniden bağ kurmaya ve bu bağı yaşamlarının bir parçası hâline getirmeye davet ediyoruz. Kendi elleriyle ürettikleri tasarımları çalışma ve yaşam alanlarına taşıyan katılımcılar, doğayı günlük yaşamlarının içine dahil ederken, bu deneyim birçok kişi için kalıcı ve sürdürülebilir bir hobiye dönüşüyor.
+Doğanın iyileştirici gücü ve birlikte üretmenin mutluluğunu bir araya getiren etkinliklerimiz; motivasyonu, ekip bağlarını ve çalışan deneyimini güçlendiriyor. Kurumun hedeflerine, mevsime ve etkinlik temasına göre özelleştirilebilen içeriklerimiz; ürün lansmanlarından iç iletişim projelerine kadar marka hikâyelerini katılımcının aktif olarak deneyimlediği unutulmaz deneyimlere dönüştürüyor.
+Akordeon Menü 1
+Sürdürülebilirlik Etkinlikleri
+Sürdürülebilirliği anlatmak yerine deneyimleten bu atölyeler, çalışanları doğanın döngüsünü keşfetmeye ve kaynaklara farklı bir gözle bakmaya davet eder. İleri dönüşüm, biyolojik çeşitlilik ve bilinçli tüketim temalarını yaratıcı üretim süreçleriyle buluşturarak çevresel farkındalığı kurum kültürünün bir parçası hâline getirir.
+Atölyeler
+Sürdürülebilir Yeşil Dünya Teraryum Atölyesi
+Geri dönüştürülebilir malzemelerle oluşturulan mini ekosistemler, doğadaki yaşam döngüsünü yaratıcı bir deneyime dönüştürür. Çalışanlar birlikte üretirken sürdürülebilirlik farkındalığını deneyimler, ekip etkileşimini ve çevresel duyarlılığı güçlendiren kalıcı bir tasarım oluşturur.
+Sukulent Kupa Aranjman Atölyesi
+Günlük hayatta farklı amaçlarla kullanılan kupalar, sukulentlerle yeniden hayat bulurken yaratıcı düşünme ve sürdürülebilir tüketim yaklaşımını destekleyen keyifli bir deneyime dönüşür. Çalışanlar birlikte üretirken doğayla bağ kurar, ortaya çıkan tasarımlar ise uzun süre kullanılabilecek doğal bir hatıraya dönüşür.
+Doğanın İkinci Baharı: Kuru Çiçek Aranjman Atölyesi
+Doğal yaşam döngüsünü tamamlamış çiçekler, estetik tasarımlara dönüşerek doğanın hiçbir parçasının değerini kaybetmediğini hatırlatır. Çalışanlar üretim sürecinde yaratıcılıklarını ortaya koyarken sürdürülebilir bakış açısını deneyimleme fırsatı bulur.
+Kahve Şişesiyle Bitki Akvaryumu (Herbaryum) Atölyesi
+Kullanım ömrünü tamamlamış cam şişeler, bitkilerle yeniden hayat bulurken ileri dönüşümün yaratıcı yönünü görünür kılar. Çalışanlar doğayla bağ kurarken atıkların yeniden değerlendirilebileceğini deneyimleyerek sürdürülebilir yaşam konusunda ilham alır.
+Bitkilerle Pastoral Şamdan Atölyesi
+Doğal bitkiler ve organik dokularla hazırlanan dekoratif şamdanlar, doğanın estetik gücünü yaratıcı bir üretim deneyimiyle buluşturur. Çalışanların odaklanmasını ve günlük iş temposundan uzaklaşmasını desteklerken doğal malzemelerin farklı kullanım alanlarını keşfetmelerini sağlar.
+"Doğadan İlhamla: Naturalist Şapka Tasarım Atölyesi
+Geri dönüştürülmüş kumaşlar ve doğal malzemelerle hazırlanan tasarımlar, sürdürülebilirliği yaratıcı ifade biçimine dönüştürür. Birlikte üretme süreci yaratıcılığı ve ekip etkileşimini desteklerken, çevresel farkındalığı estetik bir deneyimle buluşturur.
+Saksısız Bitki Yetiştirme (Kokedama) Atölyesi
+Japon bitki yetiştirme sanatından ilham alan bu deneyim, doğanın sadeliğini ve denge anlayışını çalışanlarla buluşturur. Saksısız tasarım süreci; sabrı, özeni ve doğayla uyumlu yaşam yaklaşımını destekleyen sakinleştirici bir üretim deneyimi sunar.
+"Atıktan Yaşama Yeniden Saksı Tasarım Atölyesi
+Günlük yaşamda kullanılan objeler yaratıcı dokunuşlarla yeniden işlev kazanırken, ileri dönüşüm uygulamalı bir deneyime dönüşür. Çalışanlar birlikte üretirken atıkların potansiyelini keşfeder, sürdürülebilirlik bilincini somut bir tasarımla pekiştirir.
+Doğadan Çiçekli Sofra Aksesuarları Tasarım Atölyesi
+Doğal bitkiler ve kuru çiçeklerle hazırlanan dekoratif servis tasarımları, doğanın estetiğini günlük yaşamın bir parçası hâline getirir. Üretim süreci yaratıcılığı ve birlikte üretmenin keyfini desteklerken doğal malzemelerin sürdürülebilir kullanımına ilham verir.
+Arı Bahçesi Tasarım Atölyesi
+Arılar için yaşam alanı oluşturan bitkilerle hazırlanan bu atölye, biyolojik çeşitliliğin korunmasına dikkat çeken anlamlı bir deneyim sunar. Çalışanlar birlikte üretirken doğaya somut katkı sağlamanın önemini keşfeder, sürdürülebilirlik bilincini yaşayarak deneyimler.
+Akordeon Menü 2
+Motivasyon ve Çalışan Deneyimi Etkinlikleri
+Yoğun iş temposuna keyifli bir ara veren bu doğa temelli deneyimler, çalışanların birlikte üretmesini, günlük rutinden uzaklaşmasını ve doğayla yeniden bağ kurmasını sağlar. Eğlenceli ve yaratıcı içerikleriyle ekip motivasyonunu artırırken, kurum içinde pozitif etkileşim ve iyi oluş kültürünü destekler.
+Atölyeler
+Doğadan İlhamla Naturel Takı Tasarım Atölyesi
+Kuru çiçekler ve doğal malzemelerle hazırlanan özgün tasarımlar, çalışanlara üretmenin keyfini yaşatan eğlenceli bir deneyim sunar. Günlük iş temposuna keyifli bir mola verirken doğayla bağ kurmayı, birlikte üretmeyi ve pozitif ekip etkileşimini destekler.
+Doğadan Mottolu Farkındalık Çerçevesi Atölyesi
+Kurumun öncelik verdiği mesajlar, doğadan ilham alan yaratıcı tasarımlarla görünür hâle gelir. Çalışanlar ortak bir tema etrafında üretirken hem keyifli vakit geçirir hem de kurum kültürünü destekleyen mesajları birlikte deneyimleyerek kalıcı bir hatıraya dönüştürür.
+Taze Çiçeklerle Buket Atölyesi
+Doğanın renkleri ve kokularıyla buluşan çalışanlar, birlikte tasarladıkları buketlerle keyifli ve dinlendirici bir üretim deneyimi yaşar. Ortaya çıkan tasarımlar motivasyonu artırırken, çalışma ortamına doğanın enerjisini taşır.
+İlham Veren Mini Ekosistem Teraryum Atölyesi
+Cam içinde kurulan mini ekosistemler, çalışanlara doğanın dengesini keşfederken üretmenin keyfini yaşatır. Günlük iş temposundan uzaklaştıran bu deneyim, birlikte üretmeyi teşvik eder ve çalışma ortamına uzun süre eşlik edecek doğal bir hatıra bırakır.
+Kuru Çiçek Fanus Tasarım Atölyesi
+Kuru çiçeklerle hazırlanan dekoratif fanuslar, çalışanların keyifli bir üretim süreciyle doğanın estetiğini keşfetmesini sağlar. Ortaya çıkan tasarımlar, çalışma alanlarına sıcak bir dokunuş katarken deneyimin uzun süre hatırlanmasını sağlar.
+Mini Bahçe Tasarım Atölyesi
+Çalışanlar kendi minyatür bahçelerini tasarlarken doğanın sakinleştirici etkisini deneyimler ve birlikte üretmenin keyfini yaşar. Ortaya çıkan canlı tasarımlar, motivasyonu destekleyen kalıcı bir hatıra olarak çalışma alanlarına taşınır.
+Zarafet Camda: Orkide Bahçesi Tasarım Atölyesi
+Orkideler ve doğada birlikte bulundukları  özenle seçilmiş bitkilerle hazırlanan bu özel deneyim, çalışanlara doğanın zarafetini estetik bir üretim süreciyle keşfetme fırsatı sunar. Günlük iş temposuna keyifli bir mola veren atölye, çalışma ortamına değer katan şık ve kalıcı tasarımlarla unutulmaz bir deneyime dönüşür.
+Akordeon Menü 3
+Özel Gün ve Dönemsel Etkinlikler
+Mevsimlerin enerjisini ve özel günlerin anlamını doğadan ilham alan yaratıcı deneyimlerle buluşturarak kurum içinde unutulmaz anılar oluşturur. Birlikte üretmenin ve kutlamanın keyfini yaşatan bu etkinlikler, çalışan etkileşimini, motivasyonu ve aidiyet duygusunu güçlendirirken kurum kültürünü destekler. Özel günleri ve mevsim geçişlerini doğadan ilham alan yaratıcı deneyimlerle kutlayarak kurum içi etkileşimi ve çalışan bağlılığını artırır.
+Atölyeler
+Bahar Kapı Süsü Tasarım Atölyesi
+Baharın renkleri ve doğal malzemeleriyle hazırlanan kapı süsleri, yeni başlangıçların enerjisini çalışma ortamına taşır. Çalışanların birlikte üretip baharın coşkusunu paylaşmasını sağlayan bu deneyim, kurum içinde pozitif etkileşimi ve motivasyonu destekler.
+Çiçekli Cadılar Kulübü: Halloween Cadı Süpürgesi Tasarım Atölyesi
+Halloween konseptini doğadan ilham alan yaratıcı tasarımlarla buluşturan bu eğlenceli atölye, çalışanların günlük rutinden uzaklaşarak keyifli vakit geçirmesini sağlar. Ortaya çıkan özgün tasarımlar, kurum içi kutlamalara renk katarken unutulmaz bir ekip deneyimi sunar.
+Çiçek Tablo Tasarım Atölyesi
+Doğal çiçeklerle hazırlanan anlamlı tablolar, özel günleri kalıcı bir hatıraya dönüştüren yaratıcı bir deneyim sunar. Kurumun vermek istediği mesaja uygun kurgulanabilen bu atölye, birlikte üretmenin keyfiyle çalışan bağlılığını destekler.
+Yılbaşı Kapı Çelengi Tasarım Atölyesi
+Doğal malzemelerle hazırlanan yılbaşı çelenkleri, yeni yıl heyecanını çalışma ortamına taşıyan keyifli bir üretim deneyimi sunar. Birlikte tasarlanan çelenkler, kurum içi kutlamalara sıcak bir atmosfer kazandırırken çalışanlar arasında pozitif etkileşimi artırır.
+Yılbaşı Ağaç Süsü Tasarım Atölyesi
+Doğadan ilham alan yılbaşı süsleri tasarlanan bu atölye, yeni yıl ruhunu yaratıcı bir üretim deneyimiyle buluşturur. Çalışanların birlikte eğlenmesini ve keyifli anılar biriktirmesini sağlayan etkinlik, kurum içi motivasyonu destekler.
+Mimoza Toka, Taç Tasarım Atölyesi
+Kadınlar Günü'ne özel tasarlanan bu atölye, mimoza çiçeğinin anlamını yaratıcı bir üretim deneyimiyle buluşturur. Çalışanların birlikte üretmesini ve özel günü anlamlı bir anıya dönüştürmesini sağlayarak kurum içindeki kutlama kültürünü güçlendirir.
+Mimoza Ağaç Tasarım Atölyesi
+Kadınlar Günü'ne özel hazırlanan bu deneyimde, mimozanın simgesel anlamı doğadan ilham alan özgün tasarımlarla hayat bulur. Birlikte üretmenin keyfini yaşatan atölye, kurumun çalışanlarına verdiği değeri görünür kılan anlamlı bir etkinliğe dönüşür.
+Sevgililer Günü Aşk Bahçesi Atölyesi
+Doğanın renkleri ve bitkileriyle hazırlanan mini bahçeler, Sevgililer Günü'nü yaratıcı ve keyifli bir deneyime dönüştürür. Birlikte üretmenin mutluluğunu paylaşan çalışanlar, kurum içinde sıcak ve samimi bir kutlama atmosferi oluşturur.
+Akordeon Menü 4
+Takım Gelişim Etkinlikleri
+Amacı
+Doğadan ilham alan takım deneyimleriyle çalışanları ortak bir hedef etrafında buluşturarak iş birliğini, iletişimi ve birlikte üretme kültürünü güçlendirir. Ekiplerin birlikte düşünmesini, karar almasını ve üretmesini sağlayan bu deneyimler, kurum kültürünü destekleyen kalıcı anılar ve güçlü ekip bağları oluşturur.
+Atölyeler
+Doğadan 5g'ye: Doğal İletişim Nesneleri Tasarım Atölyesi
+Doğadaki görünmez iletişim ağlarından ilham alan bu atölye, ekiplerin iletişimi farklı bir bakış açısıyla deneyimlemesini sağlar. Birlikte tasarlanan doğal iletişim nesneleri, ortak düşünmeyi, fikir paylaşımını ve ekip içi etkileşimi destekleyen yaratıcı bir deneyime dönüşür.
+Doğa Hack’i: Geri Dönüşümle Yaratıcılık Atölyesi
+Geri dönüştürülmüş malzemeler ve doğal objelerle gerçekleştirilen bu takım deneyimi, ekiplerin birlikte düşünerek üretmesini teşvik eder. Ortak tasarım süreci; yaratıcılığı, problem çözme becerisini ve farklı bakış açılarını bir araya getirirken sürdürülebilirlik konusunda ortak bir farkındalık oluşturur.
+Doğal Harflerden Kelime Tasarım Atölyesi
+Takımlar, kurumun adı veya ortak bir mesajı temsil eden harfleri doğal malzemelerle birlikte tasarlar. Her grubun ortaya koyduğu parça, birleşerek tek bir bütün oluşturur; böylece ekipler birlikte üretmenin, ortak hedefe ulaşmanın ve kurum kültürünü birlikte inşa etmenin gücünü deneyimler.
+Doğadan İlhamla Takım Ruhu: Sukulent Bahçesi Atölyesi
+Ekipler ortak bir sukulent bahçesi tasarlayarak birlikte planlama, karar alma ve üretme deneyimi yaşar. Doğadan ilham alan bu süreç, iş birliğini güçlendirirken ortak emeğin somut bir ürüne dönüşmesini sağlayan keyifli bir takım deneyimi sunar.
+Tarihten İlhamla Minyatür Bahçeni Tasarımı Atölyesi
+Takımlar, canlı bitkilerle ortak bir bahçe tasarlarken doğanın büyüme ve dayanışma döngüsünden ilham alır. Farklı bahçe kültürlerinden ilham alan ekipler, seçtikleri konsepti birlikte planlayıp hayata geçirir. Tasarım süreci; ortak karar almayı, görev paylaşımını ve yaratıcı problem çözmeyi desteklerken ekiplerin birlikte üretme deneyimini güçlendirir.
+Yeni Bir Hayat: Takım Geri Dönüşüm Saksı Tasarım Atölyesi
+Takımlar, geri dönüştürülebilir malzemeleri birlikte yeniden tasarlayarak işlevsel bitki düzenlemeleri oluşturur. Ortak üretim süreci, iş birliğini ve yaratıcı düşünmeyi desteklerken sürdürülebilirlik bilincini ekipçe deneyimlenen anlamlı bir başarı hikâyesine dönüştürür.
+Akordeon Menü 5
+Kurumsal Gönüllülük Etkinlikleri
+Çalışanları ortak bir sosyal fayda hedefi etrafında buluşturan bu deneyimler, üretmeyi anlamlı bir etkiye dönüştürür. Atölyede tasarlanan ürünlerden biri katılımcıya kurum hediyesi olarak kalırken, diğeri kurumun belirlediği sivil toplum kuruluşu yararına hazırlanır. Katılımcılar bu ürünü yakın çevrelerine, gönüllü olarak tasarladıklarını ve hangi sosyal amaca destek verdiğini anlatarak bağış karşılığında ulaştırır. Elde edilen gelir ilgili sivil toplum kuruluşuna aktarılır. Böylece çalışanlar yalnızca gönüllülüğü deneyimlemekle kalmaz; çevrelerinde farkındalık oluşturarak başkalarını da sosyal faydaya ortak eder ve toplumsal etkinin büyümesine katkı sağlar.
+Katılımcılar atölyede ürettikleri ürünleri yalnızca tasarlamaz; aynı zamanda onların sosyal etki elçisine dönüşür. Ürünü yakın çevrelerine ulaştırırken gönüllülük hikâyesini ve desteklenen sivil toplum kuruluşunun amacını paylaşır, bağış yapılmasına aracılık eder.
+Böylece tek bir ürün, yeni bağışçılarla buluşarak gönüllülük bilincinin yayılmasına ve sosyal etkinin katlanarak büyümesine katkı sağlar.
+Uygulanabilecek Atölyeler: Kuru Çiçek Toka & Taç Tasarım Atölyesi, Deniz Konseptli Takı Tasarım Atölyesi, Saksısız Bitki Yetiştirme (Kokedama) Gönüllülük Atölyesi.
+Akordeon Menü 6
+Wellbeing İyi Oluş Etkinlikleri
+Doğanın bilimsel olarak kanıtlanan iyileştirici etkisini çalışan deneyimine taşıyan bu etkinlikler; yoğun iş temposunda zihnin yavaşlamasına, stresin azalmasına ve odaklanmanın yeniden kazanılmasına destek olur. Araştırmalar, doğayla temasın dikkat süresini artırabildiğini, stres düzeyini azaltabildiğini ve yaratıcı düşünmeyi destekleyebildiğini ortaya koymaktadır. Özellikle Shinrin-yoku (Orman Banyosu) üzerine yapılan çalışmalarda, doğada geçirilen zamanın bağışıklık sistemi üzerinde olumlu etkiler gösterebildiği ve Natural Killer (NK) hücrelerinin aktivitesini artırabildiği raporlanmıştır.
+Doğal malzemelerle üretim yapmaya dayalı deneyimlerimiz, çalışanların kısa süreliğine dijital ve zihinsel yoğunluktan uzaklaşmasını sağlayarak daha sakin, odaklı ve üretken bir zihin durumuna geçişini destekler. Böylece yalnızca keyifli bir etkinlik değil, çalışan iyi oluşunu ve verimliliğini destekleyen anlamlı bir deneyim sunar.
+Bilim Ne Diyor?
+• Doğayla temas stres hormonlarının azalmasına yardımcı olabilir.
+• Doğal ortamlar dikkat yenilenmesini ve odaklanmayı destekleyebilir.
+• Doğada geçirilen zaman yaratıcılığı ve problem çözme becerilerini olumlu etkileyebilir.
+• Shinrin-yoku (Orman Banyosu) araştırmaları, doğayla geçirilen zamanın bağışıklık sistemi üzerinde olumlu etkiler oluşturabildiğini ve NK hücre aktivitesinde artış gözlemlendiğini göstermektedir.
+• Çalışan wellbeing programları; motivasyon, bağlılık ve iş performansını destekleyen uygulamalar arasında gösterilmektedir.
+Atölyeler:
+Kokulu Bahçem: Baharatlarla Tasarım Atölyesi
+Aromatik bitkilerle hazırlanan bu deneyim, çalışanları doğanın iyileştirici etkisiyle buluştururken günlük yaşamda sürdürülebilir alışkanlıklara ilham verir. Üretim süreci; iyi oluşu, rahatlamayı ve doğayla bağı desteklerken, mutfakta kullanılabilecek yaşayan bir baharat bahçesi oluşturulmasını sağlar.
+Doğadaki Misafirim: Kuş Evi Tasarım Atölyesi
+Ahşap kuş evleri tasarlanan bu deneyim, çalışanların doğayla bağ kurmasını ve canlılara katkı sunmanın iyi hissettiren etkisini deneyimlemesini sağlar. Üretim süreci; yaratıcılığı, farkındalığı ve çevresel duyarlılığı desteklerken, doğaya kalıcı bir iz bırakma duygusu kazandırır.
+Dalından Taze Tütsü & Oda Kokusu Tasarım Atölyesi
+Doğal aromatik bitkilerle hazırlanan tütsü ve oda kokuları, çalışanlara duyulara hitap eden sakinleştirici bir üretim deneyimi sunar. Doğanın kokularıyla geçirilen bu süreç, stresin azalmasına, anda kalmaya ve yaşam alanlarına doğal bir ferahlık taşınmasına katkı sağlar.
+Bitkilerle Arınma: Aromatik Duş Buketleri Atölyesi
+Aromatik bitkilerden hazırlanan duş buketleri, günlük bakım rutinlerini doğanın iyileştirici etkisiyle buluşturur. Üretim süreci, çalışanların kendilerine zaman ayırmasını teşvik ederken iyi oluşu ve duyusal farkındalığı destekleyen keyifli bir deneyim sunar.
+Sakinlikte Estetik: Taze Çiçeklerle İkebana Tasarım Deneyimi
+Japon çiçek düzenleme sanatı Ikebana'dan ilham alan bu deneyim, sadelik, denge ve anda kalma pratiğini yaratıcı üretimle birleştirir. Çalışanların odaklanmasını, zihinsel dinginlik kazanmasını ve estetik bakış açısını geliştirmesini destekler.
+Bonsai Ağaç Tasarım Atölyesi
+Bonsai sanatının sabır ve özen gerektiren yaklaşımını deneyimleyen çalışanlar, doğanın ritmiyle uyumlanırken odaklanma ve farkındalık becerilerini geliştirir. Üretim süreci, zihinsel rahatlamayı destekleyen kalıcı bir doğa deneyimi sunar.
+Orman Banyosu ( Shirin Yoku)  Atölyesi
+Bilimsel araştırmalarla da desteklenen orman banyosu deneyimi, çalışanların doğayla bilinçli bağ kurmasını sağlayarak stres düzeyini azaltmayı ve zihinsel yenilenmeyi destekler. Kurumlara, çalışan iyi oluşunu güçlendiren sakin, farkındalık odaklı bir deneyim sunar.
+Bonsai Müzesi Ziyareti & Bonsai Tasarım Atölyesi
+Doğanın estetik anlayışını ve bonsai kültürünü keşfetmeyi üretim deneyimiyle birleştiren bu özel etkinlik, çalışanların ilham almasını ve zihinsel olarak yenilenmesini sağlar. Kültürel keşif ve yaratıcı uygulama bir araya gelerek unutulmaz bir wellbeing deneyimi oluşturur.
+Şifa Bahçesi Tasarım Atölyesi
+Doğanın denge ve dinginlik hissinden ilham alan bu deneyimde, çalışanlar sukulentler, doğal taşlar, yosun ve farklı doğal dokularla kendi şifa bahçelerini tasarlar. Farklı kültürlerde yüzyıllardır denge, güç ve iyi oluşun sembolü olarak kullanılan doğal taşlar, bu tasarımlara estetik ve anlamlı bir boyut kazandırırken; üretim süreci çalışanların yavaşlamasını, odaklanmasını ve doğayla yeniden bağ kurmasını destekler. Ortaya çıkan kişisel tasarımlar ise çalışma ve yaşam alanlarına doğadan ilham alan huzurlu bir atmosfer taşır.
+Akordeon Menü 7
+Çocuk Atölye Etkinlikleri
+Kurumların aile dostu çalışan deneyimini güçlendirmek amacıyla tasarlanan doğa temelli çocuk atölyeleri, çalışanların çocuklarını doğayla buluşturan eğitici ve eğlenceli deneyimler sunar. Oyunlaştırılmış aktif öğrenme yaklaşımıyla hazırlanan etkinlikler; çocukların yaratıcılığını, keşfetme duygusunu ve çevre bilincini desteklerken ailelerin birlikte kaliteli zaman geçirmesine ve çalışan bağlılığının güçlenmesine katkı sağlar.
+Atölyeler
+Ahşap Kuş Evi Tasarım Atölyesi (+3 Yaş)
+Çocuklar kendi kuş evlerini tasarlarken doğadaki canlıları keşfeder ve üretmenin mutluluğunu deneyimler. Eğlenceli uygulama süreci; yaratıcılığı, ince motor becerilerini ve doğa sevgisini desteklerken ailelerin birlikte keyifli anılar biriktirmesine katkı sağlar.
+Doğaya Saygıyla İleri Dönüşüm: Mini Kavanoz Teraryum Atölyesi (+3 Yaş)
+Çocuklar geri dönüştürülen kavanozları canlı bitkilerle minik ekosistemlere dönüştürürken doğanın döngüsünü eğlenerek keşfeder. Üretim süreci; çevre bilinci, sürdürülebilirlik farkındalığı ve doğaya karşı sorumluluk duygusunu destekleyen unutulmaz bir deneyim sunar.
+Kalemlik Tasarım Atölyesi (+3 Yaş)
+Seramik objeler, doğal malzemeler ve renkli süslemelerle kişiselleştirilen tasarımlar sayesinde çocuklar kendi hayal güçlerini özgürce ifade eder. Üretim süreci; yaratıcılığı, estetik bakış açısını ve ince motor becerilerini desteklerken, ortaya çıkan tasarım uzun süre kullanılabilecek anlamlı bir hatıraya dönüşür.
+Eğlenceli Bitki Dikimi Atölyesi (+3 Yaş)
+Çocuklar ilk bitkilerini dikerken toprağı, bitkilerin yaşam döngüsünü ve bakım sorumluluğunu uygulayarak öğrenir. Doğayla birebir temas kurdukları bu deneyim; merak duygusunu, çevre bilincini ve sorumluluk alma becerisini desteklerken ailelere de birlikte paylaşabilecekleri özel bir anı kazandırır.
+İlham Veren Yeşil Keşif: Ambalaj Dönüşüm Atölyesi &Bitki Dikimi (+5 Yaş)
+Çocuklar kullanılmayan ambalajları yaratıcı fikirlerle yeniden tasarlayıp bitkilerle buluşturarak ileri dönüşümün değerini deneyimleyerek keşfeder. Üretim süreci; yaratıcılığı, problem çözme becerisini ve çevresel farkındalığı destekleyen eğlenceli bir öğrenme deneyimi sunar.
+İleri Dönüşüm Kavanoz Teraryum Atölyesi (+5 Yaş)
+Çocuklar kendi mini ekosistemlerini tasarlarken tüketim alışkanlıkları, geri dönüşüm ve doğadaki yaşam dengesi üzerine farkındalık kazanır. Teraryumun bakımını üstlenmeleri ise sorumluluk bilincini ve doğayla kurdukları bağı güçlendiren kalıcı bir deneyime dönüşür.
+Mini Bahçe Tasarım Atölyesi (+5 Yaş)
+Çocuklar kendi minyatür bahçelerini tasarlarken bitkilerin gelişimini keşfeder, doğayı oyun ve üretimle deneyimler. Tasarım süreci; planlama, hayal gücü ve sorumluluk alma becerilerini desteklerken doğayla güçlü bir bağ kurulmasına katkı sağlar.
+Doğa Çerçeve Tasarım Atölyesi (+5 Yaş)
+Doğal malzemelerle hazırlanan çerçeveler sayesinde çocuklar doğadaki canlıları yakından tanırken yaratıcılıklarını özgürce ifade eder. Tubitak Yabani Çiçekler kitabı destekli içerik ve uygulamalı tasarım süreci; gözlem becerisini, estetik bakış açısını ve doğa farkındalığını güçlendirir.
+Doğadan Yeniden: Çiçeklerle Toka Yapımı Atölyesi (+7 Yaş)
+Kuru çiçekler ve doğal malzemelerle hazırlanan özgün tokalar sayesinde çocuklar tasarım yapmanın keyfini yaşarken geri dönüşümün değerini uygulayarak öğrenir. Yaratıcı üretim süreci; estetik bakış açısını, ince motor becerilerini ve çevre bilincini destekleyen eğlenceli bir deneyime dönüşür.
+Çiçek Laboratuvarı Doğal Parfüm Atölyesi (+7 Yaş)
+Çocuklar çiçeklerin ve aromatik bitkilerin dünyasını keşfederek kendi doğal kokularını oluşturur. Duyulara hitap eden bu yaratıcı deneyim; merak duygusunu, hayal gücünü ve keşfetme isteğini desteklerken ailelere birlikte keyifli vakit geçirebilecekleri özel bir etkinlik sunar.
+===== word/footer2.xml =====
+1

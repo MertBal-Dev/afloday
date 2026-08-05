@@ -1,95 +1,74 @@
 # Afloday — proje hafızası
 
-> Yeni oturumda önce bu dosyayı oku, sonra
-> `docs/superpowers/plans/2026-08-02-afloday-rev2-mimari-ve-devir.md` planını aç.
-> **En son iş:** `docs/gece-denetimi-2026-08-05.md` — belge sayfa sayfa
-> doğrulandı, galeri ve erişilebilirlik düzeltildi.
-> Son güncelleme: 5 Ağustos 2026 sabaha karşı.
+> **Yeni oturumdaysan sırayla oku:**
+> 1. Bu dosya (tamamı)
+> 2. `docs/devam-plani.md` — nerede kaldık, sırada ne var
+> 3. `docs/belge-kapsam-raporu.md` — belge doğrulamasının kanıtı
+>
+> Son güncelleme: 5 Ağustos 2026 akşamı.
+> Site yayında: **afloday.vercel.app** (henüz afloday.com değil)
 
 ---
 
-## Durum tek bakışta
-
-**İş bağlandı ve kapsam belgesi geldi.** Next.js taşıması bitti, doğrulandı.
-Şu an içerik döküm aşamasındayız.
+## Bir bakışta
 
 ```
-Müşteri      Afloday · Ceylan Kalyon Özdemir (kurumsal iletişim)
+Müşteri      Afloday · Ceylan Kalyon Özdemir (kurucu, kurumsal iletişim)
 Teknik kişi  Hasan Basri Ünlü (Afloday tarafı)
+Geliştirici  İsmail Mert Bal (serbest)
 Bedel        20.000 TL KDV dahil · site + blog + panel, tek paket
 Fatura       tek fatura, site yayına alındığında
-Bakım        ilk 3 ay dahil · 3. ay sonunda yıllık bedel birlikte belirlenecek
-Teslim       site: erişimden 3-4 iş günü · blog+panel: en geç 3 hafta
-Bekleyen     cPanel erişimi — sayaç o gün başlıyor
+Bakım        ilk 3 ay dahil · 3. ay sonunda yıllık bedel konuşulacak
+Teslim       site: cPanel erişiminden 3-4 iş günü · blog+panel: en geç 3 hafta
+Durum        SİTE BİTTİ, müşteri incelemesinde. Blog + panel başlamadı.
 ```
 
-**Fiyat pazarlığı kapandı, bir daha açma.** Kullanıcı net söyledi: kapsam belgede
-ne yazıyorsa o.
+**Fiyat pazarlığı kapandı, bir daha açma.** Kapsam belgede ne yazıyorsa o.
 
 ---
 
-## Değişmez kurallar
+## Kurallar — ve hangisinin kaynağı var
 
-**1 · İçerik uydurma.** Sitedeki her cümle ya afloday.com'da ya da 4 Ağustos
-tarihli içerik belgesinde geçmeli. Rakam, rozet, referans, istatistik uydurma yok.
-Kısaltma ve yeniden yazma da yok — belgede nasıl yazıyorsa öyle.
+Bu ayrım önemli. Bir dönem `CLAUDE.md`'de "tasarım dili" kural olarak yazılıydı
+ama kaynağı yoktu; geliştiricinin tercihiydi ve kullanıcıya kural gibi
+sunulmuştu. **Kural yazarken kaynağını da yaz.**
 
-**2 · Commit ve push yok.** Kullanıcı açıkça istedi. Vercel önizlemesi Afloday'de
-var, push edilirse görürler. Yerel commit teknik olarak güvenli (deploy etmez) ama
-kullanıcı istemedi — sormadan yapma.
+| Kural | Kaynak | Bağlayıcı mı |
+|---|---|---|
+| **İçerik uydurma yasak** | Kullanıcı, açıkça iki kez | ✅ evet |
+| **Sormadan commit/push yok** | Kullanıcı | ✅ evet (nota bak) |
+| **34 canlı adres korunacak** | Excel envanteri, DURUM sütunu | ✅ evet |
+| Tailwind kurulmayacak | Mimari karar, `docs/mimari.md` | ⚙️ gerekçeli teknik tercih |
+| Saç teli çizgi, serif başlık, bronz etiket, karmen vurgu | — | ⚠️ **tercih**, kural değil |
 
-**3 · Adres eşleşmesi kutsal.** Canlı afloday.com'daki 34 adres birebir korunuyor.
-Herhangi bir değişiklikten sonra doğrula, bu iş zor kazanıldı.
+**İçerik kuralının tam hâli:** sitedeki her cümle ya 4 Ağustos belgesinde ya da
+canlı afloday.com dökümünde geçmeli. Rakam, rozet, referans, istatistik uydurma
+yok. Kısaltma ve yeniden yazma da yok. Şu an **%95.7 kaynaklı** (kelime
+bazında); kalanı etiket, sayaç, buton ve form metni.
 
-**4 · Tasarım dili — çoğu KAYNAKLI DEĞİL, geliştiricinin tercihi.**
-Belgede köşe, font, renk paleti, tipografi hakkında **tek kelime yok**; sadece
-9 yerleşim yönergesi var (satır 14, 15, 23, 32, 49, 54, 302, 304, 389) ve
-hepsi uygulandı. Canlı afloday.com ise `border-radius: 10px` kullanıyor.
+**Push notu:** 5 Ağustos'ta kullanıcı açık onay verdi, site yayına alındı.
+Bundan sonrası için yine sor — Ceylan hanım siteyi incelediği için her push
+ona anında yansıyor.
 
-Yani saç teli çizgi, serif başlık, bronz etiket, karmen vurgu ve bir dönem
-uygulanan "köşe yuvarlaması yok" kararı **bağlayıcı kural değil, tasarım
-tercihi**. Değiştirilebilir; müşteri onayı yeter, belgeye danışmak gerekmez.
-
-**Bağlayıcı olan tek şey:** Tailwind kurulmadı, `afloday.css` tasarımın kendisi
-(mimari karar, madde 4'te değil `docs/mimari.md`'de gerekçesi var).
-
----
-
-## Kapsam kaynağı — buradan okunur
-
-```
-C:\Users\Gaming\Downloads\wetransfer_afloday-web-metin-ve-gorseller_2026-08-04_1711\Afloday Web Metin ve Görseller\
-  ├─ Afloday_WEB Sayfası Metinler_04082026.docx     ← ASIL KAYNAK · 65.000 karakter
-  ├─ Afloday_Mevcut_Site_Envanteri_Dolu.xlsx        ← güncel site haritası
-  ├─ Seçilmiş Olanlar/        24 dosya · 194 MB · belgede adı geçenler
-  ├─ Doğadan Etkinlik.../     71 dosya · 184 MB
-  ├─ Galeri/                  21 dosya ·  11 MB
-  └─ Diğer Görseller/        136 dosya · 1.3 GB · kütüphane, seçmeli kullan
-```
-
-**Uyarı:** `Downloads\01_Mevcut_Site_Envanteri_Dolu.xlsx` **eski sürüm** (2 Ağustos),
-kullanma. `site/assets/img` altındaki eski çiçek/atölye fotoğrafları da artık
-kullanılmıyor.
-
-Belge metni çıkarılmış hâlde:
-`scratchpad/afloday-metinler.txt` (540 satır) — yoksa `.docx`'ten yeniden çıkar
-(zipfile + `word/document.xml`, `<w:t>` etiketlerini topla).
+**Belgede olmayan sayfa/bölüm üretme.** Belge 4 vitrin kartı diyor ama 2'sinin
+metnini yazmış; site 2 kart gösteriyor, eksik ikisi Afloday'den istendi. Doğru
+davranış bu.
 
 ---
 
-## Konumlandırma değişti
+## Kaynaklar — hepsi artık depoda
+
+Orijinal `.docx` ve `.xlsx` geliştiricinin eski bilgisayarındaydı. Başka
+makinede çalışılabilsin diye çıkarılmış hâlleri depoya alındı:
 
 ```
-ESKİ   Çiçek ve bitki hobi atölyeleri · bireysel müşteri
-YENİ   Kurumsal eğitim ve gelişim · B2B · doğa temelli metodoloji
+docs/kaynak/belge-tam.txt   4 Ağustos içerik belgesi, 551 satır, tablolar dahil
+docs/kaynak/envanter.tsv    Excel site envanteri, 35 satır
+_audit/orijinal/            canlı afloday.com'un 34 sayfalık metin dökümü
+_audit/denetim/             13 denetim betiği + kullanım notu
 ```
 
-Site **34 → 16 sayfaya** iniyor. 16 atölye sayfası + `/katilim` +
-`/dogadan-gelisim-atolyeleri` + `/dogadan-hobi-atolyeleri` iptal (19 adres).
-Yerine **tek yeni sayfa**: *Doğadan Etkinlik Atölye Deneyimleri* — atölyeler orada
-7 akordeon kategorisi altında toplanıyor.
-
-Sayfa sayısı azalıyor ama **iş artıyor**: içerik çok daha yoğun, bölümler yeni.
+`docs/kaynak/BENİOKU.md` bölüm haritasını ve tuzakları anlatıyor. **Oku.**
 
 ---
 
@@ -97,254 +76,158 @@ Sayfa sayısı azalıyor ama **iş artıyor**: içerik çok daha yoğun, bölüm
 
 ```
 Next.js 15 · React 19 · TypeScript 5 · output: 'export'
-Tailwind YOK · afloday.css olduğu gibi kullanılıyor
-three@0.185 kurulu (hero slaydı için)
+Tailwind YOK · site/assets/css/afloday.css tasarımın kendisi
+Bağımlılık: next, react, react-dom (üçü, o kadar)
 ```
 
-**İçeriğin tek kaynağı `_build/build.mjs`.** Hem statik üreteç hem Next.js'in veri
-kaynağı. Sayfaları bir diziye topluyor, `sayfalar` olarak dışa açıyor
-(gövde + meta ayrıştırılmış). Doğrudan çalıştırılırsa `site/` altına yazıyor.
+**İçeriğin tek kaynağı `_build/build.mjs`.** Hem statik üreteç hem Next'in veri
+kaynağı. Sayfaları bir diziye toplayıp `sayfalar` olarak dışa açıyor. Doğrudan
+çalıştırılırsa `site/` altına yazıyor.
 
 ```
-app/layout.tsx           belge iskeleti, fontlar, afloday.js betiği
+app/layout.tsx           belge iskeleti, fontlar, CSS ve JS bağlantısı
 app/[[...slug]]/page.tsx tüm sayfalar tek yakalayıcı rotadan
-app/sitemap.ts           adresler build.mjs'ten
-app/robots.ts            PREVIEW=1 iken Disallow
-_build/data.mjs          içerik + canliAdres tablosu
-_build/egitimler.mjs     5 eğitim programı (data.mjs re-export ediyor)
-_build/etkinlikler.mjs   7 akordeon · 50 etkinlik atölyesi
-_build/galeri-rev2.mjs   21 galeri fotoğrafı (otomatik üretilir)
-_build/gorsel-hazirla.mjs  belge görsellerini web'e hazırlar
-_build/varliklar.mjs     site/assets → public/assets kopyalama
-_build/verify.mjs        38 sayfa denetimi, cleanUrls farkında
+_build/build.mjs         sayfa gövdeleri · sayfalar dizisi
+_build/data.mjs          site bilgisi, menü, canliAdres tablosu, anasayfa verisi
+_build/templates.mjs     kabuk, başlık, alt bilgi, ortak bileşenler
+_build/etkinlikler.mjs   7 akordeon · 53 atölye · atolyeSayisi (tek doğru sayaç)
+_build/gelecegi-tasarla.mjs · sosyal-sorumluluk.mjs · hakkimizda-rev2.mjs
+_build/ceylan-rev2.mjs · egitimler.mjs · galeri-rev2.mjs
+_build/kvkk.mjs          hazir:false olduğu sürece sayfa üretilmiyor
+_build/varliklar.mjs     site/assets → public/assets + favicon.ico kökü
+_build/gorsel-hazirla.mjs · og-gorsel.mjs · favicon.mjs
+_build/onizle.mjs        yerel önizleme sunucusu
+_build/verify.mjs        sayfa/görsel/bağlantı denetimi
 ```
 
-**Görsel boru hattı:** `node _build/gorsel-hazirla.mjs` kaynak klasörden okur,
-`site/assets/img/rev2/<klasor>/` altına yazar — en uzun kenar 1600, WebP + 800px
-varyant + JPG yedeği, dosya başına 300 KB üst sınır (aşarsa önce kalite, sonra
-ölçü düşer). Klasör ayrımı şart: *Seçilmiş Olanlar* ve *Galeri* içinde ayrı
-ayrı `Resim1.jpg` var, tek klasöre yazılınca biri diğerini eziyordu. Betik
-aynı klasörde slug çakışması bulursa derlemeyi durduruyor.
-
-**Varlıklar:** kaynak `site/assets`, derleme öncesi `public/assets`'e kopyalanıyor,
-`public/` gitignore'da. İki kopya git'e girmiyor.
-
-**Adres eşleme:** `data.mjs` içindeki `canliAdres` tablosu. Sayfalar eski
-dosya adlarıyla üretiliyor, yazılmadan önce dosya adı + iç bağlantılar + canonical
-+ sitemap canlı adrese çevriliyor. Next.js'te klasör adı = adres olacağı için bu
-katman ileride sadeleşebilir.
+**Adres eşleme:** `data.mjs` içindeki `canliAdres` tablosu. Sayfalar iç dosya
+adlarıyla üretilip yazılmadan önce canlı adrese çevriliyor.
 
 ---
 
 ## Komutlar
 
 ```bash
-npm run build        # varlıkları kopyala + next build → out/
-npm run dev          # varlıkları kopyala + next dev
-npm run dogrula      # node _build/verify.mjs
-node _build/build.mjs # eski statik üreteç → site/ (yedek olarak duruyor)
+npm run build                 # varlıkları kopyala + next build → out/
+npm run dev                   # geliştirme sunucusu
+node _build/build.mjs         # statik üreteç → site/
+node _build/onizle.mjs 8899   # site/ için önizleme sunucusu
+node _build/verify.mjs        # 20 sayfa · görsel · bağlantı denetimi
 ```
 
-**Adres doğrulaması** (her yapısal değişiklikten sonra çalıştır): `out/` içindeki
-`.html` dosyalarını canlı 34 adresle karşılaştır. Liste planın *Adres haritası*
-bölümünde.
-
----
-
-## Tuzaklar — hepsi bizzat yaşandı
-
-**Python http.server `out/` klasörünü kilitliyor.** `next build` `EBUSY` verir.
-Test sunucusunu kapatmadan derleme yapma. `pkill -f` Windows'ta çalışmıyor;
-`Get-CimInstance Win32_Process` ile bul, PID ile `Stop-Process`. **IDE'nin
-jedi-language-server python sürecini öldürme.**
-
-**Bash heredoc, Türkçe içerikli uzun JS bloklarında bozuluyor.** Büyük veri
-dosyalarını Write aracıyla yaz, `cat <<'JS'` ile değil.
-
-**Python'un varsayılan kodlaması cp1254.** Türkçe/unicode yazarken
-`io.open(..., encoding='utf-8')` kullan, `print` ile em dash basma.
-
-**Playwright başsız tarayıcıda CSS animasyonu geç başlıyor.** `currentTime`
-ilerliyorsa animasyon çalışıyordur; ekran görüntüsü zaman aşımına uğruyorsa bu
-aslında animasyonun sürdüğünün kanıtı.
+**Her yapısal değişiklikten sonra `verify` çalıştır.** Sıfır sorun vermeli.
 
 ---
 
 ## Yapıldı
 
-- Canlı siteden 34 adres çıkarıldı, HTTP durumlarıyla doğrulandı
-- `canliAdres` tablosu · `cleanUrls` · **34/34 adres korunuyor**
-- `kurumsal` ikiye ayrıldı (`/dogadan-gelisim-atolyeleri` sonradan iptal oldu)
-- Anasayfa slaydı — CSS daire açılımı *(WebGL sürümüyle değişecek)*
-- **Next.js taşıması** — 37/37 sayfa gövdesi statikle birebir aynı
-- sitemap + robots Next tarafında, `vercel.json` `out/`'a göre
-- Kapsam belgesi çözüldü, plan baştan yazıldı
-- Karar günlüğü: `docs/afloday-sorular-2026-08-04.md` — 11 karar, 2 soru
-- **Veri:** `heroSlaytlari` (3) · `degerOnerisi` (3) · `istatistikler` (4) ·
-  `metodoloji` (3) · `egitimler` (5, tam) · `deneyimVitrini` (2) ·
-  `etkinlikKategorileri` (7 akordeon, 50 atölye)
-- Belgede adı geçen 29 görselin 29'u klasörde doğrulandı
-- **52 görsel işlendi** — 3 varyant, dosya başına ≤300 KB (3 istisna, yoğun doku)
-- **Etkinlik sayfası** — `/dogadan-hobi-atolyeleri` adresini devraldı
-- **Anasayfa yeniden yazıldı** — cam geçişli slayt dahil 8 bölüm
-- Metin denetimi: 129 metnin 129'u belgede birebir geçiyor, ters yönde de
-  belgenin 126 satırının tamamı veride karşılanıyor
+- 4 Ağustos belgesinin 8 bölümü satır satır doğrulandı, 380 içerik satırı tam
+- Belgenin 9 yerleşim yönergesi kod üzerinden sınandı, dokuzu da uygulandı
+- Excel envanterinin 35 satırı doğrulandı, 34/34 canlı adres korunuyor
+- Menü belgedeki düz sekiz maddeye indi
+- Erişilebilirlik: 1020 kontrast ihlali giderildi, 24×24 altı dokunma hedefi yok
+- Responsive: 390 / 768 / 1366 / 1920 / 2560 / 3840 — yatay taşma yok
+- SEO: OG kapakları, 20/20 sayfada JSON-LD, açıklamalar 160 karakter altında
+- Galeri sonsuz kayan şeride geçti (kullanıcının tasarımı, beş kusuru giderildi)
+- Yayında: afloday.vercel.app · Vercel statik site olarak yayınlıyor
 
 ---
 
-## Sıradaki iş — buradan devam et
+## Tuzaklar — hepsi bizzat yaşandı
 
-```
-1-7  İçerik, 8 sayfa, görseller, sayfa haritası, menü   ✅ BİTTİ
-8    Formlar · KVKK · yayın hazırlığı                   ← BURADASIN
-9    Blog + /admin paneli (Supabase, 2. aşama)
-```
+**Betiği iki kez çalıştırma tuzağı.** `build.mjs` gövdeyi Next'e verirken betik
+etiketini siliyor; deseni sorgu dizesini de kapsamalı (`afloday\.js[^"]*`).
+Kapsamazsa etiket gövdede kalır, Next kabuğu bir kez daha ekler, betik iki kez
+çalışır: dinleyiciler aç-kapa yapar (menü ve akordeon ölü görünür), WebGL ikinci
+program kurup konsolu hata yağmuruna tutar, marquee iki kez katlanır.
 
-**Site içerik olarak bitti.** 4 Ağustos belgesinin içerik taşıyan 357
-satırının tamamı sitede birebir karşılanıyor (doğrulandı, ölçüldü).
+**Önbellek damgası.** CSS ve JS adreslerine içerik özeti ekleniyor
+(`afloday.css?v=<md5>`), hem `templates.mjs` hem `app/layout.tsx` içinde —
+**ikisi ayrı çıktı, ikisinde de gerekli.** `vercel.json` `/assets/css/*` ve
+`/assets/js/*` için `immutable` veriyor; damga olmadan dönen ziyaretçi eski
+CSS'le bozuk sayfa görür.
 
-**8. adımda kalan:**
-- Formlar gösteri modunda (`data-demo="form-ok"`), gerçek gönderime bağlı değil
-- **KVKK metni Afloday'den bekleniyor.** `_build/kvkk.mjs` içindeki `hazir`
-  false olduğu sürece sayfa üretilmiyor ve her derlemede uyarı basılıyor.
-  Metin gelmeden form gerçek gönderime bağlanmamalı — aydınlatma metni
-  olmadan veri toplamak KVKK ihlali.
-- Hero videosu hâlâ geçici AI videosu (README'nin başında uyarı var)
-- DNS geçişi cPanel erişimi bekliyor
+**IntersectionObserver eşiği.** Yüzde eşiği (`threshold: 0.12`) ekrandan uzun
+bölümlerde **hiç tetiklenmez**: 7935 piksellik akordeon 844 piksellik ekranda en
+fazla %10 görünebiliyor. `threshold: 0` + `rootMargin` kullan.
 
-## 5 Ağustos gecesi yapılanlar
+**Denetim betikleri `data-reveal` opaklığını 1'e zorluyor** — bu, görünürlük
+hatalarını gizler. Görünürlük ararken `_audit/denetim/gorunmez.mjs` kullan.
 
-- **Belge sayfa sayfa doğrulandı** — 7 bölüm, satır satır. Karşılıksız içerik
-  satırı yok. Belgenin 3 tasarım yönergesi de kod üzerinden sınandı.
-- **Atölye sayısı düzeltildi: 50 → 53.** Kurumsal Gönüllülük'ün 3 atölyesi
-  `uygulanabilir` alanında; akordeon başlığı sayıyordu, künye saymıyordu.
-  `etkinlikler.mjs` içinde `atolyeSayisi`/`toplamAtolye` tek doğru kaynak.
-- **Menü düz sekiz maddeye indi** (belge satır 381-388). Mega panel kalktı;
-  erişilemeyen sayfa yok, 34/34 adres duruyor.
-- **Galeri sonsuz kayan şeride geçti** (kullanıcının tasarımı). Beş kusur
-  giderildi: uydurma kategori etiketleri, ışık kutusunun kopyaları sayması,
-  duraklat düğmesinin olmaması, silinmiş odak halkası, uydurma bar metinleri.
-- **Erişilebilirlik:** 1020 kontrast ihlali giderildi (bronz `#8A6A38`→`#7D5F31`,
-  alt bilgi buton özgüllüğü, koyu bölüm için `--element-lift`). Dokunma
-  hedeflerinde slayt gezinme düğmesi 77×2 pikseldi. 24×24 altı kalmadı.
-- **Metin kaynağı %95.7** (kelime bazında). Denetim betikleri scratchpad'de:
-  `bolum.mjs`, `hucre-ac.mjs`, `a11y.mjs`, `canli.mjs`, `kesin.mjs`.
+**Şablon dizesi içindeki yorumda ters tırnak kullanma**, diziyi kapatıp
+derlemeyi kırar. Ve `node _build/build.mjs` çıktısını `/dev/null`'a yönlendirme,
+hatayı gizler.
 
-**Erişilebilirlik eşiği artık korunmalı:** yeni renk eklerken sayfa zemini
-`#E9E9E0`, koyu bölüm `#131A15`. Yeni dokunma hedefi eklerken alt sınır 24×24,
-tercihen 44×44.
+**CSS özgüllüğü.** `.serit:hover .serit-panel` (0,3,0) düz `.serit-panel:hover`
+(0,2,0) kuralını ezer. Ayrıca bileşen tanımları CSS'te sonra geldiği için ortada
+duran medya sorgusu bloğu eziliyor — telefon etiket puntoları bu yüzden dosya
+sonunda.
 
----
+**`<picture>` satır içi ve yüksekliksiz.** İçindeki `img`'ye `height:100%`
+vermek yetmez, `picture`'a da vermek gerekir.
 
-**Anasayfa bölüm sırası:** video hero (olduğu gibi kaldı) → cam geçişli 3 slayt
-→ değer önerisi şeridi → "Neden Doğa Temelli Gelişim?" 4 istatistik → Kök
-Sal/Sorumluluk Al/Birlikte Yeşer → 5 eğitim vitrini → 2 deneyim vitrini →
-galeri (21 kare) → referans logoları.
+**Python'un varsayılan kodlaması cp1254.** Türkçe yazarken
+`io.open(..., encoding='utf-8')` kullan, uzun çıktıyı konsola değil dosyaya yaz.
 
-## Sayfa haritası — 19 dosya
+**JS'in `/i` bayrağı Türkçe İ ile çalışmıyor.** `/ikincil/i` "İkincil" ile
+eşleşmez.
 
-```
-Envanterin 16'sı   /  hakkimizda  ik  iletisim  gelecegi-tasarla
-                   sosyal-sorumluluk-is-danismanligi  doga-temelli-egitimlerimiz
-                   dogadan-hobi-atolyeleri  gulumseyen-yarinlar-projesi
-                   + 7 ekip sayfası
-Menü için eklenen  kurumsal  surdurulebilirlik
-Standart           404
-```
+**`_audit/orijinal/` küçük harfe çevrilmiş ve birleştirilmiş aksan taşıyor.**
+Karşılaştırırken iki tarafı da küçült ve NFC uygula.
 
-**19 iptal adres kaybolmadı:** 16 atölye → `/dogadan-hobi-atolyeleri`,
-`/katilim` → `/iletisim`, `/dogadan-gelisim-atolyeleri` →
-`/doga-temelli-egitimlerimiz` (hepsi `vercel.json`'da 301);
-`/dogadan-hobi-atolyeleri` adresini yeni Etkinlik sayfası devraldı.
-
-**Menü belgeden geliyor** (belge satır 372-379), sıra dahil birebir:
-Anasayfa · Hakkımızda · Geleceği Doğadan Tasarla · Doğa Temelli Eğitimlerimiz ·
-Kurumsal Hizmetler · Sürdürülebilirlik · Galeri · İletişim.
-
-## Depo temizliği — yapıldı
-
-Sayfa haritası 34'ten 19'a inince 494 görsel sahipsiz kaldı (silinen 16 atölye
-sayfasının galerileri, eski anasayfa kategorileri, kullanılmayan varyantlar).
-**494 dosya / 34.8 MB silindi**, 47 boş klasör kaldırıldı. `site/assets`
-58 MB'tan 24 MB'a indi.
-
-Tespit betiği scratchpad'de: HTML'deki her `assets/` yolunu, CSS `url()`
-ve JS içindeki yolları toplayıp diskteki dosyalarla karşılaştırıyor.
-Silmeden önce `/surdurulebilirlik` ve `/gulumseyen-yarinlar-projesi`
-sayfalarının görselleri elle doğrulandı — ikisi de korunuyor.
-
-`_audit/` (316 KB, 20 betik) duruyor: orijinal siteyle karşılaştırmanın
-kaydı, silmek kazanç değil kayıp olurdu.
-
-## Teslim belgeleri — yazıldı
-
-- `README.md` — projeyi gerçekten anlatıyor (eskisi hâlâ "bağımlılık yok" diyordu)
-- `docs/mimari.md` — Next.js'in neden render için kullanılmadığı, sınırın nerede
-  olduğu, dönüşüm gerekirse nasıl yapılacağı
-- `_build/icerik.d.ts` — içerik veri dosyalarının tip tanımları
+**Python http.server `out/` klasörünü kilitler**, `next build` EBUSY verir.
+`_build/onizle.mjs` kullan. Windows'ta süreç öldürmek için
+`Get-CimInstance Win32_Process` + `Stop-Process`.
 
 ---
 
-## Anasayfa slaydı — cam geçişi ✅ YAPILDI
+## Yayın ve DNS
 
-Kaynak: 21st.dev · `lumina-interactive-list` (`docs/referans/Not.md`,
-shader `docs/referans/hero-slayt-cam-gecis.md`).
-
-**Kullanıcı "birebir bu tasarım olacak" dedi.** Düzen ve sınıf adları kaynakla
-aynı: `.slider-wrapper` · `.webgl-canvas` · `.slide-number` / `.slide-total` ·
-`.slide-content` > `.slide-title` / `.slide-description` · `.slides-navigation`
-> `.slide-nav-item` > `.slide-progress-line`.
-
-Uygulama farkı — **Three.js ve GSAP kullanılmadı.** Efektin tamamı tek bir
-fragment shader; shader kaynaktakiyle birebir, düz WebGL ile çiziliyor
-(`afloday.js`). Görünen sonuç aynı, eklenen ağırlık sıfır, CDN bağımlılığı yok.
-Harf harf açılım GSAP yerine CSS `--i` gecikmesiyle.
-
-Diğer uyarlamalar: 6 demo görseli yerine belgedeki 3 slayt · Afloday paleti ve
-Newsreader + Jost · duraklat düğmesi, ok tuşları, `prefers-reduced-motion` ·
-görünmezken ve sekme arkadayken çizim duruyor · WebGL yoksa CSS daire açılımı
-devralıyor.
-
-**Video hero olduğu gibi duruyor**, slayt onun altında — kullanıcının açık isteği.
-İkisi de `100dvh`: arka arkaya iki tam ekran, aralarında yükseklik farkı yok.
-
-**Odak noktası (`odak`, data.mjs):** görsel tam ekranı kaplarken kırpılıyor;
-merkez kırpma birinci slaytta kadının yüzünü kesiyordu. `odak` CSS
-`object-position` gibi okunuyor (soldan ve ÜSTTEN yüzde) ve iki yere birden
-gidiyor: CSS geri düşüşünde `object-position`, shader'da `uFocus1/uFocus2`.
-Shader'da doku y ekseni ters (UNPACK_FLIP_Y) olduğu için y 1'den çıkarılıyor.
-`getCoverUV` kaynakta sabit 0.5'ti; 0.5 verilirse davranış birebir aynı.
-
----
-
-## Yayın — DNS
-
-**Kritik:** MX kaydı `afloday.com`'un kendisini gösteriyor. Site A kaydı
-değiştiği an e-posta kesilir.
+**Kritik:** MX kaydı `afloday.com`'un kendisini gösteriyor. A kaydı değişirse
+e-posta kesilir.
 
 ```
-1. gün   MX → mail.afloday.com   (ikisi de aynı sunucu, hiçbir şey değişmez)
+1. gün   MX → mail.afloday.com   (ikisi de aynı sunucu, değişen bir şey yok)
 2-3. gün 48 saat bekle + e-posta testi
 4. gün   A kaydı → Vercel        site yayında
 ```
 
 Dokunulmayacak: `mail` `webmail` `ftp` `cpanel` `autodiscover` `autoconfig`
-`nameserver` `SPF`. SPF kaydı **var ve düzgün** (`-all` ile bitiyor).
+`nameserver` `SPF`. SPF kaydı var ve düzgün (`-all` ile bitiyor).
 
-**Altyapı, yerine geçilen ajansın kontrolünde:** ByFlash Agency = ByServer,
-site + e-posta + iki nameserver hepsi tek makinede (`5.253.141.186`). Erişim
-talebi oradan geçecekse süre geliştiricinin kontrolünde değil.
+**Altyapı yerine geçilen ajansın kontrolünde:** ByFlash Agency = ByServer, site
++ e-posta + iki nameserver tek makinede (`5.253.141.186`). Erişim talebi oradan
+geçecekse süre geliştiricinin kontrolünde değil.
+
+**Vercel yapılandırması** (`vercel.json`): `framework: null`,
+`outputDirectory: "out"`, `cleanUrls: true`, 18 adet 301. Faz 2'de sunucu tarafı
+gerekince `output: 'export'` kalkacak, `framework` tekrar `"nextjs"` olacak,
+`outputDirectory` silinecek. **İkisini aynı anda tanımlama** — dağıtım
+`routes-manifest.json` bulunamadı diye patlar.
 
 ---
 
 ## Kullanıcı hakkında
 
-İsmail Mert Bal · serbest çalışan geliştirici · Next.js/React akıcı.
-Nakit sıkışık, bu iş ilk kurumsal referansı.
+İsmail Mert Bal · serbest geliştirici · Next.js/React akıcı. Nakit sıkışık, bu
+iş ilk kurumsal referansı.
 
 **Editoryal tercihleri:** kısa ve düz metin, satış dili yok, em dash yok,
 çocuksu ton yok, savunmacı cümle yok. Uzun açıklama yerine tek net cümle.
 Teknik jargonu müşteriye anlatırken sadeleştir ama içini boşaltma.
 
+**Çalışma tarzı:** ölçüm ister, tahmin istemez. "Düzelttim" demeden önce ölç ve
+kanıtı göster. Yanlış ölçüm yaptıysan söyle ve düzelt.
+
 Fatura kendi şirketi olmadığı için bir yakınının ortağının şahıs şirketinden
 kesilecek; ödeme faturayı kesen hesaba gitmeli.
+
+**Corentia (corentia.com.tr) kullanıcının ayrı girişimi** — footer imzası için
+kullanılmayacak; karar verilirse kişisel isim kullanılacak.
+
+---
+
+## Karar günlüğü
+
+`docs/afloday-sorular-2026-08-04.md` — 31 madde, her kararın gerekçesi. Yeni bir
+karar verdiğinde oraya madde ekle ve `docs/devam-plani.md`'yi güncelle.

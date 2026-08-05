@@ -5,7 +5,9 @@
 !_audit/**/*.png
 
 # Denetim ara dosyaları (üretilebilir — _audit/*.mjs betikleriyle yeniden oluşturulur)
-_audit/orijinal/
+# _audit/orijinal/ ARTIK İZLENİYOR — canlı afloday.com'un 34 sayfalık dökümü.
+# İçerik doğrulamasının ikinci kaynağı (belge + bu döküm). Başka bilgisayarda
+# çalışılabilmesi için depoda durmalı; 296 KB, tamamı düz metin.
 _audit/govde/
 _audit/probe/
 _audit/frames/
