@@ -4227,3 +4227,18 @@ a.index-row .index-meta::after,
   --rule:       #CFC9B9;
   --rule-soft:  #DFDACB;
 }
+
+/* ==========================================================================
+   TEK BAŞINA DURAN GİRİŞ PARAGRAFI
+   ──────────────────────────────────────────────────────────────────────────
+   .wrap-narrow 1100 piksel; içindeki .lede ise 44ch, yani ~500 piksel.
+   Paragraf sola yaslı kalıyor ve sağında 600 pikselden fazla ölü alan
+   oluşuyordu — "sayfalarda boşluklar da çok" şikâyetinin görünür örneği.
+
+   Ölçü biraz açılıyor ve blok ortalanıyor: satır uzunluğu okunur
+   aralıkta (58ch) kalırken boşluk iki yana simetrik dağılıyor.
+   ========================================================================== */
+.wrap-narrow > .lede {
+  max-width: 58ch;
+  margin-inline: auto;
+}
