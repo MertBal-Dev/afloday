@@ -1,192 +1,93 @@
 # Devam planı
 
-> **Bu dosya her iş bitiminde güncellenir.** Yeni oturumun tek görevi:
-> `CLAUDE.md` + bu dosyayı okuyup kaldığı yerden devam etmek.
+> Son güncelleme: **6 Ağustos 2026**
 >
-> Son güncelleme: **5 Ağustos 2026, akşam**
+> **Dal:** `feedback-2026-08-06` · `main` hâlâ `4b9ea9c` (yayındaki hâl)
 
 ---
 
 ## Şu an neredeyiz
 
-**Ceylan hanımın geri bildirimi geldi (5 Ağustos akşamı), uygulanıyor.**
-Blog ve `/admin` paneline henüz başlanmadı.
+Ceylan Kalyon Özdemir'in 5 Ağustos geri bildirimi uygulandı ve doğrulandı.
+Push edilmedi, onay bekliyor.
 
 ```
-Faz 1 · Site         ✅ bitti
-Faz 1b· Geri bildirim ⏳ yapı ve ölçek bitti, renk + 3 karar bekliyor  ← BURADASIN
-Faz 2 · Blog + panel ⬜ başlanmadı
-Yayın · DNS geçişi   ⛔ cPanel erişimi bekleniyor
+Faz 1  · Site               ✅ bitti
+Faz 1b · Geri bildirim      ✅ uygulandı, gönderilmeyi bekliyor  ← BURADASIN
+Faz 2  · Blog + /admin      ⬜ başlanmadı
+Yayın  · DNS geçişi         ⛔ cPanel erişimi bekleniyor
 ```
 
-### Geri bildirimde yapılanlar
+### Geri bildirimin 14 maddesi
 
-| Ceylan hanımın sözü | Ne yapıldı |
+| Ceylan hanımın sözü | Sonuç |
 |---|---|
-| "atölyeler çok yazı yazı kalmış, görseller altta word düzeni gibi" | Etkinlik sayfası ikiye ayrıldı: 7 kategori kartlı genel bakış + 7 ayrı kategori sayfası. Akordeon kalktı. |
-| "hepsini bir arada görebilir, tıklayınca içine girebiliriz" | `kat-izgara` — 7 kart tek ekranda, tıklayınca `etkinlik-<id>` sayfası |
-| "aralara görseller girebilir, üzerinde olabilir yazılar" | Kategori kapağı tam genişlik, ad fotoğrafın üzerinde. Gövde mozaik: atölye kartı ve fotoğraf eşit hücreler. |
-| "çok büyük büyük geldi" + "yazılar büyüyebilir, orantılı olmaları en doğrusu" | Başlık 120→68px, gövde 15→17/18px. Oran **8:1 → 3.9:1** |
-| "sayfalarda boşluklar da çok" | Bölüm dolgusu 108→78px |
-| "açılan ana menüde başlıklar çok büyük" | Drawer bağlantısı 31→20px (telefon) |
-| "10 atölye, 7 kişi ekip vs olmasın" | 4 sayaç rozeti kaldırıldı |
-| "başlıklardan sonra nokta olmasın" | 10 başlıktan nokta kaldırıldı |
-| "referans logoları en az iki katı büyüsün" | 32→64px, hücre ölçüsü buna göre |
+| "çok büyük büyük geldi" | başlık 120 → 68px |
+| "yazılar büyüyebilir, orantılı olsun" | gövde 14-15 → 17/18px · oran 8:1 → 3.9:1 |
+| "sayfalarda boşluklar da çok" | bölüm 108 → 78px · alt bilgi 1071 → 862px |
+| "10 atölye, 7 kişi ekip vs olmasın" | 5 sayaç kaldırıldı, 0 kaldı |
+| "başlıklardan sonra nokta olmasın" | 10 başlık + alt bilgi (31 sayfa) + hero |
+| "eski logo rengi var, turuncu yeşil" | karmen ve bronz 0 öğede kaldı |
+| "açılan menüde başlıklar çok büyük" | telefonda 31 → 20px |
+| "5 eğitimi sayfaya sığdırsak" | 11.7 → 3.9 ekran + 5 program sayfası |
+| "atölyeler yazı yazı, görseller word düzeni" | panel şeridi + 7 kategori sayfası, mozaik gövde |
+| "hepsi bir arada derli toplu" | uç uca panel şeridi, tek arka plan, saç teli çizgi |
+| "vizyon misyon alt alta, sevmedim" | yan yana, yazı fotoğrafın üzerinde |
+| "resim yazı resim yazı, daha dinamik" | mozaik editoryal ölçeğe geçti (hücre 420 → 637px) |
+| "referans logoları iki katı" | 32 → 64px |
+| "galeri sayfasını kapatabiliriz" | kapatıldı, /galeri 301 ile etkinliklere |
 
-Kanıt: `verify.mjs` 0 sorun · `a11y.mjs` 0 bulgu · 34/34 adres · 5 ekran ×
-26 sayfa = 130 kontrolde yatay taşma yok.
-
-### Panel şeridi — "hepsi bir arada derli toplu"
-
-Ceylan hanım naregitim.com/cozumlerimiz'i gösterdikten sonra WhatsApp'ta
-netleştirdi: *"Büyüklük olarak değil şekil olarak demek istedim. Hepsi bir
-arada derli toplu."*
-
-Referansın şekli Playwright ile ölçüldü: 6 dikey panel uç uca, aralarında
-boşluk yok, yalnız saç teli çizgi; etiketler dikey; panele gelince arka
-plandaki illüstrasyonun tamamı değişiyor; sayfa 2.9 ekran. Telefonda 2×3
-ızgaraya dönüyor, illüstrasyon hücreler boyunca devam ediyor.
-
-Bizde uygulanan hâli `_build/panel-serit.mjs`: 7 etkinlik kategorisi ve 5
-eğitim programı artık boşluklu kart ızgarası değil, uç uca panel şeridi.
-Referansın sihri el yapımı suluboyalarda; bizde fotoğraf var, o yüzden
-arka plan değişimi yerine panelin kendi fotoğrafı duruyor ve üzerine
-gelince doygunluk/parlaklık açılıyor.
-
-### Fotoğraf-atölye eşlemesi — Ceylan hanıma sorulacak
-
-Kategori sayfalarında fotoğraflar atölye kartlarının YANINDA değil,
-onlarla aynı ızgarada eşit hücre olarak duruyor. Sebep: dosya adları
-hangi fotoğrafın hangi ATÖLYEYE ait olduğunu söylemiyor, yalnız
-kategoriyi söylüyor. "Bonsai Atölyesi" başlığının yanına rastgele kare
-koymak o karenin o atölyeden olduğunu iddia etmek olurdu.
-
-**Ceylan hanım hangi karenin hangi atölye olduğunu söylerse** eşleme
-`etkinlik-gorselleri.mjs` içinde tek satırla yapılır ve her atölye kendi
-fotoğrafıyla görünür.
-
----
-
-## Yeni bilgisayarda ilk adımlar
-
-```bash
-git clone https://github.com/MertBal-Dev/afloday.git
-cd afloday
-npm install
-```
-
-**`.env` dosyasını elle oluştur** (depoda yok, `.env.example`'ı kopyala):
+### Doğrulama
 
 ```
-SITE_URL=https://afloday.vercel.app
-PREVIEW=1
-```
-
-`PREVIEW=1` iken sayfalara `noindex` ve `robots.txt` `Disallow` konuyor.
-Gerçek yayına geçerken bu satır silinecek. Vercel tarafındaki değişkenler
-zaten ayarlı, dokunma.
-
-Sonra doğrula:
-
-```bash
-node _build/build.mjs && node _build/verify.mjs   # 0 sorun vermeli
-npm run build                                     # üretim derlemesi geçmeli
+verify.mjs        0 sorun · 31 sayfa · 495 görsel · 1647 bağlantı
+a11y.mjs          0 bulgu
+kontrast          0 gerçek ihlal
+canlı adres       34/34
+responsive        5 ekran × 30 sayfa = 150 kontrol, yatay taşma yok
+320px reflow      0/9 sayfada taşma (WCAG 1.4.10)
+görsel kırpma     kapak %89 → %36 · şerit %91 → yapısal olarak çözüldü
 ```
 
 ---
 
-## Afloday'den bekleyenler (iş bunlara bağlı)
+## Sıradaki iş
+
+1. **Ceylan hanıma gönder.** Onay gelirse `feedback-2026-08-06` → `main`.
+2. **Faz 2: blog + /admin paneli.** Taahhüt en geç 3 hafta, hiç başlanmadı.
+   Kararlaştırılan yaklaşım: Supabase (Frankfurt) + Afloday'in kendi SMTP'si.
+   Hesap Afloday'in olur, geliştiriciye bağlı bağımlılık kalmaz.
+3. **DNS geçişi** — cPanel erişimi gelince. MX kaydı kritik, `CLAUDE.md`'ye bak.
+
+---
+
+## Afloday'den bekleyenler
 
 | # | Ne | Neyi açar | Durum |
 |---|---|---|---|
-| 1 | **cPanel / DNS erişimi** | Yayın, teslim sayacı | istendi, beklemede |
-| 2 | **KVKK aydınlatma + çerez metni** | Formların gerçek gönderime bağlanması | istendi, beklemede |
-| 3 | `info@afloday.com` SMTP bilgileri | Form bildirim e-postası | cPanel ile gelecek |
+| 1 | cPanel / DNS erişimi | Yayın, teslim sayacı | beklemede |
+| 2 | KVKK aydınlatma + çerez metni | Formların gerçek gönderime bağlanması | **müşterinin sorumluluğu** |
+| 3 | `info@afloday.com` SMTP | Form bildirim e-postası | cPanel ile gelecek |
 | 4 | Vitrin kartı ③ ve ④ metinleri | Anasayfada 2 kart daha | sorulacak |
 | 5 | %88 istatistiğinin kaynağı | Kaynak satırı | sorulacak |
+| 6 | **Hangi fotoğraf hangi atölye** | Her atölye kartı kendi karesiyle | sorulacak |
 
-4 ve 5 geri bildirim turunda sorulacak, aciliyeti yok.
-
----
-
-## Sıradaki iş — Faz 2: blog + `/admin` paneli
-
-Taahhüt: **en geç 3 hafta.** Hiç başlanmadı, asıl kalan iş bu.
-
-### Kararlaştırılan yaklaşım
-
-**Supabase + kendi mail sunucuları.** Gerekçesi:
-
-- Faz 2'de zaten kurulacak, formlar da oraya bağlanınca tek hesap tek yer
-- Hesap Afloday'in olur, geliştiriciye bağlı hiçbir şey kalmaz (temiz devir)
-- CV dosyası Storage'da düzgün durur (4 MB, imzalı bağlantı)
-- **Frankfurt (eu-central-1)** bölgesi seçilecek — KVKK için veri AB'de kalır
-- Bildirim e-postası `info@afloday.com` SMTP'siyle gider, üçüncü servis yok
-
-**Google Apps Script elendi:** script geliştiricinin kişisel Google hesabında
-çalışır, teslim sonrası gizli bağımlılık ve destek yükü olur. Hesap kapanırsa
-form sessizce ölür.
-
-### Mimari kararı (Faz 2 başında verilecek)
-
-**A · Statik kalmak.** Blog yazıları derleme anında Supabase'den çekilir, yeni
-yazı webhook ile Vercel'de yeniden derleme tetikler. Panel tarayıcıda çalışan
-React, Supabase'e doğrudan bağlanır, yetki Row Level Security ile. Bugünkü
-yapı aynen devam eder.
-
-**B · Sunucu tarafına geçmek.** `output: 'export'` kalkar, Next sunucu
-bileşenleri devreye girer. Blog anında yayınlanır.
-
-Kullanıcı A'ya yakın duruyor: "yazı ekleyip 40 saniye sonra yayında olması
-kurumsal bir blog için sorun değil, karşılığında altyapı basit ve ucuz kalıyor."
-
-### Faz 2 adımları
-
-1. Supabase projesi (Frankfurt), tablo + storage kovası + RLS kuralları
-2. Formları bağla: `iletisim` ve `ik` (CV yüklemesi dahil)
-3. `data-demo` özniteliğini kaldır, "Bu bir tasarım sunumudur" notunu sil
-4. KVKK metni gelince `_build/kvkk.mjs` içinde `hazir: true` yap
-5. Blog: liste + yazı sayfası, adres yapısı `/blog/<slug>`
-6. `/admin`: giriş, yazı ekle/düzenle, form mesajlarını görüntüle
-7. Bildirim e-postası (SMTP)
+6. madde önemli: dosya adları yalnız kategoriyi söylüyor. Eşleme gelirse
+mozaikteki fotoğraf karoları atölye kartlarıyla birleştirilebilir.
 
 ---
 
-## Açık tasarım kararları
+## Karar verilmiş, uygulanmamış
 
-**Anasayfa hero başlığı.** Şu an *"Doğada öğrenilen, elde kalan bir gün."* —
-bu cümle **hiçbir kaynakta yok, geliştirici yazdı.** Ceylan hanıma açıkça
-bildirildi, kendi cümlesini söylerse değişecek. Kaynaklı alternatif:
-*"Çiçeklerin, doğanın iyileştirici etkisini eğitimle, atölyeyle, özgün
-tasarımlarla iş ve yaşam alanlarına taşıyoruz."* (afloday.com'un kendi cümlesi)
+**Turuncu düzlem.** Araştırma, tam genişlikte bir turuncu bandın koyu
+metinle 5.11:1 verdiğini ve kurucunun "turuncu marka rengimiz"
+beklentisini karşıladığını söylüyor. Kullanıcı turuncuyu iki kez
+reddettiği için eklenmedi; istenirse tek bloklu bir bant olarak açılabilir.
 
-**Footer imzası.** Alt şeritteki sağ yuva boş; eskiden ByFlash Agency imzası
-oradaydı. Geliştirici imzası eklenecekse yeri orası. Karar: teslim sırasında
-Ceylan hanıma sorulacak, sormadan konmayacak. Corentia markası
-kullanılmayacak, kişisel isim tercih edilecek.
+**Anasayfa.** 11.1 ekran. Kartlarda belgeden gelen `vitrinMetin`,
+etiketler ve künye var; panel şeridine çevirmek kaynaklı içerik siler.
+Ceylan hanımın anasayfa hakkında yorumu gelene kadar dokunulmuyor.
 
-**İstatistik arka planı.** Belge satır 54 "yaprak/toprak deseni" diyor ama
-satır 55'te iş insanı elleri fotoğrafı veriyor; belge kendi içinde çelişiyor.
-Şu an tarife uyan üretilmiş doku kullanılıyor
-(`site/assets/img/rev2/secilmis/dogal-zemin-dokusu.*`). Belgenin kendi
-görseli de duruyor, istenirse tek satırla geri dönülür. Kaynak PNG ve işleme
-adımları: `docs/gorsel/BENİOKU.md`.
-
----
-
-## Bitirilmiş işler (kanıtlarıyla)
-
-| İş | Kanıt |
-|---|---|
-| Belge doğrulaması | `docs/belge-kapsam-raporu.md` — 8 bölüm, 380 satır, karşılıksız 0 |
-| Gece denetimi | `docs/gece-denetimi-2026-08-05.md` |
-| Karar günlüğü | `docs/afloday-sorular-2026-08-04.md` — 31 madde |
-| Mimari gerekçeleri | `docs/mimari.md` |
-
----
-
-## Güncelleme kuralı
-
-Bir iş bittiğinde **bu dosyayı güncelle**: "Şu an neredeyiz" bölümünü ve
-sıradaki adımı. Karar verdiysen `docs/afloday-sorular-2026-08-04.md`'ye madde
-ekle. Böylece bir sonraki oturum sadece iki dosya okuyup devam eder.
+**Geleceği Tasarla element haritası.** Belge "4 küçük ikonla gösterilir"
+diyor. Ceylan hanım bu sayfa hakkında yorum yapmadı, o yüzden belge
+geçerli. Yorum gelirse geri bildirim öncelikli — bkz. hafıza notu.
