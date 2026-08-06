@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..500&display=swap">
-<link rel="stylesheet" href="assets/css/afloday.css?v=df807ad0">
+<link rel="stylesheet" href="assets/css/afloday.css?v=b94c5a6a">
 <script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
 {
@@ -122,9 +122,6 @@
           <a href="surdurulebilirlik">Sürdürülebilirlik</a>
         </li>
         <li>
-          <a href="galeri">Galeri</a>
-        </li>
-        <li>
           <a href="iletisim">İletişim</a>
         </li>
       </ul>
@@ -143,7 +140,6 @@
     <li><a href="doga-temelli-egitimlerimiz">Doğa Temelli Eğitimlerimiz</a></li>
     <li><a href="kurumsal">Kurumsal Hizmetler</a></li>
     <li><a href="surdurulebilirlik">Sürdürülebilirlik</a></li>
-    <li><a href="galeri">Galeri</a></li>
     <li><a href="iletisim">İletişim</a></li>
   </ul>
   <div class="btn-row">
@@ -160,7 +156,7 @@
     </p>
   </div>
 </div>
-<main id="main">
+<main id="main" tabindex="-1">
 <section class="folio">
     <div class="wrap">
       <p class="folio-top" data-reveal><span>Afloday</span><span>Doğa Temelli Eğitimler</span></p>
@@ -182,16 +178,51 @@
   </section>
   <section class="section-tight" id="programlar">
     <div class="wrap">
-      <div class="pserit pserit-5" aria-label="Eğitim programları">
-      <a class="pserit-panel" href="egitim-duygusal-dayaniklilik" data-reveal="stagger">
-        <span class="pserit-medya">
+      <div class="pserit pserit-5" data-pserit aria-label="Eğitim programları">
+      <div class="pserit-sahne" aria-hidden="true">
+        <span class="pserit-kare is-aktif" data-kare="0">
           <picture>
             <source type="image/webp" srcset="assets/img/rev2/secilmis/close-up-executives-ready-start-running-800.webp 800w, assets/img/rev2/secilmis/close-up-executives-ready-start-running.webp 1600w"
-                    sizes="(max-width: 900px) 100vw, 50vw">
-            <img src="assets/img/rev2/secilmis/close-up-executives-ready-start-running.jpg" alt="" role="presentation" width="800" height="534"
+                    sizes="100vw">
+            <img src="assets/img/rev2/secilmis/close-up-executives-ready-start-running.jpg" alt="" role="presentation" width="1600" height="1067"
+                 fetchpriority="high">
+          </picture>
+        </span>
+        <span class="pserit-kare" data-kare="1">
+          <picture>
+            <source type="image/webp" srcset="assets/img/rev2/secilmis/handshake-environmentalists-generative-ai-800.webp 800w, assets/img/rev2/secilmis/handshake-environmentalists-generative-ai.webp 1600w"
+                    sizes="100vw">
+            <img src="assets/img/rev2/secilmis/handshake-environmentalists-generative-ai.jpg" alt="" role="presentation" width="1600" height="1067"
                  loading="lazy" decoding="async">
           </picture>
         </span>
+        <span class="pserit-kare" data-kare="2">
+          <picture>
+            <source type="image/webp" srcset="assets/img/rev2/secilmis/double-exposure-businessman-suit-with-nature-digital-icons-symbolizing-innovatio-800.webp 800w, assets/img/rev2/secilmis/double-exposure-businessman-suit-with-nature-digital-icons-symbolizing-innovatio.webp 1600w"
+                    sizes="100vw">
+            <img src="assets/img/rev2/secilmis/double-exposure-businessman-suit-with-nature-digital-icons-symbolizing-innovatio.jpg" alt="" role="presentation" width="1600" height="1067"
+                 loading="lazy" decoding="async">
+          </picture>
+        </span>
+        <span class="pserit-kare" data-kare="3">
+          <picture>
+            <source type="image/webp" srcset="assets/img/rev2/secilmis/creativity-design-process-graphics-concept-800.webp 800w, assets/img/rev2/secilmis/creativity-design-process-graphics-concept.webp 1600w"
+                    sizes="100vw">
+            <img src="assets/img/rev2/secilmis/creativity-design-process-graphics-concept.jpg" alt="" role="presentation" width="1600" height="1067"
+                 loading="lazy" decoding="async">
+          </picture>
+        </span>
+        <span class="pserit-kare" data-kare="4">
+          <picture>
+            <source type="image/webp" srcset="assets/img/rev2/secilmis/man-hand-holding-compass-forest-800.webp 800w, assets/img/rev2/secilmis/man-hand-holding-compass-forest.webp 1600w"
+                    sizes="100vw">
+            <img src="assets/img/rev2/secilmis/man-hand-holding-compass-forest.jpg" alt="" role="presentation" width="1600" height="1067"
+                 loading="lazy" decoding="async">
+          </picture>
+        </span>
+      </div>
+      <a class="pserit-panel" href="egitim-duygusal-dayaniklilik" data-panel="0"
+        style="--kare:url('/assets/img/rev2/secilmis/close-up-executives-ready-start-running-800.webp')">
         <span class="pserit-ic">
           <span class="pserit-ad">Doğanın Gücüyle Duygusal Dayanıklılık ve Esneklik</span>
           <span class="pserit-ok" aria-hidden="true">
@@ -201,15 +232,8 @@
           </span>
         </span>
       </a>
-      <a class="pserit-panel" href="egitim-iletisim-dili" data-reveal="stagger">
-        <span class="pserit-medya">
-          <picture>
-            <source type="image/webp" srcset="assets/img/rev2/secilmis/handshake-environmentalists-generative-ai-800.webp 800w, assets/img/rev2/secilmis/handshake-environmentalists-generative-ai.webp 1600w"
-                    sizes="(max-width: 900px) 100vw, 50vw">
-            <img src="assets/img/rev2/secilmis/handshake-environmentalists-generative-ai.jpg" alt="" role="presentation" width="800" height="534"
-                 loading="lazy" decoding="async">
-          </picture>
-        </span>
+      <a class="pserit-panel" href="egitim-iletisim-dili" data-panel="1"
+        style="--kare:url('/assets/img/rev2/secilmis/handshake-environmentalists-generative-ai-800.webp')">
         <span class="pserit-ic">
           <span class="pserit-ad">Doğanın İletişim Dili Eğitimi</span>
           <span class="pserit-ok" aria-hidden="true">
@@ -219,15 +243,8 @@
           </span>
         </span>
       </a>
-      <a class="pserit-panel" href="egitim-takim-ruhu" data-reveal="stagger">
-        <span class="pserit-medya">
-          <picture>
-            <source type="image/webp" srcset="assets/img/rev2/secilmis/business-people-assembling-puzzle-800.webp 800w, assets/img/rev2/secilmis/business-people-assembling-puzzle.webp 1600w"
-                    sizes="(max-width: 900px) 100vw, 50vw">
-            <img src="assets/img/rev2/secilmis/business-people-assembling-puzzle.jpg" alt="" role="presentation" width="800" height="534"
-                 loading="lazy" decoding="async">
-          </picture>
-        </span>
+      <a class="pserit-panel" href="egitim-takim-ruhu" data-panel="2"
+        style="--kare:url('/assets/img/rev2/secilmis/double-exposure-businessman-suit-with-nature-digital-icons-symbolizing-innovatio-800.webp')">
         <span class="pserit-ic">
           <span class="pserit-ad">Doğanın Takım Ruhuyla İş Ekosistemi Eğitimi</span>
           <span class="pserit-ok" aria-hidden="true">
@@ -237,15 +254,8 @@
           </span>
         </span>
       </a>
-      <a class="pserit-panel" href="egitim-yaratici-dusunme" data-reveal="stagger">
-        <span class="pserit-medya">
-          <picture>
-            <source type="image/webp" srcset="assets/img/rev2/secilmis/whatsapp-image-2026-07-22-at-14-29-50-2-800.webp 800w, assets/img/rev2/secilmis/whatsapp-image-2026-07-22-at-14-29-50-2.webp 1600w"
-                    sizes="(max-width: 900px) 100vw, 50vw">
-            <img src="assets/img/rev2/secilmis/whatsapp-image-2026-07-22-at-14-29-50-2.jpg" alt="" role="presentation" width="800" height="534"
-                 loading="lazy" decoding="async">
-          </picture>
-        </span>
+      <a class="pserit-panel" href="egitim-yaratici-dusunme" data-panel="3"
+        style="--kare:url('/assets/img/rev2/secilmis/creativity-design-process-graphics-concept-800.webp')">
         <span class="pserit-ic">
           <span class="pserit-ad">Doğanın İlhamıyla Yaratıcı Düşünme Eğitimi</span>
           <span class="pserit-ok" aria-hidden="true">
@@ -255,15 +265,8 @@
           </span>
         </span>
       </a>
-      <a class="pserit-panel" href="egitim-degisimin-dogasi" data-reveal="stagger">
-        <span class="pserit-medya">
-          <picture>
-            <source type="image/webp" srcset="assets/img/rev2/secilmis/double-exposure-businessman-suit-with-nature-digital-icons-symbolizing-innovatio-800.webp 800w, assets/img/rev2/secilmis/double-exposure-businessman-suit-with-nature-digital-icons-symbolizing-innovatio.webp 1600w"
-                    sizes="(max-width: 900px) 100vw, 50vw">
-            <img src="assets/img/rev2/secilmis/double-exposure-businessman-suit-with-nature-digital-icons-symbolizing-innovatio.jpg" alt="" role="presentation" width="800" height="534"
-                 loading="lazy" decoding="async">
-          </picture>
-        </span>
+      <a class="pserit-panel" href="egitim-degisimin-dogasi" data-panel="4"
+        style="--kare:url('/assets/img/rev2/secilmis/man-hand-holding-compass-forest-800.webp')">
         <span class="pserit-ic">
           <span class="pserit-ad">Değişimin Doğası ve Liderlik Ekosistemi Eğitimi</span>
           <span class="pserit-ok" aria-hidden="true">
@@ -365,7 +368,6 @@
           <li><a href="hakkimizda">Afloday Hakkında</a></li>
           <li><a href="hakkimizda#ekip">Ekibimiz</a></li>
           <li><a href="surdurulebilirlik">Sürdürülebilirlik</a></li>
-          <li><a href="galeri">Galeri</a></li>
         </ul>
         <p class="ftr-head" style="margin-top:var(--s5)">Takip Edeyim</p>
         <ul>
@@ -380,6 +382,6 @@
     </div>
   </div>
 </footer>
-<script src="assets/js/afloday.js?v=3a776f64" defer></script>
+<script src="assets/js/afloday.js?v=d13308a4" defer></script>
 </body>
 </html>

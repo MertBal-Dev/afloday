@@ -208,10 +208,6 @@ ${heroSlayt(heroSlaytlari)}
       <div style="margin-top:clamp(32px,4vw,56px)" data-reveal>
         ${homeGaleriVitrin(galeriRev2)}
       </div>
-      <div class="btn-row" style="margin-top:clamp(28px,3.5vw,44px); justify-content:space-between; align-items:center;" data-reveal>
-        <span class="eyebrow" style="margin:0">Arşiv</span>
-        <a class="btn btn-primary" href="galeri.html">Tüm Galeriyi İncele &rarr;</a>
-      </div>
     </div>
   </section>
 
@@ -1067,12 +1063,20 @@ ${folio({
        Şimdi beşi de tek ızgarada; tam metin kendi sayfasında. */ ''}
   <section class="section-tight" id="programlar">
     <div class="wrap">
-      ${/* `vitrinGorsel` varsa o tercih ediliyor: `takim-ruhu` ile
-           `degisimin-dogasi` aynı çift-pozlama görselini paylaşıyor,
-           şeritte iki panel birebir aynı çıkıyordu. Vitrin görselleri
-           ayrıca Afloday'in kendi fotoğrafları, stok değil. */ ''}
+      ${/* ŞERİT GÖRSELLERİ ELLE SEÇİLDİ — hepsi yatay.
+           Panel şeridinin arka planı geniş bir bant; oraya dikey fotoğraf
+           konunca %81'i kesiliyor (6 çözünürlükte ölçüldü). Programların
+           `vitrinGorsel` alanları Afloday'in kendi kareleri ama ikisi
+           dikey (1067×1600 ve 900×1600), o yüzden şeritte kullanılmıyor.
+
+           `takim-ruhu` ile `degisimin-dogasi` aynı çift-pozlama karesini
+           paylaşıyor; şeritte iki panel birebir aynı çıkmasın diye
+           ikincisine pusula karesi verildi — "Değişimin Doğası ve Liderlik
+           Ekosistemi" için yön/rota anlamı da yerinde oturuyor. */ ''}
       ${panelSerit(egitimler.map(e => ({
-    ad: e.ad, gorsel: e.vitrinGorsel || e.gorsel, href: egitimDosyasi(e),
+    ad: e.ad,
+    gorsel: e.id === 'degisimin-dogasi' ? 'man-hand-holding-compass-forest.jpg' : e.gorsel,
+    href: egitimDosyasi(e),
   })), { etiket: 'Eğitim programları' }).replace('class="pserit"', 'class="pserit pserit-5"')}
     </div>
   </section>
@@ -1582,12 +1586,20 @@ ${folio({
 
   ${marquee(30)}`;
 
-  add('galeri.html', layout({
-    title: 'Galeri — Afloday',
-    desc: `Afloday atölye ve etkinliklerinden ${galeriRev2.length} fotoğraf. Kurumsal gelişim atölyeleri, doğadan etkinlik deneyimleri ve çocuk atölyelerinden kareler.`,
-    current: 'galeri.html', body, canonical: 'galeri.html',
-    ogImage: `assets/img/rev2/${galeriRev2[0].slug}.jpg`,
-  }));
+  /* GALERİ SAYFASI ÜRETİLMİYOR — Ceylan Kalyon Özdemir, 5 Ağustos:
+     "Galeri sayfasını kapatabiliriz."
+
+     Fotoğraflar kaybolmadı: 21 kare anasayfadaki vitrin şeridinde,
+     70 atölye karesi de yedi etkinlik kategorisi sayfasının mozaiğinde
+     duruyor — orada hem daha çoklar hem de bağlamlılar.
+
+     `/galeri` canlı sitede var olan bir adres, o yüzden silinmiyor:
+     `vercel.json` içinde 301 ile `/dogadan-hobi-atolyeleri`ne gidiyor.
+     Böylece 34 adres kuralı bozulmuyor, adresin arama motorlarındaki
+     birikmiş değeri de fotoğrafların gerçekten bulunduğu yere aktarılıyor.
+
+     Sayfa gövdesi (`body`) yukarıda duruyor; karar geri alınırsa tek
+     satırla geri açılır. */
 }
 
 /* ====================================================================== */

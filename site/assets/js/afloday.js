@@ -942,4 +942,48 @@
     });
   });
 
+
+  /* --- Panel şeridi: sahne değiştirme -------------------------------------
+     Referans (naregitim.com/cozumlerimiz) panele gelince arka plandaki
+     görselin tamamını değiştiriyor. Aynı davranış:
+
+       · fare panelin üzerine gelince o panelin karesi görünür olur
+       · klavyeyle odaklanınca da aynı şey olur (fare zorunlu değil)
+       · şeritten çıkınca ilk kareye dönülür
+
+     Görselin panelin ARKASINDA olmasının sebebi ölçüm: panelin İÇİNDE
+     olduğu sürümde 195×400 piksellik dar çerçevede 3:2 fotoğrafın %68'i
+     kesiliyordu. Tam genişlikte tek çerçevede kayıp ~%10.
+
+     900 pikselin altında CSS sahneyi kapatıp ızgaraya geçiyor; orada her
+     panel kendi zeminini gösterdiği için bu kod boşa çalışmasın diye
+     `matchMedia` ile susuyor. */
+  document.querySelectorAll('[data-pserit]').forEach(function (serit) {
+    var kareler = [].slice.call(serit.querySelectorAll('.pserit-kare'));
+    var paneller = [].slice.call(serit.querySelectorAll('.pserit-panel'));
+    if (kareler.length < 2 || !paneller.length) return;
+
+    var dar = window.matchMedia('(max-width: 900px)');
+    var aktif = 0;
+
+    function goster(i) {
+      if (dar.matches || i === aktif) return;
+      if (kareler[aktif]) kareler[aktif].classList.remove('is-aktif');
+      if (kareler[i]) kareler[i].classList.add('is-aktif');
+      aktif = i;
+    }
+
+    paneller.forEach(function (panel, i) {
+      panel.addEventListener('mouseenter', function () { goster(i); });
+      panel.addEventListener('focus', function () { goster(i); });
+    });
+
+    /* Şeritten tamamen çıkınca başa dön. `mouseleave` şeridin kendisinde
+       dinleniyor: paneller arası geçişte tetiklenmesin. */
+    serit.addEventListener('mouseleave', function () { goster(0); });
+    serit.addEventListener('focusout', function (e) {
+      if (!serit.contains(e.relatedTarget)) goster(0);
+    });
+  });
+
 })();

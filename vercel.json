@@ -131,6 +131,11 @@
       "source": "/dogadan-gelisim-atolyeleri",
       "destination": "/doga-temelli-egitimlerimiz",
       "permanent": true
+    },
+    {
+      "source": "/galeri",
+      "destination": "/dogadan-hobi-atolyeleri",
+      "permanent": true
     }
   ],
   "cleanUrls": true

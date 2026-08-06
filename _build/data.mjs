@@ -97,7 +97,11 @@ export const nav = [
   /* Belge "Galeri"yi menüde anıyor ama sayfa tanımlamıyor; içeriğini
      klasör adı söylüyor (WeTransfer arşivindeki "Galeri" klasörü).
      Gerekçe: docs/afloday-sorular-2026-08-04.md · madde 23. */
-  { href: 'galeri.html', label: 'Galeri' },
+  /* GALERİ MENÜDEN KALKTI — Ceylan Kalyon Özdemir, 5 Ağustos:
+     "Galeri sayfasını kapatabiliriz."
+     Fotoğraflar kaybolmuyor: 21 kare anasayfadaki vitrin şeridinde,
+     70 atölye karesi de 7 etkinlik kategorisi sayfasının mozaiğinde
+     duruyor. /galeri adresi 301 ile etkinlik genel bakışına gidiyor. */
   { href: 'iletisim.html', label: 'İletişim' },
 ];
 

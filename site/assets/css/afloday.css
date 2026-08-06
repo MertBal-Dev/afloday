@@ -3940,143 +3940,6 @@ a.index-row .index-meta::after,
 .iletisim-blok a:hover { border-color: var(--vurgu); }
 
 /* ==========================================================================
-   PANEL ŞERİDİ — "hepsi bir arada derli toplu"
-   ──────────────────────────────────────────────────────────────────────────
-   Ceylan hanım naregitim.com/cozumlerimiz için "büyüklük olarak değil şekil
-   olarak" dedi. Şekil şu: paneller uç uca, aralarında boşluk yok, yalnız
-   saç teli çizgi ayırıyor, hepsi aynı ölçüde, sayfanın kenarından kenarına.
-
-   Önceki kart ızgarası 36 piksellik boşluklarla yüzen ayrı kutulardı ve
-   yedinci kart geniş banda dönüşüyordu — yedi ayrı nesne gibi duruyordu.
-   ========================================================================== */
-
-/* Sayfa kenarından kenarına: bileşen .wrap içinde duruyor ama onun
-   dolgusunu iptal edip görüntü alanının tamamına yayılıyor. */
-.pserit {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  width: 100vw;
-  margin-inline: calc(50% - 50vw);
-  background: var(--field);
-}
-
-.pserit-panel {
-  position: relative;
-  display: block;
-  aspect-ratio: 5 / 9;
-  overflow: hidden;
-  text-decoration: none;
-  color: var(--field-ink);
-  /* Panelleri ayıran saç teli — boşluk yerine çizgi. */
-  border-inline-start: 1px solid rgba(233, 233, 224, 0.22);
-}
-.pserit-panel:first-child { border-inline-start: 0; }
-.pserit-panel:focus-visible { outline: 2px solid var(--carmine); outline-offset: -4px; }
-
-.pserit-medya { position: absolute; inset: 0; }
-.pserit-medya img,
-.pserit-medya picture {
-  width: 100%; height: 100%;
-  object-fit: cover; aspect-ratio: auto;
-  transition: transform 1200ms var(--ease-out), filter 500ms var(--ease-io);
-  /* Durgun hâlde hafif geri çekilme; ilgilenilen panel öne çıksın. */
-  filter: saturate(0.82) brightness(0.86);
-}
-.pserit-panel:hover .pserit-medya img,
-.pserit-panel:focus-visible .pserit-medya img {
-  transform: scale(1.06);
-  filter: saturate(1) brightness(1);
-}
-/* Perde: etiketin okunması fotoğrafın parlaklığına bırakılmıyor. */
-.pserit-medya::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to top,
-    rgba(19, 26, 21, 0.88) 0%,
-    rgba(19, 26, 21, 0.42) 46%,
-    rgba(19, 26, 21, 0.10) 100%);
-}
-
-.pserit-ic {
-  position: relative; z-index: 1;
-  height: 100%;
-  display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;
-  gap: var(--s4);
-  padding: clamp(16px, 1.4vw, 22px);
-}
-
-/* Kategori adlarımız uzun ("Motivasyon ve Çalışan Deneyimi Etkinlikleri"
-   42 karakter). Dar panelde yatay yazı beş satıra bölünüyor; dikey yazı
-   panel boyunca akıyor ve uzunluğu taşıyor. Referans da bu yüzden dikey. */
-.pserit-ad {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-family: var(--serif);
-  font-size: clamp(0.9375rem, 1.05vw, 1.125rem);
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-  max-height: 100%;
-}
-.pserit-ok {
-  flex: none;
-  width: 34px; height: 34px;
-  display: grid; place-items: center;
-  border: 1px solid rgba(233, 233, 224, 0.5);
-  border-radius: 50%;
-  transition: background var(--t-state) var(--ease-io),
-              border-color var(--t-state) var(--ease-io),
-              transform var(--t-state) var(--ease-io);
-}
-.pserit-ok svg { width: 16px; height: 16px; }
-.pserit-panel:hover .pserit-ok,
-.pserit-panel:focus-visible .pserit-ok {
-  background: var(--carmine); border-color: var(--carmine); color: #131A15;
-  transform: translateX(3px);
-}
-
-/* Beş programlık şerit (eğitimler) aynı bileşeni kullanıyor. */
-.pserit-5 { grid-template-columns: repeat(5, 1fr); }
-
-/* --- Responsive -------------------------------------------------------
-   Yedi dar panel dizüstünde okunmaz hâle geliyor; satır sayısı azalıyor
-   ama paneller uç uca kalmaya devam ediyor — derli toplu olan şey o. */
-@media (max-width: 1200px) {
-  .pserit { grid-template-columns: repeat(4, 1fr); }
-  .pserit-5 { grid-template-columns: repeat(3, 1fr); }
-  .pserit-panel { aspect-ratio: 4 / 5; }
-  /* İkinci satırın ilk paneli sol kenarda, çizgisi olmamalı. */
-  .pserit-panel:nth-child(4n + 1) { border-inline-start: 0; }
-  .pserit-5 .pserit-panel:nth-child(3n + 1) { border-inline-start: 0; }
-}
-
-@media (max-width: 720px) {
-  .pserit, .pserit-5 { grid-template-columns: repeat(2, 1fr); }
-  .pserit-panel { aspect-ratio: 3 / 4; }
-  .pserit-panel:nth-child(4n + 1) { border-inline-start: 1px solid rgba(233, 233, 224, 0.22); }
-  .pserit-panel:nth-child(odd) { border-inline-start: 0; }
-  .pserit-5 .pserit-panel:nth-child(3n + 1) { border-inline-start: 1px solid rgba(233, 233, 224, 0.22); }
-  .pserit-5 .pserit-panel:nth-child(odd) { border-inline-start: 0; }
-
-  /* İki sütunda panel genişliyor, yatay yazı sığıyor ve daha rahat okunuyor. */
-  .pserit-ad { writing-mode: horizontal-tb; transform: none; font-size: 1rem; }
-  .pserit-ic { gap: var(--s3); }
-}
-
-/* Şerit yüksekliği oranla değil doğrudan veriliyor: 5/9 oranı 205px'lik
-   panelde 369px tutuyordu, bant basık kalıyordu. Ceylan hanım "büyüklük
-   olarak değil" dedi, o yüzden tam ekran değil — ama ekranın yarısına
-   yakın bir bant şeridi tek bir blok gibi ayakta tutuyor. */
-.pserit { height: clamp(400px, 46vh, 560px); }
-.pserit-panel { aspect-ratio: auto; height: 100%; }
-
-@media (max-width: 1200px) {
-  .pserit { height: auto; }
-  .pserit-panel { aspect-ratio: 4 / 5; height: auto; }
-}
-@media (max-width: 720px) {
-  .pserit-panel { aspect-ratio: 3 / 4; }
-}
-
-/* ==========================================================================
    EYLEM RENGİ: KOYU MÜREKKEP — turuncu doğru boyutuna iniyor
    ──────────────────────────────────────────────────────────────────────────
    Turuncu #F05625 düğme zemini olarak kullanılınca sayfada bağırıyordu.
@@ -4241,4 +4104,349 @@ a.index-row .index-meta::after,
 .wrap-narrow > .lede {
   max-width: 58ch;
   margin-inline: auto;
+}
+
+/* ==========================================================================
+   GÖRSEL ÇERÇEVELERİ — kırpma kaybı ölçülüp düşürüldü
+   ──────────────────────────────────────────────────────────────────────────
+   6 çözünürlük × 31 sayfa taranarak her görselin doğal oranı ile
+   çerçevesinin oranı karşılaştırıldı. `object-fit: cover` farkı kesiyor;
+   kesilen oran ölçüldü. Fotoğraflarımızın çoğu 3:2 (1.5) ve 4:3 (1.33).
+
+   BULUNAN EN AĞIR ÜÇ KAYIP:
+     kat-kapak   %89   4K'da 3840×560, yani 6.9:1 mektup kutusu
+     pserit      %68   telefonda 195×400 dar panel
+     mz-foto     %56   ızgara satırı görseli dikey esnetiyordu
+   ========================================================================== */
+
+/* --- 1 · Kategori ve program kapağı -----------------------------------
+   `min-height: clamp(340px, 56vh, 560px)` yükseklği 560'ta sabitliyordu.
+   Genişlik büyüdükçe oran bozuluyor: 1440'ta 2.6:1 (kabul edilebilir),
+   3840'ta 6.9:1 (fotoğrafın %89'u gidiyor, üstten kesilmiş duruyor).
+
+   Yükseklik artık genişlikle birlikte büyüyor. 16:9 çerçevede 3:2 bir
+   fotoğraf yalnız %16 kaybediyor. `max-height` çok uzun ekranlarda
+   kapağın sayfayı yutmasını engelliyor. */
+.kat-kapak {
+  aspect-ratio: 16 / 9;
+  min-height: 320px;
+  max-height: 78vh;
+}
+@media (max-width: 720px) {
+  /* Telefonda dikey çerçeve daha çok kesiyor: 4:3 çerçevede 3:2 fotoğraf
+     yalnız %11 kaybediyor, 4:5'te %47 kaybederdi. */
+  .kat-kapak { aspect-ratio: 4 / 3; min-height: 280px; max-height: none; }
+}
+
+/* --- 2 · Mozaik fotoğrafı ---------------------------------------------
+   `height: 100%` ızgara satırının yüksekliğini alıyordu; yanındaki atölye
+   kartı uzunsa fotoğraf da uzuyor ve kare çerçeve dikey dikdörtgene
+   dönüşüyordu (396×495). Oran artık satırdan bağımsız. */
+.mz-foto { align-self: start; }
+.mz-foto img { height: auto; aspect-ratio: 1 / 1; }
+@media (max-width: 720px) {
+  .mz-foto img { aspect-ratio: 3 / 2; }
+}
+
+/* --- 3 · Diğer kategoriler şeridi --------------------------------------
+   84×112'lik küçük resim 0.75 oranında; 3:2 fotoğrafın yarısı gidiyordu.
+   Kare çerçevede kayıp %33'e iniyor ve küçük resim zaten tanıtıcı. */
+.kat-gezinme-medya img,
+.kat-gezinme-medya picture { aspect-ratio: 1 / 1; min-height: 0; }
+.kat-gezinme-oge { grid-template-columns: 96px minmax(0, 1fr); }
+
+/* --- 4 · Sosyal sorumluluk ve levha çerçeveleri ------------------------
+   Dikey çerçevelere yatay fotoğraf giriyor. 4:5 yerine 1:1'e çekilince
+   kayıp %50'den %33'e iniyor ve sayfa da kısalıyor. */
+.ss-gorsel { aspect-ratio: 1 / 1; }
+.plate-frame { aspect-ratio: 4 / 5; }
+
+/* ==========================================================================
+   PANEL ŞERİDİ — tek arka plan, üstünde etiket panelleri
+   ──────────────────────────────────────────────────────────────────────────
+   Önceki hâlde her panelin kendi fotoğrafı vardı. Ölçüm: 195×400 piksellik
+   dar panelde 3:2 fotoğrafın %68'i kesiliyordu. Dar dikey çerçeveye geniş
+   fotoğraf sığmaz; bu ayar değil geometri sorunu.
+
+   Referans (naregitim) fotoğrafı panelin İÇİNE değil ARKASINA koyuyor:
+   tam genişlikte tek görsel, panellerin altından boydan boya geçiyor.
+   Geniş çerçeveye geniş fotoğraf giriyor, kırpma %68'den ~%10'a iniyor.
+   ========================================================================== */
+.pserit {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  height: clamp(400px, 46vh, 620px);
+  background: var(--field);
+  overflow: hidden;
+}
+
+/* --- Arka plan sahnesi --- */
+.pserit-sahne { position: absolute; inset: 0; z-index: 0; }
+.pserit-kare {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity 620ms var(--ease-io);
+}
+.pserit-kare.is-aktif { opacity: 1; }
+.pserit-kare img,
+.pserit-kare picture {
+  width: 100%; height: 100%;
+  object-fit: cover; aspect-ratio: auto;
+  /* Yavaş ölçek: sahne değişince fotoğraf hafifçe nefes alıyor. */
+  transform: scale(1.03);
+  transition: transform 8s linear;
+}
+.pserit-kare.is-aktif img { transform: scale(1); }
+/* Perde: etiketlerin okunması fotoğrafın parlaklığına bırakılmıyor. */
+.pserit-sahne::after {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top,
+    rgba(19, 26, 21, 0.86) 0%,
+    rgba(19, 26, 21, 0.46) 44%,
+    rgba(19, 26, 21, 0.20) 100%);
+}
+
+/* --- Paneller: yalnız etiket ve tıklama alanı --- */
+.pserit-panel {
+  position: relative; z-index: 2;
+  display: block;
+  height: 100%;
+  text-decoration: none;
+  color: var(--field-ink);
+  border-inline-start: 1px solid rgba(233, 233, 224, 0.22);
+  transition: background 420ms var(--ease-io);
+}
+.pserit-panel:first-of-type { border-inline-start: 0; }
+.pserit-panel:hover,
+.pserit-panel:focus-visible { background: rgba(19, 26, 21, 0.28); }
+.pserit-panel:focus-visible { outline: 2px solid var(--odak); outline-offset: -4px; }
+
+.pserit-ic {
+  height: 100%;
+  display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;
+  gap: var(--s4);
+  padding: clamp(16px, 1.4vw, 24px);
+}
+
+/* Kategori adları uzun ("Motivasyon ve Çalışan Deneyimi Etkinlikleri"
+   42 karakter). Dar panelde yatay yazı beş satıra bölünüyor; dikey yazı
+   panel boyunca akıyor. Referans da bu yüzden dikey. */
+.pserit-ad {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--serif);
+  font-size: clamp(0.9375rem, 1.05vw, 1.125rem);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  max-height: 100%;
+  text-shadow: 0 1px 12px rgba(19, 26, 21, 0.6);
+}
+.pserit-ok {
+  flex: none; width: 34px; height: 34px;
+  display: grid; place-items: center;
+  border: 1px solid rgba(233, 233, 224, 0.5);
+  border-radius: 50%;
+  transition: background var(--t-state) var(--ease-io),
+              border-color var(--t-state) var(--ease-io),
+              transform var(--t-state) var(--ease-io);
+}
+.pserit-ok svg { width: 16px; height: 16px; }
+.pserit-panel:hover .pserit-ok,
+.pserit-panel:focus-visible .pserit-ok {
+  background: var(--field-ink); border-color: var(--field-ink); color: #131A15;
+  transform: translateX(3px);
+}
+
+.pserit-5 { grid-template-columns: repeat(5, 1fr); }
+
+/* --- Responsive ---------------------------------------------------------
+   Tabletten aşağıda tek sahne dar paneller altında anlamını yitiriyor:
+   ekran daraldıkça arka plan da daralıyor ve yine kesiliyor. Orada
+   ızgaraya dönüyor ve her hücre kendi fotoğrafını gösteriyor — hücre
+   geniş olduğu için kırpma düşük kalıyor. */
+@media (max-width: 900px) {
+  .pserit, .pserit-5 {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    background: transparent;
+  }
+  .pserit-sahne { display: none; }
+  .pserit-panel {
+    border: 0;
+    aspect-ratio: 4 / 3;
+    background-image: var(--kare);
+    background-size: cover;
+    background-position: center;
+  }
+  .pserit-panel::after {
+    content: ''; position: absolute; inset: 0; z-index: 0;
+    background: linear-gradient(to top,
+      rgba(19, 26, 21, 0.86) 0%,
+      rgba(19, 26, 21, 0.40) 52%,
+      rgba(19, 26, 21, 0.14) 100%);
+  }
+  .pserit-ic { position: relative; z-index: 1; gap: var(--s3); }
+  .pserit-ad { writing-mode: horizontal-tb; transform: none; font-size: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pserit-kare { transition: none; }
+  .pserit-kare img { transition: none; transform: none; }
+}
+
+/* ==========================================================================
+   ŞERİT ORANI — bant sonsuz genişlemesin
+   ──────────────────────────────────────────────────────────────────────────
+   Şerit tam genişlikte, yüksekliği ise sabit tavanlıydı. Genişlik büyüdükçe
+   oran bozuluyor ve arkadaki fotoğraf üstten kesiliyordu:
+
+     1440 × 620  = 2.3:1   fotoğrafın %35'i gider
+     3840 × 620  = 6.2:1   fotoğrafın %91'i gider   ← ölçülen
+
+   İki müdahale: yükseklik genişlikle birlikte bir miktar büyüyor ve çok
+   geniş ekranlarda bant kenardan kenara gitmeyi bırakıp ölçüsünü koruyor.
+   Sonuç her ekranda ~3:1 civarı, yani kayıp %50 bandında sabit kalıyor —
+   arka plan fotoğrafı için kabul edilebilir, çünkü orada fotoğraf içerik
+   değil atmosfer; okunan şey üstündeki etiketler.
+   ========================================================================== */
+.pserit { height: clamp(420px, 34vw, 780px); }
+
+/* Bant 2100 pikselde duruyor ama tam-genişlik hilesi korunuyor.
+   `margin-inline: auto` burada işe yaramıyor: .pserit bir .wrap içinde
+   ve wrap 1440'ta kapanıyor, 2100 piksellik çocuk taşıyor. Negatif
+   kenar boşluğu wrap'in yarısından bandın yarısını çıkarıyor. */
+@media (min-width: 2100px) {
+  .pserit {
+    width: 2100px;
+    margin-inline: calc(50% - 1050px);
+  }
+}
+
+/* Arka plan fotoğrafı biraz yukarıdan alınıyor: atölye karelerinde eller,
+   masa ve yüzler karenin üst-orta bandında topluyor. */
+.pserit-kare img { object-position: 50% 42%; }
+
+/* ==========================================================================
+   ODAK NOKTALARI — kırpma kaçınılmazsa konu kurtarılır
+   ──────────────────────────────────────────────────────────────────────────
+   Kaynak fotoğraflar karışık yönlü: bir kısmı 1600×1067 yatay, bir kısmı
+   1200×1600 dikey. Kare bir karoya dikey fotoğraf, geniş bir banda yatay
+   fotoğraf koyunca kırpma kaçınılmaz — bu ayar değil geometri.
+
+   Kırpmayı sıfırlamak yerine NEREDEN kesileceği belirleniyor. Atölye
+   karelerinde konu (eller, masa, yüzler) karenin üst-orta bandında
+   toplanıyor; merkez kırpma alt kenardaki zemini koruyup yüzleri kesiyordu.
+   ========================================================================== */
+
+/* Mozaik karosu — atölye masası ve eller üst bantta */
+.mz-foto img { object-position: 50% 42%; }
+
+/* Küçük gezinme resmi — tanıtıcı, konu ortada tutuluyor */
+.kat-gezinme-medya img { object-position: 50% 45%; }
+
+/* Ekip portreleri — yüz üst üçte birde */
+.plate-frame img { object-position: 50% 28%; }
+
+/* Anasayfa slaytı ve hero: telefonda yatay video dikey ekrana giriyor,
+   yanlardan çok şey kesiliyor. Merkez yerine hafif yukarı. */
+@media (max-width: 720px) {
+  .hero-video-media video,
+  .hero-video-media img,
+  .slide-media-kare img { object-position: 50% 38%; }
+}
+
+/* Slider kartı — küçük dikey çerçeve */
+.slider-card-media img { object-position: 50% 40%; }
+
+/* ==========================================================================
+   KAPAK GENİŞLİĞİ SABİT — 360px'te yatay taşmanın sebebi
+   ──────────────────────────────────────────────────────────────────────────
+   .kat-kapak hem `aspect-ratio: 4/3` hem `min-height: 280px` taşıyor ve
+   `width` belirsiz. Tarayıcı genişliği yükseklikten türetiyor:
+   280 × 4/3 = 373.33px. 360 piksellik ekranda 13 piksel taşıyordu —
+   12 sayfada, yalnız en dar ekranda.
+
+   Genişlik açıkça verilince oran yükseklikten hesaplanıyor, tersi değil.
+   ========================================================================== */
+.kat-kapak { width: 100%; }
+
+/* ==========================================================================
+   320 PİKSEL REFLOW — WCAG 1.4.10
+   ──────────────────────────────────────────────────────────────────────────
+   1.4.10 Reflow, içeriğin 320 CSS pikselde iki eksenli kaydırma
+   gerektirmeden okunabilmesini istiyor. 320 aynı zamanda 1280 pikselde
+   %400 yakınlaştırmanın karşılığı, yani görme güçlüğü olan kullanıcının
+   gerçekten kullandığı genişlik.
+
+   İki kaynak ölçüldü:
+     · .deneyim-vitrin sütun alt sınırı 320px sabitti; 320 piksellik
+       ekranda kenar boşluğu düşünce içerik alanı 280px kalıyor ve
+       sütun taşıyordu. `min()` ile sütun ekranı geçemiyor.
+     · Uzun Türkçe kelimeler ("sürdürülebilirlik", "değerlendirme")
+       dar kolonda kırılamıyordu.
+   ========================================================================== */
+.deneyim-vitrin { grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); }
+
+@media (max-width: 400px) {
+  /* Kırılma yalnız en dar ekranda açılıyor: geniş ekranda kelime bölmek
+     okumayı bozar, orada gerek de yok. */
+  p, li, dd, .body, .lede, h1, h2, h3, .hk-ikili-ic p { overflow-wrap: anywhere; }
+}
+
+/* ==========================================================================
+   MOZAİK — editoryal ölçeğe geçiş
+   ──────────────────────────────────────────────────────────────────────────
+   İki düzeltme bir arada.
+
+   1 · GRİ BANT HATASI
+   `.mz-foto` bir <button>. Izgara hücresi olarak `align-self: start`
+   veriliyordu ama düğmeler bu hizalamayı blok eksende uygulamıyor:
+   ölçümde düğme 420×524, içindeki görsel 418×418 çıktı — altta 107
+   piksellik zemin rengi görünüyordu. Oran doğrudan düğmeye veriliyor,
+   görsel de onu dolduruyor.
+
+   2 · ÖLÇEK
+   Referans olarak verilen allisonhoodflowerschool.com'da görseller
+   600 piksel ve üstü; bizim üç sütunlu mozaikte hücre 420 pikselde
+   kalıyordu ve sayfa "küçük küçük" duruyordu.
+
+   İki sütuna inince hücre ~620 piksele çıkıyor, yani referansın ölçüsü.
+   Sayfa uzamasın diye fotoğraf oranı 1:1 yerine 3:2: hücre genişler ama
+   yükseklik artmaz. 19 hücrelik bir kategoride üç sütun 7 satır × 524px
+   = 3668px tutuyordu; iki sütun 10 satır × 413px = 4130px. Görsel iki
+   katına çıkarken sayfa yalnız %12 uzuyor.
+   ========================================================================== */
+.kat-mozaik {
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 2.2vw, 36px);
+}
+
+/* Oran düğmenin kendisinde; görsel onu dolduruyor. */
+.mz-foto {
+  aspect-ratio: 3 / 2;
+  align-self: auto;
+}
+.mz-foto img {
+  width: 100%; height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+}
+
+/* Hücre büyüdü, metin de onunla birlikte nefes alıyor. */
+.mz-atolye { padding: clamp(28px, 2.8vw, 44px); justify-content: center; }
+.mz-ad { font-size: clamp(1.25rem, 1.7vw, 1.5rem); }
+.mz-metin { font-size: 1.0625rem; line-height: 1.7; max-width: 46ch; }
+
+/* Çok geniş ekranda iki sütun aşırı uzun satır üretir; üçe çıkıyor ama
+   hücre yine 600 pikselin üstünde kalıyor (2100 / 3 = 700). */
+@media (min-width: 2000px) {
+  .kat-mozaik { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .kat-mozaik { grid-template-columns: 1fr; }
+  .mz-foto { aspect-ratio: 3 / 2; }
 }

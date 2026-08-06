@@ -163,7 +163,6 @@ export function footer() {
           <li><a href="hakkimizda.html">Afloday Hakkında</a></li>
           <li><a href="hakkimizda.html#ekip">Ekibimiz</a></li>
           <li><a href="surdurulebilirlik.html">Sürdürülebilirlik</a></li>
-          <li><a href="galeri.html">Galeri</a></li>
         </ul>
         <p class="ftr-head" style="margin-top:var(--s5)">Takip Edeyim</p>
         <ul>
@@ -815,7 +814,7 @@ ${process.env.PREVIEW === '1' ? '<meta name="robots" content="noindex, nofollow"
 
 ${header(current)}
 
-<main id="main"${pad ? ' class="pad-top"' : ''}>
+<main id="main" tabindex="-1"${pad ? ' class="pad-top"' : ''}>
 ${body}
 </main>
 
