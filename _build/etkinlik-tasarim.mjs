@@ -152,23 +152,56 @@ export function kategoriMozaik(k) {
       </div>`;
   };
 
-  /* Metin kartları ikişerli, fotoğraflar üçerli bantlar hâlinde
-     dönüşümlü akıyor: iki atölye, bir bant, iki atölye, bir bant. */
-  const parcalar = [];
-  let ai = 0, gi = 0;
-  while (ai < atolyeler.length || gi < foto.length) {
-    const ikili = atolyeler.slice(ai, ai + 2);
-    if (ikili.length) {
-      parcalar.push(`<div class="mz-metin-satir">
-        ${ikili.map((a) => `<article class="mz-atolye" data-reveal="stagger">
-          <h2 class="mz-ad">${a.ad}</h2>
-          ${a.metin ? `<p class="mz-metin">${a.metin}</p>` : ''}
-        </article>`).join('\n        ')}
-      </div>`);
-      ai += 2;
+  /* ── SIRAYLA BİR YAZI BİR FOTOĞRAF ────────────────────────────────────
+     Bant deseni masaüstünde çalışıyordu ama telefonda tek sütuna inince
+     "üç fotoğraf, iki yazı" diye topaklanıyordu: düzen değil yığın.
+     Kullanıcının tespiti: "tertip düzen sıfır".
+
+     Şimdi akış birebir dönüşümlü — bir atölye, bir kare, bir atölye,
+     bir kare. İki sütunlu ızgarada her satır [yazı][fotoğraf] oluyor;
+     tek sütunda da aynı ritim iniyor. Her iki ekranda da öngörülebilir.
+
+     ── ÜÇ STANDART ÇERÇEVE ──
+     Oranı tamamen serbest bırakmak her kareyi farklı yükseklikte
+     bırakıyordu. Şimdi her kare kendi yönüne en yakın ÜÇ çerçeveden
+     birine oturuyor: dikey 3:4, kare 1:1, yatay 3:2.
+
+     Havuzumuz zaten bu üç orana yakın toplandığı için kırpma yüzde
+     onun altında kalıyor, ama sayfada yalnız üç farklı yükseklik
+     olduğu için göz düzeni yakalıyor. */
+  const CERCEVE = [[3, 4], [1, 1], [3, 2]];
+  const cerceve = (slug) => {
+    const o = oran(slug);
+    let en = CERCEVE[0], fark = Infinity;
+    for (const [a, b] of CERCEVE) {
+      const d = Math.abs(a / b - o);
+      if (d < fark) { fark = d; en = [a, b]; }
     }
-    const uclu = foto.slice(gi, gi + 3);
-    if (uclu.length) { parcalar.push(bant(uclu, gi)); gi += 3; }
+    return `${en[0]} / ${en[1]}`;
+  };
+
+  const parcalar = [];
+  const enUzun = Math.max(atolyeler.length, foto.length);
+  for (let i = 0; i < enUzun; i++) {
+    const a = atolyeler[i];
+    if (a) {
+      parcalar.push(`<article class="mz-atolye" data-reveal="stagger">
+        <h2 class="mz-ad">${a.ad}</h2>
+        ${a.metin ? `<p class="mz-metin">${a.metin}</p>` : ''}
+      </article>`);
+    }
+    const g = foto[i];
+    if (g) {
+      parcalar.push(`<button class="mz-foto galeri-hucre" type="button" data-reveal="stagger"
+        style="aspect-ratio:${cerceve(g.slug)}"
+        data-full="assets/img/rev2/${g.slug}.jpg"
+        data-caption="${k.ad}"
+        aria-label="${k.ad} — ${i + 1}. fotoğrafı büyüt">
+        <img src="assets/img/rev2/${g.slug}-800.webp"
+             alt="${k.ad} kapsamındaki atölyelerden kare ${i + 1}"
+             loading="lazy" decoding="async" width="800" height="800">
+      </button>`);
+    }
   }
 
   return `<div class="kat-mozaik" data-lightbox>

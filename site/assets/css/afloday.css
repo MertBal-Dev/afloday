@@ -4520,3 +4520,34 @@ a.index-row .index-meta::after,
   .mz-bant .mz-foto { height: auto; }
   .mz-bant .mz-foto img { aspect-ratio: auto; height: auto; }
 }
+
+/* ==========================================================================
+   SIRAYLA BİR YAZI BİR FOTOĞRAF — mozaiğin son hâli
+   ──────────────────────────────────────────────────────────────────────────
+   Bant deseni masaüstünde çalışıyordu ama telefonda tek sütuna inince
+   "üç fotoğraf, iki yazı" diye topaklanıyordu. Akış artık birebir
+   dönüşümlü: iki sütunda her satır [yazı][fotoğraf], tek sütunda da
+   aynı ritim iniyor.
+
+   Fotoğraflar üç standart çerçeveden birine oturuyor (3:4 · 1:1 · 3:2),
+   oran satır içinde veriliyor. Sayfada yalnız üç farklı yükseklik
+   olduğu için göz düzeni yakalıyor, kırpma da yüzde onun altında kalıyor.
+   ========================================================================== */
+.kat-mozaik {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 2.2vw, 36px);
+  align-items: start;
+}
+
+.mz-foto { aspect-ratio: auto; align-self: start; }
+.mz-foto img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: auto; }
+.mz-atolye { align-self: stretch; }
+
+@media (min-width: 2000px) {
+  .kat-mozaik { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .kat-mozaik { grid-template-columns: 1fr; gap: var(--s4); }
+}
