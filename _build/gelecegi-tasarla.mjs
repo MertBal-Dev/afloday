@@ -55,7 +55,7 @@ export const gelecegiTasarla = {
       id: 'cevre',
       ad: 'Çevre',
       element: 'Toprak',
-      renk: '#7A6234',           /* bronzun toprak tonu */
+      renk: '#6E6540',           /* haki — yeni logonun harf rengi, 4.78:1 */
       renkAcik: '#C2A667',       /* koyu bölümde okunur karşılığı — 7.4:1 */
       ikon: 'toprak',
       gorsel: 'business-people-holding-plant-sprout-together-unity-as-csr-commitmentgyre.jpg',
@@ -104,8 +104,12 @@ export const gelecegiTasarla = {
       id: 'cocuk',
       ad: 'Çocuk',
       element: 'Ateş',
-      renk: '#A82B45',           /* karmen — sitenin vurgu rengi */
-      renkAcik: '#E08199',       /* koyu bölümde okunur karşılığı — 7.2:1 */
+      renk: '#A83A16',           /* turuncunun koyu tonu — ateş. Saf #F05625
+                                    açık zeminde 2.84:1, küçük metinde
+                                    kullanılamıyor; bu tonu 5.24:1 veriyor. */
+      renkAcik: '#F2764A',       /* turuncunun açık tonu — koyu bölümde 6.29:1.
+                                    Eski #E08199 karmen ailesindendi, palet
+                                    değişince tek başına kalmıştı. */
       ikon: 'ates',
       gorsel: 'curious-kids-participating-treasure-hunt (1).jpg',
       alt: 'Hazine avına katılan meraklı çocuklar',

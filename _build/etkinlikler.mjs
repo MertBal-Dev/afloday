@@ -178,7 +178,11 @@ export const etkinlikKategorileri = [
     giris: [
       'Doğadan ilham alan takım deneyimleriyle çalışanları ortak bir hedef etrafında buluşturarak iş birliğini, iletişimi ve birlikte üretme kültürünü güçlendirir. Ekiplerin birlikte düşünmesini, karar almasını ve üretmesini sağlayan bu deneyimler, kurum kültürünü destekleyen kalıcı anılar ve güçlü ekip bağları oluşturur.',
     ],
-    gorsel: 'Takım Gelişim Etkinlikleri.jpg',
+    /* KAPAK YATAY OLANLA DEĞİŞTİRİLDİ. Önceki kare 1200×1600, yani dikey.
+       Kategori kapağı 16:9 tam genişlik bir bant; dikey fotoğrafın %58'i
+       kesiliyor ve konu kayboluyordu. Bu kare aynı kategorinin kendi
+       havuzundan, yatay ve kapağın oranına yakın. */
+    gorsel: 'Takım Gelişim Etkinlikleri 5.jpg.jpg',
     alt: 'Takım gelişim atölyesinde birlikte üreten ekip',
     atolyeler: [
       {
@@ -236,7 +240,11 @@ export const etkinlikKategorileri = [
       'Doğanın bilimsel olarak kanıtlanan iyileştirici etkisini çalışan deneyimine taşıyan bu etkinlikler; yoğun iş temposunda zihnin yavaşlamasına, stresin azalmasına ve odaklanmanın yeniden kazanılmasına destek olur. Araştırmalar, doğayla temasın dikkat süresini artırabildiğini, stres düzeyini azaltabildiğini ve yaratıcı düşünmeyi destekleyebildiğini ortaya koymaktadır. Özellikle Shinrin-yoku (Orman Banyosu) üzerine yapılan çalışmalarda, doğada geçirilen zamanın bağışıklık sistemi üzerinde olumlu etkiler gösterebildiği ve Natural Killer (NK) hücrelerinin aktivitesini artırabildiği raporlanmıştır.',
       'Doğal malzemelerle üretim yapmaya dayalı deneyimlerimiz, çalışanların kısa süreliğine dijital ve zihinsel yoğunluktan uzaklaşmasını sağlayarak daha sakin, odaklı ve üretken bir zihin durumuna geçişini destekler. Böylece yalnızca keyifli bir etkinlik değil, çalışan iyi oluşunu ve verimliliğini destekleyen anlamlı bir deneyim sunar.',
     ],
-    gorsel: 'Wellbeing İyi Oluş Etkinlikleri 1.jpeg',
+    /* KAPAK YATAY OLANLA DEĞİŞTİRİLDİ. Önceki kare 1200×1600, yani dikey.
+       Kategori kapağı 16:9 tam genişlik bir bant; dikey fotoğrafın %58'i
+       kesiliyor ve konu kayboluyordu. Bu kare aynı kategorinin kendi
+       havuzundan, yatay ve kapağın oranına yakın. */
+    gorsel: 'Wellbeing İyi Oluş Etkinlikleri 7.jpg',
     alt: 'Wellbeing iyi oluş atölyesinden dingin bir kare',
     bilim: {
       baslik: 'Bilim Ne Diyor?',

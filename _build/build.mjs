@@ -3,8 +3,11 @@ import { writeFile, mkdir, readdir, rm } from 'node:fs/promises';
 import path from 'node:path';
 import { site, workshops, team, projects, assets,
          surdurulebilirlikGiris, canliAdres } from './data.mjs';
-import { layout, opener, logoWall, heroVideo, folio, marquee, galeriBolumu, akordeon, resim, heroSlayt, genisleyenSerit, homeGaleriVitrin, awwwardsGaleri } from './templates.mjs';
+import { layout, opener, logoWall, heroVideo, folio, marquee, galeriBolumu, resim, heroSlayt, homeGaleriVitrin, awwwardsGaleri } from './templates.mjs';
 import { etkinlikSayfasi, etkinlikKategorileri, toplamAtolye } from './etkinlikler.mjs';
+import { kategoriKapak, kategoriMozaik, kategoriGezinme, kategoriDosyasi } from './etkinlik-tasarim.mjs';
+import { egitimKapak, egitimGezinme, egitimDosyasi } from './egitim-tasarim.mjs';
+import { panelSerit } from './panel-serit.mjs';
 import { heroSlaytlari, degerOnerisi, istatistikler, metodoloji, egitimler, deneyimVitrini } from './data.mjs';
 import { egitimlerSayfasi } from './egitimler.mjs';
 import { kurumsalSayfasi } from './kurumsal-rev2.mjs';
@@ -37,7 +40,7 @@ const add = (file, html) => pages.push({ file, html });
   const body = `
 ${heroVideo({
     kicker: 'Afloday · Doğadan Gelişim Atölyesi',
-    heading: 'Doğada öğrenilen,<br>elde kalan <em>bir gün</em>.',
+    heading: 'Doğada öğrenilen,<br>elde kalan <em>bir gün</em>',
     lede: 'Bitkilerin, çiçeklerin başrolde; katılımcının yönetmen olduğu atölyeler tasarlıyoruz.',
     cta: '<a class="btn btn-primary" href="kurumsal.html">Kurumsal Teklif Al</a>',
     // Yalnız afloday.com'da yazan bilgiler. Referans markaları burada yazıyla
@@ -145,7 +148,7 @@ ${heroSlayt(heroSlaytlari)}
            açıklama yazmamış, uydurmuyoruz. */ ''}
       ${opener('Eğitim & Gelişim', 'Eğitim &amp; Gelişim Programlarımız', '')}
       <div class="egitim-vitrin" style="margin-top:clamp(40px,5vw,72px)">
-        ${egitimler.map(e => `<a class="egitim-kart" href="doga-temelli-egitimler.html#${e.id}" data-reveal="stagger">
+        ${egitimler.map(e => `<a class="egitim-kart" href="${egitimDosyasi(e)}" data-reveal="stagger">
           <div class="egitim-kart-gorsel">
             ${resim({ gorsel: e.vitrinGorsel || e.gorsel, alt: e.vitrinAlt || e.alt, kucuk: true })}
           </div>
@@ -205,10 +208,6 @@ ${heroSlayt(heroSlaytlari)}
       <div style="margin-top:clamp(32px,4vw,56px)" data-reveal>
         ${homeGaleriVitrin(galeriRev2)}
       </div>
-      <div class="btn-row" style="margin-top:clamp(28px,3.5vw,44px); justify-content:space-between; align-items:center;" data-reveal>
-        <span class="eyebrow" style="margin:0">Arşiv · ${galeriRev2.length} Fotoğraf</span>
-        <a class="btn btn-primary" href="galeri.html">Tüm Galeriyi İncele (${galeriRev2.length} Fotoğraf) &rarr;</a>
-      </div>
     </div>
   </section>
 
@@ -262,7 +261,7 @@ ${heroSlayt(heroSlaytlari)}
 ${folio({
     eyebrow: 'Afloday',
     plateNo: 'Kurumsal Hizmetler',
-    lines: ['Kurumlara', '<em class="em">doğadan</em> hizmet.'],
+    lines: ['Kurumlara', '<em class="em">doğadan</em> hizmet'],
     lede: deneyimsel.ozet,
     size: 'd-xl',
     buttons: `<a class="btn btn-primary" href="iletisim.html">Kurumsal Teklif Al</a>`,
@@ -314,11 +313,11 @@ ${folio({
         <div class="opener-rule"></div>
       </div>
 
-      <div class="hat" style="margin-top:clamp(40px,5vw,72px)">
+      <div class="hat hat-ters" style="margin-top:clamp(40px,5vw,72px)">
         <div class="hat-anlati">
           ${etkinlik.paragraflar.map(p => `<p class="body" style="color:var(--field-muted)" data-reveal>${p}</p>`).join('\n          ')}
           <div class="btn-row" style="margin-top:clamp(24px,3vw,40px)" data-reveal>
-            <a class="btn btn-ghost" href="kurumsal-hobi-atolyeleri.html">${etkinlikKategorileri.length} kategori · ${toplamAtolye} atölye deneyimi</a>
+            <a class="btn btn-ghost" href="kurumsal-hobi-atolyeleri.html">Etkinlik atölye deneyimleri</a>
           </div>
         </div>
         <figure class="hat-gorsel" data-reveal>
@@ -335,6 +334,21 @@ ${folio({
             ${k.atolyeler.map(a => `<li>${a}</li>`).join('\n            ')}
           </ul>
         </div>`).join('\n        ')}
+      </div>
+
+      ${/* YEDİ KATEGORİ ŞERİDİ — 5 Ağustos geri bildirimi:
+           "Metin, görsel, yazı yazı gidiyor daha dinamik olabilir.
+            Aralara görseller girebilir."
+
+           Bu bölüm ölçüldüğünde metin/görsel oranı 3.73 çıkıyordu: 6.2
+           ekranlık sayfada iki görsel vardı. Buraya stok görsel koymak
+           yerine Afloday'in kendi atölye fotoğrafları geliyor — hem
+           gerçek hem de kategori sayfalarına kapı açıyor. */ ''}
+      <div style="margin-top:clamp(40px,5vw,72px)">
+        <p class="eyebrow" data-reveal>Etkinlik kategorileri</p>
+        <div style="margin-top:var(--s4)">
+          ${kategoriGezinme(etkinlikKategorileri, null)}
+        </div>
       </div>
     </div>
   </section>
@@ -372,7 +386,7 @@ ${folio({
 ${folio({
     eyebrow: 'Afloday Kurumsal Hizmetler',
     plateNo: 'Sosyal Sorumluluk & İş Danışmanlığı',
-    lines: ['Sosyal Sorumluluk', '&amp; <em class="em">İş Danışmanlığı</em>.'],
+    lines: ['Sosyal Sorumluluk', '&amp; <em class="em">İş Danışmanlığı</em>'],
     lede: s.ozet,
     size: 'd-xl',
     buttons: `<a class="btn btn-primary" href="iletisim.html">Projenizi Konuşalım</a>`,
@@ -489,12 +503,11 @@ ${folio({
 ${folio({
     eyebrow: 'Hakkımızda',
     plateNo: '2018’den bugüne',
-    lines: ['Doğanın bilgeliğini', '<em class="em">işe taşıyoruz</em>.'],
+    lines: ['Doğanın bilgeliğini', '<em class="em">işe taşıyoruz</em>'],
     lede: h.alintiAlt,
     size: 'd-xl',
     buttons: '<a class="btn btn-ghost" href="#ekip">Ekibimiz</a>',
     meta: [
-      ['Ekip', `${team.length} kişi`],
       ['Merkez', `${site.address.locality}, ${site.address.region}`],
       ['Hizmet', 'Kurumsal · Bireysel · Çocuk'],
     ],
@@ -511,7 +524,20 @@ ${folio({
     </div>
   </section>
 
-  ${h.bolumler.map((b, i) => `
+  ${/* VİZYON VE MİSYON YAN YANA — 5 Ağustos geri bildirimi:
+       "vizyon, misyon alt alta aynı sayfada word düzeni gibi, sevmedim."
+
+       İkisi de tek paragraf ama her biri tam bir bölüm kaplıyordu; sayfa
+       aşağı doğru dört kez aynı şeyi tekrarlıyordu. Şimdi tek bölümde
+       yan yana duruyorlar ve metin fotoğrafın üzerinde — "görsellerin
+       üzerinde olabilir yazılar vs."
+
+       Anlatı bölümleri (Hikayemiz, Neden Doğa?) metin+görsel düzeninde
+       kalıyor; onların gerçekten anlatacak metni var. */ ''}
+  ${(() => {
+    const ikili = h.bolumler.filter(b => b.id === 'vizyonumuz' || b.id === 'misyonumuz');
+    const anlati = h.bolumler.filter(b => !ikili.includes(b));
+    const anlatiHtml = anlati.map((b, i) => `
   <section class="section${i === 0 ? ' rule-top' : ''}" id="${b.id}">
     <div class="wrap">
       <div class="hk-bolum${i % 2 ? ' hk-bolum-ters' : ''}">
@@ -524,13 +550,35 @@ ${folio({
         </figure>
       </div>
     </div>
-  </section>`).join('\n')}
+  </section>`);
+
+    const ikiliHtml = ikili.length ? `
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="hk-ikili">
+        ${ikili.map(b => `<article class="hk-ikili-kart" id="${b.id}" data-reveal="stagger">
+          <div class="hk-ikili-medya" aria-hidden="true">
+            ${resim({ gorsel: b.gorsel, alt: '', kucuk: true, odak: b.odak })}
+          </div>
+          <div class="hk-ikili-ic">
+            <h2 class="hk-ikili-ad">${b.baslik}</h2>
+            ${b.paragraflar.map(p => `<p>${p}</p>`).join('\n            ')}
+          </div>
+        </article>`).join('\n        ')}
+      </div>
+    </div>
+  </section>` : '';
+
+    /* Belgedeki sıra: Hikayemiz → Vizyon → Misyon → Neden Doğa?
+       İkili blok o sıradaki yerine, yani ilk anlatıdan sonra giriyor. */
+    return [anlatiHtml[0], ikiliHtml, ...anlatiHtml.slice(1)].filter(Boolean).join('\n');
+  })()}
 
   ${marquee(30)}
 
   <section class="section" id="ekip">
     <div class="wrap">
-      ${opener(`Ekip · ${team.length} kişi`, 'Ekibimiz', '')}
+      ${opener('Ekip', 'Ekibimiz', '')}
       <div class="plates" style="margin-top:clamp(40px,5vw,72px)">
         ${team.map(t => `<a class="plate" href="ekip-${t.slug}.html" data-reveal="stagger">
           <div class="plate-frame plate-frame-tall"><img src="assets/img/team/${t.img}" alt="${t.alt}" loading="lazy" width="900" height="900"></div>
@@ -561,7 +609,7 @@ ${folio({
 ${folio({
     eyebrow: 'Sürdürülebilirlik',
     plateNo: `${projects.length} proje`,
-    lines: ['Paylaştıkça', '<em class="em">var olacağımızı</em>', 'düşünüyoruz.'],
+    lines: ['Paylaştıkça', '<em class="em">var olacağımızı</em>', 'düşünüyoruz'],
     lede: surdurulebilirlikGiris,
     meta: projects.map(p => ['Proje', p.title]),
   })}
@@ -711,7 +759,7 @@ for (const p of projects.filter(x => x.slug !== 'proje-gelecegi-yesil-tasarla'))
 ${folio({
     eyebrow: 'Sürdürülebilirlik projesi',
     plateNo: p.title,
-    lines: [p.title.replace(' Projesi', ''), `<em class="em">Projesi</em>.`],
+    lines: [p.title.replace(' Projesi', ''), `<em class="em">Projesi</em>`],
     lede: p.tagline,
     size: 'h1',
     buttons: `<a class="btn btn-primary" href="iletisim.html">Projeye katıl</a>`,
@@ -777,12 +825,23 @@ ${davetBlok}`;
     <div class="wrap">
       <div class="pencere-bas" data-reveal>
         <p class="pencere-no">Pencere ${String(p.no).padStart(2, '0')}</p>
-        <div>
+        <div class="pencere-giris">
           ${/* Belge: "kartın üstünde şu an hangi elementte olduğumuzu
                gösteren bir element rozeti bulunur" */ ''}
           <p class="element-rozet">${ikon(p.ikon)}<span>${p.element}</span></p>
           <h2 class="pencere-ad">${p.ad}</h2>
           <p class="pencere-element">Doğa Elementi: ${p.element}</p>
+          ${/* ANLATI BURAYA TAŞINDI — 5 Ağustos geri bildirimi:
+               "sayfalarda boşluklar da çok" ve "metin, görsel, yazı yazı
+               gidiyor daha dinamik olabilir".
+               Başlık bloğu 150 piksel, yanındaki görsel 330 piksel; sol
+               sütunun altında 180 piksellik boşluk kalıyordu ve anlatı
+               görselin altından yeniden başlıyordu. Anlatı yukarı gelince
+               boşluk kapanıyor ve metin görselle yan yana duruyor. */ ''}
+          <div class="pencere-blok pencere-blok-giris">
+            <p class="eyebrow">Anlatı</p>
+            <p>${p.anlati}</p>
+          </div>
         </div>
         <figure class="pencere-gorsel">
           ${resim({ gorsel: p.gorsel, alt: p.alt, kucuk: true })}
@@ -791,10 +850,6 @@ ${davetBlok}`;
 
       <div class="pencere-govde">
         <div class="pencere-anlati">
-          <div class="pencere-blok" data-reveal>
-            <p class="eyebrow">Anlatı</p>
-            <p>${p.anlati}</p>
-          </div>
           <div class="pencere-blok" data-reveal>
             <p class="eyebrow">Ne Sunuyoruz</p>
             <p>${p.neSunuyoruz}</p>
@@ -809,7 +864,7 @@ ${davetBlok}`;
           <p class="eyebrow">${p.programEtiketi || 'Bu Pencerede Yer Alacak Programlar / Atölyeler'}</p>
           <ul>
             ${(p.egitimBaglari
-      ? p.egitimBaglari.map(([ad, id]) => `<li><a href="doga-temelli-egitimler.html#${id}">${ad}</a></li>`)
+      ? p.egitimBaglari.map(([ad, id]) => `<li><a href="egitim-${id}.html">${ad}</a></li>`)
       : p.programlar.map(x => `<li>${x}</li>`)
     ).join('\n            ')}
           </ul>
@@ -823,7 +878,7 @@ ${davetBlok}`;
 ${folio({
     eyebrow: 'Geleceği Doğadan Tasarla',
     plateNo: '4 element · 4 pencere',
-    lines: ['Geleceği', '<em class="em">Doğadan Tasarla</em>', 'Hareketi.'],
+    lines: ['Geleceği', '<em class="em">Doğadan Tasarla</em>', 'Hareketi'],
     lede: g.heroAlt,
     size: 'd-xl',
     buttons: `<a class="btn btn-primary" href="iletisim.html">${g.kapanis.cagri}</a>`,
@@ -917,22 +972,15 @@ ${folio({
   const B = egitimlerSayfasi.bolumler;
   const A = egitimlerSayfasi.alanlar;
 
-  /* Program bloğu — tek tek yazmak yerine iskelet bir kez tanımlı, beş kez
-     uygulanıyor; belgede de beş program birebir aynı başlıkları taşıyor. */
-  const program = (e, i) => `
-  <section class="section${i % 2 ? ' field' : ' rule-top'} program" id="${e.id}">
-    <div class="wrap">
-      <div class="program-bas" data-reveal>
-        <p class="program-no">${String(i + 1).padStart(2, '0')}</p>
-        <div>
-          <h2 class="program-ad">${e.ad}</h2>
-          <p class="program-slogan">${e.slogan}</p>
-        </div>
-        <figure class="program-gorsel">
-          ${resim({ gorsel: e.gorsel, alt: e.alt, kucuk: true })}
-        </figure>
-      </div>
+  /* Program sayfası gövdesi — iskelet bir kez tanımlı, beş kez uygulanıyor;
+     belgede de beş program birebir aynı başlıkları taşıyor.
+     Kapak ve başlık artık `egitim-tasarim.mjs` içinde; burada belgenin
+     altı bölümü duruyor. */
+  const program = (e) => `
+${egitimKapak(e)}
 
+  <section class="section program">
+    <div class="wrap">
       <div class="program-govde">
         <div class="program-anlati">
           <div class="program-blok" data-reveal>
@@ -973,10 +1021,23 @@ ${folio({
               <div><dt>${A.yetkinlikler}</dt><dd>${e.yetkinlikler}</dd></div>
             </dl>
             <div class="btn-row" style="margin-top:var(--s4)">
-              <a class="btn ${i % 2 ? 'btn-ghost' : 'btn-primary'}" href="iletisim.html">Bu program için teklif alın</a>
+              <a class="btn btn-primary" href="iletisim.html">Bu program için teklif alın</a>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section rule-top">
+    <div class="wrap">
+      ${opener('Diğer programlar', 'Doğa Temelli Eğitimlerimiz', '')}
+      <div style="margin-top:clamp(28px,3.5vw,48px)">
+        ${egitimGezinme(egitimler, e.id)}
+      </div>
+      <div class="btn-row" style="margin-top:clamp(32px,4vw,56px)">
+        <a class="btn btn-primary" href="iletisim.html">Kurumsal Teklif Al</a>
+        <a class="btn btn-ghost" href="doga-temelli-egitimler.html">Beş programın tamamı</a>
       </div>
     </div>
   </section>`;
@@ -984,33 +1045,41 @@ ${folio({
   const body = `
 ${folio({
     eyebrow: 'Afloday',
-    plateNo: `${egitimler.length} program`,
-    lines: ['Doğa Temelli', '<em class="em">Eğitimlerimiz</em>.'],
+    /* Sayaç kaldırıldı — "10 atölye, 7 kişi ekip vs onlar olmasın." */
+    plateNo: 'Doğa Temelli Eğitimler',
+    lines: ['Doğa Temelli', '<em class="em">Eğitimlerimiz</em>'],
     lede: egitimlerSayfasi.giris,
     size: 'd-xl',
     buttons: `<a class="btn btn-primary" href="iletisim.html">Kurumsal Teklif Al</a>
               <a class="btn btn-ghost" href="#programlar">Programlara git</a>`,
     meta: [
-      ['Program', `${egitimler.length} eğitim`],
       ['Biçim', 'Yüz Yüze / Online'],
       ['Süre', '1-2 Gün'],
     ],
   })}
 
-  <!-- Program dizini — beş programın tamamı tek bakışta, çapalara gidiyor -->
+  ${/* "5 eğitimi sayfaya sığdırsak çok iyi olur." Beş programın tam
+       anlatısı alt alta 10.572 piksel tutuyordu, yani 11.7 ekran.
+       Şimdi beşi de tek ızgarada; tam metin kendi sayfasında. */ ''}
   <section class="section-tight" id="programlar">
     <div class="wrap">
-      <div class="index">
-        ${egitimler.map((e, i) => `<a class="index-row" href="#${e.id}">
-          <span class="index-acc">${String(i + 1).padStart(2, '0')}</span>
-          <span><span class="index-name">${e.ad}</span><br><span class="caption" style="margin-top:6px;display:block">${e.slogan}</span></span>
-          <span class="index-meta">${e.sure}</span>
-        </a>`).join('\n        ')}
-      </div>
+      ${/* ŞERİT GÖRSELLERİ ELLE SEÇİLDİ — hepsi yatay.
+           Panel şeridinin arka planı geniş bir bant; oraya dikey fotoğraf
+           konunca %81'i kesiliyor (6 çözünürlükte ölçüldü). Programların
+           `vitrinGorsel` alanları Afloday'in kendi kareleri ama ikisi
+           dikey (1067×1600 ve 900×1600), o yüzden şeritte kullanılmıyor.
+
+           `takim-ruhu` ile `degisimin-dogasi` aynı çift-pozlama karesini
+           paylaşıyor; şeritte iki panel birebir aynı çıkmasın diye
+           ikincisine pusula karesi verildi — "Değişimin Doğası ve Liderlik
+           Ekosistemi" için yön/rota anlamı da yerinde oturuyor. */ ''}
+      ${panelSerit(egitimler.map(e => ({
+    ad: e.ad,
+    gorsel: e.id === 'degisimin-dogasi' ? 'man-hand-holding-compass-forest.jpg' : e.gorsel,
+    href: egitimDosyasi(e),
+  })), { etiket: 'Eğitim programları' }).replace('class="pserit"', 'class="pserit pserit-5"')}
     </div>
   </section>
-
-  ${egitimler.map(program).join('\n')}
 
   <!-- Eğitimin somut hâli — deneyimsel atölyelere köprü -->
   <section class="section rule-top">
@@ -1049,6 +1118,19 @@ ${folio({
     current: 'doga-temelli-egitimler.html', body, canonical: 'doga-temelli-egitimler.html',
     ogImage: `assets/img/rev2/secilmis/${gorselSlug(egitimler[0].gorsel)}.jpg`,
   }));
+
+  /* ── 5 PROGRAM SAYFASI ────────────────────────────────────────────────
+     Belgenin altı bölümü olduğu gibi taşındı, tek cümle değişmedi. */
+  for (const e of egitimler) {
+    add(egitimDosyasi(e), layout({
+      title: `${e.ad} | Afloday`,
+      desc: kirp(e.acilisSahnesi, 155),
+      current: 'doga-temelli-egitimler.html',
+      body: program(e),
+      canonical: egitimDosyasi(e),
+      ogImage: `assets/img/rev2/secilmis/${gorselSlug(e.gorsel)}.jpg`,
+    }));
+  }
 }
 
 /* ====================================================================== */
@@ -1066,16 +1148,18 @@ ${folio({
   const body = `
 ${folio({
     eyebrow: 'Afloday Kurumsal Hizmetler',
-    plateNo: `${etkinlikKategorileri.length} kategori · ${toplamAtolye} atölye`,
-    lines: ['Doğadan Etkinlik', '<em class="em">Atölye Deneyimleri</em>.'],
+    /* Sayaç kaldırıldı — Ceylan hanım 5 Ağustos geri bildirimi:
+       "Ara yönlendirmeler var 10 atölye, 7 kişi ekip vs onlar olmasın." */
+    plateNo: 'Kurumsal Hizmetler',
+    /* Başlık sonundaki nokta kaldırıldı: "Başlıklardan sonra nokta işareti
+       olmasın." Aynı düzeltme site genelinde uygulandı. */
+    lines: ['Doğadan Etkinlik', '<em class="em">Atölye Deneyimleri</em>'],
     lede: etkinlikSayfasi.giris[0],
     size: 'd-xl',
     buttons: `<a class="btn btn-primary" href="iletisim.html">Kurumsal Teklif Al</a>
               <a class="btn btn-ghost" href="#kategoriler">Kategorilere git</a>`,
     meta: [
       ['Hizmet hattı', 'Kurumsal Hizmetler'],
-      ['Kategori', `${etkinlikKategorileri.length} başlık`],
-      ['Atölye', `${toplamAtolye} deneyim`],
     ],
   })}
 
@@ -1089,10 +1173,15 @@ ${folio({
   <section class="section rule-top" id="kategoriler">
     <div class="wrap">
       ${/* Başlık belgedeki sayfa adının kendisi. Açıklama yok: belge bu
-           bölüme metin yazmamış, akordeonlar doğrudan geliyor. */ ''}
+           bölüme metin yazmamış, kategoriler doğrudan geliyor. */ ''}
       ${opener('Etkinlik kategorileri', etkinlikSayfasi.baslik, '')}
-      <div style="margin-top:clamp(32px,4vw,56px)" data-reveal>
-        ${akordeon(etkinlikKategorileri)}
+      ${/* "Hepsi bir arada derli toplu" — Ceylan hanım, 5 Ağustos.
+           Boşluklu kart ızgarası yerine uç uca panel şeridi;
+           gerekçesi `panel-serit.mjs` başlığında. */ ''}
+      <div style="margin-top:clamp(32px,4vw,56px)">
+        ${panelSerit(etkinlikKategorileri.map(k => ({
+    ad: k.ad, gorsel: k.gorsel, klasor: 'etkinlik', href: kategoriDosyasi(k),
+  })), { etiket: 'Etkinlik kategorileri' })}
       </div>
     </div>
   </section>
@@ -1128,6 +1217,77 @@ ${folio({
        paylaşım kartı boş çıkıyordu. 1200×630 kapak `og-gorsel.mjs`ten. */
     ogImage: 'assets/img/og/og-kurumsal.jpg',
   }));
+
+  /* ── 7 KATEGORİ SAYFASI ───────────────────────────────────────────────
+     Her kategori kendi adresine taşındı. Gerekçe: tek sayfada 12.600
+     piksel vardı ve müşteri "genel olarak kayboldum sayfalarda" dedi.
+     Bölünce genel bakış tek ekrana sığıyor, kategoriler ayrı ayrı
+     paylaşılabilir hâle geliyor.
+
+     Metinlerin tamamı 4 Ağustos belgesinden; bu sayfalar yalnızca var
+     olan içeriği yeniden yerleştiriyor, tek cümle eklemiyor. */
+  for (const k of etkinlikKategorileri) {
+    const govde = `
+${kategoriKapak(k)}
+
+  <section class="section-tight">
+    <div class="wrap wrap-narrow">
+      ${k.girisEtiketi ? `<p class="eyebrow" data-reveal>${k.girisEtiketi}</p>` : ''}
+      ${k.giris.map((p, i) => `<p class="${i === 0 ? 'lede' : 'kat-giris-metin'}" data-reveal>${p}</p>`).join('\n      ')}
+    </div>
+  </section>
+
+  ${k.bilim ? `<section class="section-tight">
+    <div class="wrap wrap-narrow">
+      <div class="kat-bilim" data-reveal>
+        <p class="eyebrow">${k.bilim.baslik}</p>
+        ${k.bilim.maddeler.map(m => `<p>${m}</p>`).join('\n        ')}
+      </div>
+    </div>
+  </section>` : ''}
+
+  <section class="section">
+    <div class="wrap">
+      ${/* Kurumsal Gönüllülük'ün üç atölyesi `uygulanabilir` alanında ve
+           belgenin kendi etiketiyle geliyor; diğer kategorilerde belge
+           böyle bir başlık vermemiş, o yüzden etiketsiz. */
+    !k.atolyeler.length && k.uygulanabilirEtiketi
+      ? `<p class="eyebrow" data-reveal>${k.uygulanabilirEtiketi}</p>` : ''}
+      ${kategoriMozaik(k)}
+    </div>
+  </section>
+
+  ${k.uygulanabilir && k.atolyeler.length ? `<section class="section-tight">
+    <div class="wrap wrap-narrow">
+      <div class="kat-bilim" data-reveal>
+        <p class="eyebrow">${k.uygulanabilirEtiketi || 'Uygulanabilir atölyeler'}</p>
+        <ul class="kat-liste">${k.uygulanabilir.map(x => `<li>${x}</li>`).join('')}</ul>
+      </div>
+    </div>
+  </section>` : ''}
+
+  <section class="section rule-top">
+    <div class="wrap">
+      ${opener('Diğer kategoriler', 'Doğadan Etkinlik Atölye Deneyimleri', '')}
+      <div style="margin-top:clamp(28px,3.5vw,48px)">
+        ${kategoriGezinme(etkinlikKategorileri, k.id)}
+      </div>
+      <div class="btn-row" style="margin-top:clamp(32px,4vw,56px)">
+        <a class="btn btn-primary" href="iletisim.html">Kurumsal Teklif Al</a>
+        <a class="btn btn-ghost" href="kurumsal-hobi-atolyeleri.html">Tüm kategoriler</a>
+      </div>
+    </div>
+  </section>`;
+
+    add(kategoriDosyasi(k), layout({
+      /* Kategori adları uzun; üst başlığı da eklemek 65 karakteri aşıyor
+         ve Google sonuçta kesiyor. Yalnız kategori adı + marka. */
+      title: `${k.ad} | Afloday`,
+      desc: kirp(k.giris[0], 155),
+      current: 'kurumsal.html', body: govde, canonical: kategoriDosyasi(k),
+      ogImage: 'assets/img/og/og-kurumsal.jpg',
+    }));
+  }
 }
 
 /* ====================================================================== */
@@ -1138,13 +1298,15 @@ ${folio({
 ${folio({
     eyebrow: 'İletişim',
     plateNo: 'Bize ulaşın',
-    lines: ['Bir <em class="em">&ldquo;TIK&rdquo;</em>', 'yakındayız.'],
+    lines: ['Bir <em class="em">&ldquo;TIK&rdquo;</em>', 'yakındayız'],
     lede: 'Bir &ldquo;TIK&rdquo; yakındayız. Formu doldurun ya da doğrudan telefonla ulaşın.',
     meta: [
       ['E-posta', `<a href="mailto:${site.email}" style="color:inherit">${site.email}</a>`],
       ...site.phones.map(p => ['Telefon', p]),
       ['Adres', `${site.address.street}, ${site.address.zip} ${site.address.locality} / ${site.address.region}`],
-      ['Yol tarifi', `<a href="${assets.maps}" rel="noopener" style="color:var(--carmine)">Haritada aç →</a>`],
+      /* Satır içi renk --carmine idi; o değişken artık turuncu ve krem
+         zeminde 2.84:1 veriyor. Metin vurgusu --vurgu (yeşil, 5.34:1). */
+      ['Yol tarifi', `<a href="${assets.maps}" rel="noopener" style="color:var(--vurgu)">Haritada aç →</a>`],
     ],
     buttons: `<a class="btn btn-ghost" href="kurumsal-hobi-atolyeleri.html">Etkinlik atölye deneyimleri</a>`,
   })}
@@ -1225,13 +1387,15 @@ for (const [i, t] of team.entries()) {
   const body = `
 ${folio({
     eyebrow: 'Ekip · Afloday',
-    plateNo: `Ekip ${String(i + 1).padStart(2, '0')} / ${team.length}`,
+    /* "Ekip 01 / 7" levha numarası kalktı — Ceylan hanım açıkça
+       "7 kişi ekip vs onlar olmasın" dedi. Hem sayfa künyesinde hem
+       sağ üst levhada iki kez görünüyordu. */
+    plateNo: 'Afloday',
     lines: [yeni ? yeni.tamAd : t.name],
     lede: yeni ? yeni.ozet : t.role,
     size: 'h1',
     buttons: '<a class="btn btn-ghost" href="hakkimizda.html#ekip">Tüm ekip</a>',
     meta: [
-      ['Kayıt', `Ekip ${String(i + 1).padStart(2, '0')} / ${team.length}`],
       ['Görev', t.role],
       ['Merkez', `${site.address.locality}, ${site.address.region}`],
       ['İletişim', `<a href="mailto:${site.email}" style="color:inherit">${site.email}</a>`],
@@ -1311,7 +1475,7 @@ ${folio({
 ${folio({
     eyebrow: 'İnsan Kaynakları',
     plateNo: 'Form 02',
-    lines: ['Ekibimize', '<em class="em">katılın</em>.'],
+    lines: ['Ekibimize', '<em class="em">katılın</em>'],
     lede: '',   /* canlı sitede de belgede de bu sayfaya ait tanıtım metni yok */
     meta: [
       ['Dosya', 'En fazla 4 MB'],
@@ -1396,12 +1560,12 @@ ${/* Başlık sayfanın belgedeki adı (satır 387). Önceki hâli "Atölyelerde
      ölçüme takılmamıştı. */ ''}
 ${folio({
     eyebrow: 'Afloday',
-    plateNo: `${galeriRev2.length} kare`,
-    lines: ['<em class="em">Galeri</em>.'],
+    plateNo: 'Afloday arşivi',
+    lines: ['<em class="em">Galeri</em>'],
     lede: '',
     size: 'd-xl',
     buttons: '<a class="btn btn-primary" href="iletisim.html">Kurumsal Teklif Al</a>',
-    meta: [['Kare', `${galeriRev2.length} fotoğraf`], ['Kaynak', 'Afloday arşivi']],
+    meta: [['Kaynak', 'Afloday arşivi']],
   })}
 
   <section class="section-tight">
@@ -1422,12 +1586,20 @@ ${folio({
 
   ${marquee(30)}`;
 
-  add('galeri.html', layout({
-    title: 'Galeri — Afloday',
-    desc: `Afloday atölye ve etkinliklerinden ${galeriRev2.length} fotoğraf. Kurumsal gelişim atölyeleri, doğadan etkinlik deneyimleri ve çocuk atölyelerinden kareler.`,
-    current: 'galeri.html', body, canonical: 'galeri.html',
-    ogImage: `assets/img/rev2/${galeriRev2[0].slug}.jpg`,
-  }));
+  /* GALERİ SAYFASI ÜRETİLMİYOR — Ceylan Kalyon Özdemir, 5 Ağustos:
+     "Galeri sayfasını kapatabiliriz."
+
+     Fotoğraflar kaybolmadı: 21 kare anasayfadaki vitrin şeridinde,
+     70 atölye karesi de yedi etkinlik kategorisi sayfasının mozaiğinde
+     duruyor — orada hem daha çoklar hem de bağlamlılar.
+
+     `/galeri` canlı sitede var olan bir adres, o yüzden silinmiyor:
+     `vercel.json` içinde 301 ile `/dogadan-hobi-atolyeleri`ne gidiyor.
+     Böylece 34 adres kuralı bozulmuyor, adresin arama motorlarındaki
+     birikmiş değeri de fotoğrafların gerçekten bulunduğu yere aktarılıyor.
+
+     Sayfa gövdesi (`body`) yukarıda duruyor; karar geri alınırsa tek
+     satırla geri açılır. */
 }
 
 /* ====================================================================== */

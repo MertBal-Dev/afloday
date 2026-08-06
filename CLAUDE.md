@@ -5,8 +5,13 @@
 > 2. `docs/devam-plani.md` — nerede kaldık, sırada ne var
 > 3. `docs/belge-kapsam-raporu.md` — belge doğrulamasının kanıtı
 >
-> Son güncelleme: 5 Ağustos 2026 akşamı.
+> Son güncelleme: 6 Ağustos 2026.
 > Site yayında: **afloday.vercel.app** (henüz afloday.com değil)
+>
+> **DİKKAT — hangi dalda olduğuna bak.** Ceylan hanımın 5 Ağustos geri
+> bildirimi `feedback-2026-08-06` dalında uygulandı; `main` hâlâ geri
+> bildirim öncesi hâlde (`4b9ea9c`) ve yayındaki site o. Çalışmaya devam
+> etmeden önce: `git checkout feedback-2026-08-06`
 
 ---
 
@@ -20,8 +25,39 @@ Bedel        20.000 TL KDV dahil · site + blog + panel, tek paket
 Fatura       tek fatura, site yayına alındığında
 Bakım        ilk 3 ay dahil · 3. ay sonunda yıllık bedel konuşulacak
 Teslim       site: cPanel erişiminden 3-4 iş günü · blog+panel: en geç 3 hafta
-Durum        SİTE BİTTİ, müşteri incelemesinde. Blog + panel başlamadı.
+Durum        Geri bildirim turu uygulandı, Ceylan hanıma gönderilmeyi
+             bekliyor. Blog + panel başlamadı.
 ```
+
+## Yeni bilgisayarda başlarken
+
+```bash
+git clone https://github.com/MertBal-Dev/afloday.git
+cd afloday
+git checkout feedback-2026-08-06     # ← ÖNEMLİ, main eski hâlde
+npm install
+```
+
+Sonra `.env` dosyasını elle oluştur — depoda yok, iki satır:
+
+```
+SITE_URL=https://afloday.vercel.app
+PREVIEW=1
+```
+
+`PREVIEW=1` sayfalara `noindex` ve `robots.txt`'ye `Disallow: /` koyuyor.
+**Gerçek yayına geçerken bu satır silinecek**, yoksa Google siteyi indekslemez.
+
+Doğrula:
+
+```bash
+node _build/build.mjs && node _build/verify.mjs   # 0 sorun vermeli
+npm run build                                     # üretim derlemesi
+```
+
+**Zip'e gerek yok.** `.env` (2 satır) ve `node_modules` (npm install üretir)
+dışında her şey depoda: kaynak belgeler `docs/kaynak/`, marka dosyaları
+`docs/marka/`, denetim betikleri `_audit/denetim/`.
 
 **Fiyat pazarlığı kapandı, bir daha açma.** Kapsam belgede ne yazıyorsa o.
 
@@ -39,7 +75,34 @@ sunulmuştu. **Kural yazarken kaynağını da yaz.**
 | **Sormadan commit/push yok** | Kullanıcı | ✅ evet (nota bak) |
 | **34 canlı adres korunacak** | Excel envanteri, DURUM sütunu | ✅ evet |
 | Tailwind kurulmayacak | Mimari karar, `docs/mimari.md` | ⚙️ gerekçeli teknik tercih |
-| Saç teli çizgi, serif başlık, bronz etiket, karmen vurgu | — | ⚠️ **tercih**, kural değil |
+| Saç teli çizgi, serif başlık | — | ⚠️ **tercih**, kural değil |
+| **Yeni palet: ağırlıkta yeşil, turuncu vurgu** | Ceylan hanım, 5 Ağustos | ✅ evet |
+
+**Palet notu — üç turda oturdu, sonuncusu geçerli.**
+
+Karmen `#A82B45` ve bronz `#7D5F31` kalktı; ikisi de logoda yok, uydurma
+renkti. Yeni değerler logonun Pantone'larından (`docs/marka/Pant1-3.png`):
+turuncu `#F05625`, yeşil `#428840`, haki `#958A54`.
+
+| Rol | Değer | Kontrast |
+|---|---|---|
+| Düğme | mürekkep `#131A15`, krem yazı | 15.8:1 |
+| Düğme (koyu bantta) | krem `#F4F3EC`, koyu yazı | ters çevrili |
+| Vurgu — italik başlık, kart çizgisi, ok | yeşil `#2F6A2E` | 5.27:1 |
+| Etiket / göz kırpma | haki `#6B6340` | 4.88:1 |
+| Odak halkası | `#C6401A` | krem 4.09:1 · koyu 3.50:1 |
+| Zemin | `#EBE7DB` · yüzey `#F4F1E7` | — |
+
+**Neden turuncu düğme değil:** logo turuncuyu 40 piksellik bir çemberde
+kullanıyor; 170×54'lük düz düğmeye yayılınca bağırıyor ve ucuz duruyor.
+Renk yanlış değil, alan yanlıştı. Turuncu artık logoda ve odak halkasında.
+
+**Turuncu asla metin rengi olamaz** — krem üzerinde 2.84:1, küçük metin
+için 4.5, iri metin için 3.0 eşiğini de geçmiyor. Metin vurgusu `--vurgu`
+(yeşil). Koyu bantta turuncu 5.11:1 ile serbest.
+
+**Odak halkası ayrı bir token** (`--odak`): tek değerle hem krem hem koyu
+zeminde 3:1 geçmesi gerekiyor, `#C6401A` bunu yapan tek ton.
 
 **İçerik kuralının tam hâli:** sitedeki her cümle ya 4 Ağustos belgesinde ya da
 canlı afloday.com dökümünde geçmeli. Rakam, rozet, referans, istatistik uydurma
@@ -231,3 +294,51 @@ kullanılmayacak; karar verilirse kişisel isim kullanılacak.
 
 `docs/afloday-sorular-2026-08-04.md` — 31 madde, her kararın gerekçesi. Yeni bir
 karar verdiğinde oraya madde ekle ve `docs/devam-plani.md`'yi güncelle.
+
+---
+
+## Denetim betikleri — iddia etmeden önce ölç
+
+Bunlar 6 Ağustos turunda yazıldı ve gerçek hatalar buldu. Yapısal bir
+değişiklikten sonra en az ilk üçünü çalıştır.
+
+```bash
+node _build/verify.mjs                # sayfa · görsel · bağlantı, 0 sorun vermeli
+node _audit/denetim/a11y.mjs          # statik erişilebilirlik
+node _audit/denetim/erisim.mjs        # erişilemeyen sayfa var mı
+```
+
+Scratchpad'deki tarayıcı denetimleri (kalıcı istenirse `_audit/denetim/`
+altına taşınmalı):
+
+| Betik | Ne ölçüyor | Bulduğu gerçek hata |
+|---|---|---|
+| `tamtest.mjs` | 31 sayfa × 6 ekran, 14 kusur türü | 186 kombinasyon tek koşumda |
+| `kirpma.mjs` | Görsel doğal oranı ile çerçeve oranı | Kapak %89 kırpılıyordu |
+| `kontrast.mjs` | Hesaplanmış renklerle WCAG kontrastı | Turuncu metin 2.84:1 |
+| `tarayici.mjs` | Betik tekliği, skip link, 320px reflow, JS kapalı | Odak halkası 1.4.11'den kalıyordu |
+| `bloklayici.mjs` | noindex, damga, ağırlık, yol adı harf duyarlılığı | — |
+
+**Yanlış pozitif tuzakları — bunlara harcanan zamanı geri kazan:**
+
+- `<a[^>]*>` regex'i `<article>` ve `<address>` etiketlerini de yakalar.
+  `<as` ya da `<a>` kullan.
+- "me**todo**loji" kelimesi `TODO` aramasıyla eşleşir.
+- Next `afloday.js`'i `next/script` ile çalışma anında ekliyor; HTML'de
+  `<script src>` yok. Betik sayısını **tarayıcıda** say.
+- Anasayfada menü koyu videonun üzerinde; saydam başlığın arkasındaki
+  gövde rengini okuyan kontrast betiği 9 yanlış pozitif üretir.
+- Tembel görseller ölçüm anında henüz yüklenmemiş olabilir.
+  `networkidle` + `img.complete` beklemeden "yüklenmeyen görsel" sayma.
+- Cümle içi bağlantılar WCAG 2.5.8'in dokunma hedefi kuralından muaf.
+
+**CSS `url()` göreli yolu stil dosyasına göre çözülür, sayfaya göre değil.**
+`style="--kare:url('assets/...')"` yazınca tarayıcı `/assets/css/assets/...`
+arar ve 404 alır. CSS'ten okunan yollar kök-göreli olmalı (`/assets/...`).
+
+**`<button>` öğesinde `align-self` blok eksende çalışmıyor.** Izgara hücresi
+olan bir düğme satır yüksekliğini alır. Oranı düğmenin kendisine ver.
+
+**`aspect-ratio` + `min-height` genişliği yükseklikten türetebilir.**
+`min-height: 280px` ve `aspect-ratio: 4/3` birlikte 373px genişlik üretti,
+360 piksellik ekranda taşırdı. Genişliği açıkça yaz.

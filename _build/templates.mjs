@@ -117,7 +117,7 @@ export function footer() {
   return `<footer class="ftr">
   <div class="ftr-cta">
     <div class="wrap ftr-cta-in">
-      <h2 class="d-l" data-reveal>Bir <em class="em">&ldquo;TIK&rdquo;</em> yakındayız.</h2>
+      <h2 class="d-l" data-reveal>Bir <em class="em">&ldquo;TIK&rdquo;</em> yakındayız</h2>
       <div class="btn-row" data-reveal style="--d:80ms">
         <a class="btn btn-primary" href="iletisim.html">İletişim Formu</a>
         <!-- Eskiden /katilim'a gidiyordu; o sayfa envanterde İPTAL. -->
@@ -163,7 +163,6 @@ export function footer() {
           <li><a href="hakkimizda.html">Afloday Hakkında</a></li>
           <li><a href="hakkimizda.html#ekip">Ekibimiz</a></li>
           <li><a href="surdurulebilirlik.html">Sürdürülebilirlik</a></li>
-          <li><a href="galeri.html">Galeri</a></li>
         </ul>
         <p class="ftr-head" style="margin-top:var(--s5)">Takip Edeyim</p>
         <ul>
@@ -582,7 +581,7 @@ const durdurDugmesi = `<button class="galeri-durdur" type="button" data-galeri-d
 export function homeGaleriVitrin(kareler) {
   return `<div class="galeri-infinite-app" data-galeri-app data-lightbox>
     <div class="galeri-bar">
-      <p class="eyebrow" style="margin:0">Galeri · ${kareler.length} kare</p>
+      <p class="eyebrow" style="margin:0">Galeri</p>
       ${durdurDugmesi}
     </div>
     ${sonsuzSerit(kareler, { yon: 'left' })}
@@ -595,7 +594,7 @@ export function awwwardsGaleri(kareler) {
   /* `galeri-sayfa-serit` tempoyu 36s'den 72s'ye indiriyor (CSS). */
   return `<div class="galeri-infinite-app galeri-sayfa-serit" data-galeri-app data-lightbox>
     <div class="galeri-bar" data-reveal>
-      <p class="eyebrow" style="margin:0">Galeri · ${kareler.length} kare</p>
+      <p class="eyebrow" style="margin:0">Galeri</p>
       ${durdurDugmesi}
     </div>
     ${sonsuzSerit(kareler.slice(0, yarisi), { yon: 'left', ilk: 0 })}
@@ -815,7 +814,7 @@ ${process.env.PREVIEW === '1' ? '<meta name="robots" content="noindex, nofollow"
 
 ${header(current)}
 
-<main id="main"${pad ? ' class="pad-top"' : ''}>
+<main id="main" tabindex="-1"${pad ? ' class="pad-top"' : ''}>
 ${body}
 </main>
 
