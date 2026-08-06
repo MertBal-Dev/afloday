@@ -4450,3 +4450,73 @@ a.index-row .index-meta::after,
   .kat-mozaik { grid-template-columns: 1fr; }
   .mz-foto { aspect-ratio: 3 / 2; }
 }
+
+/* ==========================================================================
+   ÇERÇEVE FOTOĞRAFA UYUYOR — mozaik son hâli
+   ──────────────────────────────────────────────────────────────────────────
+   Havuzun 114 karesinin 48'i dikey, 54'ü yatay, 12'si kareye yakın.
+   Hepsini tek bir orana zorlamak dikey karelerin yarısını siliyordu:
+   teraryum tutan iki kişinin ELİNDEKİ teraryumlar kesiliyordu.
+
+   Oran artık her fotoğrafa satır içi `aspect-ratio` olarak veriliyor
+   (`gorsel-olculeri.mjs`). Buradaki kural yalnız o değeri serbest
+   bırakıyor; sabit bir oran DAYATMIYOR.
+
+   Satırlar farklı yükseklikte oluyor — istenen bu. Tek tip ızgara yerine
+   editoryal bir ritim çıkıyor ve hiçbir kare kırpılmıyor.
+   ========================================================================== */
+.kat-mozaik { align-items: start; }
+.mz-foto { aspect-ratio: auto; }        /* satır içi değer kazanıyor */
+.mz-atolye { align-self: stretch; }     /* metin kartı satırı dolduruyor */
+
+@media (max-width: 900px) {
+  /* Tek sütunda da fotoğrafın kendi oranı korunuyor: dikey kare dikey,
+     yatay kare yatay kalıyor. */
+  .mz-foto { aspect-ratio: auto; }
+}
+
+/* ==========================================================================
+   HİZALANMIŞ FOTO BANDI — sıfır kırpma + düz satırlar
+   ──────────────────────────────────────────────────────────────────────────
+   Bir bandaki karelerin hepsi aynı yükseklikte; genişlikleri kendi
+   oranlarına göre değişiyor. Dikey kare dar, yatay kare geniş oluyor,
+   bant üstten ve alttan düz kesiliyor.
+
+   Yükseklik CSS'te yazılmıyor: bandın `aspect-ratio` değeri satır içinde
+   oranların toplamı olarak veriliyor (h × Σoran = toplam genişlik), her
+   kare de `flex-grow` olarak kendi oranını alıyor. Yükseklik böylece
+   kendiliğinden doğru çıkıyor ve hiçbir kare kırpılmıyor.
+   ========================================================================== */
+.kat-mozaik {
+  display: grid;
+  grid-template-columns: 1fr;      /* artık satırlar kendi içinde bölünüyor */
+  gap: clamp(20px, 2.2vw, 36px);
+  align-items: stretch;
+}
+
+.mz-metin-satir {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 2.2vw, 36px);
+}
+
+.mz-bant {
+  display: flex;
+  gap: clamp(12px, 1.2vw, 20px);
+  width: 100%;
+}
+.mz-bant .mz-foto {
+  height: 100%;
+  min-width: 0;
+  aspect-ratio: auto;   /* genişlik flex-grow'dan, yükseklik banttan */
+}
+.mz-bant .mz-foto img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: auto; }
+
+@media (max-width: 900px) {
+  .mz-metin-satir { grid-template-columns: 1fr; }
+  /* Telefonda üç kare yan yana çok darlaşıyor; bant sarılıyor ve her
+     kare kendi oranıyla tam genişlikte duruyor. */
+  .mz-bant { display: grid; grid-template-columns: 1fr; aspect-ratio: auto !important; }
+  .mz-bant .mz-foto { height: auto; }
+  .mz-bant .mz-foto img { aspect-ratio: auto; height: auto; }
+}

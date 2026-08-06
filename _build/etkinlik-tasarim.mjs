@@ -29,6 +29,7 @@
 
 import { resim } from './templates.mjs';
 import { etkinlikGorselleri } from './etkinlik-gorselleri.mjs';
+import { oran } from './gorsel-olculeri.mjs';
 
 /* Kategori sayfalarının dosya adı. Site genelinde adresler düz (klasörsüz):
    `hakkimizda`, `ceylan-kalyon`... Aynı geleneği sürdürüyoruz, böylece
@@ -115,27 +116,63 @@ export function kategoriMozaik(k) {
        veriliyor (belge satır 496). Başlık var, metin yok. */
     : (k.uygulanabilir || []).map((ad) => ({ ad, metin: '' }));
 
-  const hucreler = harmanla(atolyeler, foto);
-  let fotoNo = 0;
+  /* ── HİZALANMIŞ FOTO BANDI ────────────────────────────────────────────
+     Havuzun 114 karesinin 48'i dikey, 54'ü yatay. Hepsini tek bir orana
+     zorlamak dikey karelerin yarısını siliyordu: Sürdürülebilirlik'teki
+     teraryum karesinde iki kişinin ELİNDEKİ teraryumlar kesiliyordu,
+     yani atölyenin ürünü kayboluyordu.
+
+     Her kareye kendi oranını vermek kırpmayı bitirdi ama bu sefer ızgara
+     dağıldı — satırlar farklı yükseklikte kaldı, sayfa 8'den 10.8 ekrana
+     çıktı ve ahenk gitti.
+
+     Doğrusu ikisinin ortası, matbaadan bilinen "hizalanmış satır":
+     bir bandaki karelerin hepsi AYNI YÜKSEKLİKTE, genişlikleri kendi
+     oranlarına göre değişiyor. Dikey kare dar, yatay kare geniş oluyor;
+     bant üstten ve alttan düz kesiliyor.
+
+     Matematiği basit: hepsi h yüksekliğindeyse toplam genişlik
+     h × Σoran olur, yani BANDIN oranı Σoran'dır. Bandın `aspect-ratio`
+     değerine bu toplamı verince yükseklik kendiliğinden doğru çıkıyor;
+     her kare de `flex-grow` olarak kendi oranını alıyor. Sonuç: sıfır
+     kırpma, düz hizalanmış satırlar. */
+  const bant = (kareGrubu, no) => {
+    const oranlar = kareGrubu.map((g) => oran(g.slug));
+    const toplam = oranlar.reduce((a, b) => a + b, 0);
+    return `<div class="mz-bant" style="aspect-ratio:${toplam.toFixed(3)}">
+        ${kareGrubu.map((g, i) => `<button class="mz-foto galeri-hucre" type="button"
+          style="flex:${oranlar[i].toFixed(3)} 1 0"
+          data-full="assets/img/rev2/${g.slug}.jpg"
+          data-caption="${k.ad}"
+          aria-label="${k.ad} — ${no + i + 1}. fotoğrafı büyüt">
+          <img src="assets/img/rev2/${g.slug}-800.webp"
+               alt="${k.ad} kapsamındaki atölyelerden kare ${no + i + 1}"
+               loading="lazy" decoding="async" width="800" height="800">
+        </button>`).join('\n        ')}
+      </div>`;
+  };
+
+  /* Metin kartları ikişerli, fotoğraflar üçerli bantlar hâlinde
+     dönüşümlü akıyor: iki atölye, bir bant, iki atölye, bir bant. */
+  const parcalar = [];
+  let ai = 0, gi = 0;
+  while (ai < atolyeler.length || gi < foto.length) {
+    const ikili = atolyeler.slice(ai, ai + 2);
+    if (ikili.length) {
+      parcalar.push(`<div class="mz-metin-satir">
+        ${ikili.map((a) => `<article class="mz-atolye" data-reveal="stagger">
+          <h2 class="mz-ad">${a.ad}</h2>
+          ${a.metin ? `<p class="mz-metin">${a.metin}</p>` : ''}
+        </article>`).join('\n        ')}
+      </div>`);
+      ai += 2;
+    }
+    const uclu = foto.slice(gi, gi + 3);
+    if (uclu.length) { parcalar.push(bant(uclu, gi)); gi += 3; }
+  }
 
   return `<div class="kat-mozaik" data-lightbox>
-      ${hucreler.map((h) => {
-    if (h.tur === 'atolye') {
-      return `<article class="mz-atolye" data-reveal="stagger">
-          <h2 class="mz-ad">${h.v.ad}</h2>
-          ${h.v.metin ? `<p class="mz-metin">${h.v.metin}</p>` : ''}
-        </article>`;
-    }
-    fotoNo++;
-    return `<button class="mz-foto galeri-hucre" type="button" data-reveal="stagger"
-          data-full="assets/img/rev2/${h.v.slug}.jpg"
-          data-caption="${k.ad}"
-          aria-label="${k.ad} — ${fotoNo}. fotoğrafı büyüt">
-          <img src="assets/img/rev2/${h.v.slug}-800.webp"
-               alt="${k.ad} kapsamındaki atölyelerden kare ${fotoNo}"
-               loading="lazy" decoding="async" width="800" height="800">
-        </button>`;
-  }).join('\n      ')}
+      ${parcalar.join('\n      ')}
     </div>`;
 }
 
