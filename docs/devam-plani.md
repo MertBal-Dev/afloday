@@ -91,3 +91,59 @@ Ceylan hanımın anasayfa hakkında yorumu gelene kadar dokunulmuyor.
 **Geleceği Tasarla element haritası.** Belge "4 küçük ikonla gösterilir"
 diyor. Ceylan hanım bu sayfa hakkında yorum yapmadı, o yüzden belge
 geçerli. Yorum gelirse geri bildirim öncelikli — bkz. hafıza notu.
+
+---
+
+## İstanbul devir listesi
+
+### 1 · Depoyu al
+
+```bash
+git clone https://github.com/MertBal-Dev/afloday.git
+cd afloday
+git checkout feedback-2026-08-06     # ← main eski hâlde, bu şart
+npm install
+```
+
+### 2 · .env oluştur (depoda yok, iki satır)
+
+```
+SITE_URL=https://afloday.vercel.app
+PREVIEW=1
+```
+
+### 3 · Çalıştığını doğrula
+
+```bash
+node _build/build.mjs && node _build/verify.mjs   # 0 sorun
+npm run build                                     # üretim derlemesi
+cd out && python -m http.server 8899              # önizleme
+```
+
+**Zip gerekmiyor.** Ceylan hanımın belgeleri `docs/kaynak/`, marka
+dosyaları `docs/marka/`, denetim betikleri `_audit/denetim/` içinde —
+hepsi depoda.
+
+### 4 · İstanbul'da gözden geçirilecekler
+
+| Konu | Durum | Not |
+|---|---|---|
+| Etkinlik mozaik düzeni | son hâli kuruldu | üç tur sürdü, birlikte bakılacak |
+| Sayfa uzunlukları | etkinlik 10.6 ekran | düzen ritmi uğruna uzadı, kısaltılabilir |
+| Doğal tema (koyu yeşil bant) | yapılmadı | `#1B3C1C`, krem metin 9.93:1 hazır seçenek |
+| Küçük gezinme resimleri | %46 kırpıyor | 96×96 tanıtıcı, öncelik düşük |
+| Turuncu düzlem | eklenmedi | kullanıcı iki kez reddetti, seçenek duruyor |
+| Anasayfa | dokunulmadı | 11.1 ekran, Ceylan hanımın yorumu bekleniyor |
+
+### 5 · Push kararı
+
+`main` hâlâ `4b9ea9c` ve yayındaki site o. Onay verildiğinde:
+
+```bash
+git checkout main
+git merge feedback-2026-08-06
+git push
+```
+
+Vercel `main`'den yayınlıyor, birleştirme anında canlıya çıkar.
+Ceylan hanım siteyi incelediği için bu ona anında yansır.
