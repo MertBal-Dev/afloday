@@ -255,7 +255,62 @@ button { font: inherit; color: inherit; }
 .opener { display: grid; gap: var(--s4); }
 .opener-head { display: grid; gap: var(--s4); max-width: 20ch; }
 .opener .lede { max-width: 40ch; }
-.opener-rule { border-top: 1px solid var(--rule); margin-top: var(--s3); }
+/* ══ BOTANİK YAPI — süs değil, sistemin parçası ═══════════════════════
+   Markanın işi bitki. O yüzden çizgi, işaret ve köşe gibi yapısal
+   öğeler bitkiden türüyor. Kural: motif hiçbir yerde "eklenmiş resim"
+   olarak durmayacak; her biri zaten orada olan bir öğenin YERİNE geçecek.
+   Süs olarak eklenirse ucuzlar; yapının parçası olursa marka olur.
+
+   Motifler CSS içinde `data:` olarak duruyor: ayrı dosya yok, 404 riski
+   yok, renkleri `stroke` üzerinden tokena bağlı. */
+
+/* 1 · AYRAÇ — düz çizginin sol ucunda filiz.
+   Çizgi duruyor, değişen sadece başlangıcı. 44 bölüm açılışında geçiyor. */
+.opener-rule {
+  border-top: 1px solid var(--rule);
+  margin-top: var(--s3);
+  position: relative;
+}
+.opener-rule::before {
+  content: '';
+  position: absolute; left: 0; top: -13px;
+  width: 34px; height: 13px;
+  background: no-repeat left bottom / contain
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 13' fill='none' stroke='%232F6A2E' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M3 13c0-5 4-9 9-9'/%3E%3Cpath d='M12 4c0-2.6 2-4 4.6-4 0 2.6-2 4-4.6 4z'/%3E%3Cpath d='M9 8c-2.4 0-4-1.6-4-4 2.4 0 4 1.6 4 4z'/%3E%3Ccircle cx='19' cy='2.6' r='1.5' fill='%23F05625' stroke='none'/%3E%3C/svg%3E");
+}
+.field .opener-rule::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 13' fill='none' stroke='%237FB877' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M3 13c0-5 4-9 9-9'/%3E%3Cpath d='M12 4c0-2.6 2-4 4.6-4 0 2.6-2 4-4.6 4z'/%3E%3Cpath d='M9 8c-2.4 0-4-1.6-4-4 2.4 0 4 1.6 4 4z'/%3E%3Ccircle cx='19' cy='2.6' r='1.5' fill='%23F2764A' stroke='none'/%3E%3C/svg%3E");
+}
+
+/* 2 · ETİKET İŞARETİ — nokta yerine tohum.
+   `.tags` listeleri atölye özelliklerini taşıyor (Yüz Yüze, 60 Dakika).
+   Aralarındaki ayırıcı orta noktaydı; tohum aynı işi görüyor. */
+.tags li + li::before {
+  content: '';
+  display: inline-block;
+  width: 7px; height: 9px;
+  margin-inline-end: var(--s2);
+  vertical-align: -1px;
+  background: no-repeat center / contain
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 9' fill='%236B6340'%3E%3Cpath d='M3.5 0C5.4 2 7 4 7 5.9 7 7.6 5.4 9 3.5 9S0 7.6 0 5.9C0 4 1.6 2 3.5 0z' opacity='.55'/%3E%3C/svg%3E");
+}
+
+/* 3 · BÖLÜM KÖŞESİ — bastırılmış çiçek silueti.
+   İsteğe bağlı: `.section.bitkili`. Her bölüme konmaz; sayfada en fazla
+   bir kez kullanılır, yoksa desen olur ve dikkat dağıtır. */
+.bitkili { position: relative; overflow: hidden; }
+.bitkili::after {
+  content: '';
+  position: absolute; right: -40px; bottom: -50px;
+  width: clamp(150px, 18vw, 260px); aspect-ratio: 1;
+  pointer-events: none;
+  opacity: 0.09;
+  background: no-repeat center / contain
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%232F6A2E' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M50 96V34'/%3E%3Cpath d='M50 34c-9 0-16-7-16-16s7-16 16-16 16 7 16 16-7 16-16 16z'/%3E%3Cpath d='M50 18v16M42 26h16'/%3E%3Cpath d='M50 58c-11 0-19-6-22-16 11-2 19 4 22 16z'/%3E%3Cpath d='M50 72c11 0 19-6 22-16-11-2-19 4-22 16z'/%3E%3C/svg%3E");
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bitkili::after { transition: opacity 600ms var(--ease-io); }
+}
 .field .opener-rule { border-color: var(--field-rule); }
 
 @media (min-width: 900px) {
@@ -4614,3 +4669,96 @@ a.index-row .index-meta::after,
   max-width: 100%;
   justify-self: center;
 }
+
+
+/* ══ BOŞ ALAN BOTANİĞİ ═══════════════════════════════════════════════
+   Kullanıcının tespiti: "kocaman ve hiçbir şey yok burada."
+   Geniş ekranda bölüm açılışlarının sağı ve altı boş kalıyor; göz
+   tutunacak bir şey bulamıyor.
+
+   Boşluğa metin eklemek çözüm değil (uydurma yasak, hem de sayfa uzar).
+   Onun yerine boşluk RENKLİ BOTANİKLE dolduruluyor: çiçek, yaprak,
+   tohum, kelebek. Markanın işi zaten bu.
+
+   Kurallar:
+   · Motifler metnin arkasında (`z-index: 0`), okumayı engellemiyor.
+   · Renkler paletten: yeşil, turuncu, haki. Rastgele renk yok.
+   · Opaklık düşük (0.14-0.22); desen değil doku olacaklar.
+   · `pointer-events: none` ve `aria-hidden` — ekran okuyucu görmüyor.
+   · Bölüm başına EN FAZLA bir küme. Her bölüme konursa desen olur. */
+
+.bos-botanik { position: relative; }
+.bos-botanik > * { position: relative; z-index: 1; }
+.bos-botanik::before {
+  content: '';
+  position: absolute; inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: right 4% top 8%, left 2% bottom 6%, right 22% bottom 18%;
+  background-size: clamp(120px, 15vw, 210px), clamp(90px, 11vw, 150px), clamp(60px, 7vw, 96px);
+  opacity: 0.55;
+  background-image:
+    /* çiçek — turuncu göbek, yeşil yapraklar */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%232F6A2E' stroke-width='1.5' stroke-linecap='round' opacity='.5'%3E%3Cpath d='M60 118V56'/%3E%3Cpath d='M60 92c-14 0-24-8-28-21 14-3 24 5 28 21z'/%3E%3Cpath d='M60 76c14 0 24-8 28-21-14-3-24 5-28 21z'/%3E%3C/g%3E%3Cg opacity='.55'%3E%3Ccircle cx='60' cy='38' r='9' fill='%23F05625'/%3E%3Cg fill='none' stroke='%23F05625' stroke-width='1.6'%3E%3Cpath d='M60 29c-6-7-4-16 0-21 4 5 6 14 0 21z'/%3E%3Cpath d='M60 47c6 7 4 16 0 21-4-5-6-14 0-21z'/%3E%3Cpath d='M51 38c-7 6-16 4-21 0 5-4 14-6 21 0z'/%3E%3Cpath d='M69 38c7-6 16-4 21 0-5 4-14 6-21 0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    /* yaprak dalı — haki */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 120'%3E%3Cg fill='none' stroke='%236B6340' stroke-width='1.4' stroke-linecap='round' opacity='.5'%3E%3Cpath d='M45 118C45 70 40 34 20 6'/%3E%3Cpath d='M42 96c-12-4-18-13-17-25 12 3 18 12 17 25z'/%3E%3Cpath d='M40 70c11-5 17-14 15-26-11 4-17 13-15 26z'/%3E%3Cpath d='M35 46c-10-5-14-14-11-24 10 5 14 14 11 24z'/%3E%3C/g%3E%3C/svg%3E"),
+    /* kelebek — turuncu ve yeşil kanat */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 70'%3E%3Cg opacity='.6'%3E%3Cpath d='M39 35C30 12 8 8 6 22c-2 13 16 19 33 13z' fill='%23F05625' opacity='.45'/%3E%3Cpath d='M41 35c9-23 31-27 33-13 2 13-16 19-33 13z' fill='%232F6A2E' opacity='.45'/%3E%3Cpath d='M39 35C31 52 14 60 10 50c-3-9 12-17 29-15z' fill='%23F05625' opacity='.3'/%3E%3Cpath d='M41 35c8 17 25 25 29 15 3-9-12-17-29-15z' fill='%232F6A2E' opacity='.3'/%3E%3Cg stroke='%23131A15' stroke-width='1.2' fill='none' stroke-linecap='round'%3E%3Cpath d='M40 28v18'/%3E%3Cpath d='M40 28c-2-5-6-7-9-8M40 28c2-5 6-7 9-8'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+/* Koyu bantta motifler açık tonlara döner. */
+.field .bos-botanik::before { opacity: 0.4; filter: brightness(1.9) saturate(1.2); }
+/* Telefonda tek motif kalır; üçü birden desen olur ve metni gölgeler. */
+@media (max-width: 760px) {
+  .bos-botanik::before {
+    background-image: none, none,
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 70'%3E%3Cg opacity='.6'%3E%3Cpath d='M39 35C30 12 8 8 6 22c-2 13 16 19 33 13z' fill='%23F05625' opacity='.45'/%3E%3Cpath d='M41 35c9-23 31-27 33-13 2 13-16 19-33 13z' fill='%232F6A2E' opacity='.45'/%3E%3C/g%3E%3C/svg%3E");
+    background-position: right 6% bottom 8%;
+    opacity: 0.4;
+  }
+}
+
+
+/* ══ MOTİFLER SAYFAYA BAĞLANIYOR ═════════════════════════════════════
+   `.bos-botanik` sınıfı CSS'te duruyordu ama hiçbir yere uygulanmamıştı;
+   yani hiçbir sayfada görünmüyordu. 30 küsur çağrı yerini tek tek
+   düzenlemek yerine kural buraya yazılıyor.
+
+   TEK ATLAYARAK: her bölüme koyarsak desen olur ve dikkat dağıtır.
+   Tek sıradaki bölümler motif alıyor, çift sıradakiler sade kalıyor —
+   sayfa boyunca renk gelip gidiyor, sabit bir doku olmuyor.
+
+   Dar ekranda kapalı: orada zaten boşluk yok, motif metnin altına
+   girip okumayı zorlaştırır. */
+@media (min-width: 1000px) {
+  main > section:nth-of-type(odd) { position: relative; }
+  main > section:nth-of-type(odd) > * { position: relative; z-index: 1; }
+  main > section:nth-of-type(odd)::before {
+    content: '';
+    position: absolute; inset: 0;
+    z-index: 0; pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: right 3% top 10%, left 1.5% bottom 8%, right 26% bottom 14%;
+    background-size: clamp(110px, 13vw, 190px), clamp(80px, 9vw, 130px), clamp(34px, 3.4vw, 52px);
+    opacity: 0.5;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%232F6A2E' stroke-width='1.5' stroke-linecap='round' opacity='.5'%3E%3Cpath d='M60 118V56'/%3E%3Cpath d='M60 92c-14 0-24-8-28-21 14-3 24 5 28 21z'/%3E%3Cpath d='M60 76c14 0 24-8 28-21-14-3-24 5-28 21z'/%3E%3C/g%3E%3Cg opacity='.55'%3E%3Ccircle cx='60' cy='38' r='9' fill='%23F05625'/%3E%3Cg fill='none' stroke='%23F05625' stroke-width='1.6'%3E%3Cpath d='M60 29c-6-7-4-16 0-21 4 5 6 14 0 21z'/%3E%3Cpath d='M60 47c6 7 4 16 0 21-4-5-6-14 0-21z'/%3E%3Cpath d='M51 38c-7 6-16 4-21 0 5-4 14-6 21 0z'/%3E%3Cpath d='M69 38c7-6 16-4 21 0-5 4-14 6-21 0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 120'%3E%3Cg fill='none' stroke='%236B6340' stroke-width='1.4' stroke-linecap='round' opacity='.5'%3E%3Cpath d='M45 118C45 70 40 34 20 6'/%3E%3Cpath d='M42 96c-12-4-18-13-17-25 12 3 18 12 17 25z'/%3E%3Cpath d='M40 70c11-5 17-14 15-26-11 4-17 13-15 26z'/%3E%3Cpath d='M35 46c-10-5-14-14-11-24 10 5 14 14 11 24z'/%3E%3C/g%3E%3C/svg%3E"),
+      /* uğur böceği — kırmızı kabuk, siyah benekler */
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 40'%3E%3Cg opacity='.85'%3E%3Cellipse cx='22' cy='23' rx='15' ry='16' fill='%23D8481B'/%3E%3Cpath d='M22 7v32' stroke='%23131A15' stroke-width='1.6'/%3E%3Ccircle cx='22' cy='8' r='6' fill='%23131A15'/%3E%3Ccircle cx='14' cy='18' r='2.6' fill='%23131A15'/%3E%3Ccircle cx='30' cy='18' r='2.6' fill='%23131A15'/%3E%3Ccircle cx='15' cy='29' r='2.2' fill='%23131A15'/%3E%3Ccircle cx='29' cy='29' r='2.2' fill='%23131A15'/%3E%3Cg stroke='%23131A15' stroke-width='1.3' stroke-linecap='round'%3E%3Cpath d='M19 4l-4-4M25 4l4-4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  /* Koyu bantta motifler açılıyor, yoksa kaybolur. */
+  .field:nth-of-type(odd)::before,
+  main > section.field:nth-of-type(odd)::before { filter: brightness(1.8) saturate(1.15); opacity: 0.38; }
+}
+
+/* ══ FOOTER DARALTILDI ════════════════════════════════════════════════
+   Ölçüldü: 1097x760 ekranda footer 586 piksel, yani ekranın %77'si.
+   Tek başına bir ekran kaplıyordu. Harita oranı 16/10'dan 3/2'ye,
+   iç boşluklar ve satır aralıkları kısaldı. */
+.ftr-main { padding-block: var(--s5) var(--s4); }
+.ftr-harita iframe { aspect-ratio: 3 / 2; max-height: 240px; }
+.ftr-kunye address { margin: var(--s3) 0 var(--s4); line-height: 1.5; }
+.ftr-iletisim li + li { margin-top: 2px; }
+.ftr-kunye .ftr-head { margin-top: var(--s4); }
+.ftr-logo img { height: 34px; width: auto; }
