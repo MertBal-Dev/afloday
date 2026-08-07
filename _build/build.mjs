@@ -1425,9 +1425,24 @@ ${folio({
   <section class="section rule-top">
     <div class="wrap">
       ${opener('Adres', 'Küçüksu Cad., Ümraniye', `${site.address.street}, ${site.address.zip} ${site.address.locality} / ${site.address.region}`)}
+      ${/* HARİTADA İĞNE ÇIKMIYORDU.
+
+           Sorgu ham sokak satırıyla kuruluyordu: "Küçüksu Cad. Antasya
+           Residence No:64A/15, 34768 Ümraniye/İstanbul". Google'ın
+           coğrafi çözümleyicisi `No:` önekini ve `/15` daire numarasını
+           adresin parçası sanıp eşleşmeyi kaybediyor; adresi çözemeyince
+           iğne koymadan bölgeyi ortalıyor. Kullanıcının gördüğü buydu.
+
+           Sorgu artık işletme adıyla başlıyor ve daire numarası düşüyor
+           — daire zaten binanın içinde, haritada karşılığı yok. Ad önde
+           olduğu için Afloday kayıtlıysa etiketli iğne çıkıyor, değilse
+           bina adresine iğne düşüyor. Görünen adres metni tam hâliyle
+           duruyor, kısaltılan yalnız harita sorgusu. */ ''}
       <div class="harita" data-reveal style="margin-top:clamp(32px,4vw,56px)">
         <iframe title="Afloday ofis konumu — Google Haritalar" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=${encodeURIComponent(site.address.street + ', ' + site.address.zip + ' ' + site.address.locality + '/' + site.address.region)}&output=embed"></iframe>
+          src="https://www.google.com/maps?q=${encodeURIComponent(
+    `${site.name}, ${site.address.street.replace(/\s*No:\s*/i, ' ').replace(/\/\d+\s*$/, '')}, ${site.address.zip} ${site.address.locality}/${site.address.region}`
+  )}&z=17&output=embed"></iframe>
       </div>
       <div class="iletisim-blok" style="margin-top:clamp(32px,4vw,56px)" data-reveal>
         <p><b>E.</b> <a href="mailto:${site.email}">${site.email}</a></p>

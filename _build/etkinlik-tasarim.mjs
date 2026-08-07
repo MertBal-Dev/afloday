@@ -219,6 +219,57 @@ export function kategoriMozaik(k) {
   const sonFotoYetim = parcalar.length % 2 === 1
     && parcalar[parcalar.length - 1].includes('class="mz-foto');
   if (sonFotoYetim) {
+    /* KAPANIŞ KARESİ YATAY OLMALI.
+
+       Kapanış karesi iki sütunu birden alıyor. Yatay kare orada bir bant
+       gibi oturuyor; DİKEY kare tam genişlikte devleşiyor ve sayfayı
+       kesiyor. Kullanıcının sözü: "bu dikey görsel tek kalınca pc de
+       sayfa düzeni bozuldu gibi". Üç sayfada böyleydi (wellbeing,
+       gönüllülük, motivasyon); üçünün de son karesi 1200×1600'dü.
+
+       Sırayı baştan sona karıştırmıyoruz — yalnız son kareyle havuzun
+       en geniş karesi YER DEĞİŞTİRİYOR. İki konum değişiyor, gerisi
+       duruyor.
+
+       Neden sıra karıştırılmıyor: yazı-fotoğraf eşleşmesinin doğrulanmış
+       bir kaynağı yok. Arşiv karelerinde etiket yok, 4 Ağustos belgesi de
+       atölyelere dosya adı atamıyor (belgede görsel yalnız 5 yerde geçiyor,
+       beşi de anasayfa). Yani eşleşme zaten rastgele; onu topluca
+       değiştirmek ne düzeltir ne bozar, ama gereksiz oynama olur.
+       Hangi karenin hangi atölyeye ait olduğu Afloday'den beklenen bilgi. */
+    const sonIndeks = foto.length - 1;
+    if (oran(foto[sonIndeks].slug) < 1) {
+      let enGenis = -1, enGenisOran = 1;
+      for (let i = 0; i < sonIndeks; i++) {
+        const o = oran(foto[i].slug);
+        if (o > enGenisOran) { enGenisOran = o; enGenis = i; }
+      }
+      if (enGenis >= 0) {
+        const t = foto[sonIndeks];
+        foto[sonIndeks] = foto[enGenis];
+        foto[enGenis] = t;
+        /* Değişen iki hücreyi gövdede de güncelle: `parcalar` yukarıdaki
+           döngüde eski sırayla kuruldu. */
+        const hucre = (g, i) => `<button class="mz-foto galeri-hucre" type="button" data-reveal="stagger"
+        style="aspect-ratio:${cerceve(g.slug)}"
+        data-full="assets/img/rev2/${g.slug}.jpg"
+        data-caption="${k.ad}"
+        aria-label="${k.ad} — ${i + 1}. fotoğrafı büyüt">
+        <img src="assets/img/rev2/${g.slug}-800.webp"
+             alt="${k.ad} kapsamındaki atölyelerden kare ${i + 1}"
+             loading="lazy" decoding="async" width="800" height="800">
+      </button>`;
+        let sayac = -1;
+        for (let p = 0; p < parcalar.length; p++) {
+          if (!parcalar[p].includes('class="mz-foto')) continue;
+          sayac++;
+          if (sayac === enGenis || sayac === sonIndeks) {
+            parcalar[p] = hucre(foto[sayac], sayac);
+          }
+        }
+      }
+    }
+
     const sonSlug = foto[foto.length - 1]?.slug;
     if (sonSlug) {
       const o = oran(sonSlug);
