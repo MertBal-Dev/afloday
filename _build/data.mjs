@@ -88,7 +88,14 @@ export const canliAdres = new Map([
    Panellerdeki alt başlıklar (`ozet`, `not`) belgede geçmiyordu; madde 24'te
    "kaynaksız" işaretlenen metinlerin bir bölümü bunlardı, birlikte kalktı. */
 export const nav = [
-  { href: 'index.html', label: 'Anasayfa' },
+  /* ANASAYFA MADDESİ KALDIRILDI — Ceylan hanım, 7 Ağustos:
+     "Ana sayfa yazısı da yazmasın, logoya basınca ana sayfaya gitsin,
+     Hakkımızda ile başlasın."
+
+     İki kazanç birden: menü daha sade oluyor ve başlık çubuğu daralıyor.
+     Yedi madde 1097 pikselde taşıyordu (kap 1097, içerik 1245); bir madde
+     eksilince yük düşüyor. Logo zaten ana sayfaya bağlı ve `aria-label`
+     taşıyor, yani gezinme kaybı yok. */
   { href: 'hakkimizda.html', label: 'Hakkımızda' },
   { href: 'proje-gelecegi-yesil-tasarla.html', label: 'Geleceği Doğadan Tasarla' },
   { href: 'doga-temelli-egitimler.html', label: 'Doğa Temelli Eğitimlerimiz' },

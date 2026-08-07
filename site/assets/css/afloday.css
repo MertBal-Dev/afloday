@@ -208,6 +208,21 @@ button { font: inherit; color: inherit; }
 @media (min-width: 1000px) {
   .wrap { width: min(76vw, var(--wrap)); padding-inline: 0; }
   .wrap-narrow { width: min(62vw, 1100px); }
+
+  /* MOBİLYA ORAN KURALININ DIŞINDA.
+
+     %76 kuralı OKUMA sütunu içindir. Başlık çubuğu, menü paneli ve alt
+     bilgi birer bant; onların işi satır uzunluğunu tutmak değil, ekranın
+     enini kullanmak. Oran kuralı onlara da uygulanınca 1097'de başlık
+     kabı 834 pikselde kaldı ama içeriği (logo 102 + menü 953 + düğme 80)
+     1135 piksel istiyordu ve taşıyordu — ölçümle yakalandı.
+
+     Bunlar kenar boşluğuyla tam genişlikte kalıyor. */
+  .hdr-in, .mega-in, .ftr-cta-in, .ftr-cols, .ftr-base, .hero-video-copy {
+    width: 100%;
+    max-width: none;
+    padding-inline: var(--gutter);
+  }
 }
 .wrap-narrow { max-width: 1100px; }
 
@@ -1057,6 +1072,24 @@ body:has(.hero-video) .hdr:not(.is-solid) .hdr-cta .btn:hover { background: var(
    Eşik menünün gerçekten sığdığı en dar noktaya çekildi, tahminle değil
    ölçümle: 7 madde + logo + düğme 1000 pikselde taşmadan duruyor. */
 @media (min-width: 1000px) { .nav, .hdr-cta { display: block; } }
+
+/* DAR MASAÜSTÜNDE MENÜ SIKIŞTIRILIYOR.
+
+   Etiketler uzun ("Geleceği Doğadan Tasarla", "Doğa Temelli
+   Eğitimlerimiz") ve altı madde 1000-1200 arasında sığmıyor: ölçümde
+   kap 1000, içerik 1143 çıktı. Eşiği 1200'e geri çekmek Ceylan hanımı
+   yine hamburgere düşürürdü (efektif genişliği 1097).
+
+   Çözüm eşik değil ölçek: bu aralıkta punto, harf aralığı ve madde
+   arası kademeli olarak sıkışıyor, 1200 üstünde normale dönüyor.
+   Sabit kırılma noktası yerine akışkan geçiş — her dizüstü boyutunda
+   çalışması gereken şey bu. */
+@media (min-width: 1000px) and (max-width: 1279px) {
+  .nav > ul { gap: clamp(9px, 1.05vw, 16px); }
+  .nav > ul > li > a { font-size: 0.6875rem; letter-spacing: 0.045em; }
+  .hdr-cta .btn { padding-inline: clamp(10px, 1.1vw, 16px); font-size: 0.6875rem; }
+  .hdr-logo img { height: 26px; }
+}
 
 .burger {
   margin-left: auto; position: relative;

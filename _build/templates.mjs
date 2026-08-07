@@ -116,16 +116,13 @@ export function header(current) {
    "İletişim Bilgileri", "Takip Edeyim", "Bir 'TIK' Yakındayız". */
 export function footer() {
   return `<footer class="ftr">
-  <div class="ftr-cta">
-    <div class="wrap ftr-cta-in">
-      <h2 class="d-l" data-reveal>Bir <em class="em">&ldquo;TIK&rdquo;</em> yakındayız</h2>
-      <div class="btn-row" data-reveal style="--d:80ms">
-        <a class="btn btn-primary" href="iletisim.html">İletişim Formu</a>
-        <!-- Eskiden /katilim'a gidiyordu; o sayfa envanterde İPTAL. -->
-        <a class="btn btn-ghost" href="kurumsal-hobi-atolyeleri.html">Etkinlik Atölye Deneyimleri</a>
-      </div>
-    </div>
-  </div>
+  ${/* KAPANIŞ ÇAĞRISI KALDIRILDI — Ceylan hanım, 7 Ağustos:
+       "Footer'da bir tık yakındayız kısmı çıkacak, butonlar kalkacak,
+        iletişim formu da çıkacak. İletişim, yol tarifi ve takip kalacak.
+        İnsan kaynakları da kalıyor."
+
+       Alt bilgi bir kapanış afişi değil, bir künye. Formun yeri iletişim
+       sayfası; footer'da ikinci kez sorulması gerekmiyor. */ ''}
 
   <div class="ftr-main">
     <div class="wrap ftr-cols">
