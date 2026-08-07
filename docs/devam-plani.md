@@ -2,18 +2,19 @@
 
 > Son güncelleme: **6 Ağustos 2026**
 >
-> **Dal:** `feedback-2026-08-06` · `main` hâlâ `4b9ea9c` (yayındaki hâl)
+> **Dal:** `main` = `6ad03b8`, yayında · `feedback-2026-08-06` = `db86d30`,
+> yedek · geri dönüş etiketi `yayin-oncesi-2026-08-06` = `4b9ea9c`
 
 ---
 
 ## Şu an neredeyiz
 
-Ceylan Kalyon Özdemir'in 5 Ağustos geri bildirimi uygulandı ve doğrulandı.
-Push edilmedi, onay bekliyor.
+Ceylan Kalyon Özdemir'in 5 Ağustos geri bildirimi uygulandı, doğrulandı,
+`main`'e alındı ve yayına çıktı. **Ceylan hanıma henüz haber verilmedi.**
 
 ```
 Faz 1  · Site               ✅ bitti
-Faz 1b · Geri bildirim      ✅ uygulandı, gönderilmeyi bekliyor  ← BURADASIN
+Faz 1b · Geri bildirim      ✅ yayında, haber verilmeyi bekliyor  ← BURADASIN
 Faz 2  · Blog + /admin      ⬜ başlanmadı
 Yayın  · DNS geçişi         ⛔ cPanel erişimi bekleniyor
 ```
@@ -51,9 +52,174 @@ görsel kırpma     kapak %89 → %36 · şerit %91 → yapısal olarak çözül
 
 ---
 
+## 6 Ağustos oturumu — nerede kaldık
+
+Oturum IDE yeniden başlatılmak üzere durduruldu. Kaldığımız nokta:
+
+### Bu oturumda yapıldı
+
+- Devir doğrulaması: `build` + `verify` (31 sayfa · 495 görsel · 1647 bağlantı,
+  0 sorun) + `a11y` (0 bulgu) + `erisim` (0 erişilemeyen) + `seo` (0 bulgu,
+  `npm run build` sonrası) + `npm run build` (35 sayfa export).
+- **13 denetim betiğindeki eski makine yolları düzeltildi.** Hepsinde
+  `c:/Users/Gaming/Desktop/Afloday/` gömülüydü, bu makinede `ENOENT` veriyordu.
+  Artık kök `import.meta.url`'den çözülüyor, raporlar `_audit/rapor/`'a gidiyor.
+- `playwright-core` devDependency olarak eklendi (Chrome `channel: 'chrome'`
+  ile kullanılıyor, tarayıcı indirmeye gerek yok).
+- **Yeni betik `_audit/denetim/mobil.mjs`** — satır başına karakter (CPL) ve
+  hesaplanmış kontrast ölçüyor. `node _audit/denetim/mobil.mjs 390`.
+- Eskimiş "main geri bildirim öncesi hâlde" bilgisi CLAUDE.md ve bu dosyadan
+  temizlendi. `main` = `6ad03b8`, yayında.
+- **Ceylan hanımın geri bildiriminin aslı depoya alındı:**
+  `docs/kaynak/geri-bildirim-2026-08-05.md`. 14 maddelik özette olmayan
+  maddeler orada işaretli.
+
+### Ölçülen sorunlar
+
+| Bulgu | Ölçüm |
+|---|---|
+| Mobilde dar sütun | 390px'te 13 sayfada 49 blok, satır başına <26 karakter. En kötüsü `p.body` 113px, `a.btn` 137px, `span.pserit-ad` 163px. Rahat okuma 45-75. |
+| Panel şeridi mobilde | 390px'te iki sütun, başlıklar 3 satıra kırılıyor, "Eğitimi" ok düğmesine biniyor, son satırda boş hücre. |
+| Fotoğraf üstü metin | "Yaratıcı Düşünme" kartında krem yazı parlak fotoğrafta okunmuyor, karartma katmanı yok. |
+| **13 sayfa geri bildirimden nasibini almamış** | `git diff 4b9ea9c..6ad03b8` ile ölçüldü. gulumseyen-yarinlar-projesi, surdurulebilirlik, sosyal-sorumluluk, ik (15 satır); 7 ekip sayfası + iletisim (17); 404 (13). Hepsi sadece kalıp: önbellek damgası, menüden Galeri çıkışı, `tabindex="-1"`, başlık sonu noktası. Sıfır tasarım işi. |
+| **CSS'te üç kuşak ölü palet kodu** | `.btn-primary` 3 kez tanımlı (897 turuncu/beyaz, 3875 turuncu/koyu, 3964 mürekkep/krem — sonuncusu kazanıyor). `--carmine` 3 tanım (şu an turuncu tutuyor), `--bronze` 4 tanım, `.em` 3 tanım. `:root` dışında ~100 ham hex. |
+
+### Kararlaştırıldı
+
+Dört iş, bu sırayla:
+
+| # | İş | Durum |
+|---|---|---|
+| **0** | Renk token katmanı toparlama | **sırada** |
+| 1 | Mobil okunabilirlik (49 blok) | bekliyor |
+| 2 | 13 dokunulmamış sayfa + tasarım seviyesi | bekliyor |
+| 3 | Ceylan hanımın renk paneli | 0'a bağlı |
+
+**0 numaranın yaklaşımı seçildi: A + C birlikte.** Rol adlı ~12 token
+(`--zemin`, `--eylem`, `--vurgu`, `--etiket`, `--odak`, `--bant` …), palet
+`_build/palet.mjs` içinde tek kaynak, `:root` oradan üretiliyor. Üç override
+bloğu silinecek, karar denemeleri `docs/`'a taşınacak.
+
+**Regresyon ağı: 31 sayfa × 3 genişlik (390 / 768 / 1440) tam sayfa ekran
+görüntüsü, refactor öncesi ve sonrası, piksel farkı sıfır olmalı.**
+
+### 7 Ağustos gece turu — yayına alındı
+
+31 sayfa Playwright ile tek tek gezildi (telefon 390 · laptop 1366 ·
+masaüstü 1440). Sonuç: **16 PASS, 1 FAIL, 7 sayfa talimatla atlandı.**
+
+FAIL: `sosyal-sorumluluk-is-danismanligi` — 8 metin bloğu arka arkaya,
+toplam 3 görsel. Feedback'in "çok yazı yazı" maddesine takılan tek sayfa.
+
+Düzeltilenler:
+
+| Ne | Önce | Sonra |
+|---|---|---|
+| Panel şeridi telefonda | 7 kategoriden **1'i** görünüyor | 7'si de |
+| Proje kapağı | %44 kırpılıyor | %0 |
+| Açık zeminde metin kontrastı | **1.93:1** | 5.14:1 |
+| Kategori kartı düzeni | bozuk (resim devleşmiş) | 96px + etiket satırı |
+| Atölye kartı metin genişliği | 277px | 301px |
+| Koruncuk fotoğrafları | 220×220 kare kırpma | 800px, doğal oran |
+| Anasayfa fotoğraf yığını | 42 | 4 |
+| Telefonda dar metin bloğu | 49 | 0 |
+| Kapanış karesi | yetim, yanında boş hücre | tam genişlik, tam boy dosya, srcset |
+
+Dördü benim kendi düzeltmelerimin açtığı yaralardı ve hepsi ancak gözle
+bakılarak yakalandı. Ölçüm nereye bakacağını söylüyor, ne olduğunu değil.
+
+**Açık kalan, feedback dışı:** mozaikte kırpma (7 sayfa) ve büyütme
+(3 sayfa, `srcset` eksik). Kullanıcı kararıyla bırakıldı.
+
+### Kaldığımız yer
+
+**Tasarım spec'i yazıldı ve onaylandı:**
+`docs/superpowers/specs/2026-08-06-premium-tasarim-design.md`
+12 ölçülebilir PASS kapısı, 6 aşama.
+
+**Aşama 0 (renk token katmanı) BİTTİ ve doğrulandı.**
+
+| Ne | Önce | Sonra |
+|---|---|---|
+| Ölü token tanımı | 22 | 0 |
+| `:root` dışında ham hex | 87 kullanım | 3 (ikisi `@media print`, kasıtlı) |
+| Paletin kaynağı | CSS'e dağılmış 3 kuşak yama | `_build/palet.mjs`, tek yer |
+| CSS satır | 4553 | 4229 |
+
+Doğrulama: `gorunum-dondur` 31 sayfa × 9030 öğe, renk + tipografi + kutu
+ölçüsü, **0 fark**. verify · a11y · erisim · seo hepsi temiz.
+
+**Görsel yerleşim kararı verildi: editoryal bant.** Dört aday gerçek
+fotoğraflarla prototiplendi ve ölçüldü, üçü elendi. Gerekçe spec'in
+4.2 bölümünde, prototip görüntüleri `_audit/rapor/kiyas-A|B|C.png`.
+
+### Aşama 1 başladı — iki bulgu planı değiştirdi
+
+**1 · Kırpmasız sistem zaten kısmen yazılmış.** `_build/etkinlik-tasarim.mjs`
+içindeki `bant()` fonksiyonu hizalı satır matematiğini yapıyor: bir bandaki
+kareler aynı yükseklikte, genişlikler orana göre, `aspect-ratio: Σoran`.
+`gorsel-olculeri.mjs` ölçü manifestosu ve CSS'teki `.plate-frame-tall/-sq/-wide`
+sınıfları da duruyor. Yani Aşama 1 **sıfırdan yazmak değil, var olanı yaymak**.
+
+Ölçü manifestosu genişletildi: 114 → **170 kayıt**. Eskiden yalnız `rev2/`
+taranıyordu, ekip ve proje klasörleri kayıt dışıydı; bant motoru oranını
+bilmediği fotoğrafa varsayılan uygulayıp kırpardı.
+
+**2 · Bazı sayfalarda fotoğraf çözünürlüğü yetersiz — tasarımla çözülmez.**
+`_audit/denetim/gorsel-kalite.mjs` ile ölçüldü (logolar hariç, onların küçük
+olması normal):
+
+| Sayfa | Durum |
+|---|---|
+| `gulumseyen-yarinlar-projesi` | **13 fotoğrafın 12'si 220×220px.** Editoryal kullanıma uygun değil. |
+| `iletisim`, `ik`, `404` | **Hiç fotoğraf yok.** |
+| `zeynep-altunhan` 450px · `alara-apaydin-saruhan` 500px | ekip portresi, sınırda |
+| `hakkimizda` | 12 fotoğraf, ortanca 618px, 2'si 600 altı |
+| Diğer 20 sayfa | ortanca 800-1600px, sorun yok |
+
+**Kaynak var ama bağlı değil:** arşivdeki `Diğer Görseller` klasörü
+132 dosya / 1.2 GB ve yapı akışına hiç bağlanmamış (`gorsel-hazirla.mjs`
+yalnız `Seçilmiş Olanlar`, `Doğadan Etkinlik…`, `Galeri` okuyor). Aç kalan
+sayfalar için ilk bakılacak yer burası.
+
+### Tasarım tezi belirlendi (frontend-design skill)
+
+Skill'in kalibrasyon uyarısı: yapay zekâ üretimi tasarımların en yaygın
+kalıbı "krem zemin + yüksek kontrastlı serif + terracotta vurgu". Afloday
+tam olarak bunun içinde. Palet bağlayıcı (Ceylan hanımın kararı), o yüzden
+ayırt edicilik **yerleşimden ve tek imza öğesinden** gelmek zorunda.
+
+**Tez:** Herbaryumda örnek levhaya sığsın diye kesilmez; levha örneğe uyar.
+Kırpmasızlık dekoratif tercih değil, sitenin kendi kavramının mantığı.
+İmza bu.
+
+**Bant etiketi kararı:** kategori adı (`ÇOCUK ATÖLYESİ`), sıra numarası
+değil. Numara ancak içerik gerçekten bir sıra ise anlamlı; atölyeler eş
+düzeyde. Ceylan hanım sayaçlardan da hoşlanmadı.
+
+### Kaldığımız yer
+
+Bant motoru yazılmadı. Prototip için sayfa seçimi gerekiyor:
+`gulumseyen-yarinlar-projesi` seçilmişti ama 220px fotoğraflarla tasarım
+kararı sağlıklı değerlendirilemez.
+
+### Açık uçlar
+
+- **WeTransfer kaynak klasörü bulunamadı.** Verilen yol
+  `C:\Users\Administrator\Downloads\wetransfer_afloday-web-metin-ve-gorseller_2026-08-04_1711\`
+  mevcut değil. Doğru yol gerekiyor; "hem son verdikleri hem eski ana plan"
+  orada olduğu söylendi.
+- **Ceylan hanım satır satır geri bildirim ya da görüşme teklif etmiş**
+  ("yarın 11:00'e kadar uygun olacağım", 5 Ağustos tarihli). Yanıtlanmadı.
+- Site yayında ama Ceylan hanıma haber verilmedi.
+- `naregitim.com/cozumlerimiz` — atölye sayfası için Ceylan hanımın verdiği
+  somut tasarım referansı. İncelenmedi.
+
+---
+
 ## Sıradaki iş
 
-1. **Ceylan hanıma gönder.** Onay gelirse `feedback-2026-08-06` → `main`.
+1. **Ceylan hanıma haber ver.** Site zaten yayında, o görmedi.
 2. **Faz 2: blog + /admin paneli.** Taahhüt en geç 3 hafta, hiç başlanmadı.
    Kararlaştırılan yaklaşım: Supabase (Frankfurt) + Afloday'in kendi SMTP'si.
    Hesap Afloday'in olur, geliştiriciye bağlı bağımlılık kalmaz.
@@ -101,7 +267,6 @@ geçerli. Yorum gelirse geri bildirim öncelikli — bkz. hafıza notu.
 ```bash
 git clone https://github.com/MertBal-Dev/afloday.git
 cd afloday
-git checkout feedback-2026-08-06     # ← main eski hâlde, bu şart
 npm install
 ```
 
@@ -135,15 +300,18 @@ hepsi depoda.
 | Turuncu düzlem | eklenmedi | kullanıcı iki kez reddetti, seçenek duruyor |
 | Anasayfa | dokunulmadı | 11.1 ekran, Ceylan hanımın yorumu bekleniyor |
 
-### 5 · Push kararı
+### 5 · Geri dönüş
 
-`main` hâlâ `4b9ea9c` ve yayındaki site o. Onay verildiğinde:
+Birleştirme yapıldı, `main` = `6ad03b8` ve Vercel bunu yayınlıyor.
+Geri almak gerekirse en hızlısı koda dokunmadan Vercel üzerinden:
+Deployments → `4b9ea9c` dağıtımı → ⋯ → Promote to Production.
+
+Git'ten:
 
 ```bash
-git checkout main
-git merge feedback-2026-08-06
+git revert -m 1 6ad03b8
 git push
 ```
 
-Vercel `main`'den yayınlıyor, birleştirme anında canlıya çıkar.
-Ceylan hanım siteyi incelediği için bu ona anında yansır.
+Tekrar ileri almak: `git merge feedback-2026-08-06 && git push`.
+Vercel `main`'den yayınladığı için her push Ceylan hanıma anında yansır.

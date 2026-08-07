@@ -29,7 +29,7 @@
 
 import { resim } from './templates.mjs';
 import { etkinlikGorselleri } from './etkinlik-gorselleri.mjs';
-import { oran } from './gorsel-olculeri.mjs';
+import { oran, gorselOlculeri } from './gorsel-olculeri.mjs';
 
 /* Kategori sayfalarının dosya adı. Site genelinde adresler düz (klasörsüz):
    `hakkimizda`, `ceylan-kalyon`... Aynı geleneği sürdürüyoruz, böylece
@@ -201,6 +201,44 @@ export function kategoriMozaik(k) {
              alt="${k.ad} kapsamındaki atölyelerden kare ${i + 1}"
              loading="lazy" decoding="async" width="800" height="800">
       </button>`);
+    }
+  }
+
+  /* SON KARE YETİM KALIYORSA TAM GENİŞLİĞE YAYILIR.
+
+     Izgara iki sütunlu. Öğe sayısı tek olduğunda sonuncusu yalnız kalıyor
+     ve yanında boş hücre bırakıyor (etkinlik-cocuk: 21 öğe). Metni olmayan
+     bir fotoğraf için doğru davranış onu kapanış karesi olarak tam
+     genişlikte göstermek.
+
+     Yayılan kare iki şey daha istiyor:
+       · TAM BOY dosya — 800px'lik türev 1295px'e yayılınca bulanıklaşır,
+         tam boy 1600px mevcut
+       · KENDİ oranı — `cerceve()` en yakın standart kesire yuvarlıyor;
+         tam genişlikte bu fark %11 kırpma demek */
+  const sonFotoYetim = parcalar.length % 2 === 1
+    && parcalar[parcalar.length - 1].includes('class="mz-foto');
+  if (sonFotoYetim) {
+    const sonSlug = foto[foto.length - 1]?.slug;
+    if (sonSlug) {
+      const o = oran(sonSlug);
+      parcalar[parcalar.length - 1] = `<button class="mz-foto mz-foto-genis galeri-hucre" type="button" data-reveal="stagger"
+        style="aspect-ratio:${o.toFixed(3)}"
+        data-full="assets/img/rev2/${sonSlug}.jpg"
+        data-caption="${k.ad}"
+        aria-label="${k.ad} — kapanış karesi">
+        ${/* `srcset` şart: kare masaüstünde ~1295px'e yayılıyor ve orada
+             800px'lik türev bulanık kalıyor; telefonda ise ~350px'e
+             düşüyor ve orada 1600px'lik dosya (216 kB) israf oluyor.
+             Tarayıcı yuvanın gerçek genişliğine bakıp seçsin. */ ''}
+        <img src="assets/img/rev2/${sonSlug}.jpg"
+             srcset="assets/img/rev2/${sonSlug}-800.webp 800w,
+                     assets/img/rev2/${sonSlug}.jpg 1600w"
+             sizes="(max-width: 760px) 92vw, 1295px"
+             alt="${k.ad} kapsamındaki atölyelerden kapanış karesi"
+             loading="lazy" decoding="async"
+             width="${gorselOlculeri[sonSlug]?.[0] ?? 1600}" height="${gorselOlculeri[sonSlug]?.[1] ?? 1067}">
+      </button>`;
     }
   }
 

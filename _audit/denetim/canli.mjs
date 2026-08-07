@@ -3,8 +3,15 @@
    hataları, kırık görseller, yatay taşma, dokunma hedefi boyutu. */
 import { chromium } from 'playwright-core';
 import { readdirSync, writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { mkdirSync } from 'node:fs';
+const KOK_ = fileURLToPath(new URL('../../', import.meta.url));
+const SITE_ = KOK_ + 'site/';
+const RAPOR_ = KOK_ + '_audit/rapor/';
+mkdirSync(RAPOR_, { recursive: true });
 
-const SITE = 'c:/Users/Gaming/Desktop/Afloday/site/';
+
+const SITE = SITE_;
 const KOK = 'http://127.0.0.1:8899/';
 const adresler = readdirSync(SITE).filter((f) => f.endsWith('.html'))
   .map((f) => (f === 'index.html' ? '' : f.replace(/\.html$/, '')));
@@ -99,4 +106,4 @@ for (const r of rapor) {
   r.bulgular.forEach((b) => console.log('     ' + b));
 }
 if (!toplam) console.log('✓ Canlı denetimde bulgu yok.');
-writeFileSync('C:/Users/Gaming/AppData/Local/Temp/claude/c--Users-Gaming-Desktop-Afloday/9762a584-306b-4526-88f3-6d66de01acda/scratchpad/canli-rapor.json', JSON.stringify(rapor, null, 1));
+writeFileSync(RAPOR_ + 'canli-rapor.json', JSON.stringify(rapor, null, 1));

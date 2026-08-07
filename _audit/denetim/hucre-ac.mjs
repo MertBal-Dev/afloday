@@ -6,9 +6,16 @@
    `bolum.mjs` hücreleri Excel satır etiketi sayıp atlıyor; burada
    `||` sütun, `/` alan ayracı olarak açılıyor. */
 import { readFileSync, readdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { mkdirSync } from 'node:fs';
+const KOK_ = fileURLToPath(new URL('../../', import.meta.url));
+const SITE_ = KOK_ + 'site/';
+const RAPOR_ = KOK_ + '_audit/rapor/';
+mkdirSync(RAPOR_, { recursive: true });
 
-const S = 'C:/Users/Gaming/AppData/Local/Temp/claude/c--Users-Gaming-Desktop-Afloday/9762a584-306b-4526-88f3-6d66de01acda/scratchpad/';
-const SITE = 'c:/Users/Gaming/Desktop/Afloday/site/';
+
+const S = RAPOR_;
+const SITE = SITE_;
 
 const norm = (s) => s
   .replace(/&ldquo;|&rdquo;|&quot;/g, ' ').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ')

@@ -1,5 +1,6 @@
 /* AFLODAY — sayfa kabuğu ve paylaşılan bileşenler. */
 import { site, nav, refs, assets } from './data.mjs';
+import { oran as gorselOrani, gorselOlculeri } from './gorsel-olculeri.mjs';
 import { slug as gorselSlug } from './gorsel-hazirla.mjs';
 import { etkinlikGorselleri } from './etkinlik-gorselleri.mjs';
 import { atolyeSayisi } from './etkinlikler.mjs';
@@ -435,21 +436,81 @@ export function logoWall(limit = 20) {
 /* Atölye galerisi — afloday.com'un o sayfada kullandığı fotoğrafların tamamı.
    Orijinal sayfalarda 10–20 karelik galeriler var; hepsi buraya taşınır.
    Tıklanınca tam ekran ışık kutusu açılır (afloday.js). */
+/* HİZALI SATIR — fotoğrafları doğal oranlarıyla, kırpmadan dizer.
+
+   Bir satırdaki kareler AYNI YÜKSEKLİKTE, genişlikleri kendi oranlarına
+   göre. Hepsi h yüksekliğindeyse toplam genişlik h × Σoran olur, yani
+   satırın oranı Σoran'dır. `aspect-ratio` bu toplamı alınca yükseklik
+   kendiliğinden çıkıyor; her kare `flex-grow` olarak kendi oranını alıyor.
+
+   Sonuç: kırpma sıfır, sol ve sağ kenar düz. Aynı matematik
+   `etkinlik-tasarim.mjs` içindeki mozaik bandında da kullanılıyor.
+
+   Neden gerekti: galeri ızgarası her fotoğrafı 4/5'e sokup `cover` ile
+   kesiyordu. Havuz çift tepeli (dikey ve yatay karışık), tek oran
+   dayatınca ortalama dörtte biri gidiyordu. */
+export function hizaliSatir(kaynaklar, hedefSayidaKare = 3) {
+  const anahtar = (src) => src.replace(/^assets\/img\//, '')
+    .replace(/^rev2\//, '').replace(/\.(jpe?g|png|webp)$/i, '');
+  const kayitlar = kaynaklar.map((src) => {
+    const a = anahtar(src);
+    const o = gorselOlculeri[a];
+    /* width/height öznitelikleri düzen kaymasını (CLS) önlüyor;
+       `verify.mjs` eksikse hata veriyor. Ölçü bilinmiyorsa 3:2 varsay. */
+    return { src, oran: gorselOrani(a), en: o ? o[0] : 1200, boy: o ? o[1] : 800 };
+  });
+
+  /* Satırlara böl: her satır hedefe yakın sayıda kare taşısın, ama
+     dikey fotoğraf çok yer kaplamasın diye orana göre denge kur. */
+  const satirlar = [];
+  let birikim = [];
+  for (const k of kayitlar) {
+    birikim.push(k);
+    const toplam = birikim.reduce((a, x) => a + x.oran, 0);
+    /* Yatay fotoğraflar hızlı doldurur, dikeyler yavaş; eşik oranla ölçülüyor */
+    if (toplam >= hedefSayidaKare * 1.15 || birikim.length >= hedefSayidaKare + 1) {
+      satirlar.push(birikim); birikim = [];
+    }
+  }
+  if (birikim.length) satirlar.push(birikim);
+  return satirlar;
+}
+
+/* "Galeri sayfasını kapatabiliriz" iki yeri kapsıyordu ve ikisi de
+   kapatıldı: `/galeri` sayfası ve anasayfadaki galeri vitrini.
+   Sayfa içindeki etkinlik kareleri KALIYOR — belgede de öyle geçiyor.
+
+   Bu bölümdeki düzeltme kırpmaydı: sabit 4/5 çerçeve her fotoğrafı
+   kesiyordu, hizalı satıra geçildi, kırpma sıfırlandı. */
 export function galeriBolumu(images, ad) {
   if (!images.length) return '';
-  /* Izgarada 300px küçük resim, ışık kutusunda afloday.com'un tam boy sürümü:
-     assets/img/afloday/0/<klasor>/01s.jpg → assets/img/afloday/tam/<klasor>/01.jpg */
+  /* Işık kutusu tam boy sürümü kullanıyor. Koruncuk kareleri 7 Ağustos'ta
+     eski siteden tam boyutta alındı; artık `s` sonekli küçük hâl yok. */
   const tam = (src) => src.replace('/afloday/0/', '/afloday/tam/').replace(/s\.jpg$/i, '.jpg');
+  const satirlar = hizaliSatir(images);
+  let no = 0;
+
+  const govde = satirlar.map((satir) => {
+    const toplam = satir.reduce((a, x) => a + x.oran, 0);
+    return `<div class="gs-satir" style="aspect-ratio:${toplam.toFixed(3)}">
+          ${satir.map((k) => {
+    no++;
+    return `<button class="galeri-hucre" type="button" style="flex:${k.oran.toFixed(3)} 1 0"
+            data-full="${tam(k.src)}" data-no="${String(no).padStart(2, '0')}"
+            aria-label="${ad} — ${no}. fotoğrafı büyüt">
+            <img src="${k.src}" alt="${ad} atölyesinden kare ${no}" loading="lazy" decoding="async" width="${k.en}" height="${k.boy}">
+          </button>`;
+  }).join('\n          ')}
+        </div>`;
+  }).join('\n        ');
+
   return `
   <section class="section rule-top">
     <div class="wrap">
-      ${/* Açıklama cümlesi yoktu: ne belgede ne canlı sitede geçiyor.
-           Kare sayısı etiket olarak zaten `plateNo` alanında duruyor. */ ''}
+      ${/* Açıklama cümlesi yoktu: ne belgede ne canlı sitede geçiyor. */ ''}
       ${opener('Atölyeden', 'Kareler', '')}
-      <div class="galeri" data-lightbox style="margin-top:clamp(32px,4vw,56px)">
-        ${images.map((src, i) => `<button class="galeri-hucre" type="button" data-full="${tam(src)}" data-no="${String(i + 1).padStart(2, '0')}" aria-label="${ad} — ${i + 1}. fotoğrafı büyüt">
-          <img src="${src}" alt="${ad} atölyesinden kare ${i + 1}" loading="lazy" width="600" height="600">
-        </button>`).join('\n        ')}
+      <div class="galeri-serit" data-lightbox style="margin-top:clamp(32px,4vw,56px)">
+        ${govde}
       </div>
     </div>
   </section>`;

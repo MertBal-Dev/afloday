@@ -3,8 +3,15 @@
    toplayıp diskteki dosyalarla karşılaştırır. */
 import { readdirSync, statSync, readFileSync } from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { mkdirSync } from 'node:fs';
+const KOK_ = fileURLToPath(new URL('../../', import.meta.url));
+const SITE_ = KOK_ + 'site/';
+const RAPOR_ = KOK_ + '_audit/rapor/';
+mkdirSync(RAPOR_, { recursive: true });
 
-const KOK = 'c:/Users/Gaming/Desktop/Afloday/';
+
+const KOK = KOK_;
 const kullanilan = new Set();
 
 const tara = (d) => {
@@ -55,7 +62,7 @@ for (const [k, v] of Object.entries(grup).sort((a, b) => b[1].mb - a[1].mb))
   console.log(`  ${String(v.n).padStart(4)} dosya · ${v.mb.toFixed(1).padStart(6)} MB  ${k}`);
 
 /* Silme listesini yaz — elle gözden geçirilecek */
-const S = 'C:/Users/Gaming/AppData/Local/Temp/claude/c--Users-Gaming-Desktop-Afloday/9762a584-306b-4526-88f3-6d66de01acda/scratchpad/';
+const S = RAPOR_;
 const { writeFileSync } = await import('node:fs');
 writeFileSync(S + 'sahipsiz-liste.txt', sahipsiz.map((f) => f.yol).join('\n'));
 console.log(`\nliste: scratchpad/sahipsiz-liste.txt`);

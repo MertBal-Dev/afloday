@@ -2,9 +2,16 @@
    Sadece "sayfa var mı" değil; İPTAL edilenlerin NEREYE gittiği de
    "Sayfa" sütunundaki bölümle tutarlı mı, ona bakıyor. */
 import { readFileSync, readdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { mkdirSync } from 'node:fs';
+const KOK_ = fileURLToPath(new URL('../../', import.meta.url));
+const SITE_ = KOK_ + 'site/';
+const RAPOR_ = KOK_ + '_audit/rapor/';
+mkdirSync(RAPOR_, { recursive: true });
 
-const S = 'C:/Users/Gaming/AppData/Local/Temp/claude/c--Users-Gaming-Desktop-Afloday/9762a584-306b-4526-88f3-6d66de01acda/scratchpad/';
-const KOK = 'c:/Users/Gaming/Desktop/Afloday/';
+
+const S = RAPOR_;
+const KOK = KOK_;
 
 const satir = readFileSync(S + 'envanter.tsv', 'utf8').split('\n')
   .map((l) => l.replace(/\r$/, '').split('\t'))

@@ -8,10 +8,10 @@
 > Son güncelleme: 6 Ağustos 2026.
 > Site yayında: **afloday.vercel.app** (henüz afloday.com değil)
 >
-> **DİKKAT — hangi dalda olduğuna bak.** Ceylan hanımın 5 Ağustos geri
-> bildirimi `feedback-2026-08-06` dalında uygulandı; `main` hâlâ geri
-> bildirim öncesi hâlde (`4b9ea9c`) ve yayındaki site o. Çalışmaya devam
-> etmeden önce: `git checkout feedback-2026-08-06`
+> **Dal durumu.** Ceylan hanımın 5 Ağustos geri bildirimi `main`'e alındı
+> ve yayında (`6ad03b8`). `feedback-2026-08-06` (`db86d30`) aynı işi taşıyan
+> yedek dal. Geri dönüş noktası `yayin-oncesi-2026-08-06` etiketi
+> (`4b9ea9c`). Çalışmaya **`main` üzerinde** devam et.
 
 ---
 
@@ -25,8 +25,8 @@ Bedel        20.000 TL KDV dahil · site + blog + panel, tek paket
 Fatura       tek fatura, site yayına alındığında
 Bakım        ilk 3 ay dahil · 3. ay sonunda yıllık bedel konuşulacak
 Teslim       site: cPanel erişiminden 3-4 iş günü · blog+panel: en geç 3 hafta
-Durum        Geri bildirim turu uygulandı, Ceylan hanıma gönderilmeyi
-             bekliyor. Blog + panel başlamadı.
+Durum        Geri bildirim turu yayında (afloday.vercel.app). Ceylan hanıma
+             haber verilmedi. Blog + panel başlamadı.
 ```
 
 ## Yeni bilgisayarda başlarken
@@ -34,7 +34,6 @@ Durum        Geri bildirim turu uygulandı, Ceylan hanıma gönderilmeyi
 ```bash
 git clone https://github.com/MertBal-Dev/afloday.git
 cd afloday
-git checkout feedback-2026-08-06     # ← ÖNEMLİ, main eski hâlde
 npm install
 ```
 
@@ -77,6 +76,19 @@ sunulmuştu. **Kural yazarken kaynağını da yaz.**
 | Tailwind kurulmayacak | Mimari karar, `docs/mimari.md` | ⚙️ gerekçeli teknik tercih |
 | Saç teli çizgi, serif başlık | — | ⚠️ **tercih**, kural değil |
 | **Yeni palet: ağırlıkta yeşil, turuncu vurgu** | Ceylan hanım, 5 Ağustos | ✅ evet |
+
+**Paletin tek kaynağı `_build/palet.mjs`** (7 Ağustos, Aşama 0). CSS'te ham
+hex yazılmaz; `:root` bloğunun renk kısmı o dosyadan üretilir. Token adları
+rolü anlatır, rengi değil (`--zemin`, `--eylem`, `--vurgu`, `--etiket`,
+`--bant-yazi` …). Eski adlar (`--carmine`, `--bronze`, `--mount`, `--field`
+…) takma ad olarak duruyor ve Aşama 1'de kalkacak.
+
+Neden: palet üç kez üst üste yamanmıştı, `--carmine` turuncu, `--bronze`
+haki tutuyordu, isimler yalan söylüyordu. 22 ölü tanım silindi, 84 ham hex
+token'a bağlandı. Karar gerekçeleri `docs/palet-gerekce.md`'ye taşındı.
+
+`:root`'ta renk olmayan token'lar (font, boşluk, easing) elle duruyor,
+paletten gelmiyor. Palet bloğunu yeniden üretirken onları silme.
 
 **Palet notu — üç turda oturdu, sonuncusu geçerli.**
 
@@ -181,6 +193,49 @@ node _build/verify.mjs        # 20 sayfa · görsel · bağlantı denetimi
 **Her yapısal değişiklikten sonra `verify` çalıştır.** Sıfır sorun vermeli.
 
 ---
+
+## Ölçüm tuzakları — bu turda dördü birden yaşandı
+
+**Kırpma ölçümü tembel yüklemeye takılıyor.** Sayı koşumdan koşuma
+1 → 6 → 15 diye değişir; yüklenmemiş görselin `naturalWidth` değeri 0 ve
+ölçüm onu atlar. Doğru ölçüm için `loading='eager'` ata, sayfayı baştan
+sona kaydır, `Promise.all` ile hepsini bekle, sonra `yuklenmeyen: 0`
+olduğunu doğrula. Yapmazsan sahte iyileşme raporlarsın.
+
+**Aynı içeriği iki bileşen taşıyabilir.** Referans logoları `index`
+içindeki `.logos` ızgarasında 64px; `.marquee` kayan şeridi ayrı bir
+bileşen ve kasten 30px. Şerit ölçülüp madde yanlışlıkla "karşılanmadı"
+işaretlendi. Hangi bileşeni ölçtüğünü doğrulamadan hüküm verme.
+
+**Çok sütunlu olmak bozuk olmak değil.** İki tür ızgara var:
+*satır* (ilk sütun `auto` ya da küçük sabit: işaretçi/küçük resim + metin)
+ve *sütun* (iki üç dolu içerik sütunu). Satır tipini tek sütuna indirmek
+tasarımı bozar — `.kat-gezinme-oge` (84px + 1fr) böyle bozuldu, küçük
+resim devleşti ve etiket çıplak metne düştü. `.flow-step`, `.asama`,
+`.index-row` de satır tipidir.
+
+**Gezinme kartları fotoğraf yığını sanılır.** Etiketi 60 karakterden kısa
+olan bağlantılı görseller "arka arkaya fotoğraf" olarak sayılır.
+`kurumsal` sayfasında 7 kategori kartı böyle yanlış işaretlendi.
+
+**Ölçüm nereye bakacağını söyler, ne olduğunu söylemez.** Bu turda dört
+yanlış hüküm gözle bakılarak düzeltildi. Yapısal değişiklikten sonra
+Playwright ile sayfayı aç ve bak.
+
+## Görünüm dondurma — değişiklikten önce ve sonra
+
+```bash
+node _build/onizle.mjs 8899
+node _audit/denetim/gorunum-dondur.mjs oncesi
+# ... değişiklik + node _build/build.mjs ...
+node _audit/denetim/gorunum-dondur.mjs sonrasi
+node _audit/denetim/gorunum-dondur.mjs kiyas    # 0 fark bekleniyor
+```
+
+9030 öğenin rengini, tipografisini ve kutu ölçüsünü karşılaştırır.
+**Yalnız renge bakan kapı yetmez:** 7 Ağustos'ta `:root`'tan font ve
+boşluk token'ları silindi, tipografi Times New Roman'a düştü ve renk
+kapısı sessizce geçirdi.
 
 ## Yapıldı
 
@@ -306,7 +361,41 @@ değişiklikten sonra en az ilk üçünü çalıştır.
 node _build/verify.mjs                # sayfa · görsel · bağlantı, 0 sorun vermeli
 node _audit/denetim/a11y.mjs          # statik erişilebilirlik
 node _audit/denetim/erisim.mjs        # erişilemeyen sayfa var mı
+node _audit/denetim/seo.mjs           # sitemap/OG/JSON-LD — önce `npm run build`
 ```
+
+**Yollar 6 Ağustos'ta depoya göreli hâle getirildi.** Betiklerde eski
+bilgisayarın mutlak yolu (`c:/Users/Gaming/Desktop/Afloday/`) gömülüydü;
+başka makinede hepsi `ENOENT` veriyordu. Artık kök `import.meta.url`'den
+çözülüyor, raporlar `_audit/rapor/` altına yazılıyor. `seo.mjs` `out/`
+klasörünü okuduğu için önce `npm run build` gerekiyor.
+
+**`playwright-core` artık devDependency olarak kurulu.** Chrome'u
+`channel: 'chrome'` ile kullanıyor, tarayıcı indirmeye gerek yok.
+
+**Görünüm dondurma — yapısal değişiklikten önce ve sonra çalıştır.**
+
+```bash
+node _build/onizle.mjs 8899
+node _audit/denetim/gorunum-dondur.mjs oncesi   # değişiklikten ÖNCE
+# ... değişiklik + node _build/build.mjs ...
+node _audit/denetim/gorunum-dondur.mjs sonrasi
+node _audit/denetim/gorunum-dondur.mjs kiyas    # 0 fark bekleniyor
+```
+
+31 sayfadaki 9030 öğenin rengini, tipografisini ve kutu ölçülerini
+karşılaştırır. **Yalnız renge bakan bir kapı yetmez:** 7 Ağustos'ta renk
+göçünde `:root`'tan font ve boşluk token'ları yanlışlıkla silindi, bütün
+tipografi Times New Roman'a düştü ve renk kapısı bunu sessizce geçirdi.
+Kapı bu yüzden `fontFamily`, `fontSize`, `lineHeight`, `margin`, `padding`,
+`gridTemplateColumns` ve ölçülen genişlik/yüksekliği de kapsıyor.
+
+`document.fonts.ready` beklemeden ölçme: web fontu yüklenmeden alınan
+ölçüm metni yedek fontla sarar, satır sayısı değişir, 23 sahte fark üretir.
+
+Diğer tarayıcı betikleri: `mobil.mjs` (satır başına karakter + kontrast),
+`oran.mjs` (kırpma), `palet-oku.mjs` (efektif palet), `piksel.mjs`
+(tam sayfa görüntü kıyası, yavaş).
 
 Scratchpad'deki tarayıcı denetimleri (kalıcı istenirse `_audit/denetim/`
 altına taşınmalı):

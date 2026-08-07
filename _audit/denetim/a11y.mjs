@@ -1,8 +1,15 @@
 /* Tüm sayfalarda erişilebilirlik ve yapı taraması — statik.
    Tarayıcı gerektirmeyen her şey burada; kontrast ve odak canlı sınanıyor. */
 import { readFileSync, readdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { mkdirSync } from 'node:fs';
+const KOK_ = fileURLToPath(new URL('../../', import.meta.url));
+const SITE_ = KOK_ + 'site/';
+const RAPOR_ = KOK_ + '_audit/rapor/';
+mkdirSync(RAPOR_, { recursive: true });
 
-const SITE = 'c:/Users/Gaming/Desktop/Afloday/site/';
+
+const SITE = SITE_;
 const sayfalar = readdirSync(SITE).filter((f) => f.endsWith('.html'));
 const bulgular = [];
 const ekle = (s, tur, detay) => bulgular.push({ sayfa: s, tur, detay });

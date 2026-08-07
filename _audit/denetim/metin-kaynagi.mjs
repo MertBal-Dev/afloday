@@ -10,9 +10,16 @@
      1. belge-tam.txt  — 4 Ağustos içerik belgesi (tablolar dahil)
      2. data.mjs       — canlı afloday.com'dan alınmış eski içerik */
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { mkdirSync } from 'node:fs';
+const KOK_ = fileURLToPath(new URL('../../', import.meta.url));
+const SITE_ = KOK_ + 'site/';
+const RAPOR_ = KOK_ + '_audit/rapor/';
+mkdirSync(RAPOR_, { recursive: true });
 
-const S = 'C:/Users/Gaming/AppData/Local/Temp/claude/c--Users-Gaming-Desktop-Afloday/9762a584-306b-4526-88f3-6d66de01acda/scratchpad/';
-const KOK = 'c:/Users/Gaming/Desktop/Afloday/';
+
+const S = RAPOR_;
+const KOK = KOK_;
 const SITE = KOK + 'site/';
 
 const norm = (s) =>

@@ -10,8 +10,15 @@
      · görünmeyen/kırpılan ögeler */
 import { chromium } from 'playwright-core';
 import { readdirSync, writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { mkdirSync } from 'node:fs';
+const KOK_ = fileURLToPath(new URL('../../', import.meta.url));
+const SITE_ = KOK_ + 'site/';
+const RAPOR_ = KOK_ + '_audit/rapor/';
+mkdirSync(RAPOR_, { recursive: true });
 
-const adresler = readdirSync('c:/Users/Gaming/Desktop/Afloday/site')
+
+const adresler = readdirSync(SITE_)
   .filter((f) => f.endsWith('.html'))
   .map((f) => (f === 'index.html' ? '' : f.replace(/\.html$/, '')));
 
@@ -121,4 +128,4 @@ for (const [, v] of Object.entries(grup).sort((a, b) => b[1].n - a[1].n)) {
   console.log(`   ${v.ornek}`);
 }
 if (!toplam) console.log('✓ Altı ekran sınıfında da bulgu yok.');
-writeFileSync('C:/Users/Gaming/AppData/Local/Temp/claude/c--Users-Gaming-Desktop-Afloday/9762a584-306b-4526-88f3-6d66de01acda/scratchpad/responsive.json', JSON.stringify(rapor, null, 1));
+writeFileSync(RAPOR_ + 'responsive.json', JSON.stringify(rapor, null, 1));

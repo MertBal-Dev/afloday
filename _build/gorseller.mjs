@@ -135,18 +135,18 @@ export const orijinalGorsel = {
     "assets/img/afloday/surdur/s/023.jpg"
   ],
   "gulumseyen-yarinlar-projesi": [
-    "assets/img/afloday/afloday/atolye-koruncuk/01s.jpg",
-    "assets/img/afloday/afloday/atolye-koruncuk/02s.jpg",
-    "assets/img/afloday/afloday/atolye-koruncuk/03s.jpg",
-    "assets/img/afloday/afloday/atolye-koruncuk/04s.jpg",
-    "assets/img/afloday/afloday/atolye-koruncuk/05s.jpg",
-    "assets/img/afloday/afloday/atolye-koruncuk/06s.jpg",
-    "assets/img/afloday/afloday/atolye-koruncuk/07s.jpg",
-    "assets/img/afloday/afloday/atolye-koruncuk/08s.jpg",
-    "assets/img/afloday/afloday/atolye-koruncuk/09s.jpg",
-    "assets/img/afloday/afloday/atolye-koruncuk/10s.jpg",
-    "assets/img/afloday/afloday/atolye-koruncuk/11s.jpg",
-    "assets/img/afloday/afloday/atolye-koruncuk/12s.jpg"
+    "assets/img/afloday/afloday/atolye-koruncuk/01.jpg",
+    "assets/img/afloday/afloday/atolye-koruncuk/02.jpg",
+    "assets/img/afloday/afloday/atolye-koruncuk/03.jpg",
+    "assets/img/afloday/afloday/atolye-koruncuk/04.jpg",
+    "assets/img/afloday/afloday/atolye-koruncuk/05.jpg",
+    "assets/img/afloday/afloday/atolye-koruncuk/06.jpg",
+    "assets/img/afloday/afloday/atolye-koruncuk/07.jpg",
+    "assets/img/afloday/afloday/atolye-koruncuk/08.jpg",
+    "assets/img/afloday/afloday/atolye-koruncuk/09.jpg",
+    "assets/img/afloday/afloday/atolye-koruncuk/10.jpg",
+    "assets/img/afloday/afloday/atolye-koruncuk/11.jpg",
+    "assets/img/afloday/afloday/atolye-koruncuk/12.jpg"
   ],
   "hakkimizda": [
     "assets/img/afloday/afloday/afloday-hakkinda.jpg"

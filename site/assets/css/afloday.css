@@ -7,27 +7,60 @@
 
 /* --- 1. Token'lar ------------------------------------------------------- */
 :root {
-  --mount:        #E9E9E0;
-  --plate:        #F4F3EC;
-  --plate-deep:   #DEDED3;
-  --ink:          #141C17;
-  --ink-muted:    #5C6158;
-  --carmine:      #A82B45;
-  --carmine-deep: #8A2039;
-  --carmine-soft: #E0A9B4;
-  /* 4.84:1 — sayfa zemini #E9E9E0 üzerinde. Önceki #8A6A38 4.10 veriyordu,
-     etiket ve göz kırpma metinlerinin tamamı bu rengi kullandığı için
-     tek satırlık bir düzeltme 20 sayfayı birden geçiriyor. */
-  --bronze:       #7D5F31;
-  --bronze-lift:  #B79B62;
-  --rule:         #CFCFC2;
-  --rule-soft:    #DFDFD4;
-  --field:        #131A15;
-  --field-2:      #1B241D;
-  --field-rule:   #2C382F;
-  --field-ink:    #E9E9E0;
-  --field-muted:  #A2AA9F;
+  /* Renkler `_build/palet.mjs`den üretiliyor. Elle değiştirme. */
+  --zemin:         #EBE7DB;
+  --yuzey:         #F4F1E7;
+  --yuzey-koyu:    #E0DBCB;
+  --yuzey-parlak:  #FBFAF3;
+  --murekkep:      #141C17;
+  --soluk:         #5C6158;
+  --etiket:        #6B6340;
+  --eylem:         #131A15;
+  --eylem-ust:     #F4F3EC;
+  --eylem-hover:   #2A3A2D;
+  --vurgu:         #2F6A2E;
+  --vurgu-canli:   #428840;
+  --turuncu:       #F05625;
+  --turuncu-koyu:  #D8481B;
+  --haki:          #958A54;
+  --odak:          #C6401A;
+  --cizgi:         #CFC9B9;
+  --cizgi-soluk:   #DFDACB;
+  --bant:          #131A15;
+  --bant2:         #1B241D;
+  --bant-cizgi:    #2C382F;
+  --bant-yazi:     #E9E9E0;
+  --bant-soluk:    #A2AA9F;
+  --bant-vurgu:    #7FB877;
+  --bant-turuncu:  #F2764A;
+  --hero-yazi:     #D6DAD3;
+  --hero-yazi2:    #D5D9D2;
+  --ftr-yazi:      #C4C9C1;
+  --ftr-etiket:    #7F877D;
+  --beyaz:         #FFF;
 
+  /* Eski adlar — Aşama 1de kaldırılacak takma adlar. */
+  --mount:         var(--zemin);
+  --plate:         var(--yuzey);
+  --plate-deep:    var(--yuzey-koyu);
+  --ink:           var(--murekkep);
+  --ink-muted:     var(--soluk);
+  --bronze:        var(--etiket);
+  --bronze-lift:   var(--bant-soluk);
+  --carmine:       var(--turuncu);
+  --carmine-deep:  var(--turuncu-koyu);
+  --carmine-soft:  var(--bant-turuncu);
+  --rule:          var(--cizgi);
+  --rule-soft:     var(--cizgi-soluk);
+  --field:         var(--bant);
+  --field-2:       var(--bant2);
+  --field-rule:    var(--bant-cizgi);
+  --field-ink:     var(--bant-yazi);
+  --field-muted:   var(--bant-soluk);
+  --yesil:         var(--vurgu-canli);
+  --yesil-derin:   var(--vurgu);
+
+  /* Renk olmayan token'lar — palet dosyasından gelmiyor, burada duruyor. */
   --serif: "Newsreader", "Iowan Old Style", Georgia, serif;
   --sans:  "Jost", "Segoe UI", system-ui, sans-serif;   /* gövde + menü */
   --label: "Jost", "Segoe UI", system-ui, sans-serif;   /* etiket: aynı aile, farklı ağırlık/aralık */
@@ -67,7 +100,7 @@ img, picture, video, svg { max-width: 100%; display: block; }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
 
-::selection { background: var(--carmine); color: #fff; }
+::selection { background: var(--carmine); color: var(--beyaz); }
 
 :focus-visible { outline: 2px solid var(--carmine); outline-offset: 3px; }
 
@@ -259,12 +292,12 @@ button { font: inherit; color: inherit; }
   display: flex; align-items: center; gap: var(--s3);
   font-family: var(--label); font-size: 0.6875rem; font-weight: 500;
   letter-spacing: 0.22em; text-transform: uppercase;
-  color: #FBFAF3;
+  color: var(--yuzey-parlak);
   text-shadow: 0 1px 4px rgba(19,26,21,.7);
 }
 .hero-video-top::after {
   content: ""; flex: 1; max-width: 88px; height: 1px;
-  background: #FBFAF3; opacity: 0.5;
+  background: var(--yuzey-parlak); opacity: 0.5;
 }
 
 .hero-video h1 {
@@ -273,7 +306,7 @@ button { font: inherit; color: inherit; }
   font-size: clamp(2.25rem, 1.3rem + 3vw, 4.5rem);
   line-height: 1.04;
   letter-spacing: -0.015em;
-  color: #FBFAF3;
+  color: var(--yuzey-parlak);
   margin: 0;
   max-width: 17ch;
   text-shadow: 0 2px 10px rgba(19,26,21,.5);
@@ -281,7 +314,7 @@ button { font: inherit; color: inherit; }
 .hero-video h1 em { font-style: normal; color: var(--carmine-soft); }
 
 .hero-video .lede {
-  color: #D5D9D2; max-width: 38ch; margin: 0;
+  color: var(--hero-yazi2); max-width: 38ch; margin: 0;
   text-shadow: 0 1px 6px rgba(19,26,21,.6);
 }
 
@@ -311,13 +344,13 @@ button { font: inherit; color: inherit; }
 .hero-play {
   display: none;
   align-items: center; gap: var(--s3);
-  background: none; border: 1px solid rgba(251,250,243,0.5); color: #FBFAF3;
+  background: none; border: 1px solid rgba(251,250,243,0.5); color: var(--yuzey-parlak);
   padding: 12px 22px; cursor: pointer;
   font-family: var(--label); font-size: 0.6875rem;
   letter-spacing: 0.14em; text-transform: uppercase;
   transition: background var(--t-state) var(--ease-io), border-color var(--t-state) var(--ease-io);
 }
-.hero-play:hover, .hero-play:focus-visible { background: rgba(251,250,243,0.12); border-color: #FBFAF3; }
+.hero-play:hover, .hero-play:focus-visible { background: rgba(251,250,243,0.12); border-color: var(--yuzey-parlak); }
 .hero-video[data-mode="poster"] .hero-play { display: inline-flex; }
 
 /* ---- Folyo levhası başlığı (iç sayfalar) --------------------------------
@@ -493,7 +526,7 @@ button { font: inherit; color: inherit; }
 @media (min-width: 1101px) {
   .hero-cine-in { padding-left: calc(var(--gutter) + 30px); }
 }
-.hero-cine .lede { color: #D6DAD3; max-width: 42ch; }
+.hero-cine .lede { color: var(--hero-yazi); max-width: 42ch; }
 
 /* Dikey sırt etiketi — folyo künyesi */
 .spine {
@@ -894,7 +927,7 @@ a.index-row:hover .index-meta::after, a.index-row:focus-visible .index-meta::aft
               border-color var(--t-state) var(--ease-io), transform var(--t-state) var(--ease-io);
 }
 .btn:hover, .btn:focus-visible { transform: translateY(-2px); }
-.btn-primary { background: var(--carmine); color: #fff; }
+.btn-primary { background: var(--carmine); color: var(--beyaz); }
 .btn-primary:hover, .btn-primary:focus-visible { background: var(--carmine-deep); }
 .btn-ghost { border-color: currentColor; }
 .btn-ghost:hover, .btn-ghost:focus-visible { background: var(--ink); color: var(--mount); border-color: var(--ink); }
@@ -955,7 +988,7 @@ a.index-row:hover .index-meta::after, a.index-row:focus-visible .index-meta::aft
 /* — Şeffaf açılış: yalnızca video hero'lu sayfada, henüz kaydırılmamışken.
      Bant fotoğrafı kesmez; kaydırma başlar başlamaz katı zemine oturur. — */
 body:has(.hero-video) .hdr:not(.is-solid) {
-  background: transparent; color: #fff;
+  background: transparent; color: var(--beyaz);
   --rule: rgba(255,255,255,.28);
 }
 body:has(.hero-video) .hdr:not(.is-solid)::after { opacity: 0; }
@@ -991,9 +1024,9 @@ body:has(.hero-video) .hdr:not(.is-solid) .nav > ul > li > a[aria-current="page"
 .hdr-cta .btn { padding: 12px 20px; font-size: 0.6875rem; white-space: nowrap; }
 /* Şeffaf durumda dolu karmen leke gibi durur — ince çerçeveye döner */
 body:has(.hero-video) .hdr:not(.is-solid) .hdr-cta .btn {
-  background: transparent; color: #fff; border-color: rgba(255,255,255,.55);
+  background: transparent; color: var(--beyaz); border-color: rgba(255,255,255,.55);
 }
-body:has(.hero-video) .hdr:not(.is-solid) .hdr-cta .btn:hover { background: #fff; color: var(--ink); border-color: #fff; }
+body:has(.hero-video) .hdr:not(.is-solid) .hdr-cta .btn:hover { background: var(--beyaz); color: var(--ink); border-color: var(--beyaz); }
 @media (min-width: 1200px) { .nav, .hdr-cta { display: block; } }
 
 .burger {
@@ -1085,6 +1118,11 @@ html { scroll-padding-top: calc(var(--hdr-h) + 16px); }
 .js .marquee-track { animation: slide 48s linear infinite; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 @keyframes slide { to { transform: translateX(-50%); } }
+/* Kayan şerit `.logos` referans ızgarasından AYRI bir bileşen.
+   Referans logoları (index, `.logos`) 5 Ağustos geri bildiriminde
+   32 → 64px'e çıkarıldı ve doğrulandı; bu şerit ikincil, 30px kalıyor.
+   Karıştırma: `docs/geri-bildirim-denetimi.md` 14. maddede bir kez
+   bu şerit ölçülüp yanlışlıkla "karşılanmadı" denmişti. */
 .marquee img {
   height: 30px; width: auto;
   filter: grayscale(1) contrast(0.4) brightness(0.75);
@@ -1162,7 +1200,7 @@ html { scroll-padding-top: calc(var(--hdr-h) + 16px); }
   line-height: 1.28;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #FBFAF3;
+  color: var(--yuzey-parlak);
   margin: 0 auto;
   max-width: 22ch;
 }
@@ -1273,11 +1311,11 @@ html { scroll-padding-top: calc(var(--hdr-h) + 16px); }
 .ftr h2 { color: var(--field-ink); }
 .ftr-head { font-family: var(--label); font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bronze-lift); margin: 0 0 var(--s4); }
 .ftr ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
-.ftr a { text-decoration: none; color: #C4C9C1; font-size: 0.9375rem; transition: color var(--t-state) var(--ease-io); }
+.ftr a { text-decoration: none; color: var(--ftr-yazi); font-size: 0.9375rem; transition: color var(--t-state) var(--ease-io); }
 /* Buton, alt bilgi bağlantısı değil: `.ftr a` (0,2,0) `.btn-primary`nin
    (0,1,0) beyazını eziyor ve karmen zeminde 4.03 kalıyordu. */
-.ftr a.btn-primary { color: #F4F3EC; }
-.ftr a.btn-primary:hover, .ftr a.btn-primary:focus-visible { color: #F4F3EC; }
+.ftr a.btn-primary { color: var(--eylem-ust); }
+.ftr a.btn-primary:hover, .ftr a.btn-primary:focus-visible { color: var(--eylem-ust); }
 
 /* Dokunma hedefi — alt bilgideki telefon ve e-posta bağlantıları 22px
    yüksekliğindeydi; WCAG 2.5.8 en az 24×24 istiyor, dokunmatikte 22px
@@ -1287,15 +1325,15 @@ html { scroll-padding-top: calc(var(--hdr-h) + 16px); }
 .hero-in { min-width: 44px; min-height: 44px; display: inline-flex;
   align-items: center; justify-content: center; }
 .hdr-logo { display: inline-flex; align-items: center; min-height: 44px; }
-.ftr a:hover, .ftr a:focus-visible { color: #fff; }
-.ftr address { font-style: normal; color: #C4C9C1; font-size: 0.9375rem; line-height: 1.7; }
+.ftr a:hover, .ftr a:focus-visible { color: var(--beyaz); }
+.ftr address { font-style: normal; color: var(--ftr-yazi); font-size: 0.9375rem; line-height: 1.7; }
 .ftr-logo img { height: 36px; width: auto; filter: brightness(0) invert(1); opacity: 0.92; }
 .ftr-base {
   border-top: 1px solid var(--field-rule); padding-block: var(--s4);
   display: flex; flex-wrap: wrap; gap: var(--s3) var(--s5); align-items: center;
-  font-family: var(--label); font-size: 0.625rem; letter-spacing: 0.08em; color: #7F877D;
+  font-family: var(--label); font-size: 0.625rem; letter-spacing: 0.08em; color: var(--ftr-etiket);
 }
-.ftr-base a { font-family: var(--label); font-size: 0.625rem; color: #7F877D; }
+.ftr-base a { font-family: var(--label); font-size: 0.625rem; color: var(--ftr-etiket); }
 
 /* --- 18. Kaydırma açığa çıkarma ------------------------------------------ */
 .js [data-reveal] {
@@ -1389,6 +1427,35 @@ html { scroll-padding-top: calc(var(--hdr-h) + 16px); }
   gap: clamp(10px, 1.2vw, 20px);
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
 }
+
+/* ==========================================================================
+   HİZALI SATIR — kırpmasız galeri şeridi (7 Ağustos)
+   ──────────────────────────────────────────────────────────────────────────
+   Eskiden `.galeri` ızgarası her kareyi 4/5'e sokup `cover` ile kesiyordu.
+   Fotoğraf havuzu çift tepeli (%40 dikey, %42 yatay), tek oran dayatınca
+   ortalama dörtte biri gidiyordu.
+
+   Şimdi: bir satırdaki kareler aynı yükseklikte, genişlikleri kendi
+   oranlarına göre. Satırın `aspect-ratio` değeri oranların toplamı;
+   her kare `flex-grow` olarak kendi oranını alıyor. Kırpma sıfır,
+   sol ve sağ kenar düz.
+
+   Telefonda tek sütuna iniyor: 350px'e iki kare sığınca satır
+   yüksekliği oynuyor ve düzen bozuluyor.
+   ========================================================================== */
+.galeri-serit { display: flex; flex-direction: column; gap: clamp(10px, 1.2vw, 18px); }
+.gs-satir { display: flex; gap: clamp(10px, 1.2vw, 18px); width: 100%; }
+.gs-satir .galeri-hucre { aspect-ratio: auto; height: 100%; min-width: 0; }
+.gs-satir .galeri-hucre img { object-fit: fill; }
+
+@media (max-width: 760px) {
+  .galeri-serit { gap: 12px; }
+  .gs-satir { display: block; aspect-ratio: auto !important; }
+  .gs-satir .galeri-hucre { width: 100%; margin-bottom: 12px; }
+  .gs-satir .galeri-hucre:last-child { margin-bottom: 0; }
+  .gs-satir .galeri-hucre img { height: auto; object-fit: contain; }
+}
+
 .galeri-hucre {
   position: relative; display: block; padding: 0; cursor: zoom-in;
   background: var(--plate-deep);
@@ -1540,7 +1607,7 @@ body.lb-acik { overflow: hidden; }
 /* Floating Cursor Indicator (Fare Takipçisi) */
 .cursor-badge {
   position: fixed; top: 0; left: 0; pointer-events: none; z-index: 300;
-  background: var(--carmine); color: #fff;
+  background: var(--carmine); color: var(--beyaz);
   font-family: var(--label); font-size: 0.625rem; font-weight: 500;
   letter-spacing: 0.16em; text-transform: uppercase;
   padding: 8px 14px;
@@ -1704,14 +1771,14 @@ body.lb-acik { overflow: hidden; }
 }
 .lb-caption {
   font-family: var(--serif); font-weight: 300; font-size: 1.125rem;
-  color: #fff; letter-spacing: -0.01em;
+  color: var(--beyaz); letter-spacing: -0.01em;
 }
 .lb-sayac {
   font-family: var(--label); font-size: 0.75rem; font-weight: 500;
   letter-spacing: 0.2em; color: var(--bronze-lift); margin: 0;
 }
 .lb-kapat {
-  background: none; border: 1px solid rgba(255, 255, 255, 0.2); color: #fff;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.2); color: var(--beyaz);
   font-family: var(--label); font-size: 0.6875rem; font-weight: 500;
   letter-spacing: 0.14em; text-transform: uppercase;
   padding: 8px 16px; cursor: pointer; transition: all 200ms var(--ease-io);
@@ -1737,7 +1804,7 @@ body.lb-acik { overflow: hidden; }
 .lb-onceki, .lb-sonraki {
   position: absolute; top: 50%; transform: translateY(-50%);
   background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18);
-  color: #fff; width: 52px; height: 52px; display: grid; place-items: center;
+  color: var(--beyaz); width: 52px; height: 52px; display: grid; place-items: center;
   cursor: pointer; transition: all 200ms var(--ease-io); font-size: 1.25rem;
   z-index: 5;
 }
@@ -1745,7 +1812,7 @@ body.lb-acik { overflow: hidden; }
 .lb-sonraki { right: var(--gutter); }
 .lb-onceki:hover, .lb-sonraki:hover,
 .lb-onceki:focus-visible, .lb-sonraki:focus-visible {
-  background: var(--carmine); border-color: var(--carmine); color: #fff;
+  background: var(--carmine); border-color: var(--carmine); color: var(--beyaz);
 }
 
 @media (max-width: 700px) {
@@ -1951,7 +2018,7 @@ body:has(.hero-video) .hdr:not(.is-solid):has(.has-mega[data-acik="true"]) .hdr-
 body:has(.hero-video) .hdr:not(.is-solid):has(.has-mega:hover) .hdr-cta .btn,
 body:has(.hero-video) .hdr:not(.is-solid):has(.has-mega:focus-within) .hdr-cta .btn,
 body:has(.hero-video) .hdr:not(.is-solid):has(.has-mega[data-acik="true"]) .hdr-cta .btn {
-  background: var(--carmine); color: #fff; border-color: transparent;
+  background: var(--carmine); color: var(--beyaz); border-color: transparent;
 }
 body:has(.hero-video) .hdr:not(.is-solid):has(.has-mega:hover)::after,
 body:has(.hero-video) .hdr:not(.is-solid):has(.has-mega:focus-within)::after,
@@ -3255,7 +3322,7 @@ a.slayt-kare:focus-visible img { transform: scale(1.04); filter: saturate(1) con
 
 /* Pencere bölümünün kendi rengi: numara, slogan ve liste imleri */
 .pencere .pencere-no { color: var(--element, var(--bronze)); }
-/* Koyu bölümde (#131A15) element renkleri okunmuyordu: Su 2.94, Hava 2.79.
+/* Koyu bölümde (var(--bant)) element renkleri okunmuyordu: Su 2.94, Hava 2.79.
    Pencere kendi kimliğini `--element-lift` ile koruyor; tanımlı değilse
    sitenin koyu zemin etiket rengine düşüyor. */
 .pencere.field .pencere-no { color: var(--element-lift, var(--bronze-lift)); }
@@ -3309,10 +3376,6 @@ a.slayt-kare:focus-visible img { transform: scale(1.04); filter: saturate(1) con
    "Metin başlıklarında eski logo rengi var, yeni renk turuncu, yeşil.
    Ağırlıkta yeşil kullanabiliriz."  Ağırlık yeşilde, turuncu tek vurgu. */
 :root {
-  --yesil:       #428840;   /* yapraklar */
-  --yesil-derin: #2F6A2E;   /* sayfa zemini üzerinde metin için güvenli */
-  --turuncu:     #F05625;   /* lale, amblem çemberi — yalnız vurgu */
-  --haki:        #958A54;   /* harfler, dış halka */
 }
 
 /* --- 1 · Genel bakış ızgarası ------------------------------------------- */
@@ -3562,24 +3625,7 @@ a.slayt-kare:focus-visible img { transform: scale(1.04); filter: saturate(1) con
   .mz-foto img { aspect-ratio: 3 / 2; }
 }
 
-/* ==========================================================================
-   TİPOGRAFİ ÖLÇEĞİ — 5 Ağustos geri bildirimi
-   ──────────────────────────────────────────────────────────────────────────
-   Ceylan hanım iki ayrı şey söyledi, ikisi de aynı sorunun yüzü:
-
-     "İlk bakışta çok büyük büyük geldi, sayfalarda boşluklar da çok."
-     "Sayfa içlerinde görseller küçülüp yazılar büyüyebilir, en doğrusu
-      orantılı olmaları olur aslında."
-     "Açılan ana menüde başlıklar çok büyük."
-
-   Ölçülen hâl (masaüstü 1440px):
-     sayfa başlığı 120px · bölüm başlığı 52px · gövde 14-15px
-     oran 120:15 = 8:1   editoryal sitelerde 3:1 – 4:1
-
-   Başlık küçülüyor, gövde büyüyor, ikisi birbirine yaklaşıyor.
-   Bu blok dosyanın sonunda: kaynak sırası gereği yukarıdaki tanımları
-   eziyor, böylece orijinal ölçek kayıt olarak duruyor.
-   ========================================================================== */
+/* TİPOGRAFİ ÖLÇEĞİ — 5 Ağustos geri bildirimi — gerekçe: docs/palet-gerekce.md */
 
 /* --- Başlıklar: aşağı ---------------------------------------------------- */
 .d-xl { font-size: clamp(2.25rem, 1rem + 4.2vw, 4.25rem); }   /* 120 → 68px */
@@ -3632,21 +3678,7 @@ body { font-size: 1.125rem; }                                  /* 17 → 18px */
   .logos img { max-height: 50px; }
 }
 
-/* ==========================================================================
-   KALAN KÜÇÜK OKUMA METİNLERİ — 5 Ağustos geri bildirimi
-   ──────────────────────────────────────────────────────────────────────────
-   Ölçek düzeltmesinden sonra 20 sayfa tekrar taranınca 16px altında kalan
-   gerçek okuma metinleri çıktı. Bunlar etiket değil, paragraf:
-
-     10px  program künyesi (dd)      8 paragraf · doga-temelli-egitimlerimiz
-     15px  program anlatısı (p)     20 paragraf · doga-temelli-egitimlerimiz
-     15px  pencere anlatısı (p)     10 paragraf · gelecegi-tasarla
-     14px  pencere program listesi   5 madde
-     14px  konsept listesi           4 madde
-
-   Etiket boyutları (eyebrow, dt, meta) olduğu gibi kalıyor — onlar zaten
-   okunmak için değil, işaretlemek için orada.
-   ========================================================================== */
+/* KALAN KÜÇÜK OKUMA METİNLERİ — 5 Ağustos geri bildirimi — gerekçe: docs/palet-gerekce.md */
 .program-blok p:not(.eyebrow),
 .pencere-blok p:not(.eyebrow),
 .hat-ornek p:not(.eyebrow),
@@ -3666,93 +3698,38 @@ body { font-size: 1.125rem; }                                  /* 17 → 18px */
    altında kalıyordu. Etiket değil, okunması gereken bir açıklama. */
 .form-note { font-size: 0.8125rem; letter-spacing: 0.02em; }
 
-/* ==========================================================================
-   YENİ MARKA PALETİ — 5 Ağustos geri bildirimi
-   ──────────────────────────────────────────────────────────────────────────
-   "Metin başlıklarında eski logo rengi var, yeni renk turuncu, yeşil.
-    Ağırlıkta yeşil kullanabiliriz."
-
-   Kaynak: yeni logonun Pantone ekranları (docs/marka/Pant1-3.png)
-     #F05625 turuncu (lale, amblem çemberi)
-     #428840 yeşil   (yapraklar)
-     #958A54 haki    (harfler, dış halka)
-
-   ── RENKLERİN NEREYE KONACAĞI ÖLÇÜLEREK BELİRLENDİ ────────────────────
-   Sayfa zemini #E9E9E0 üzerinde saf değerler:
-
-     turuncu  2.84:1   metin olarak kullanılamaz (24px+ başlık için bile
-                       3:1 gerekiyor, o eşiği de geçmiyor)
-     yeşil    3.56:1   yalnız 24px ve üstü başlıklarda
-     haki     2.85:1   metin olarak kullanılamaz
-
-   Koyu bant #131A15 üzerinde:
-
-     turuncu  5.11:1 ✓   haki 5.09:1 ✓   yeşil 4.07:1 ✗
-
-   Bölüşüm buradan çıkıyor, keyfî değil:
-
-     AÇIK ZEMİN → yeşil   (ağırlık burada, sitenin çoğu açık zemin)
-     KOYU BANT  → turuncu (tek yerde parlıyor, orada okunuyor)
-     ETİKETLER  → koyulaştırılmış haki, küçük punto 4.5:1 istiyor
-
-   Eski karmen #A82B45 tamamen kalkıyor.
-   ========================================================================== */
+/* YENİ MARKA PALETİ — 5 Ağustos geri bildirimi — gerekçe: docs/palet-gerekce.md */
 :root {
   /* Eylem rengi: buton, odak halkası, seçim. Beyaz metin üstünde 6.52:1 */
-  --carmine:      #2F6A2E;
-  --carmine-deep: #2A5F29;
   /* Koyu bantta vurgu — turuncunun asıl yeri burası, 5.11:1 */
-  --carmine-soft: #F05625;
 
   /* Etiket dili: haki koyulaştırıldı, 4.78:1 */
-  --bronze:       #6E6540;
   /* Koyu bantta etiket: saf haki zaten 5.09:1 veriyor */
-  --bronze-lift:  #958A54;
 }
 
 /* Devasa italik serif — sayfaların imza vurgusu. Buton yeşilinden bir ton
    canlı, çünkü hep 38px ve üstünde: 3.56:1 büyük metin eşiğini geçiyor. */
-.em { color: #428840; }
+.em { color: var(--vurgu-canli); }
 /* Koyu bantta italik turuncuya dönüyor: yeşil orada 4.07:1 ile kalıyor. */
 .field .em, .hero-cine .em { color: var(--carmine-soft); }
 
 /* Etkinlik bileşenleri paletle aynı yerden besleniyor. */
-.kat-kart:hover        { border-color: #428840; }
-.kat-gezinme-oge:hover { border-color: #428840; }
-.mz-atolye             { border-top-color: #428840; }
-.kat-bilim             { border-left-color: #428840; }
-.kat-liste li::before  { background: #428840; }
+.kat-kart:hover        { border-color: var(--vurgu-canli); }
+.kat-gezinme-oge:hover { border-color: var(--vurgu-canli); }
+.mz-atolye             { border-top-color: var(--vurgu-canli); }
+.kat-bilim             { border-left-color: var(--vurgu-canli); }
+.kat-liste li::before  { background: var(--vurgu-canli); }
 
-/* ==========================================================================
-   KOYU BANTTA TURUNCU EYLEM DÜĞMESİ
-   ──────────────────────────────────────────────────────────────────────────
-   Ceylan hanım: "yeni renk turuncu, yeşil. Ağırlıkta yeşil kullanabiliriz."
-
-   Ağırlık yeşilde kalıyor — açık zeminin tamamı yeşil, sitenin çoğu açık
-   zemin. Turuncu yalnız koyu kapanış bandındaki ana düğmede duruyor, yani
-   her sayfada bir kez. Paletin ikinci rengi böylece var ama baskın değil.
-
-   Ölçü: beyaz yazı turuncu üstünde 3.46:1 ile sınıfta kalıyor, koyu yazı
-   5.11:1 veriyor. O yüzden yazı koyu.
-
-   Alt bilgideki kural .ftr a.btn-primary (0,2,1) özgüllüğünde tanımlı,
-   burada da aynı özgüllük kullanılmazsa rengi ezilmiyor.
-   ========================================================================== */
+/* KOYU BANTTA TURUNCU EYLEM DÜĞMESİ — gerekçe: docs/palet-gerekce.md */
 .field .btn-primary,
-.ftr a.btn-primary { background: var(--carmine-soft); color: #131A15; }
+.ftr a.btn-primary { background: var(--carmine-soft); color: var(--bant); }
 
 .field .btn-primary:hover, .field .btn-primary:focus-visible,
 .ftr a.btn-primary:hover, .ftr a.btn-primary:focus-visible {
-  background: #D8481B; color: #131A15;
+  background: var(--turuncu-koyu); color: var(--bant);
 }
 
-/* ==========================================================================
-   VİZYON + MİSYON İKİLİSİ — 5 Ağustos geri bildirimi
-   "Hakkımızda sayfası çok büyük yazılar, vizyon, misyon alt alta aynı
-    sayfada word düzeni gibi, sevmedim öyle."
-   İkisi de tek paragraf ama her biri tam bölüm kaplıyordu. Yan yana
-   geldiler ve metin fotoğrafın üzerine taşındı.
-   ========================================================================== */
+/* VİZYON + MİSYON İKİLİSİ — 5 Ağustos geri bildirimi — gerekçe: docs/palet-gerekce.md */
 .hk-ikili {
   display: grid; grid-template-columns: repeat(2, 1fr);
   gap: clamp(16px, 2vw, 28px);
@@ -3829,80 +3806,29 @@ body { font-size: 1.125rem; }                                  /* 17 → 18px */
 .field .kat-gezinme-oge:hover { border-color: var(--carmine-soft); }
 .field .kat-gezinme-oge:focus-visible { outline-color: var(--carmine-soft); }
 
-/* ==========================================================================
-   PALET A — TURUNCU EYLEM, YEŞİL VURGU
-   ──────────────────────────────────────────────────────────────────────────
-   İlk deneme (açık zemin yeşil, koyu bant turuncu) sayfada kötü duruyordu.
-   Sebebi ölçülebilir bir hataydı, zevk meselesi değil:
-
-     1 · Krem zemin #E9E9E0, haki etiket #6E6540 ve yeşil #428840 üçü de
-         sıcak sarı-yeşil bölgesinde. Aralarında karşıtlık yok, hepsi
-         aynı çamura düşüyordu. Eski karmen kırmızıydı ve kremi kırıyordu;
-         onu alınca sayfayı ayakta tutan tek karşıtlık gitti.
-
-     2 · Buton yeşili #2F6A2E kontrast için koyulaştırılmıştı. Canlı yaprak
-         yeşilini koyulaştırınca rengin kanı çekiliyor, kurumsal-devlet
-         yeşiline dönüyor.
-
-     3 · En büyüğü: logo turuncu, sayfa yeşildi. Üstte turuncu amblem,
-         altında yeşil düğme — göz ikisini bağlayamıyordu, logo başka bir
-         markadan gelmiş gibi duruyordu.
-
-   Çözüm rolleri değiştirmek oldu:
-
-     TURUNCU  eylem     düğmeler. Logoyla aynı renk, sayfanın odağı.
-     YEŞİL    vurgu     italik başlıklar, kart çizgileri, oklar, bağlantı.
-     NÖTR GRİ etiket    göz kırpma satırları. Haki kremin üstünde kirliydi.
-
-   "Ağırlıkta yeşil kullanabiliriz" kuralı korunuyor: yeşil hâlâ her
-   vurguda; turuncu sayfa başına üç dört düğmede. Önceki hâlde yeşil bütün
-   işi yapıyor, turuncu hiç görünmüyordu — o iki renk değil, tek renkti.
-
-   Kontrast: turuncu üstünde koyu yazı 5.11:1 · yeşil italik 5.34:1 ·
-   gri etiket 5.20:1 · koyu bantta açık yeşil 8.0:1
-   ========================================================================== */
+/* PALET A — TURUNCU EYLEM, YEŞİL VURGU — gerekçe: docs/palet-gerekce.md */
 :root {
-  --carmine:      #F05625;   /* eylem — logonun turuncusu */
-  --carmine-deep: #D8481B;   /* üzerine gelince */
-  --carmine-soft: #F2764A;   /* koyu bantta açık ton, 6.29:1 */
 
-  --bronze:       #5C6158;   /* etiket — nötr, 5.20:1 */
-  --bronze-lift:  #A2AA9F;   /* koyu bantta etiket */
 }
 
 /* Düğme: turuncu zemin, koyu yazı. Beyaz yazı turuncu üstünde 3.46:1 ile
    sınıfta kalıyor; koyu yazı 5.11:1. */
-.btn-primary { background: var(--carmine); color: #131A15; }
-.btn-primary:hover, .btn-primary:focus-visible { background: var(--carmine-deep); color: #131A15; }
-.ftr a.btn-primary { color: #131A15; }
-.ftr a.btn-primary:hover, .ftr a.btn-primary:focus-visible { color: #131A15; }
-.field .btn-primary { background: var(--carmine-soft); color: #131A15; }
-.field .btn-primary:hover, .field .btn-primary:focus-visible { background: var(--carmine); color: #131A15; }
+.btn-primary { background: var(--carmine); color: var(--bant); }
+.btn-primary:hover, .btn-primary:focus-visible { background: var(--carmine-deep); color: var(--bant); }
+.ftr a.btn-primary { color: var(--bant); }
+.ftr a.btn-primary:hover, .ftr a.btn-primary:focus-visible { color: var(--bant); }
+.field .btn-primary { background: var(--carmine-soft); color: var(--bant); }
+.field .btn-primary:hover, .field .btn-primary:focus-visible { background: var(--carmine); color: var(--bant); }
 
 /* İtalik vurgu yeşil kalıyor — sayfanın doğa notası burada. */
-.em { color: #2F6A2E; }
-/* Koyu bantta yeşilin açık tonu: #2F6A2E orada 1.9:1 ile kayboluyor. */
-.field .em, .hero-cine .em { color: #7FB877; }
+.em { color: var(--vurgu); }
+/* Koyu bantta yeşilin açık tonu: var(--vurgu) orada 1.9:1 ile kayboluyor. */
+.field .em, .hero-cine .em { color: var(--bant-vurgu); }
 
 /* Seçim vurgusu turuncu; beyaz yazı okunmadığı için koyu. */
-::selection { background: var(--carmine); color: #131A15; }
+::selection { background: var(--carmine); color: var(--bant); }
 
-/* ==========================================================================
-   TURUNCU YALNIZ ZEMİNDE
-   ──────────────────────────────────────────────────────────────────────────
-   --carmine artık turuncu #F05625. Düğme zemini olarak koyu yazıyla
-   5.11:1 veriyor, sorun yok. Ama bu değişken sitede METİN rengi olarak da
-   kullanılıyordu: etiketler, sloganlar, bağlantı hover'ları. Turuncu krem
-   zeminin üzerinde 2.84:1 — küçük metin için 4.5, büyük metin için 3.0
-   isteniyor, ikisini de geçmiyor.
-
-   Ölçümde altı yerde yakalandı; ama hover durumları taramada tetiklenmiyor,
-   o yüzden değişkeni metin/çerçeve olarak kullanan bütün seçiciler burada
-   yeşile çevriliyor. Koyu bölümdekiler dışarıda — orada turuncu okunuyor.
-
-   Kural: TURUNCU zemin olur, metin olmaz. Metin yeşildir.
-   ========================================================================== */
-:root { --vurgu: #2F6A2E; }   /* krem üstünde 5.34:1 */
+/* TURUNCU YALNIZ ZEMİNDE — gerekçe: docs/palet-gerekce.md */
 
 .em,
 .masthead b,
@@ -3939,66 +3865,26 @@ a.index-row .index-meta::after,
 .lb-onceki:focus-visible, .lb-sonraki:focus-visible,
 .iletisim-blok a:hover { border-color: var(--vurgu); }
 
-/* ==========================================================================
-   EYLEM RENGİ: KOYU MÜREKKEP — turuncu doğru boyutuna iniyor
-   ──────────────────────────────────────────────────────────────────────────
-   Turuncu #F05625 düğme zemini olarak kullanılınca sayfada bağırıyordu.
-   Sorun rengin tonunda değil, kapladığı alanda: logo turuncuyu 40 piksellik
-   bir çemberde kullanıyor, biz onu 170×54 piksellik düz bloklara yaydık.
-   Aynı doygunluk elli kat büyüyünce ucuzluyor.
-
-   Çözüm rengi değiştirmek değil, alanı küçültmek. Turuncu şurada kalıyor:
-
-     · logo               (zaten orada, markanın kendi ölçüsü)
-     · panel oku hover    34px yuvarlak
-     · odak halkası       klavye gezinmesi
-
-   Düğmeler koyu mürekkebe geçiyor. Fotoğraflar ve yeşil vurgu rengi
-   taşıyor; düğme yalnız eylemi işaret ediyor, renk yarışına girmiyor.
-   "Ağırlıkta yeşil" bozulmuyor — yeşil bütün italik vurgularda,
-   kart çizgilerinde ve bağlantılarda duruyor.
-
-   Kontrast: krem yazı #F4F3EC koyu mürekkep #131A15 üzerinde 15.8:1.
-   Koyu bantta düğme ters çevriliyor: krem zemin, koyu yazı.
-   ========================================================================== */
-.btn-primary { background: #131A15; color: #F4F3EC; }
+/* EYLEM RENGİ: KOYU MÜREKKEP — turuncu doğru boyutuna iniyor — gerekçe: docs/palet-gerekce.md */
+.btn-primary { background: var(--bant); color: var(--eylem-ust); }
 .btn-primary:hover,
-.btn-primary:focus-visible { background: #2A3A2D; color: #F4F3EC; }
+.btn-primary:focus-visible { background: var(--eylem-hover); color: var(--eylem-ust); }
 
 /* Koyu bantta ters: krem zemin, koyu yazı. `.ftr a.btn-primary` (0,2,1)
    özgüllüğünde tanımlı olduğu için burada da aynı özgüllük şart. */
 .field .btn-primary,
-.ftr a.btn-primary { background: #F4F3EC; color: #131A15; }
+.ftr a.btn-primary { background: var(--eylem-ust); color: var(--bant); }
 .field .btn-primary:hover, .field .btn-primary:focus-visible,
 .ftr a.btn-primary:hover, .ftr a.btn-primary:focus-visible {
-  background: #FFFFFF; color: #131A15;
+  background: #FFFFFF; color: var(--bant);
 }
 
-/* ==========================================================================
-   ALT BİLGİ SIKIŞTIRMASI — "sayfalarda boşluklar da çok"
-   ──────────────────────────────────────────────────────────────────────────
-   Alt bilgi ölçüldüğünde 31 sayfanın hepsinde 1071 piksel tutuyordu, yani
-   masaüstünde 1.2 ekran. Yedi ekranlık bir sayfada payı %15.
-
-   Yükseklik içerikten değil dolgudan geliyordu:
-     çağrı bandı  144px üst + 144px alt = 288px
-     sütun bloğu   86px üst +  86px alt = 172px
-   İkisi birlikte 460px, yani içerikten çok boşluk.
-
-   İçeriğe dokunulmuyor — telefonlar, adres, bağlantılar aynen duruyor.
-   ========================================================================== */
+/* ALT BİLGİ SIKIŞTIRMASI — "sayfalarda boşluklar da çok" — gerekçe: docs/palet-gerekce.md */
 .ftr-cta  { padding-block: clamp(44px, 5vw, 80px); }
 .ftr-main { padding-block: clamp(32px, 3.6vw, 60px); }
 .ftr-base { padding-block: clamp(16px, 1.8vw, 28px); }
 
-/* ==========================================================================
-   PENCERE GİRİŞİ — anlatı başlığın altına, görselin yanına
-   ──────────────────────────────────────────────────────────────────────────
-   Başlık bloğu 150px, yanındaki görsel 330px idi; sol sütunun altında
-   180 piksellik boşluk kalıyor, anlatı görselin altından yeniden
-   başlıyordu. "Sayfalarda boşluklar da çok" ve "metin, görsel, yazı yazı
-   gidiyor daha dinamik olabilir" — anlatı yukarı alındı.
-   ========================================================================== */
+/* PENCERE GİRİŞİ — anlatı başlığın altına, görselin yanına — gerekçe: docs/palet-gerekce.md */
 .pencere-giris { display: grid; gap: var(--s4); align-content: start; }
 .pencere-blok-giris { margin: 0; }
 .pencere-blok-giris p:not(.eyebrow) { max-width: 54ch; }
@@ -4031,23 +3917,7 @@ a.index-row .index-meta::after,
   .hat-ters .hat-anlati, .hat-ters .hat-gorsel { order: 0; }
 }
 
-/* ==========================================================================
-   ODAK HALKASI — gerçek WCAG hatası düzeltmesi
-   ──────────────────────────────────────────────────────────────────────────
-   Odak halkası `--carmine` (turuncu #F05625) kullanıyordu. Krem zemin
-   #E9E9E0 üzerinde 2.84:1 veriyor; WCAG 1.4.11 (arayüz bileşeni) ve
-   2.4.11 (odak göstergesi) 3:1 istiyor. Sınıfta kalıyordu.
-
-   Metin kontrast denetimleri bunu yakalamıyor — odak halkası bir metin
-   rengi değil, `outline-color`. O yüzden "1020 ihlal giderildi" turunda
-   da görünmemişti.
-
-   #C6401A tek değerle iki zeminde de geçen tek ton:
-     krem #E9E9E0 üzerinde 4.14:1 ✓
-     koyu #131A15 üzerinde 3.50:1 ✓
-   (#A83A16 kremde 5.24 veriyor ama koyuda 2.77 ile kalıyor.)
-   ========================================================================== */
-:root { --odak: #C6401A; }
+/* ODAK HALKASI — gerçek WCAG hatası düzeltmesi — gerekçe: docs/palet-gerekce.md */
 
 :focus-visible { outline: 2px solid var(--odak); outline-offset: 3px; }
 
@@ -4056,68 +3926,19 @@ a.index-row .index-meta::after,
 .mz-foto:focus-visible,
 .pserit-panel:focus-visible { outline-color: var(--odak); }
 
-/* ==========================================================================
-   ETİKET RENGİ HAKİYE DÖNÜYOR
-   ──────────────────────────────────────────────────────────────────────────
-   Palet A'da etiketleri nötr griye (#5C6158) çekmiştim. Yan yana bakınca
-   gri jenerik duruyor: büyük harf gri eyebrow her kurumsal şablonda var.
-   Haki #6B6340 logonun HARF rengi, yani markanın kendi tonu, ve krem
-   zeminde 4.94:1 ile küçük puntoda da geçiyor.
+/* ETİKET RENGİ HAKİYE DÖNÜYOR — gerekçe: docs/palet-gerekce.md */
 
-   İlk denemede haki kirli görünmüştü; o zaman yanında doygun turuncu
-   düğmeler vardı ve üçü birden aynı sıcak bölgede çakışıyordu. Düğmeler
-   koyu mürekkebe geçince haki yerine oturdu.
-   ========================================================================== */
-:root { --bronze: #6B6340; }
-
-/* ==========================================================================
-   KÂĞIT TONU — zemin kâğıda yaklaşıyor
-   ──────────────────────────────────────────────────────────────────────────
-   Eski zemin #E9E9E0'de kırmızı ve yeşil kanal tam eşitti (233/233/224),
-   tonu 106.6°. Bu, kâğıt değil beton okuyor. Referans olarak bakılan
-   premium botanik/wellbeing sitelerinin hepsinde kademeli R>G>B rampası
-   var ve ton 76-92 arasında kümeleniyor.
-
-   #EBE7DB aynı açıklıkta kalıyor (bağıl parlaklık 0.8098 → 0.7993) ama
-   tonu 91.6'ya çekiyor. Bütün kontrast çiftleri yeniden hesaplandı,
-   hiçbiri eşiğin altına düşmüyor:
-     gövde 14.06:1 · soluk 5.14:1 · etiket 4.88:1 · yeşil 5.27:1 · odak 4.09:1
-   ========================================================================== */
+/* KÂĞIT TONU — zemin kâğıda yaklaşıyor — gerekçe: docs/palet-gerekce.md */
 :root {
-  --mount:      #EBE7DB;
-  --plate:      #F4F1E7;
-  --plate-deep: #E0DBCB;
-  --rule:       #CFC9B9;
-  --rule-soft:  #DFDACB;
 }
 
-/* ==========================================================================
-   TEK BAŞINA DURAN GİRİŞ PARAGRAFI
-   ──────────────────────────────────────────────────────────────────────────
-   .wrap-narrow 1100 piksel; içindeki .lede ise 44ch, yani ~500 piksel.
-   Paragraf sola yaslı kalıyor ve sağında 600 pikselden fazla ölü alan
-   oluşuyordu — "sayfalarda boşluklar da çok" şikâyetinin görünür örneği.
-
-   Ölçü biraz açılıyor ve blok ortalanıyor: satır uzunluğu okunur
-   aralıkta (58ch) kalırken boşluk iki yana simetrik dağılıyor.
-   ========================================================================== */
+/* TEK BAŞINA DURAN GİRİŞ PARAGRAFI — gerekçe: docs/palet-gerekce.md */
 .wrap-narrow > .lede {
   max-width: 58ch;
   margin-inline: auto;
 }
 
-/* ==========================================================================
-   GÖRSEL ÇERÇEVELERİ — kırpma kaybı ölçülüp düşürüldü
-   ──────────────────────────────────────────────────────────────────────────
-   6 çözünürlük × 31 sayfa taranarak her görselin doğal oranı ile
-   çerçevesinin oranı karşılaştırıldı. `object-fit: cover` farkı kesiyor;
-   kesilen oran ölçüldü. Fotoğraflarımızın çoğu 3:2 (1.5) ve 4:3 (1.33).
-
-   BULUNAN EN AĞIR ÜÇ KAYIP:
-     kat-kapak   %89   4K'da 3840×560, yani 6.9:1 mektup kutusu
-     pserit      %68   telefonda 195×400 dar panel
-     mz-foto     %56   ızgara satırı görseli dikey esnetiyordu
-   ========================================================================== */
+/* GÖRSEL ÇERÇEVELERİ — kırpma kaybı ölçülüp düşürüldü — gerekçe: docs/palet-gerekce.md */
 
 /* --- 1 · Kategori ve program kapağı -----------------------------------
    `min-height: clamp(340px, 56vh, 560px)` yükseklği 560'ta sabitliyordu.
@@ -4161,17 +3982,7 @@ a.index-row .index-meta::after,
 .ss-gorsel { aspect-ratio: 1 / 1; }
 .plate-frame { aspect-ratio: 4 / 5; }
 
-/* ==========================================================================
-   PANEL ŞERİDİ — tek arka plan, üstünde etiket panelleri
-   ──────────────────────────────────────────────────────────────────────────
-   Önceki hâlde her panelin kendi fotoğrafı vardı. Ölçüm: 195×400 piksellik
-   dar panelde 3:2 fotoğrafın %68'i kesiliyordu. Dar dikey çerçeveye geniş
-   fotoğraf sığmaz; bu ayar değil geometri sorunu.
-
-   Referans (naregitim) fotoğrafı panelin İÇİNE değil ARKASINA koyuyor:
-   tam genişlikte tek görsel, panellerin altından boydan boya geçiyor.
-   Geniş çerçeveye geniş fotoğraf giriyor, kırpma %68'den ~%10'a iniyor.
-   ========================================================================== */
+/* PANEL ŞERİDİ — tek arka plan, üstünde etiket panelleri — gerekçe: docs/palet-gerekce.md */
 .pserit {
   position: relative;
   display: grid;
@@ -4256,7 +4067,7 @@ a.index-row .index-meta::after,
 .pserit-ok svg { width: 16px; height: 16px; }
 .pserit-panel:hover .pserit-ok,
 .pserit-panel:focus-visible .pserit-ok {
-  background: var(--field-ink); border-color: var(--field-ink); color: #131A15;
+  background: var(--field-ink); border-color: var(--field-ink); color: var(--bant);
   transform: translateX(3px);
 }
 
@@ -4297,21 +4108,7 @@ a.index-row .index-meta::after,
   .pserit-kare img { transition: none; transform: none; }
 }
 
-/* ==========================================================================
-   ŞERİT ORANI — bant sonsuz genişlemesin
-   ──────────────────────────────────────────────────────────────────────────
-   Şerit tam genişlikte, yüksekliği ise sabit tavanlıydı. Genişlik büyüdükçe
-   oran bozuluyor ve arkadaki fotoğraf üstten kesiliyordu:
-
-     1440 × 620  = 2.3:1   fotoğrafın %35'i gider
-     3840 × 620  = 6.2:1   fotoğrafın %91'i gider   ← ölçülen
-
-   İki müdahale: yükseklik genişlikle birlikte bir miktar büyüyor ve çok
-   geniş ekranlarda bant kenardan kenara gitmeyi bırakıp ölçüsünü koruyor.
-   Sonuç her ekranda ~3:1 civarı, yani kayıp %50 bandında sabit kalıyor —
-   arka plan fotoğrafı için kabul edilebilir, çünkü orada fotoğraf içerik
-   değil atmosfer; okunan şey üstündeki etiketler.
-   ========================================================================== */
+/* ŞERİT ORANI — bant sonsuz genişlemesin — gerekçe: docs/palet-gerekce.md */
 .pserit { height: clamp(420px, 34vw, 780px); }
 
 /* Bant 2100 pikselde duruyor ama tam-genişlik hilesi korunuyor.
@@ -4329,17 +4126,7 @@ a.index-row .index-meta::after,
    masa ve yüzler karenin üst-orta bandında topluyor. */
 .pserit-kare img { object-position: 50% 42%; }
 
-/* ==========================================================================
-   ODAK NOKTALARI — kırpma kaçınılmazsa konu kurtarılır
-   ──────────────────────────────────────────────────────────────────────────
-   Kaynak fotoğraflar karışık yönlü: bir kısmı 1600×1067 yatay, bir kısmı
-   1200×1600 dikey. Kare bir karoya dikey fotoğraf, geniş bir banda yatay
-   fotoğraf koyunca kırpma kaçınılmaz — bu ayar değil geometri.
-
-   Kırpmayı sıfırlamak yerine NEREDEN kesileceği belirleniyor. Atölye
-   karelerinde konu (eller, masa, yüzler) karenin üst-orta bandında
-   toplanıyor; merkez kırpma alt kenardaki zemini koruyup yüzleri kesiyordu.
-   ========================================================================== */
+/* ODAK NOKTALARI — kırpma kaçınılmazsa konu kurtarılır — gerekçe: docs/palet-gerekce.md */
 
 /* Mozaik karosu — atölye masası ve eller üst bantta */
 .mz-foto img { object-position: 50% 42%; }
@@ -4361,33 +4148,10 @@ a.index-row .index-meta::after,
 /* Slider kartı — küçük dikey çerçeve */
 .slider-card-media img { object-position: 50% 40%; }
 
-/* ==========================================================================
-   KAPAK GENİŞLİĞİ SABİT — 360px'te yatay taşmanın sebebi
-   ──────────────────────────────────────────────────────────────────────────
-   .kat-kapak hem `aspect-ratio: 4/3` hem `min-height: 280px` taşıyor ve
-   `width` belirsiz. Tarayıcı genişliği yükseklikten türetiyor:
-   280 × 4/3 = 373.33px. 360 piksellik ekranda 13 piksel taşıyordu —
-   12 sayfada, yalnız en dar ekranda.
-
-   Genişlik açıkça verilince oran yükseklikten hesaplanıyor, tersi değil.
-   ========================================================================== */
+/* KAPAK GENİŞLİĞİ SABİT — 360px'te yatay taşmanın sebebi — gerekçe: docs/palet-gerekce.md */
 .kat-kapak { width: 100%; }
 
-/* ==========================================================================
-   320 PİKSEL REFLOW — WCAG 1.4.10
-   ──────────────────────────────────────────────────────────────────────────
-   1.4.10 Reflow, içeriğin 320 CSS pikselde iki eksenli kaydırma
-   gerektirmeden okunabilmesini istiyor. 320 aynı zamanda 1280 pikselde
-   %400 yakınlaştırmanın karşılığı, yani görme güçlüğü olan kullanıcının
-   gerçekten kullandığı genişlik.
-
-   İki kaynak ölçüldü:
-     · .deneyim-vitrin sütun alt sınırı 320px sabitti; 320 piksellik
-       ekranda kenar boşluğu düşünce içerik alanı 280px kalıyor ve
-       sütun taşıyordu. `min()` ile sütun ekranı geçemiyor.
-     · Uzun Türkçe kelimeler ("sürdürülebilirlik", "değerlendirme")
-       dar kolonda kırılamıyordu.
-   ========================================================================== */
+/* 320 PİKSEL REFLOW — WCAG 1.4.10 — gerekçe: docs/palet-gerekce.md */
 .deneyim-vitrin { grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); }
 
 @media (max-width: 400px) {
@@ -4396,29 +4160,7 @@ a.index-row .index-meta::after,
   p, li, dd, .body, .lede, h1, h2, h3, .hk-ikili-ic p { overflow-wrap: anywhere; }
 }
 
-/* ==========================================================================
-   MOZAİK — editoryal ölçeğe geçiş
-   ──────────────────────────────────────────────────────────────────────────
-   İki düzeltme bir arada.
-
-   1 · GRİ BANT HATASI
-   `.mz-foto` bir <button>. Izgara hücresi olarak `align-self: start`
-   veriliyordu ama düğmeler bu hizalamayı blok eksende uygulamıyor:
-   ölçümde düğme 420×524, içindeki görsel 418×418 çıktı — altta 107
-   piksellik zemin rengi görünüyordu. Oran doğrudan düğmeye veriliyor,
-   görsel de onu dolduruyor.
-
-   2 · ÖLÇEK
-   Referans olarak verilen allisonhoodflowerschool.com'da görseller
-   600 piksel ve üstü; bizim üç sütunlu mozaikte hücre 420 pikselde
-   kalıyordu ve sayfa "küçük küçük" duruyordu.
-
-   İki sütuna inince hücre ~620 piksele çıkıyor, yani referansın ölçüsü.
-   Sayfa uzamasın diye fotoğraf oranı 1:1 yerine 3:2: hücre genişler ama
-   yükseklik artmaz. 19 hücrelik bir kategoride üç sütun 7 satır × 524px
-   = 3668px tutuyordu; iki sütun 10 satır × 413px = 4130px. Görsel iki
-   katına çıkarken sayfa yalnız %12 uzuyor.
-   ========================================================================== */
+/* MOZAİK — editoryal ölçeğe geçiş — gerekçe: docs/palet-gerekce.md */
 .kat-mozaik {
   grid-template-columns: repeat(2, 1fr);
   gap: clamp(20px, 2.2vw, 36px);
@@ -4451,20 +4193,7 @@ a.index-row .index-meta::after,
   .mz-foto { aspect-ratio: 3 / 2; }
 }
 
-/* ==========================================================================
-   ÇERÇEVE FOTOĞRAFA UYUYOR — mozaik son hâli
-   ──────────────────────────────────────────────────────────────────────────
-   Havuzun 114 karesinin 48'i dikey, 54'ü yatay, 12'si kareye yakın.
-   Hepsini tek bir orana zorlamak dikey karelerin yarısını siliyordu:
-   teraryum tutan iki kişinin ELİNDEKİ teraryumlar kesiliyordu.
-
-   Oran artık her fotoğrafa satır içi `aspect-ratio` olarak veriliyor
-   (`gorsel-olculeri.mjs`). Buradaki kural yalnız o değeri serbest
-   bırakıyor; sabit bir oran DAYATMIYOR.
-
-   Satırlar farklı yükseklikte oluyor — istenen bu. Tek tip ızgara yerine
-   editoryal bir ritim çıkıyor ve hiçbir kare kırpılmıyor.
-   ========================================================================== */
+/* ÇERÇEVE FOTOĞRAFA UYUYOR — mozaik son hâli — gerekçe: docs/palet-gerekce.md */
 .kat-mozaik { align-items: start; }
 .mz-foto { aspect-ratio: auto; }        /* satır içi değer kazanıyor */
 .mz-atolye { align-self: stretch; }     /* metin kartı satırı dolduruyor */
@@ -4475,18 +4204,7 @@ a.index-row .index-meta::after,
   .mz-foto { aspect-ratio: auto; }
 }
 
-/* ==========================================================================
-   HİZALANMIŞ FOTO BANDI — sıfır kırpma + düz satırlar
-   ──────────────────────────────────────────────────────────────────────────
-   Bir bandaki karelerin hepsi aynı yükseklikte; genişlikleri kendi
-   oranlarına göre değişiyor. Dikey kare dar, yatay kare geniş oluyor,
-   bant üstten ve alttan düz kesiliyor.
-
-   Yükseklik CSS'te yazılmıyor: bandın `aspect-ratio` değeri satır içinde
-   oranların toplamı olarak veriliyor (h × Σoran = toplam genişlik), her
-   kare de `flex-grow` olarak kendi oranını alıyor. Yükseklik böylece
-   kendiliğinden doğru çıkıyor ve hiçbir kare kırpılmıyor.
-   ========================================================================== */
+/* HİZALANMIŞ FOTO BANDI — sıfır kırpma + düz satırlar — gerekçe: docs/palet-gerekce.md */
 .kat-mozaik {
   display: grid;
   grid-template-columns: 1fr;      /* artık satırlar kendi içinde bölünüyor */
@@ -4521,18 +4239,7 @@ a.index-row .index-meta::after,
   .mz-bant .mz-foto img { aspect-ratio: auto; height: auto; }
 }
 
-/* ==========================================================================
-   SIRAYLA BİR YAZI BİR FOTOĞRAF — mozaiğin son hâli
-   ──────────────────────────────────────────────────────────────────────────
-   Bant deseni masaüstünde çalışıyordu ama telefonda tek sütuna inince
-   "üç fotoğraf, iki yazı" diye topaklanıyordu. Akış artık birebir
-   dönüşümlü: iki sütunda her satır [yazı][fotoğraf], tek sütunda da
-   aynı ritim iniyor.
-
-   Fotoğraflar üç standart çerçeveden birine oturuyor (3:4 · 1:1 · 3:2),
-   oran satır içinde veriliyor. Sayfada yalnız üç farklı yükseklik
-   olduğu için göz düzeni yakalıyor, kırpma da yüzde onun altında kalıyor.
-   ========================================================================== */
+/* SIRAYLA BİR YAZI BİR FOTOĞRAF — mozaiğin son hâli — gerekçe: docs/palet-gerekce.md */
 .kat-mozaik {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -4550,4 +4257,189 @@ a.index-row .index-meta::after,
 
 @media (max-width: 900px) {
   .kat-mozaik { grid-template-columns: 1fr; gap: var(--s4); }
+}
+
+/* ==========================================================================
+   TELEFONDA TEK SÜTUN — 7 Ağustos
+   ──────────────────────────────────────────────────────────────────────────
+   Ceylan hanım: "sayfalarda boşluklar da çok", "genel olarak kayboldum".
+   Kullanıcı: "mobilde çoğu yazı yatayda çok kısa dikey olarak uzun kalmış,
+   yazıyı okumak için çok kaydırıyoruz."
+
+   Ölçüm (390px): 13 sayfada 49 metin bloğu satır başına 26 karakterin
+   altında. En dar bloklar 113px, 137px, 141px, 163px. Rahat okuma
+   45-75 karakter/satır; buradaki ortalama 13-19.
+
+   Sebep: 16 bileşen 390px'te hâlâ iki-üç sütunda kalıyordu, hücre
+   genişliği 98-195px'e düşüyordu.
+
+   Dışarıda bırakılanlar ve nedenleri:
+     .marquee-track  yatay kayan şerit, tasarımı bu
+     .folio-top      iki parçalı etiket satırı, kısa metin
+     .plate-acc      aynı desen
+     .logos          logo ızgarası, metin değil
+   ========================================================================== */
+/* DİKKAT — hangi ızgara tek sütuna iner, hangisi inmez.
+
+   Bir ızgaranın çok sütunlu olması onu "bozuk" yapmıyor. İki tür var:
+
+   SATIR  ilk sütunu `auto` ya da küçük sabit: işaretçi/küçük resim +
+          metin. Tasarımın kendisi bu. Tek sütuna indirilirse resim
+          devleşir, etiket çıplak metne düşer ve kart dağılır.
+          `.kat-gezinme-oge` (84px + 1fr), `.flow-step` (4em + 1fr),
+          `.asama` (auto + 1fr), `.index-row` (auto 1fr auto) böyle.
+          BUNLARA DOKUNULMUYOR.
+
+   SÜTUN  iki ya da üç dolu içerik sütunu. 390px'de hücreler 140-195px'e
+          düşüyor ve metin satıra iki kelime alıyor. Bunlar iniyor.
+
+   7 Ağustos'ta `.kat-gezinme-oge` yanlışlıkla ilk gruba değil ikinciye
+   konmuştu; kategori kartlarının düzeni bozuldu. Ölçüm "2 sütun, hücre
+   175px" dediği için içerik ızgarası sanılmıştı. */
+@media (max-width: 760px) {
+  .pencere-bas,
+  .hk-bolum,
+  .hk-ikili-kart,
+  .hk-ikili,
+  .hat,
+  .konsept-satir,
+  .pserit,
+  .kat-kapak,
+  .duo,
+  .mz-bant {
+    display: block;
+    grid-template-columns: 1fr;
+  }
+
+  /* Blok akışına dönen ızgara hücreleri arasında dikey boşluk kalsın */
+  .pencere-bas > * + *,
+  .hk-bolum > * + *,
+  .hk-ikili > * + *,
+  .hat > * + *,
+  .konsept-satir > * + *,
+  .kat-kapak > * + *,
+  .duo > * + * { margin-top: var(--s4); }
+
+  /* Panel şeridi: masaüstünde sabit yükseklikli yatay şerit
+     (`height: clamp(400px,46vh,620px)` + `overflow: hidden`), üzerine
+     gelince arkadaki sahne değişiyor. Telefonda alt alta iniyor; kabın
+     sabit yüksekliği ve taşma gizlemesi kalırsa 7 panelden yalnız BİRİ
+     görünür, kalan altısı kesilir. İkisini de serbest bırak. */
+  .pserit {
+    height: auto;
+    overflow: visible;
+    width: auto;
+    margin-inline: 0;
+  }
+  .pserit-panel {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    margin-bottom: 12px;
+  }
+  .pserit-panel:last-child { margin-bottom: 0; }
+  /* Sahne mutlak konumlu ve tek; alt alta düzende her panel kendi
+     görselini taşımalı, ortak sahne gizleniyor. */
+  .pserit-sahne { display: none; }
+}
+
+/* Künye satırları telefonda alt alta. `.dl div` yatay flex; `dt` 8.5em
+   yer kaplayınca `dd`ye 211px kalıyor ve içerik satıra iki kelime
+   düşürerek akıyordu. Etiket üstte, içerik altta okunur. */
+@media (max-width: 760px) {
+  .dl div { display: block; }
+  .dl dt { min-width: 0; margin-bottom: 2px; }
+}
+
+/* ==========================================================================
+   PROJE BANDI — metin ve fotoğraf eşleşmesi (7 Ağustos)
+   ──────────────────────────────────────────────────────────────────────────
+   Ceylan hanım: "Görseller altta word düzeni gibi olmuş, amatör duruyor."
+   ve "Metin, görsel, yazı yazı gidiyor daha dinamik olabilir."
+
+   Proje sayfalarında önce metin yığını, sonra altta fotoğraf ızgarası
+   vardı. Artık her kapsam maddesi kendi fotoğrafıyla yan yana duruyor.
+
+   Bant tipini fotoğrafın KENDİ ORANI seçiyor:
+     dikey fotoğraf  → dar sütun, metin yanında
+     yatay fotoğraf  → geniş sütun, metin yanında
+   İkisinde de fotoğraf doğal oranında; kırpma yok.
+
+   Koyu bant (`.field`) içinde durduğu için metin rengi bant paletinden.
+   ========================================================================== */
+.proje-akis {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 5vw, 72px);
+  margin-top: clamp(32px, 4vw, 56px);
+}
+
+.proje-bant {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(24px, 3.5vw, 56px);
+  align-items: center;
+}
+/* Dikey fotoğraf daha az yer kaplasın, yoksa metni ezer */
+.proje-bant-dikey { grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr); }
+
+/* Sırayla sağ-sol: tek satırlık ritim, tek yönlü akış sıkıcı duruyor */
+.proje-bant:nth-child(even) .proje-bant-foto { order: 2; }
+
+.proje-bant-foto { margin: 0; }
+.proje-bant-foto img {
+  width: 100%;
+  height: auto;              /* doğal oran korunuyor, kırpma yok */
+  display: block;
+  border: 1px solid var(--bant-cizgi);
+}
+
+/* Metin rengi ZEMİNE göre. Bant hem açık zeminde (giriş) hem koyu bantta
+   (kapsam) kullanılıyor; tek renk yazmak açık zeminde 1.93:1 veriyordu,
+   yani okunmuyordu. Varsayılan açık zemin, `.field` içinde koyu bant. */
+.proje-bant-metin {
+  color: var(--soluk);            /* krem üstünde 5.14:1 */
+  margin: 0;
+  max-width: 46ch;
+}
+.field .proje-bant-metin { color: var(--bant-soluk); }   /* koyu bantta 7.41:1 */
+
+.proje-kapanis {
+  color: var(--soluk);
+  margin-top: clamp(36px, 5vw, 64px);
+  max-width: 60ch;
+}
+.field .proje-kapanis { color: var(--bant-soluk); }
+
+/* Çerçeve çizgisi de zemine göre: koyu çizgi krem zeminde görünmüyordu */
+.proje-bant-foto img { border-color: var(--cizgi); }
+.field .proje-bant-foto img { border-color: var(--bant-cizgi); }
+
+@media (max-width: 760px) {
+  .proje-akis { gap: 32px; }
+  .proje-bant,
+  .proje-bant-dikey { grid-template-columns: 1fr; gap: 16px; }
+  /* Telefonda fotoğraf daima metnin ÜSTÜNDE: sıra değişimi kafa karıştırır */
+  .proje-bant:nth-child(even) .proje-bant-foto { order: 0; }
+  .proje-bant-metin { max-width: none; }
+}
+
+/* Atölye kartı telefonda daha az iç boşluk.
+   `padding: clamp(28px,2.8vw,44px)` 350px'lik kapta iki yandan 56px yiyor,
+   metne 277px kalıyordu. Ölçüm: etkinlik sayfalarında 9 blok bu yüzden
+   dar. Kullanıcı: "mobilde çoğu yazı yatayda çok kısa dikey olarak uzun". */
+@media (max-width: 760px) {
+  .mz-atolye { padding: 20px 16px; }
+  .mz-metin { max-width: none; }
+}
+
+/* Mozaikte yetim kalan son kare tam genişliğe yayılır.
+   Izgara iki sütunlu; öğe sayısı tek olduğunda sonuncusu yalnız kalıyor
+   ve yanında boş hücre bırakıyordu (etkinlik-cocuk: 21 öğe).
+   Metni olmayan bir fotoğraf için doğru davranış onu kapanış karesi
+   olarak tam genişlikte göstermek.
+
+   `:nth-child(odd)` iki sütunlu ızgarada birinci sütuna denk gelen
+   öğeyi yakalar; `:last-child` ile birleşince yalnız kalanı verir. */
+.kat-mozaik > .mz-foto:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }

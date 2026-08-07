@@ -1,7 +1,14 @@
 /* SEO denetimi — 20 sayfa. Yayına çıkmadan önce bakılması gerekenler. */
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { mkdirSync } from 'node:fs';
+const KOK_ = fileURLToPath(new URL('../../', import.meta.url));
+const SITE_ = KOK_ + 'site/';
+const RAPOR_ = KOK_ + '_audit/rapor/';
+mkdirSync(RAPOR_, { recursive: true });
 
-const KOK = 'c:/Users/Gaming/Desktop/Afloday/';
+
+const KOK = KOK_;
 const SITE = KOK + 'site/';
 const sayfalar = readdirSync(SITE).filter((f) => f.endsWith('.html'));
 const bulgu = [];

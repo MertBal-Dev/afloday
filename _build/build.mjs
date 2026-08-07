@@ -4,7 +4,25 @@ import path from 'node:path';
 import { site, workshops, team, projects, assets,
          surdurulebilirlikGiris, canliAdres } from './data.mjs';
 import { layout, opener, logoWall, heroVideo, folio, marquee, galeriBolumu, resim, heroSlayt, homeGaleriVitrin, awwwardsGaleri } from './templates.mjs';
+import { oran as gorselOraniHam, gorselOlculeri as gorselOlculeriTablo } from './gorsel-olculeri.mjs';
 import { etkinlikSayfasi, etkinlikKategorileri, toplamAtolye } from './etkinlikler.mjs';
+
+/* `assets/img/...` yolundan manifest anahtarına çevirip oranı ver.
+   Bant tipini fotoğrafın kendi oranı seçiyor; dikeyse metin yanına,
+   yataysa metin altına geçiyor. Çerçeve fotoğrafa uymuyor, kompozisyon
+   fotoğrafa uyuyor. */
+const gorselAnahtar = (src) => String(src)
+  .replace(/^assets\/img\//, '').replace(/^rev2\//, '')
+  .replace(/\.(jpe?g|png|webp)$/i, '');
+
+const gorselOraniOku = (src) => gorselOraniHam(gorselAnahtar(src));
+
+/* `width`/`height` öznitelikleri düzen kaymasını (CLS) önlüyor ve
+   `verify.mjs` eksikse hata veriyor. Ölçü bilinmiyorsa 3:2 varsay. */
+const gorselOlcuOku = (src) => {
+  const o = gorselOlculeriTablo[gorselAnahtar(src)];
+  return o ? { en: o[0], boy: o[1] } : { en: 1200, boy: 800 };
+};
 import { kategoriKapak, kategoriMozaik, kategoriGezinme, kategoriDosyasi } from './etkinlik-tasarim.mjs';
 import { egitimKapak, egitimGezinme, egitimDosyasi } from './egitim-tasarim.mjs';
 import { panelSerit } from './panel-serit.mjs';
@@ -148,6 +166,13 @@ ${heroSlayt(heroSlaytlari)}
            açıklama yazmamış, uydurmuyoruz. */ ''}
       ${opener('Eğitim & Gelişim', 'Eğitim &amp; Gelişim Programlarımız', '')}
       <div class="egitim-vitrin" style="margin-top:clamp(40px,5vw,72px)">
+        ${/* Anasayfa eğitim kartları KASITLI OLARAK dokunulmadı.
+             Vitrin görsellerinin ikisi dikey (900×1600, 1067×1600) ve
+             4/3 kartta %58'e varan kırpma oluyor. Ama Ceylan hanım bu
+             kartları gördü ve bir şey demedi; geri bildirimde yer almayan
+             bir yeri değiştirmek gereksiz risk. Karar kullanıcının.
+             Değiştirilecekse: kart oranını `gorselOlcuOku` ile fotoğrafın
+             kendi oranına bağlamak yeterli. */ ''}
         ${egitimler.map(e => `<a class="egitim-kart" href="${egitimDosyasi(e)}" data-reveal="stagger">
           <div class="egitim-kart-gorsel">
             ${resim({ gorsel: e.vitrinGorsel || e.gorsel, alt: e.vitrinAlt || e.alt, kucuk: true })}
@@ -202,14 +227,16 @@ ${heroSlayt(heroSlaytlari)}
   ${/* Galerinin tamamı kendi sayfasında (/galeri, 21 kare). Burada tek
        şeritlik tanıtım duruyor: 3 kare, oraya bağlanıyor.
        Karar günlüğü: madde 23 (ayrı sayfa) ve madde 25 (şerit düzeni). */ ''}
-  <section class="section rule-top">
-    <div class="wrap">
-      ${opener('Afloday', 'Galeri Vitrini', 'Doğa temelli kurumsal eğitimlerimiz ve etkinliklerimizden seçilmiş kareler.')}
-      <div style="margin-top:clamp(32px,4vw,56px)" data-reveal>
-        ${homeGaleriVitrin(galeriRev2)}
-      </div>
-    </div>
-  </section>
+  ${/* ANASAYFA GALERİ VİTRİNİ KALDIRILDI — 7 Ağustos.
+
+       Ceylan hanım 5 Ağustos'ta "Galeri sayfasını kapatabiliriz" dedi;
+       sayfa kapatıldı ama anasayfadaki vitrin kalmıştı. Denetimde
+       anasayfanın en büyük fotoğraf yığını olarak çıktı: arka arkaya
+       42 kare, aralarında metin yok — tam olarak "görseller altta word
+       düzeni gibi olmuş" şikâyetinin biçimi.
+
+       Kullanıcı kararı: vitrin de kalksın, gerekirse geri eklenir.
+       Kareler silinmedi, `galeri-rev2.mjs` ve dosyalar duruyor. */ ''}
 
   <!-- 8 · REFERANSLAR — orijinaldeki gibi logo duvarı.
        Müşteri notu: "Marka logoları kalsın derim." -->
@@ -651,20 +678,64 @@ for (const p of projects.filter(x => x.slug !== 'proje-gelecegi-yesil-tasarla'))
   const G = (f) => `assets/img/surdurulebilirlik/${f}`;
   const gal = orijinalGorsel[p.id === 'gulumseyen-yarinlar' ? 'gulumseyen-yarinlar-projesi' : 'gelecegi-tasarla'] || [];
 
+  /* KAPSAM MADDELERİ FOTOĞRAFLA EŞLEŞİYOR — 7 Ağustos.
+
+     Ceylan hanım: "atölyeler çok yazı yazı kalmış. Görseller altta word
+     düzeni gibi olmuş, amatör duruyor." ve "Metin, görsel, yazı yazı
+     gidiyor daha dinamik olabilir. Aralara görseller girebilir."
+
+     Şikâyet bir sayfaya değil bir KALIBA: önce metin yığını, sonra altta
+     fotoğraf ızgarası. Bu sayfa o kalıbı adı geçen sayfadan daha ağır
+     taşıyordu — 10 metin bloğu, sonra %61'den itibaren 12 fotoğraf.
+
+     Çözüm için yeni cümle gerekmedi: sayfada zaten dört tarihli madde ve
+     on iki fotoğraf vardı, eşleştirildiler. Kalanlar galeride duruyor.
+
+     Numaralı sayaçlar (01/02/03) kaldırıldı: "ara yönlendirmeler var
+     10 atölye, 7 kişi ekip vs onlar olmasın". Fotoğraf zaten görsel
+     çapa görevi görüyor, numaraya gerek kalmadı. */
+  /* Kapak fotoğrafı `surdurulebilirlik/koruncuk-01.jpg`, galerinin ilk
+     karesi `atolye-koruncuk/01.jpg` — ikisi AYNI fotoğrafın iki kopyası,
+     farklı klasörlerde. Bant galerinin başından alınca aynı kare sayfada
+     iki kez çıkıyordu. Kullanıcının tespiti: "hem baştaki kısımda aynı
+     görsel kullanılmış hem de kapsamın başında aynı görsel."
+     Bant ikinci kareden başlıyor. */
+  const KAPAK_TEKRARI = 1;
+  const havuz = gal.filter((x) => !x.endsWith('/01.jpg'));
+
+  /* Fotoğraflar sayfaya DAĞITILIYOR, iki yerde toplanmıyor.
+
+     Önce üstte tek fotoğraf + dört uzun paragraf, altta sekiz fotoğraflık
+     blok vardı. Yığın 12'den 8'e inmişti ama desen aynıydı: "yazı yazı",
+     sonra "görseller altta". Ceylan hanımın şikâyeti sayıya değil desene.
+
+     Şimdi: giriş paragrafları ve kapsam maddeleri kendi fotoğraflarıyla
+     eşleşiyor, geriye kalan az sayıda kare galeride duruyor. */
+  const girisFoto = havuz.slice(0, p.paras.length);
+  const eslesen = havuz.slice(girisFoto.length, girisFoto.length + (p.kapsam ? p.kapsam.maddeler.length : 0));
+  const kalanGal = havuz.slice(girisFoto.length + eslesen.length);
+
   const listeBlok = p.kapsam ? `
   <section class="section field">
     <div class="wrap">
       <div class="stack-l" data-reveal>
         <p class="eyebrow">Kapsam</p>
         <h2 class="h2">${p.kapsam.baslik}</h2>
-        <div class="flow">
-          ${p.kapsam.maddeler.map((m, i) => `<div class="flow-step" style="grid-template-columns:4em 1fr">
-            <span class="flow-num">${String(i + 1).padStart(2, '0')}</span>
-            <p class="body" style="color:var(--field-muted)">${m}</p>
-          </div>`).join('')}
-        </div>
-        ${p.kapanis ? `<p class="lede" style="color:var(--field-muted)">${p.kapanis}</p>` : ''}
       </div>
+      <div class="proje-akis">
+        ${p.kapsam.maddeler.map((m, i) => {
+    const foto = eslesen[i];
+    const dik = foto ? gorselOraniOku(foto) < 1 : false;
+    return `<div class="proje-bant${dik ? ' proje-bant-dikey' : ''}" data-reveal style="--d:${i * 60}ms">
+          ${foto ? `<figure class="proje-bant-foto">
+            <img src="${foto}" alt="${p.alt}" loading="lazy" decoding="async"
+              width="${gorselOlcuOku(foto).en}" height="${gorselOlcuOku(foto).boy}">
+          </figure>` : ''}
+          <p class="body proje-bant-metin">${m}</p>
+        </div>`;
+  }).join('\n        ')}
+      </div>
+      ${p.kapanis ? `<p class="lede proje-kapanis" data-reveal>${p.kapanis}</p>` : ''}
     </div>
   </section>` : '';
 
@@ -770,22 +841,30 @@ ${folio({
 
   <section class="section">
     <div class="wrap">
-      <div class="duo">
-        <div class="duo-wide body stack" data-reveal>
-          <p class="lede">${surdurulebilirlikGiris}</p>
-          ${p.paras.map(x => `<p>${x}</p>`).join('\n          ')}
-        </div>
-        <figure class="duo-side plate" data-reveal style="--d:120ms; margin:0">
-          <div class="plate-frame plate-frame-tall"><img src="${G(p.img)}" alt="${p.alt}" loading="lazy" width="800" height="900"></div>
-          <figcaption class="plate-label">
-            <p class="plate-acc"><span>Proje</span><span>Afloday</span></p>
-          </figcaption>
-        </figure>
+      <div class="stack-l" data-reveal>
+        <p class="lede proje-giris">${surdurulebilirlikGiris}</p>
+      </div>
+      ${/* Giriş paragrafları da fotoğrafla eşleşiyor. Önce dört paragraf
+           yan yana tek fotoğrafla duruyordu; sayfanın üst yarısı düz
+           metin duvarıydı. Ceylan hanım: "atölyeler çok yazı yazı kalmış",
+           "aralara görseller girebilir". */ ''}
+      <div class="proje-akis proje-akis-acik">
+        ${p.paras.map((x, i) => {
+    const foto = girisFoto[i];
+    const dik = foto ? gorselOraniOku(foto) < 1 : false;
+    return `<div class="proje-bant${dik ? ' proje-bant-dikey' : ''}" data-reveal style="--d:${i * 60}ms">
+          ${foto ? `<figure class="proje-bant-foto">
+            <img src="${foto}" alt="${p.alt}" loading="lazy" decoding="async"
+              width="${gorselOlcuOku(foto).en}" height="${gorselOlcuOku(foto).boy}">
+          </figure>` : ''}
+          <p class="body proje-bant-metin">${x}</p>
+        </div>`;
+  }).join('\n        ')}
       </div>
     </div>
   </section>
 ${listeBlok}${mevsimBlok}${katkiBlok}${bilimBlok}${stratejiBlok}
-  ${galeriBolumu(gal, p.title)}
+  ${galeriBolumu(kalanGal, p.title)}
 ${davetBlok}`;
 
   add(`${p.slug}.html`, layout({

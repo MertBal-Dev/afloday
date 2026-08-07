@@ -22,6 +22,7 @@ _audit/*.jpeg
 _audit/*.jpg
 _audit/orijinal-gorseller.json
 _audit/gorsel-boyut.json
+_audit/rapor/
 
 # Eski taslaklar
 _arsiv/
@@ -54,3 +55,6 @@ tsconfig.tsbuildinfo
 # Varlıklar site/assets'te kaynak olarak duruyor; public/ altına derleme
 # öncesi kopyalanıyor (bkz. _build/varliklar.mjs). Git'te iki kopya tutmuyoruz.
 public/
+
+# Claude Code makine-yerel ayarları — izin kayıtları oturuma özel, depoya girmez
+.claude/

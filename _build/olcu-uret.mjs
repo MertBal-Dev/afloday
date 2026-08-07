@@ -11,22 +11,34 @@ import sharp from 'sharp';
 import { readdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
-const KOK = 'site/assets/img/rev2';
+/* Tarama kökü `img` — eskiden yalnız `img/rev2` taranıyordu ve ekip,
+   sürdürülebilirlik, koruncuk klasörlerindeki fotoğraflar kayıt dışıydı.
+   Bant motoru oranı bilmediği fotoğrafa varsayılan uygular ve kırpar,
+   o yüzden havuzun tamamı gerekiyor.
+
+   Anahtar biçimi: `rev2/` altındakiler eski kısa hâliyle kalıyor (yüzlerce
+   çağrı ona bakıyor), diğerleri `img/`ye göreli tam yolla giriyor. */
+const IMG = 'site/assets/img';
+const REV2 = IMG + '/rev2';
 const olcu = {};
 
 const gez = async (d) => {
   for (const e of readdirSync(d, { withFileTypes: true })) {
     const p = path.join(d, e.name);
     if (e.isDirectory()) { await gez(p); continue; }
-    if (!/\.jpe?g$/i.test(e.name)) continue;
-    const m = await sharp(p).metadata();
-    const anahtar = p.split(path.sep).join('/')
-      .replace(KOK + '/', '')
-      .replace(/\.jpe?g$/i, '');
+    if (!/\.(jpe?g|png)$/i.test(e.name)) continue;
+    if (/-\d+w\./.test(e.name)) continue;              /* türev boyutlar */
+    let m;
+    try { m = await sharp(p).metadata(); } catch { continue; }
+    if (!m.width || !m.height) continue;
+    const duz = p.split(path.sep).join('/');
+    const anahtar = duz.startsWith(REV2 + '/')
+      ? duz.replace(REV2 + '/', '').replace(/\.(jpe?g|png)$/i, '')
+      : duz.replace(IMG + '/', '').replace(/\.(jpe?g|png)$/i, '');
     olcu[anahtar] = [m.width, m.height];
   }
 };
-await gez(KOK);
+await gez(IMG);
 
 const satirlar = Object.entries(olcu).sort(([a], [b]) => a.localeCompare(b))
   .map(([k, [w, h]]) => `  '${k}': [${w}, ${h}],`).join('\n');

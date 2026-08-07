@@ -1,8 +1,15 @@
 /* Menü düzleşince hiçbir sayfa erişilemez hâle geldi mi?
    Dosyalar canlı adreslerle yazılıyor, `href="x.html"` aramak yanlış. */
 import { readFileSync, readdirSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { mkdirSync } from 'node:fs';
+const KOK_ = fileURLToPath(new URL('../../', import.meta.url));
+const SITE_ = KOK_ + 'site/';
+const RAPOR_ = KOK_ + '_audit/rapor/';
+mkdirSync(RAPOR_, { recursive: true });
 
-const KOK = 'c:/Users/Gaming/Desktop/Afloday/site/';
+
+const KOK = SITE_;
 const sayfalar = readdirSync(KOK).filter((f) => f.endsWith('.html'));
 const metin = Object.fromEntries(sayfalar.map((f) => [f, readFileSync(KOK + f, 'utf8')]));
 const adres = (f) => (f === 'index.html' ? '/' : f.replace(/\.html$/, ''));

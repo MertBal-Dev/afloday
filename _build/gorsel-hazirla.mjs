@@ -14,7 +14,7 @@
    Betik idempotent: çıktı kaynaktan yeniyse dosyayı atlar. */
 
 import { mkdir, readdir, readFile, stat, writeFile } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import sharp from 'sharp';
@@ -27,9 +27,45 @@ const uzunYol = (p) =>
     ? '\\\\?\\' + path.resolve(p).replace(/\//g, '\\')
     : p;
 
-const KAYNAK =
-  process.env.GORSEL_KAYNAK ||
-  'C:/Users/Gaming/Downloads/wetransfer_afloday-web-metin-ve-gorseller_2026-08-04_1711/Afloday Web Metin ve Görseller';
+/* Kaynak arşivin yeri makineden makineye değişiyor; buraya mutlak yol
+   gömmek bir kez yapıldı ve taşınınca kırıldı. Sıra: ortam değişkeni,
+   sonra bilinen indirme klasörlerinde arama. Bulunamazsa açıkça söyle. */
+const kaynakBul = () => {
+  if (process.env.GORSEL_KAYNAK) return process.env.GORSEL_KAYNAK;
+
+  const ev = process.env.USERPROFILE || process.env.HOME || '';
+  const adaylar = [];
+  for (const indir of [path.join(ev, 'Downloads'), path.join(ev, 'İndirilenler')]) {
+    let alt;
+    try { alt = readdirSync(indir, { withFileTypes: true }); } catch { continue; }
+    for (const d of alt) {
+      if (!d.isDirectory() || !/^wetransfer_afloday/i.test(d.name)) continue;
+      /* Arşiv tek bir klasör sarmalıyor: .../wetransfer_.../Afloday Web Metin ve Görseller */
+      const dis = path.join(indir, d.name);
+      for (const ic of readdirSync(dis, { withFileTypes: true })) {
+        if (ic.isDirectory()) adaylar.push(path.join(dis, ic.name));
+      }
+    }
+  }
+  /* Beklenen alt klasörleri taşıyan ilk aday doğrudur */
+  for (const a of adaylar) {
+    try {
+      const ic = readdirSync(a);
+      if (ic.includes('Seçilmiş Olanlar') || ic.includes('Galeri')) return a;
+    } catch { /* okunamadı, sıradaki */ }
+  }
+  return null;
+};
+
+const KAYNAK = kaynakBul();
+if (!KAYNAK) {
+  console.error(
+    'Görsel kaynak arşivi bulunamadı.\n' +
+    'Çözüm: GORSEL_KAYNAK ortam değişkenine arşivin yolunu ver, örnek:\n' +
+    '  GORSEL_KAYNAK="C:/.../Afloday Web Metin ve Görseller" node _build/gorsel-hazirla.mjs'
+  );
+  process.exit(1);
+}
 
 const HEDEF = path.join(process.cwd(), 'site', 'assets', 'img', 'rev2');
 
