@@ -189,7 +189,26 @@ button { font: inherit; color: inherit; }
 .field .lede, .field .caption { color: var(--field-muted); }
 
 /* --- 4. Düzen ----------------------------------------------------------- */
+/* İÇERİK SÜTUNU ORANTILI, SABİT DEĞİL.
+
+   Eski kural `max-width: 1440px` idi. Geniş ekranda güzel çalışıyordu:
+   1900 piksellik ekranda içerik 1440, iki yanda 230'ar piksel boşluk,
+   oran %76. Ama ekran küçüldükçe max-width devreden çıkıyor ve içerik
+   kenardan kenara yayılıyor — 1097'de oran %96'ya fırlıyor.
+
+   Ceylan hanımın sözü tam buydu: "bir çizgi çizsek, yazılar senin tam
+   ekranındaki aralıkta olmalı; böyle yayılınca büyük büyük geliyor."
+   Şikâyet punto değil, satırın genişlemesiydi.
+
+   Masaüstünde sütun artık ORANLA belirleniyor (%76) ve 1440'ta duruyor.
+   Böylece 1097'de de, 1900'de de, 2560'ta da göz aynı ölçüyü görüyor.
+   1000 pikselin altında oran bırakılıyor: telefonda %76 sütun 274 piksele
+   iner ve okunmaz olur; orada sabit küçük kenar boşluğu doğru olan. */
 .wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
+@media (min-width: 1000px) {
+  .wrap { width: min(76vw, var(--wrap)); padding-inline: 0; }
+  .wrap-narrow { width: min(62vw, 1100px); }
+}
 .wrap-narrow { max-width: 1100px; }
 
 .section { padding-block: clamp(64px, 7.5vw, 128px); }
@@ -955,7 +974,7 @@ a.index-row:hover .index-meta::after, a.index-row:focus-visible .index-meta::aft
 /* Başlık kendi katı bandında durur — fotoğrafın üstüne binen şeffaf gezinme
    katmanı, jenerik "premium hero" imzasının en belirgin parçasıydı. */
 :root { --hdr-h: 88px; }
-@media (max-width: 1199px) { :root { --hdr-h: 68px; } }
+@media (max-width: 999px) { :root { --hdr-h: 68px; } }
 
 /* Fixed — böylece video hero bandın altından değil, arkasından başlar. */
 .hdr {
@@ -994,7 +1013,7 @@ body:has(.hero-video) .hdr:not(.is-solid) {
 body:has(.hero-video) .hdr:not(.is-solid)::after { opacity: 0; }
 body:has(.hero-video) .hdr:not(.is-solid) .hdr-logo img { filter: brightness(0) invert(1); }
 .hdr.is-solid { box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 10px 30px -24px rgba(20,18,15,.5); }
-@media (min-width: 1200px) { .hdr.is-solid .hdr-in { height: 68px; } .hdr.is-solid .hdr-logo img { height: 28px; } }
+@media (min-width: 1000px) { .hdr.is-solid .hdr-in { height: 68px; } .hdr.is-solid .hdr-logo img { height: 28px; } }
 
 .nav { display: none; margin-left: auto; }
 .nav > ul { display: flex; gap: clamp(14px, 1.5vw, 30px); list-style: none; margin: 0; padding: 0; }
@@ -1027,7 +1046,17 @@ body:has(.hero-video) .hdr:not(.is-solid) .hdr-cta .btn {
   background: transparent; color: var(--beyaz); border-color: rgba(255,255,255,.55);
 }
 body:has(.hero-video) .hdr:not(.is-solid) .hdr-cta .btn:hover { background: var(--beyaz); color: var(--ink); border-color: var(--beyaz); }
-@media (min-width: 1200px) { .nav, .hdr-cta { display: block; } }
+/* MASAÜSTÜ MENÜ EŞİĞİ 1200 → 1000.
+
+   Eşik 1200'ken Ceylan hanımın dizüstünde hamburger çıkıyordu: ekranı
+   1920x1200 ama tarayıcısı %175 yakınlaştırma kullanıyor ve bu, CSS
+   piksel cinsinden 1097 genişlik demek. Yani 1200'ün altında kalıyor.
+   Dizüstünde mobil menü görmek "site küçük ekrana göre yapılmış" hissi
+   veriyordu; şikâyetin bir parçası buydu.
+
+   Eşik menünün gerçekten sığdığı en dar noktaya çekildi, tahminle değil
+   ölçümle: 7 madde + logo + düğme 1000 pikselde taşmadan duruyor. */
+@media (min-width: 1000px) { .nav, .hdr-cta { display: block; } }
 
 .burger {
   margin-left: auto; position: relative;
@@ -1042,7 +1071,7 @@ body:has(.hero-video) .hdr:not(.is-solid) .hdr-cta .btn:hover { background: var(
 .burger i:nth-child(2) { top: 27px; width: 13px; }
 .burger[aria-expanded="true"] i:nth-child(1) { transform: translateY(3px) rotate(45deg); }
 .burger[aria-expanded="true"] i:nth-child(2) { width: 20px; transform: translateY(-3px) rotate(-45deg); }
-@media (min-width: 1200px) { .burger { display: none; } }
+@media (min-width: 1000px) { .burger { display: none; } }
 /* Menü açıkken başlık her zaman koyu metinli katı zemin olur */
 body.nav-open .hdr { background: var(--mount) !important; color: var(--ink) !important; }
 body.nav-open .hdr .hdr-logo img { filter: none !important; }
