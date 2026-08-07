@@ -4735,12 +4735,25 @@ a.index-row .index-meta::after,
    sütunun dışında kalan payda duruyor. `z-index: 0` ile de metnin
    arkasındalar, kesişse bile üste çıkmıyorlar. */
 @media (min-width: 1000px) {
-  main > section:nth-of-type(odd) { position: relative; }
-  main > section:nth-of-type(odd) > * { position: relative; z-index: 1; }
+  /* ÇOCUKLARA DOKUNULMUYOR — 7 Ağustos, kırıp düzeltilen hata.
+
+     Önce `main > section:nth-of-type(odd) > * { position: relative }`
+     yazılmıştı, motifin altta kalması için. Ama hero 1. bölüm, yani tek
+     sıra: kural hero'nun `position: absolute` olan video katmanını
+     `relative`e çevirdi, video akışa girdi, metin aşağı düştü ve altta
+     kocaman yeşil bir boşluk kaldı.
+
+     Doğrusu çocuklara hiç dokunmamak: motif `z-index: -1`e iniyor,
+     bölüme `isolation: isolate` veriliyor ki negatif katman sayfanın
+     zeminine kaçmasın. Çocuklar olduğu gibi kalıyor. */
+  main > section:nth-of-type(odd) { position: relative; isolation: isolate; }
+  /* Video hero'nun kendi katman düzeni var; motif oraya girmiyor. */
+  main > section.hero-video:nth-of-type(odd)::before,
+  main > section.slider-wrapper:nth-of-type(odd)::before { content: none; }
   main > section:nth-of-type(odd)::before {
     content: '';
     position: absolute; inset: 0;
-    z-index: 0; pointer-events: none;
+    z-index: -1; pointer-events: none;
     background-repeat: no-repeat;
     /* Kenarlara yaslı: metin sütunu ortada, motifler payda. */
     background-position: right -2% top 6%, left -3% bottom 4%, right 8% bottom 30%;
