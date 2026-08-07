@@ -69,6 +69,25 @@ for (const file of files) {
     }
   }
 
+  /* --- srcset hedefleri --------------------------------------------------
+     `src`'ye bakmak yetmiyor. `resim()` her görsel için `-800.webp` ve
+     1600 piksellik `.webp` sürümlerini `<source srcset>` içinde veriyor;
+     tarayıcı geniş ekranda büyük olanı istiyor. Tam boy webp yalnız kapak
+     karelerinde üretilmişti, bu yüzden 7 Ağustos'ta kapak değişince
+     `kurumsal-gonulluluk-etkinlikleri-6.webp` 404 verdi ve verify sustu:
+     `src` (.jpg) yerinde olduğu için denetim temiz görünüyordu. Sayfa
+     çalışıyordu ama görsel jpg'den düşüyordu ve konsolda 404 vardı. */
+  for (const m of html.matchAll(/<source\b[^>]*srcset="([^"]+)"/g)) {
+    for (const parca of m[1].split(',')) {
+      const yol = parca.trim().split(/\s+/)[0];
+      if (!yol || /^https?:/.test(yol)) continue;
+      totalImgs++;
+      if (!(await exists(path.join(SITE, yol)))) {
+        flag(file, 'IMG', `srcset dosyası yok: ${yol}`);
+      }
+    }
+  }
+
   /* --- bağlantılar --- */
   for (const m of html.matchAll(/<a\b[^>]*href="([^"]+)"/g)) {
     totalLinks++;

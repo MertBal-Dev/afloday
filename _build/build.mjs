@@ -258,7 +258,9 @@ ${heroSlayt(heroSlaytlari)}
   add('index.html', layout({
     title: 'Afloday — Doğadan Gelişim ve Hobi Atölyeleri',
     desc: 'Afloday Doğadan Gelişim Atölyesi olarak; çiçeklerin, doğanın iyileştirici etkisini eğitimle, atölyeyle, özgün tasarımlarla iş ve yaşam alanlarına taşıyoruz.',
-    current: '', body, canonical: '',
+    /* Anasayfa menüde bir madde; boş `current` ile hiçbiri işaretlenmiyordu.
+       Ekran okuyucu "şu an bu sayfadasınız" bilgisini buradan alıyor. */
+    current: 'index.html', body, canonical: '',
     schema: {
       '@context': 'https://schema.org', '@type': 'Organization',
       name: site.name, alternateName: 'Afloday Doğadan Gelişim Atölyesi',
@@ -1033,7 +1035,12 @@ ${folio({
   add('proje-gelecegi-yesil-tasarla.html', layout({
     title: 'Geleceği Doğadan Tasarla Hareketi — Afloday',
     desc: kirp(g.heroAlt + ' ' + g.yaklasim.paragraflar[0], 155),
-    current: 'surdurulebilirlik.html', body, canonical: 'proje-gelecegi-yesil-tasarla.html',
+    /* Menüde kendi maddesi var; `current` onu göstermeli. Burada
+       `surdurulebilirlik.html` yazıyordu ve sayfaya girince alt çizgi
+       Sürdürülebilirlik'in altında çıkıyordu. `header()` eşleşmeyi
+       menüdeki `href` ile yapıyor, o yüzden değer menüdeki adresin
+       birebir aynısı olmak zorunda (`data.mjs` → nav). */
+    current: 'proje-gelecegi-yesil-tasarla.html', body, canonical: 'proje-gelecegi-yesil-tasarla.html',
     ogImage: `assets/img/rev2/secilmis/${gorselSlug(g.yaklasim.gorsel)}.jpg`,
   }));
 }

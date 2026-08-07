@@ -10,19 +10,24 @@
    Kategorisi çözülemeyen tek dosya (thumbnail_IMG_0624.jpg) dışarıda. */
 export const etkinlikGorselleri = {
   'gonulluluk': [
-    { slug: 'etkinlik/kurumsal-gonulluluk-etkinlikleri-1', kapak: true },
+    /* Kapak 1'den 6'ya geçti (7 Ağustos): 1 numara havuzun en dikey karesi,
+       geniş bantta yanında en çok boşluğu o bırakıyordu. 1 numara kapak
+       olmaktan çıktı ama SİLİNMEDİ — galeriye indi, sayfada duruyor. */
+    { slug: 'etkinlik/kurumsal-gonulluluk-etkinlikleri-6', kapak: true },
+    { slug: 'etkinlik/kurumsal-gonulluluk-etkinlikleri-1', kapak: false },
     { slug: 'etkinlik/kurumsal-gonulluluk-etkinlikleri-10', kapak: false },
     { slug: 'etkinlik/kurumsal-gonulluluk-etkinlikleri-2', kapak: false },
     { slug: 'etkinlik/kurumsal-gonulluluk-etkinlikleri-3', kapak: false },
     { slug: 'etkinlik/kurumsal-gonulluluk-etkinlikleri-4', kapak: false },
     { slug: 'etkinlik/kurumsal-gonulluluk-etkinlikleri-5', kapak: false },
-    { slug: 'etkinlik/kurumsal-gonulluluk-etkinlikleri-6', kapak: false },
     { slug: 'etkinlik/kurumsal-gonulluluk-etkinlikleri-7', kapak: false },
     { slug: 'etkinlik/kurumsal-gonulluluk-etkinlikleri-9', kapak: false },
   ],
   'cocuk': [
-    { slug: 'etkinlik/cocuk-atolye-etkinlikleri', kapak: true },
-    { slug: 'etkinlik/cocuk-atolye-etkinlikleri-1', kapak: false },
+    /* Kapak numarasızdan 1'e geçti (7 Ağustos) — gerekçe etkinlikler.mjs'de.
+       Numarasız kare silinmedi, galeriye indi. */
+    { slug: 'etkinlik/cocuk-atolye-etkinlikleri-1', kapak: true },
+    { slug: 'etkinlik/cocuk-atolye-etkinlikleri', kapak: false },
     { slug: 'etkinlik/cocuk-atolye-etkinlikleri-10', kapak: false },
     { slug: 'etkinlik/cocuk-atolye-etkinlikleri-2', kapak: false },
     { slug: 'etkinlik/cocuk-atolye-etkinlikleri-3', kapak: false },

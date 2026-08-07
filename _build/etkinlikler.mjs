@@ -220,7 +220,13 @@ export const etkinlikKategorileri = [
       'Katılımcılar atölyede ürettikleri ürünleri yalnızca tasarlamaz; aynı zamanda onların sosyal etki elçisine dönüşür. Ürünü yakın çevrelerine ulaştırırken gönüllülük hikâyesini ve desteklenen sivil toplum kuruluşunun amacını paylaşır, bağış yapılmasına aracılık eder.',
       'Böylece tek bir ürün, yeni bağışçılarla buluşarak gönüllülük bilincinin yayılmasına ve sosyal etkinin katlanarak büyümesine katkı sağlar.',
     ],
-    gorsel: 'Kurumsal Gönüllülük Etkinlikleri 1.jpg',
+    /* KAPAK 1 → 6 (7 Ağustos, kullanıcı seçimi). 1 numaralı kare havuzun
+       en dikey fotoğrafıydı (1600×1410, oran 1.135) ve geniş bantta yanında
+       en çok boş alanı o bırakıyordu. 6 numara 1600×1066, oran 1.50 —
+       banda oturuyor. Konu da daha doğru okunuyor: çelenk takmış kadınlar
+       ve çocuklar yan yana, yani gönüllülüğün buluşturduğu iki taraf.
+       1 numaralı kare kategori galerisinde duruyor, kaybolmadı. */
+    gorsel: 'Kurumsal Gönüllülük Etkinlikleri 6.jpg',
     alt: 'Kurumsal gönüllülük etkinliğinde birlikte üreten katılımcılar',
     /* Bu kategoride atölyeler tek tek anlatılmıyor; belgede tek satırda
        "Uygulanabilecek Atölyeler" olarak sayılıyor. */
@@ -302,7 +308,14 @@ export const etkinlikKategorileri = [
     giris: [
       'Kurumların aile dostu çalışan deneyimini güçlendirmek amacıyla tasarlanan doğa temelli çocuk atölyeleri, çalışanların çocuklarını doğayla buluşturan eğitici ve eğlenceli deneyimler sunar. Oyunlaştırılmış aktif öğrenme yaklaşımıyla hazırlanan etkinlikler; çocukların yaratıcılığını, keşfetme duygusunu ve çevre bilincini desteklerken ailelerin birlikte kaliteli zaman geçirmesine ve çalışan bağlılığının güçlenmesine katkı sağlar.',
     ],
-    gorsel: 'Çocuk Atölye Etkinlikleri.jpeg',
+    /* KAPAK numarasızdan 1'e geçti (7 Ağustos). Belge etkinlik
+       kategorilerine dosya adı atamıyor (görselden yalnız anasayfa hero'su
+       ve istatistik bloğu için söz ediyor), seçim kategorinin kendi
+       klasörüyle sınırlı. Numarasız kare 1600×1200, oran 1.333; şerit
+       sütunu 1.48 olduğu için yanında 96 piksel koyu alan kalıyordu.
+       1 numara 1394×942, oran 1.480 — sütuna birebir oturuyor. Konu da
+       daha net: sınıf, öğretmen, parmak kaldıran çocuklar, masada bitki. */
+    gorsel: 'Çocuk Atölye Etkinlikleri 1.jpg',
     alt: 'Çocuk atölyesinde doğal malzemelerle üreten çocuklar',
     atolyeler: [
       {

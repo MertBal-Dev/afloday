@@ -3982,57 +3982,46 @@ a.index-row .index-meta::after,
 .ss-gorsel { aspect-ratio: 1 / 1; }
 .plate-frame { aspect-ratio: 4 / 5; }
 
-/* PANEL ŞERİDİ — tek arka plan, üstünde etiket panelleri — gerekçe: docs/palet-gerekce.md */
+/* PANEL ŞERİDİ — hepsi bir arada, hiçbiri kırpılmadan
+   ────────────────────────────────────────────────────────────────────────
+   Ceylan hanım, 5 Ağustos: "Mesela buradaki gibi HEPSİNİ BİR ARADA
+   görebilir, tıklayınca içine girebiliriz."
+
+   Bu madde iki turdur yarım kalmıştı. Arka planda tek fotoğraf tutan
+   sürüm kırpmayı çözdü ama aynı anda yalnız BİR kare gösteriyordu;
+   kalan altısı imleç üzerine gelene kadar yoktu. Artık yedisi de aynı
+   anda duruyor.
+
+   HİZALI SATIR MATEMATİĞİ — kırpmanın sıfır olma sebebi:
+     satır  → `aspect-ratio: Σ(oranlar)`
+     kare   → `flex: <kendi oranı> 1 0`
+   Satır genişliği S ise yüksekliği S/Σ, karenin genişliği S·oran/Σ olur;
+   bölününce karenin oranı kendi oranına eşit çıkar. Çerçeve fotoğrafa
+   uyuyor, fotoğraf çerçeveye zorlanmıyor. Satır sonları düz, aralarda
+   boşluk yok — referanstaki "uç uca, saç teli çizgiyle ayrılmış" his
+   korunuyor. Aynı matematik `.galeri-serit`te de kullanılıyor.
+
+   `gap` KULLANILMIYOR. Boşluk eklenirse her kareden gap/n kadar pay
+   gider ve oran bozulur; ayırma işini saç teli kenarlık yapıyor. */
 .pserit {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  width: 100vw;
-  margin-inline: calc(50% - 50vw);
-  height: clamp(400px, 46vh, 620px);
+  display: block;
   background: var(--field);
-  overflow: hidden;
 }
 
-/* --- Arka plan sahnesi --- */
-.pserit-sahne { position: absolute; inset: 0; z-index: 0; }
-.pserit-kare {
-  position: absolute; inset: 0;
-  opacity: 0;
-  transition: opacity 620ms var(--ease-io);
-}
-.pserit-kare.is-aktif { opacity: 1; }
-.pserit-kare img,
-.pserit-kare picture {
-  width: 100%; height: 100%;
-  object-fit: cover; aspect-ratio: auto;
-  /* Yavaş ölçek: sahne değişince fotoğraf hafifçe nefes alıyor. */
-  transform: scale(1.03);
-  transition: transform 8s linear;
-}
-.pserit-kare.is-aktif img { transform: scale(1); }
-/* Perde: etiketlerin okunması fotoğrafın parlaklığına bırakılmıyor. */
-.pserit-sahne::after {
-  content: ''; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(to top,
-    rgba(19, 26, 21, 0.86) 0%,
-    rgba(19, 26, 21, 0.46) 44%,
-    rgba(19, 26, 21, 0.20) 100%);
+.pserit-satir {
+  display: flex;
+  aspect-ratio: var(--toplam);
 }
 
 /* --- Paneller: yalnız etiket ve tıklama alanı --- */
 .pserit-panel {
   position: relative; z-index: 2;
   display: block;
-  height: 100%;
   text-decoration: none;
   color: var(--field-ink);
-  border-inline-start: 1px solid rgba(233, 233, 224, 0.22);
   transition: background 420ms var(--ease-io);
 }
-.pserit-panel:first-of-type { border-inline-start: 0; }
-.pserit-panel:hover,
-.pserit-panel:focus-visible { background: rgba(19, 26, 21, 0.28); }
 .pserit-panel:focus-visible { outline: 2px solid var(--odak); outline-offset: -4px; }
 
 .pserit-ic {
@@ -4042,17 +4031,17 @@ a.index-row .index-meta::after,
   padding: clamp(16px, 1.4vw, 24px);
 }
 
-/* Kategori adları uzun ("Motivasyon ve Çalışan Deneyimi Etkinlikleri"
-   42 karakter). Dar panelde yatay yazı beş satıra bölünüyor; dikey yazı
-   panel boyunca akıyor. Referans da bu yüzden dikey. */
+/* Etiket yatay. Dikey yazı, panelin dar bir dilim olduğu sürümde
+   zorunluydu — 42 karakterlik ad 78 piksellik panelde beş satıra
+   bölünüyordu. Kare artık 300 pikselden geniş, yatay yazı rahat sığıyor
+   ve okunması için başı yana çevirmek gerekmiyor.
+   Gölge duruyor: yazı fotoğrafın üzerinde ve fotoğrafın alt bandı
+   kareden kareye açılıp koyulaşıyor. */
 .pserit-ad {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
   font-family: var(--serif);
-  font-size: clamp(0.9375rem, 1.05vw, 1.125rem);
-  line-height: 1.2;
+  font-size: clamp(1rem, 1.15vw, 1.25rem);
+  line-height: 1.22;
   letter-spacing: 0.01em;
-  max-height: 100%;
   text-shadow: 0 1px 12px rgba(19, 26, 21, 0.6);
 }
 .pserit-ok {
@@ -4071,60 +4060,116 @@ a.index-row .index-meta::after,
   transform: translateX(3px);
 }
 
-.pserit-5 { grid-template-columns: repeat(5, 1fr); }
+/* --- Masaüstü: hizalı satırlar, tam genişlik ---------------------------- */
+@media (min-width: 1000px) {
+  .pserit {
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+  }
+  /* Kare kendi oranı kadar esniyor; hizalı satır matematiği burada.
+     `flex-basis: 0` şart — `auto` olsaydı içeriğin doğal genişliği
+     paya karışır ve oran tutmazdı. */
+  .pserit-panel { flex: var(--oran) 1 0; }
 
-/* --- Responsive ---------------------------------------------------------
-   Tabletten aşağıda tek sahne dar paneller altında anlamını yitiriyor:
-   ekran daraldıkça arka plan da daralıyor ve yine kesiliyor. Orada
-   ızgaraya dönüyor ve her hücre kendi fotoğrafını gösteriyor — hücre
-   geniş olduğu için kırpma düşük kalıyor. */
-@media (max-width: 900px) {
-  .pserit, .pserit-5 {
-    grid-template-columns: repeat(2, 1fr);
-    height: auto;
-    background: transparent;
+  /* Kareler uç uca; ayırma işini saç teli çizgi yapıyor, boşluk değil. */
+  .pserit-panel + .pserit-panel { box-shadow: inset 1px 0 0 rgba(233, 233, 224, 0.28); }
+  .pserit-satir + .pserit-satir .pserit-panel { box-shadow: inset 0 1px 0 rgba(233, 233, 224, 0.28); }
+  .pserit-satir + .pserit-satir .pserit-panel + .pserit-panel {
+    box-shadow: inset 1px 0 0 rgba(233, 233, 224, 0.28),
+                inset 0 1px 0 rgba(233, 233, 224, 0.28);
   }
-  .pserit-sahne { display: none; }
-  .pserit-panel {
-    border: 0;
-    aspect-ratio: 4 / 3;
-    background-image: var(--kare);
-    background-size: cover;
-    background-position: center;
-  }
-  .pserit-panel::after {
-    content: ''; position: absolute; inset: 0; z-index: 0;
-    background: linear-gradient(to top,
-      rgba(19, 26, 21, 0.86) 0%,
-      rgba(19, 26, 21, 0.40) 52%,
-      rgba(19, 26, 21, 0.14) 100%);
-  }
-  .pserit-ic { position: relative; z-index: 1; gap: var(--s3); }
-  .pserit-ad { writing-mode: horizontal-tb; transform: none; font-size: 1rem; }
 }
+
+/* Bant 2100 pikselde duruyor: daha genişinde satır yüksekliği ekranı
+   yutuyor ve etiketler birbirinden kopuyor. */
+@media (min-width: 2100px) {
+  .pserit { width: 2100px; margin-inline: calc(50% - 1050px); }
+}
+
+/* --- Fotoğraf zemini: her karede kendi fotoğrafı ------------------------
+   Çerçevenin oranı fotoğrafın oranına eşit olduğu için `cover` hiçbir şey
+   kırpmıyor; kırpma ancak ikisi ayrıştığında başlar.
+
+   Fotoğraf panelin kendi zemininde değil `::before` katmanında duruyor:
+   zemin olarak verilseydi üzerine gelince ölçeklenemezdi. `background-size`
+   `cover` ile bir uzunluk arasında geçiş yapmıyor, `transform` yapıyor. */
+.pserit-panel {
+  overflow: hidden;
+  background: var(--bant);
+}
+.pserit-panel::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background-image: var(--kare);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1);
+  transition: transform 900ms var(--ease-io);
+}
+/* Perde: etiketin okunması fotoğrafın parlaklığına bırakılmıyor. */
+.pserit-panel::after {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to top,
+    rgba(19, 26, 21, 0.88) 0%,
+    rgba(19, 26, 21, 0.42) 54%,
+    rgba(19, 26, 21, 0.10) 100%);
+  transition: background var(--t-state) var(--ease-io);
+}
+.pserit-ic {
+  position: relative; z-index: 2; gap: var(--s3);
+  transform: translateY(0);
+  transition: transform 520ms var(--ease-io);
+}
+
+/* Üzerine gelince: fotoğraf hafifçe yaklaşıyor, perde açılıyor, etiket
+   yükseliyor. Ölçek dinlenme hâlinde değil yalnız etkileşimde — Ceylan
+   hanımın kırpma itirazı duran görüntüye dairdi. */
+.pserit-panel:hover::before,
+.pserit-panel:focus-visible::before { transform: scale(1.045); }
+.pserit-panel:hover::after,
+.pserit-panel:focus-visible::after {
+  background: linear-gradient(to top,
+    rgba(19, 26, 21, 0.80) 0%,
+    rgba(19, 26, 21, 0.26) 54%,
+    rgba(19, 26, 21, 0.04) 100%);
+}
+.pserit-panel:hover .pserit-ic,
+.pserit-panel:focus-visible .pserit-ic { transform: translateY(-6px); }
 
 @media (prefers-reduced-motion: reduce) {
-  .pserit-kare { transition: none; }
-  .pserit-kare img { transition: none; transform: none; }
+  .pserit-panel::before,
+  .pserit-ic { transition: none; }
+  .pserit-panel:hover::before,
+  .pserit-panel:focus-visible::before { transform: none; }
+  .pserit-panel:hover .pserit-ic,
+  .pserit-panel:focus-visible .pserit-ic { transform: none; }
 }
 
-/* ŞERİT ORANI — bant sonsuz genişlemesin — gerekçe: docs/palet-gerekce.md */
-.pserit { height: clamp(420px, 34vw, 780px); }
-
-/* Bant 2100 pikselde duruyor ama tam-genişlik hilesi korunuyor.
-   `margin-inline: auto` burada işe yaramıyor: .pserit bir .wrap içinde
-   ve wrap 1440'ta kapanıyor, 2100 piksellik çocuk taşıyor. Negatif
-   kenar boşluğu wrap'in yarısından bandın yarısını çıkarıyor. */
-@media (min-width: 2100px) {
+/* --- Tablet: iki sütun -------------------------------------------------
+   1000 pikselin altında hizalı satır çalışmıyor: dört kareli satırın
+   yüksekliği 820'de 143 piksele iniyor ve etiket sığmıyor. Orada ızgaraya
+   dönüyor; hücre oranı yine fotoğrafın kendi oranı, kırpma yine sıfır.
+   `align-items: start` olmazsa kısa hücre satır yüksekliğine gerilir ve
+   oran bozulur. */
+@media (max-width: 999px) {
   .pserit {
-    width: 2100px;
-    margin-inline: calc(50% - 1050px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    align-items: start;
+    background: transparent;
   }
+  /* Satır kabı ızgarada saydam: kareler doğrudan ızgaranın çocuğu olsun. */
+  .pserit-satir { display: contents; }
+  .pserit-panel { aspect-ratio: var(--oran, 3 / 2); }
 }
 
-/* Arka plan fotoğrafı biraz yukarıdan alınıyor: atölye karelerinde eller,
-   masa ve yüzler karenin üst-orta bandında topluyor. */
-.pserit-kare img { object-position: 50% 42%; }
+/* --- Telefon: alt alta ------------------------------------------------- */
+@media (max-width: 760px) {
+  .pserit { display: block; }
+  .pserit-panel { width: 100%; margin-bottom: 12px; }
+  .pserit-satir:last-child .pserit-panel:last-child { margin-bottom: 0; }
+  .pserit-ad { font-size: 1rem; }
+}
 
 /* ODAK NOKTALARI — kırpma kaçınılmazsa konu kurtarılır — gerekçe: docs/palet-gerekce.md */
 
@@ -4303,7 +4348,6 @@ a.index-row .index-meta::after,
   .hk-ikili,
   .hat,
   .konsept-satir,
-  .pserit,
   .kat-kapak,
   .duo,
   .mz-bant {
@@ -4320,26 +4364,10 @@ a.index-row .index-meta::after,
   .kat-kapak > * + *,
   .duo > * + * { margin-top: var(--s4); }
 
-  /* Panel şeridi: masaüstünde sabit yükseklikli yatay şerit
-     (`height: clamp(400px,46vh,620px)` + `overflow: hidden`), üzerine
-     gelince arkadaki sahne değişiyor. Telefonda alt alta iniyor; kabın
-     sabit yüksekliği ve taşma gizlemesi kalırsa 7 panelden yalnız BİRİ
-     görünür, kalan altısı kesilir. İkisini de serbest bırak. */
-  .pserit {
-    height: auto;
-    overflow: visible;
-    width: auto;
-    margin-inline: 0;
-  }
-  .pserit-panel {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    margin-bottom: 12px;
-  }
-  .pserit-panel:last-child { margin-bottom: 0; }
-  /* Sahne mutlak konumlu ve tek; alt alta düzende her panel kendi
-     görselini taşımalı, ortak sahne gizleniyor. */
-  .pserit-sahne { display: none; }
+  /* Panel şeridinin telefon kuralları kendi bölümünde toplandı
+     (`.pserit` bloğunun sonundaki `max-width: 760px` sorgusu).
+     Burada `display: block` listesinde de yer almamalı: `.pserit`
+     ızgara/blok geçişini kendi sorgusu yönetiyor. */
 }
 
 /* Künye satırları telefonda alt alta. `.dl div` yatay flex; `dt` 8.5em

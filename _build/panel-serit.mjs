@@ -1,70 +1,91 @@
-/* PANEL ŞERİDİ — "hepsi bir arada derli toplu"
+/* PANEL ŞERİDİ — "hepsini bir arada görebilir"
    ────────────────────────────────────────────────────────────────────────
-   Ceylan Kalyon Özdemir, 5 Ağustos, naregitim.com/cozumlerimiz üzerine:
+   Ceylan Kalyon Özdemir, 5 Ağustos:
 
-     Soru : "Buradaki ana sayfadaki gibi büyük mü istiyorsunuz Etkinlik
-             Atölye görsellerini?"
-     Cevap: "Büyüklük olarak değil şekil olarak demek istedim."
-            "Hepsi bir arada derli toplu"
+     "Doğadan Etkinlik Atölye Deneyimleri sayfasında atölyeler çok yazı
+      yazı kalmış. Görseller altta word düzeni gibi olmuş, amatör duruyor.
+      Mesela buradaki gibi HEPSİNİ BİR ARADA GÖREBİLİR, tıklayınca içine
+      girebiliriz."  → https://naregitim.com/cozumlerimiz
 
-   Referansın şekli Playwright ile ölçüldü:
-     · 6 dikey panel uç uca, aralarında boşluk yok, saç teli çizgi ayırıyor
-     · Arkada TEK illüstrasyon, panellerin tamamını boydan boya geçiyor
-     · Panele gelince arka plandaki görselin tamamı değişiyor
-     · Paneller genişlemiyor, sabit kalıyor
+   ── ÜÇÜNCÜ TUR: ARKA PLAN SAHNESİ KALKTI ──────────────────────────────
+   İlk kurulumda her panelin kendi fotoğrafı vardı, dar dikey çerçevede
+   %68 kırpıyordu. İkinci kurulumda referansın mekaniği alındı: arkada tek
+   fotoğraf, üstünde etiket panelleri, panele gelince fotoğraf değişiyor.
+   Kırpma çözüldü ama maddenin kendisi kaldı — o düzende aynı anda YALNIZ
+   BİR fotoğraf görünüyor, kalan altısı imleç üzerine gelene kadar yok.
+   "Hepsini bir arada görebilir" karşılanmıyordu.
 
-   ── NEDEN ARKA PLAN TEK GÖRSEL ────────────────────────────────────────
-   İlk uygulamada her panelin kendi fotoğrafı vardı ve 6 çözünürlükte
-   ölçüldüğünde ağır kırpma çıktı: 195×400 piksellik dar panelde 3:2
-   fotoğrafın **%68'i** gidiyordu. Kullanıcının gözlemi de buydu:
-   "geniş görseller küçük çerçevede kesilmiş duruyor, bazı görseller
-   anlamını kaybediyor."
+   Artık yedisi de aynı anda duruyor ve hiçbiri kırpılmıyor. Yöntem sitenin
+   galerisinde kullanılan hizalı satır matematiği:
 
-   Dar dikey çerçeveye geniş fotoğraf sığmaz — bu bir ayar meselesi değil,
-   geometri. Referansın çözümü de zaten bu değil: onlarda fotoğraf panelin
-   içinde değil, ARKASINDA ve tam genişlikte duruyor. Tek geniş çerçeveye
-   geniş fotoğraf giriyor, kırpma sıfıra iniyor.
+     satır oranı  = Σ(karelerin oranları)
+     kare esnemesi= kendi oranı        (flex-grow)
 
-   Paneller artık sadece etiket ve tıklama alanı. Hangi panelin üzerindeysen
-   onun fotoğrafı görünüyor (`afloday.js` içindeki `pserit` bloğu).
-   JavaScript çalışmazsa ilk fotoğraf durur ve bağlantılar çalışır. */
+   Satır genişliği S ise satır yüksekliği S/Σ, karenin genişliği S·oran/Σ
+   olur; bölünce karenin oranı kendi oranına eşit çıkar. Yani çerçeve
+   fotoğrafa uyuyor, fotoğraf çerçeveye zorlanmıyor: kırpma sıfır, satır
+   sonu düz, aralarda boşluk yok. Referansın "uç uca, saç teli çizgiyle
+   ayrılmış" hissi de böyle korunuyor.
 
-import { resim } from './templates.mjs';
+   Paneller hâlâ yalnız etiket ve tıklama alanı; fotoğraf panelin zemini.
+   JavaScript gerekmiyor — `afloday.js` içindeki `pserit` bloğu artık
+   `.pserit-kare` bulamadığı için kendini kapatıyor (`kareler.length < 2`
+   koruması). Sayfa JS olmadan da eksiksiz çalışıyor. */
+
 import { slug as gorselSlug } from './gorsel-hazirla.mjs';
+import { oran as gorselOrani } from './gorsel-olculeri.mjs';
+
+/* Satır yüksekliği = satır genişliği / Σoran. Yani satırdaki kare sayısı
+   azaldıkça satır YÜKSELİR. İki kareli satır 1920'de 640 piksele çıkıyor
+   ve bandı 1037 piksele şişiriyor — sayfa uzunluğu zaten geri bildirimde
+   açık madde, oraya 400 piksel eklenmez.
+
+   Ters yönde de bir sınır var: kalabalık satır alçalıyor. Beş kare tek
+   satıra alınınca 1440'ta satır 184 piksele iniyor, kare 276×184 oluyor
+   ve iki satırlık etiket okla üst üste biniyor — ölçüldü, gözle de
+   görüldü. O yüzden beş kare bölünüyor.
+
+   Kural: 4 ve altı tek satır, 5+ ikiye bölünür.
+     7 → 4 + 3   (1440'ta 252 + 316 = 568 piksel)
+     5 → 3 + 2   (1440'ta 298 + 480 = 778 piksel) */
+function satirlaraBol(liste) {
+  if (liste.length <= 4) return [liste];
+  const ilk = Math.ceil(liste.length / 2);
+  return [liste.slice(0, ilk), liste.slice(ilk)];
+}
 
 /* ogeler: [{ ad, gorsel, href, klasor }] */
 export function panelSerit(ogeler, { etiket = '' } = {}) {
-  const katman = ogeler.map((o, i) => `<span class="pserit-kare${i === 0 ? ' is-aktif' : ''}" data-kare="${i}">
-          ${resim({ gorsel: o.gorsel, alt: '', klasor: o.klasor || 'secilmis', oncelik: i === 0 })}
-        </span>`).join('\n        ');
+  const anahtar = (o) => `${o.klasor || 'secilmis'}/${gorselSlug(o.gorsel)}`;
 
-  /* Dar ekranda tek sahne kapanıyor ve her panel kendi fotoğrafını
-     zemin olarak gösteriyor; adres burada değişken olarak veriliyor.
+  /* KÖK-GÖRELİ OLMAK ZORUNDA (baştaki eğik çizgi). CSS `url()` göreli yolu
+     STİL DOSYASINA göre çözüyor, sayfaya göre değil: `assets/...` yazınca
+     tarayıcı `/assets/css/assets/...` arayıp 404 alıyordu. Sitedeki diğer
+     görseller `src` özniteliğinden geldiği için bu tuzağa düşmüyor. */
+  const zemin = (o) => `/assets/img/rev2/${anahtar(o)}-800.webp`;
 
-     KÖK-GÖRELİ OLMAK ZORUNDA (baştaki eğik çizgi). CSS `url()` göreli
-     yolu STİL DOSYASINA göre çözüyor, sayfaya göre değil: `assets/...`
-     yazınca tarayıcı `/assets/css/assets/...` arıyor ve 404 alıyordu.
-     Sitedeki diğer görseller `src` özniteliğinden geldiği için bu
-     tuzağa düşmüyor; yalnız CSS'ten okunan bu yol etkileniyor. */
-  const zemin = (o) =>
-    `/assets/img/rev2/${o.klasor || 'secilmis'}/${gorselSlug(o.gorsel)}-800.webp`;
-
-  const panel = ogeler.map((o, i) => `<a class="pserit-panel" href="${o.href}" data-panel="${i}"
-        style="--kare:url('${zemin(o)}')">
-        <span class="pserit-ic">
-          <span class="pserit-ad">${o.ad}</span>
-          <span class="pserit-ok" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-              <path d="M4 12h15M13 6l6 6-6 6"/>
-            </svg>
+  const panel = (o, i) => `<a class="pserit-panel" href="${o.href}" data-panel="${i}"
+          style="--kare:url('${zemin(o)}');--oran:${gorselOrani(anahtar(o)).toFixed(4)}">
+          <span class="pserit-ic">
+            <span class="pserit-ad">${o.ad}</span>
+            <span class="pserit-ok" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M4 12h15M13 6l6 6-6 6"/>
+              </svg>
+            </span>
           </span>
-        </span>
-      </a>`).join('\n      ');
+        </a>`;
+
+  let sira = 0;
+  const satirlar = satirlaraBol(ogeler).map((satir) => {
+    const toplam = satir.reduce((t, o) => t + gorselOrani(anahtar(o)), 0);
+    const icerik = satir.map((o) => panel(o, sira++)).join('\n        ');
+    return `<div class="pserit-satir" style="--toplam:${toplam.toFixed(4)}">
+        ${icerik}
+      </div>`;
+  }).join('\n      ');
 
   return `<div class="pserit" data-pserit${etiket ? ` aria-label="${etiket}"` : ''}>
-      <div class="pserit-sahne" aria-hidden="true">
-        ${katman}
-      </div>
-      ${panel}
+      ${satirlar}
     </div>`;
 }
