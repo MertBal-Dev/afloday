@@ -986,4 +986,54 @@
     });
   });
 
+
+  /* METODOLOJİ — üç evre kartı.
+
+     Kart yerinde açılıyor: komşular kaymıyor, sayfa uzamıyor. Tek
+     seferde bir kart açık; ikincisine tıklayınca birincisi kapanıyor,
+     yoksa üç kart birden açılıp bölüm iki ekrana çıkıyor.
+
+     Yükseklik animasyonu CSS'te `grid-template-rows: 0fr → 1fr` ile;
+     burada yalnız durum değişiyor. `max-height` tahmini kullanılmıyor,
+     uzun metinde kırpıyor.
+
+     Arkadaki gövde çizgisi bölüm görününce doluyor — "büyüme" fikri. */
+  document.querySelectorAll('.mtd').forEach(function (liste) {
+    var kartlar = [].slice.call(liste.querySelectorAll('.mtd-kart'));
+    if (!kartlar.length) return;
+
+    kartlar.forEach(function (kart) {
+      var dugme = kart.querySelector('.mtd-ac');
+      if (!dugme) return;
+      dugme.addEventListener('click', function () {
+        var acik = kart.getAttribute('data-acik') === 'evet';
+        kartlar.forEach(function (k) {
+          k.removeAttribute('data-acik');
+          var d = k.querySelector('.mtd-ac');
+          if (d) d.setAttribute('aria-expanded', 'false');
+        });
+        if (!acik) {
+          kart.setAttribute('data-acik', 'evet');
+          dugme.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* Yüzde eşiği KULLANMA: ekrandan uzun bölümde hiç tetiklenmez.
+       `threshold: 0` + rootMargin doğru olan. */
+    if ('IntersectionObserver' in window) {
+      var gozcu = new IntersectionObserver(function (girisler) {
+        girisler.forEach(function (g) {
+          if (g.isIntersecting) {
+            liste.setAttribute('data-doldu', 'evet');
+            gozcu.disconnect();
+          }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -20% 0px' });
+      gozcu.observe(liste);
+    } else {
+      liste.setAttribute('data-doldu', 'evet');
+    }
+  });
+
 })();

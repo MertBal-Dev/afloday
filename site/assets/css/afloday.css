@@ -4973,3 +4973,149 @@ a.index-row .index-meta::after,
     opacity: 0.26;
   }
 }
+
+/* ══ METODOLOJİ — üç evre, üç renk ═══════════════════════════════════
+   Bir bitkinin üç evresi yan yana. İlk kurulumda üç kart da aynı krem
+   zeminde, küçük puntoyla ve artı işaretiyle duruyordu — düzen doğruydu
+   ama Word tablosu gibi cansızdı.
+
+   Şimdi her evrenin kendi rengi var ve renk hikâyeyi anlatıyor:
+     01 KÖK SALMAK       toprak yeşili — derinlik, kök
+     02 SORUMLULUK ALMAK su mavisi     — akış, nehir metaforu
+     03 BİRLİKTE YEŞERME turuncu       — açan çiçek, simbiyoz
+
+   Renkler uydurma değil: sitenin dört element paletinden geliyor
+   (Toprak, Su, Ateş). Rakamlar iri ve renkli, kart üstüne gelince o
+   renge boyanıyor, üstteki gövde çizgisi üç rengin geçişini taşıyor. */
+.mtd {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 2px;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+}
+
+/* Evre renkleri — dört element paletinden. */
+.mtd-kart[data-evre='1'] { --evre: #2F6A2E; --evre-koyu: #1E4620; --evre-acik: #E4EFD9; }
+.mtd-kart[data-evre='2'] { --evre: #1F7FBF; --evre-koyu: #0B3A5C; --evre-acik: #DCEDF7; }
+.mtd-kart[data-evre='3'] { --evre: #D8481B; --evre-koyu: #8A2A0C; --evre-acik: #FBE4D8; }
+
+/* Kartların üstünden geçen gövde: üç rengin geçişi. Kaydırınca soldan
+   sağa doluyor — "büyüme" fikri hareketin kendisinde. */
+.mtd::before {
+  content: '';
+  position: absolute; left: 0; right: 0; top: 0;
+  height: 3px;
+  background: linear-gradient(to right, #2F6A2E 0%, #1F7FBF 50%, #D8481B 100%);
+  background-size: var(--mtd-dolum, 0%) 100%;
+  background-repeat: no-repeat;
+  transition: background-size 1500ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 2;
+}
+.mtd[data-doldu='evet']::before { --mtd-dolum: 100%; }
+
+.mtd-kart { position: relative; }
+
+.mtd-ac {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  padding: var(--s5);
+  text-align: left;
+  background: var(--evre-acik);
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  transition: background var(--t-state) var(--ease-io);
+}
+.mtd-ac:hover,
+.mtd-kart[data-acik='evet'] .mtd-ac { background: var(--evre); }
+
+/* Rakam iri ve renkli — kartın grafik öğesi. */
+.mtd-sira {
+  font-family: var(--serif);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 0.9;
+  color: var(--evre);
+  transition: color var(--t-state) var(--ease-io);
+}
+.mtd-ad {
+  font-family: var(--label);
+  font-size: 0.6875rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--evre-koyu);
+  margin-top: 6px;
+  transition: color var(--t-state) var(--ease-io);
+}
+.mtd-slogan {
+  font-family: var(--serif);
+  font-size: clamp(1.125rem, 1.7vw, 1.5rem);
+  font-weight: 400; line-height: 1.16;
+  color: var(--evre-koyu);
+  transition: color var(--t-state) var(--ease-io);
+}
+
+/* Kart renge boyanınca yazılar kreme dönüyor. */
+.mtd-ac:hover .mtd-sira,
+.mtd-ac:hover .mtd-ad,
+.mtd-ac:hover .mtd-slogan,
+.mtd-kart[data-acik='evet'] .mtd-sira,
+.mtd-kart[data-acik='evet'] .mtd-ad,
+.mtd-kart[data-acik='evet'] .mtd-slogan { color: #F4F1E7; }
+
+/* Aç/kapa işareti */
+.mtd-isaret { position: relative; width: 22px; height: 22px; margin-top: 10px; }
+.mtd-isaret::before,
+.mtd-isaret::after {
+  content: '';
+  position: absolute; left: 0; top: 10px;
+  width: 22px; height: 2px;
+  background: var(--evre);
+  transition: transform var(--t-state) var(--ease-io), background var(--t-state) var(--ease-io);
+}
+.mtd-isaret::after { transform: rotate(90deg); }
+.mtd-ac[aria-expanded='true'] .mtd-isaret::after { transform: rotate(0deg); }
+.mtd-ac:hover .mtd-isaret::before,
+.mtd-ac:hover .mtd-isaret::after,
+.mtd-kart[data-acik='evet'] .mtd-isaret::before,
+.mtd-kart[data-acik='evet'] .mtd-isaret::after { background: #F4F1E7; }
+
+/* Açılan gövde. `max-height` tahmini KULLANILMIYOR: uzun metinde kırpar.
+   `grid-template-rows: 0fr → 1fr` içeriğin gerçek yüksekliğini alıyor. */
+.mtd-govde {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 460ms var(--ease-io);
+  background: var(--evre-koyu);
+}
+.mtd-kart[data-acik='evet'] .mtd-govde { grid-template-rows: 1fr; }
+.mtd-govde > p {
+  overflow: hidden;
+  margin: 0;
+  padding-inline: var(--s5);
+  font-size: 0.9375rem;
+  line-height: 1.62;
+  color: #F4F1E7;
+}
+.mtd-kart[data-acik='evet'] .mtd-govde > p {
+  padding-block: var(--s5);
+}
+
+/* Tablet: iki sütun, üçüncü kart alta tam genişlik. */
+@media (max-width: 900px) {
+  .mtd { grid-template-columns: repeat(2, 1fr); }
+  .mtd-kart:nth-child(3) { grid-column: 1 / -1; }
+}
+/* Telefon: alt alta. */
+@media (max-width: 600px) {
+  .mtd { grid-template-columns: 1fr; }
+  .mtd-kart:nth-child(3) { grid-column: auto; }
+  .mtd-ac { padding: var(--s4); }
+  .mtd-govde > p { padding-inline: var(--s4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mtd::before { transition: none; --mtd-dolum: 100%; }
+  .mtd-govde { transition: none; }
+}

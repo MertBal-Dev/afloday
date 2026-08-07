@@ -126,21 +126,33 @@ ${heroSlayt(heroSlaytlari)}
   <section class="section" id="metodoloji">
     <div class="wrap">
       ${opener('Eğitim metodolojimiz', metodoloji.baslik.replace('Eğitim Metodolojimiz: ', ''), metodoloji.giris)}
-      <div class="metodoloji" style="margin-top:clamp(40px,5vw,72px)">
-        <figure class="metodoloji-gorsel" data-reveal>
-          ${resim({ gorsel: metodoloji.gorsel, alt: metodoloji.alt })}
-        </figure>
-        <ol class="metodoloji-asamalar">
-          ${metodoloji.asamalar.map(a => `<li class="asama" data-reveal="stagger">
-            <p class="asama-no">${String(a.no).padStart(2, '0')}</p>
-            <div>
-              <h3 class="asama-ad">${a.ad}</h3>
-              <p class="asama-slogan">${a.slogan}</p>
-              <p class="asama-metin">${a.metin}</p>
-            </div>
-          </li>`).join('\n          ')}
-        </ol>
-      </div>
+      ${/* ÜÇ AŞAMA TEK EKRANDA — bir bitkinin üç evresi.
+
+           Önceki düzen dikeydi: solda tek büyük fotoğraf, sağda üç aşama
+           alt alta. Üç ekrana yayılıyordu ve "her şey tek ekran daha
+           anlaşılır olacak" maddesini ihlal ediyordu.
+
+           Şimdi üçü yan yana. Metafor içeriğin kendisinden geliyor:
+           belge "bir bitkinin hayatta kalma ve serpilme sürecinden ilham
+           alan 3 aşamalı patern" diyor. Kartlar kök → gövde → yeşerme
+           sırasında ve aralarından geçen ince bir gövde onları bağlıyor.
+
+           METİN KISALTILMADI: kapalıyken slogan görünüyor, karta
+           tıklayınca tam paragraf açılıyor. Hem tek ekrana sığıyor hem
+           tek kelime kaybolmuyor. */ ''}
+      <ol class="mtd" style="margin-top:clamp(28px,3.4vw,52px)">
+        ${metodoloji.asamalar.map((a, i) => `<li class="mtd-kart" data-evre="${i + 1}" data-reveal="stagger">
+          <button class="mtd-ac" type="button" aria-expanded="false" aria-controls="mtd-${a.no}">
+            <span class="mtd-sira">${String(a.no).padStart(2, '0')}</span>
+            <span class="mtd-ad">${a.ad}</span>
+            <span class="mtd-slogan">${a.slogan}</span>
+            <span class="mtd-isaret" aria-hidden="true"></span>
+          </button>
+          <div class="mtd-govde" id="mtd-${a.no}">
+            <p>${a.metin}</p>
+          </div>
+        </li>`).join('')}
+      </ol>
     </div>
   </section>
 
