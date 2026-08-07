@@ -57,15 +57,26 @@ const kaynakBul = () => {
   return null;
 };
 
+/* ARŞİV YOKSA MODÜL YİNE DE YÜKLENMELİ.
+
+   Bu dosya iki işi birden görüyor: görselleri hazırlayan betik ve `slug`
+   yardımcısını dışa açan modül. `build.mjs` yalnız `slug` için import
+   ediyor ve arşive ihtiyaç duymuyor.
+
+   7 Ağustos'ta arşiv bulunamayınca `process.exit(1)` çağrılıyordu; import
+   anında çalıştığı için Vercel derlemesini kırdı — sunucuda WeTransfer
+   arşivi yok, olması da gerekmiyor. Hata yalnız görsel hazırlama
+   fonksiyonu GERÇEKTEN çağrıldığında verilmeli. */
 const KAYNAK = kaynakBul();
-if (!KAYNAK) {
-  console.error(
+
+const kaynakZorunlu = () => {
+  if (KAYNAK) return KAYNAK;
+  throw new Error(
     'Görsel kaynak arşivi bulunamadı.\n' +
     'Çözüm: GORSEL_KAYNAK ortam değişkenine arşivin yolunu ver, örnek:\n' +
-    '  GORSEL_KAYNAK="C:/.../Afloday Web Metin ve Görseller" node _build/gorsel-hazirla.mjs'
+    '  GORSEL_KAYNAK="C:/.../Afloday Web Metin ve Görseller" node _build/gorsel-hazirla.mjs',
   );
-  process.exit(1);
-}
+};
 
 const HEDEF = path.join(process.cwd(), 'site', 'assets', 'img', 'rev2');
 
@@ -182,7 +193,7 @@ async function isle(kaynakYolu, ad, altKlasor) {
 }
 
 async function klasoruIsle(etiket, klasorAdi, altKlasor, suzgec) {
-  const dizin = path.join(KAYNAK, klasorAdi);
+  const dizin = path.join(kaynakZorunlu(), klasorAdi);
   if (!existsSync(dizin)) {
     console.log(`ATLANDI  ${etiket}: klasör yok — ${dizin}`);
     return [];
@@ -286,7 +297,7 @@ export function etkinlikKategorisi(dosyaAdi) {
 
 async function main() {
   await mkdir(HEDEF, { recursive: true });
-  console.log(`Kaynak: ${KAYNAK}\nHedef:  ${HEDEF}\n`);
+  console.log(`Kaynak: ${kaynakZorunlu()}\nHedef:  ${HEDEF}\n`);
 
   const kayit = {
     secilmis: await klasoruIsle('Seçilmiş Olanlar', KLASORLER.secilmis, 'secilmis'),
@@ -309,7 +320,9 @@ async function main() {
   console.log(`\nToplam ${toplam} görsel hazır.`);
 }
 
-if (import.meta.url === `file:///${process.argv[1].replace(/\\/g, '/')}`) {
+/* `process.argv[1]` doğrudan çalıştırmada dolu, `node -e` ile import
+   edildiğinde tanımsız. Korumasız `.replace` orada patlıyor. */
+if (import.meta.url === `file:///${(process.argv[1] ?? '').replace(/\\/g, '/')}`) {
   main().catch((e) => {
     console.error(e);
     process.exit(1);
