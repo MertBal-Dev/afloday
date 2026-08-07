@@ -5119,3 +5119,44 @@ a.index-row .index-meta::after,
   .mtd::before { transition: none; --mtd-dolum: 100%; }
   .mtd-govde { transition: none; }
 }
+
+/* ══ İSTATİSTİK KARTLARI — dört element, dört renk ════════════════════
+   "Neden Doğa Temelli Gelişim?" bölümü anasayfadan eğitimler sayfasına
+   taşındı. Orada dört kart da aynı koyu yeşil zemindeydi ve rakamlar
+   krem tek renkti — ciddi ama sönük.
+
+   Şimdi her kart bir elementin rengini alıyor. Renk bir süs değil, dört
+   elementin sitedeki karşılığı:
+     Toprak yeşil · Su mavi · Ateş turuncu · Hava lacivert
+
+   Rakam kartın en iri öğesi ve kendi renginde parlıyor; zemin o rengin
+   en koyu kademesi, yazı krem. Kart üstüne gelince zemin bir kademe
+   açılıyor ve rakam büyüyor. */
+.istatistik-kutu[data-element='toprak'] { --k: #7FB03F; --k-zemin: #1E4620; }
+.istatistik-kutu[data-element='su']     { --k: #5FB8D8; --k-zemin: #0B3A5C; }
+.istatistik-kutu[data-element='ates']   { --k: #F58B54; --k-zemin: #8A2A0C; }
+.istatistik-kutu[data-element='hava']   { --k: #8290E0; --k-zemin: #1B2470; }
+
+.istatistik-kutu {
+  background: var(--k-zemin);
+  padding: var(--s5);
+  transition: background var(--t-state) var(--ease-io),
+              transform var(--t-state) var(--ease-io);
+}
+.istatistik-kutu:hover {
+  background: color-mix(in srgb, var(--k-zemin) 78%, var(--k));
+  transform: translateY(-3px);
+}
+
+.istatistik-rakam {
+  color: var(--k);
+  transition: transform var(--t-state) var(--ease-io);
+  transform-origin: left bottom;
+}
+.istatistik-kutu:hover .istatistik-rakam { transform: scale(1.06); }
+
+.istatistik-metin { color: #F4F1E7; }
+.istatistik-kaynak { color: color-mix(in srgb, var(--k) 62%, #F4F1E7); }
+
+/* Kaynağı olmayan kartta boş satır yer kaplamasın. */
+.istatistik-kaynak-yok { display: none; }

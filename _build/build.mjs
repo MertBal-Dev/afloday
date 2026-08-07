@@ -95,32 +95,12 @@ ${heroSlayt(heroSlaytlari)}
        kartMetin). Aynı bilgi iki kez, iki ekranda duruyordu; şimdi
        bir kez, kendi slaydının üstünde. Anasayfa bir bölüm kısaldı. */ ''}
 
-  <section class="section field istatistik">
-    <div class="istatistik-doku" aria-hidden="true">
-      ${resim({ gorsel: istatistikler.gorsel, alt: '' })}
-    </div>
-    <div class="wrap istatistik-in">
-      <div class="opener" data-reveal>
-        <div class="opener-head">
-          <p class="eyebrow">${istatistikler.ustEtiket}</p>
-          <h2 class="h2">${istatistikler.baslik}</h2>
-        </div>
-        <div></div>
-        <div class="opener-rule"></div>
-      </div>
-      <div class="istatistik-kutular">
-        ${istatistikler.kutular.map(k => `<div class="istatistik-kutu" data-reveal="stagger">
-          <p class="istatistik-rakam">${k.rakam}</p>
-          <p class="istatistik-metin">${k.metin}</p>
-          ${k.kaynak
-      ? `<p class="istatistik-kaynak">${k.kaynak}</p>`
-      /* Belgede bu rakamın kaynağı yazmıyor. Uydurma kaynak yazmak yerine
-         boş bırakıldı; Afloday'e soruldu. */
-      : '<p class="istatistik-kaynak istatistik-kaynak-yok"></p>'}
-        </div>`).join('\n        ')}
-      </div>
-    </div>
-  </section>
+  ${/* "NEDEN DOĞA TEMELLİ GELİŞİM?" BÖLÜMÜ TAŞINDI — 7 Ağustos.
+       Ceylan hanımın isteği: bu bölüm anasayfada değil, doğa temelli
+       eğitimler sayfasında dursun. Dört istatistik kartı orada, kendi
+       bağlamının içinde daha anlamlı; anasayfa da bir bölüm kısalıyor.
+       Blok `doga-temelli-egitimler.html` sayfasına aynen taşındı. */ ''}
+
 
   <!-- 4 · METODOLOJİ — Kök Sal · Sorumluluk Al · Birlikte Yeşer -->
   <section class="section" id="metodoloji">
@@ -1177,6 +1157,37 @@ ${folio({
   </section>
 
   <!-- DOKÜMANLAR — afloday.com'daki iki PDF, olduğu gibi kalıyor -->
+  ${/* ANASAYFADAN TAŞINDI — Ceylan hanım, 7 Ağustos.
+       "Neden Doğa Temelli Gelişim?" dört istatistik kartı anasayfadaydı;
+       kendi bağlamı burası. Anasayfa bir bölüm kısaldı, bu sayfa da
+       eğitimlerin neden doğa temelli olduğunu kanıtla açıklıyor. */ ''}
+  <section class="section field istatistik">
+    <div class="istatistik-doku" aria-hidden="true">
+      ${resim({ gorsel: istatistikler.gorsel, alt: '' })}
+    </div>
+    <div class="wrap istatistik-in">
+      <div class="opener" data-reveal>
+        <div class="opener-head">
+          <p class="eyebrow">${istatistikler.ustEtiket}</p>
+          <h2 class="h2">${istatistikler.baslik}</h2>
+        </div>
+        <div></div>
+        <div class="opener-rule"></div>
+      </div>
+      <div class="istatistik-kutular">
+        ${istatistikler.kutular.map((k, i) => `<div class="istatistik-kutu" data-element="${['toprak', 'su', 'ates', 'hava'][i % 4]}" data-reveal="stagger">
+          <p class="istatistik-rakam">${k.rakam}</p>
+          <p class="istatistik-metin">${k.metin}</p>
+          ${k.kaynak
+      ? `<p class="istatistik-kaynak">${k.kaynak}</p>`
+      /* Belgede bu rakamın kaynağı yazmıyor. Uydurma kaynak yazmak yerine
+         boş bırakıldı; Afloday'e soruldu. */
+      : '<p class="istatistik-kaynak istatistik-kaynak-yok"></p>'}
+        </div>`).join('\n        ')}
+      </div>
+    </div>
+  </section>
+
   <section class="section rule-top">
     <div class="wrap">
       ${opener('Dokümanlar', 'İndirilebilir içerik', '')}
