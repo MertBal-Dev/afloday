@@ -26,6 +26,11 @@ const TURLER = {
   '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png',
   '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon',
   '.mp4': 'video/mp4', '.woff2': 'font/woff2',
+  /* PDF tabloda yokken `application/octet-stream` gidiyordu ve tarayıcı
+     dosyayı gömük göstermek yerine indiriyordu. Site içindeki indirilebilir
+     içerikleri (ve tasarım referansı destesini) tarayıcıda açabilmek için
+     doğru tür şart. */
+  '.pdf': 'application/pdf',
 };
 
 /* İstenen adresi diskteki dosyaya çevirir: önce birebir, sonra .html,
