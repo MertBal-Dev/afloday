@@ -4471,3 +4471,20 @@ a.index-row .index-meta::after,
 .kat-mozaik > .mz-foto:last-child:nth-child(odd) {
   grid-column: 1 / -1;
 }
+
+/* KAPANIŞ KARESİNİN YÜKSEKLİK TAVANI
+   Tek kalan kare iki sütunu birden alıyor ve kendi oranını koruyor.
+   Yatay karede sorun yok; DİKEY karede 1295 piksellik yuvada 0.75 oranı
+   1727 piksel yükseklik demek — ekranı iki kez aşıyor ve kullanıcının
+   dediği gibi "kaydır kaydır bitmiyor". Üç sayfada böyleydi:
+   wellbeing, gönüllülük, motivasyon (üçünün de kapanış karesi 1200×1600).
+
+   Tavan yüksekliğe konuyor, genişlik orandan türüyor, kare ortalanıyor.
+   KIRPMA YOK — kare küçülüyor, kesilmiyor. `justify-self` şart: ızgara
+   hücresi varsayılan olarak geriyor ve `width: auto` tek başına ezilir. */
+.mz-foto-genis {
+  max-height: min(84vh, 820px);
+  width: auto;
+  max-width: 100%;
+  justify-self: center;
+}
