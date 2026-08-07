@@ -320,29 +320,13 @@ button { font: inherit; color: inherit; }
   margin-top: var(--s3);
   position: relative;
 }
-.opener-rule::before {
-  content: '';
-  position: absolute; left: 0; top: -13px;
-  width: 34px; height: 13px;
-  background: no-repeat left bottom / contain
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 13' fill='none' stroke='%232F6A2E' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M3 13c0-5 4-9 9-9'/%3E%3Cpath d='M12 4c0-2.6 2-4 4.6-4 0 2.6-2 4-4.6 4z'/%3E%3Cpath d='M9 8c-2.4 0-4-1.6-4-4 2.4 0 4 1.6 4 4z'/%3E%3Ccircle cx='19' cy='2.6' r='1.5' fill='%23F05625' stroke='none'/%3E%3C/svg%3E");
-}
-.field .opener-rule::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 13' fill='none' stroke='%237FB877' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M3 13c0-5 4-9 9-9'/%3E%3Cpath d='M12 4c0-2.6 2-4 4.6-4 0 2.6-2 4-4.6 4z'/%3E%3Cpath d='M9 8c-2.4 0-4-1.6-4-4 2.4 0 4 1.6 4 4z'/%3E%3Ccircle cx='19' cy='2.6' r='1.5' fill='%23F2764A' stroke='none'/%3E%3C/svg%3E");
-}
+
+
 
 /* 2 · ETİKET İŞARETİ — nokta yerine tohum.
    `.tags` listeleri atölye özelliklerini taşıyor (Yüz Yüze, 60 Dakika).
    Aralarındaki ayırıcı orta noktaydı; tohum aynı işi görüyor. */
-.tags li + li::before {
-  content: '';
-  display: inline-block;
-  width: 7px; height: 9px;
-  margin-inline-end: var(--s2);
-  vertical-align: -1px;
-  background: no-repeat center / contain
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 7 9' fill='%236B6340'%3E%3Cpath d='M3.5 0C5.4 2 7 4 7 5.9 7 7.6 5.4 9 3.5 9S0 7.6 0 5.9C0 4 1.6 2 3.5 0z' opacity='.55'/%3E%3C/svg%3E");
-}
+
 
 /* 3 · BÖLÜM KÖŞESİ — bastırılmış çiçek silueti.
    İsteğe bağlı: `.section.bitkili`. Her bölüme konmaz; sayfada en fazla
@@ -4817,11 +4801,11 @@ a.index-row .index-meta::after,
      Doğrusu çocuklara hiç dokunmamak: motif `z-index: -1`e iniyor,
      bölüme `isolation: isolate` veriliyor ki negatif katman sayfanın
      zeminine kaçmasın. Çocuklar olduğu gibi kalıyor. */
-  main > section:nth-of-type(odd) { position: relative; isolation: isolate; }
+  main > section { position: relative; isolation: isolate; }
   /* Video hero'nun kendi katman düzeni var; motif oraya girmiyor. */
   main > section.hero-video:nth-of-type(odd)::before,
   main > section.slider-wrapper:nth-of-type(odd)::before { content: none; }
-  main > section:nth-of-type(odd)::before {
+  main > section::before {
     content: '';
     position: absolute; inset: 0;
     z-index: -1; pointer-events: none;
@@ -4838,7 +4822,7 @@ a.index-row .index-meta::after,
       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' fill='none' stroke='%23D9D1BC' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M40 78V40'/%3E%3Cg%3E%3Cpath d='M40 40l-14-16M40 40l14-16M40 40l-20-4M40 40l20-4M40 40l-11-21M40 40l11-21M40 40v-24M40 40l-22 8M40 40l22 8'/%3E%3C/g%3E%3Ccircle cx='40' cy='40' r='3' fill='%23D9D1BC' stroke='none'/%3E%3C/svg%3E");
   }
   /* Koyu bantta ton tersine döner: koyu üstüne biraz açık yeşil. */
-  main > section.field:nth-of-type(odd)::before {
+  main > section.field::before {
     filter: invert(1) brightness(0.42) sepia(0.5) hue-rotate(66deg) saturate(1.6);
     opacity: 0.5;
   }
@@ -4877,53 +4861,112 @@ a.index-row .index-meta::after,
 @media (max-width: 760px) { .slide-kart { padding: var(--s3); max-width: none; } .slide-kart-metin { font-size: 0.875rem; } }
 
 /* ══ BOTANİK ARKA PLAN ════════════════════════════════════════════════
-   Kullanıcının klasöründen gelen gerçek çizimler:
-   `site/assets/img/botanik/` — yaprak, bitki, organik çiçek, gül,
-   ayçiçeği, yeşil çiçek. Kendi renkleriyle duruyorlar.
+   Kullanıcının klasöründen gelen gerçek çizimler, kendi renkleriyle:
+   yaprak, bitki, organik çiçek, gül, ayçiçeği, yeşil çiçek.
 
-   Denge opaklıkla kuruluyor: yeterince görünür ki renk hissedilsin,
-   yeterince silik ki metinle yarışmasın.
+   ÖNCE İKİ MOTİF VARDI VE BÜYÜKTÜLER (320px), bölümün en üst ve en alt
+   köşesine oturuyorlardı. Bölümler uzun olduğu için ikisi de çoğu zaman
+   ekranın dışında kalıyor, kullanıcı hiçbir şey görmüyordu. Şimdi ALTI
+   motif ve hepsi küçük (60-150px): sayfa boyunca dağılıyorlar, hangi
+   noktada olursan ol birkaçı görüş alanında oluyor.
 
-   ÇOCUKLARA DOKUNULMUYOR. Bir önceki denemede motifin altta kalması
-   için bölümün çocuklarına `position: relative` verilmişti; hero
-   1. bölüm olduğu için o kural hero'nun `position: absolute` video
-   katmanını kırdı, video akışa girdi ve metin aşağı düştü. Şimdi motif
-   `z-index: -1`e iniyor, bölüme `isolation: isolate` veriliyor ve
-   çocuklar olduğu gibi kalıyor.
+   Küçük olmaları ayrıca metinle çatışmayı bitiriyor — büyük bir çizim
+   sütunun altına giriyordu, küçükler kenar payında kalıyor.
 
-   Bölümler tek atlayarak motif alıyor; hepsine konursa desen olur. */
+   ÇOCUKLARA DOKUNULMUYOR. Motif `z-index: -1`, bölümde
+   `isolation: isolate`. Önceki denemede çocuklara `position: relative`
+   verilmişti ve hero'nun absolute video katmanını kırmıştı. */
 @media (min-width: 1000px) {
-  main > section:nth-of-type(odd) { position: relative; isolation: isolate; }
+  main > section { position: relative; isolation: isolate; }
 
   /* Video hero ve slaytın kendi katman düzeni var; motif oraya girmez. */
   main > section.hero-video::before,
   main > section.slider-wrapper::before { content: none !important; }
 
-  main > section:nth-of-type(odd)::before {
+  main > section::before {
     content: '';
     position: absolute; inset: 0;
     z-index: -1;
     pointer-events: none;
     background-repeat: no-repeat;
-    /* Kenarlara yaslı: metin sütunu ortada, motifler dışındaki payda. */
-    background-position: right -4% top 6%, left -5% bottom 4%;
-    background-size: clamp(170px, 21vw, 320px), clamp(140px, 17vw, 250px);
-    background-image: url('/assets/img/botanik/yaprak.svg'),
-                      url('/assets/img/botanik/bitki.svg');
-    opacity: 0.3;
+    /* Altı motif, sayfa boyunca serpiştirilmiş. Yüzde konumlar bölümün
+       yüksekliğine göre ölçeklendiği için uzun bölümde de kısa bölümde
+       de dağılım korunuyor. */
+    background-position:
+      right 2% top 6%,
+      left 1% top 26%,
+      right 6% top 48%,
+      left 3% top 68%,
+      right 1% bottom 8%,
+      left 8% bottom 2%;
+    background-size:
+      clamp(74px, 8vw, 118px),
+      clamp(56px, 6vw, 88px),
+      clamp(64px, 7vw, 104px),
+      clamp(50px, 5.4vw, 78px),
+      clamp(70px, 7.6vw, 112px),
+      clamp(46px, 5vw, 70px);
+    background-image:
+      url('/assets/img/botanik/yaprak.svg'),
+      url('/assets/img/botanik/gul.svg'),
+      url('/assets/img/botanik/cicek-organik.svg'),
+      url('/assets/img/botanik/bitki.svg'),
+      url('/assets/img/botanik/aycicegi.svg'),
+      url('/assets/img/botanik/cicek-yesil.svg');
+    opacity: 0.32;
   }
-  /* Motif seti bölümden bölüme değişiyor, tekrar hissi olmasın. */
+
+  /* Sıra değişince motiflerin yeri ve türü de değişiyor; iki bölüm
+     birbirinin kopyası gibi durmasın. */
   main > section:nth-of-type(4n + 3)::before {
-    background-image: url('/assets/img/botanik/cicek-organik.svg'),
-                      url('/assets/img/botanik/gul.svg');
+    background-position:
+      left 2% top 8%, right 3% top 30%, left 6% top 52%,
+      right 1% top 72%, left 1% bottom 6%, right 7% bottom 3%;
+    background-image:
+      url('/assets/img/botanik/cicek-organik.svg'),
+      url('/assets/img/botanik/aycicegi.svg'),
+      url('/assets/img/botanik/yaprak.svg'),
+      url('/assets/img/botanik/cicek-yesil.svg'),
+      url('/assets/img/botanik/gul.svg'),
+      url('/assets/img/botanik/bitki.svg');
   }
   main > section:nth-of-type(6n + 5)::before {
-    background-image: url('/assets/img/botanik/aycicegi.svg'),
-                      url('/assets/img/botanik/cicek-yesil.svg');
+    background-position:
+      right 4% top 10%, left 2% top 34%, right 2% top 56%,
+      left 7% top 76%, right 8% bottom 4%, left 1% bottom 8%;
+    background-image:
+      url('/assets/img/botanik/gul.svg'),
+      url('/assets/img/botanik/bitki.svg'),
+      url('/assets/img/botanik/cicek-yesil.svg'),
+      url('/assets/img/botanik/aycicegi.svg'),
+      url('/assets/img/botanik/yaprak.svg'),
+      url('/assets/img/botanik/cicek-organik.svg');
   }
+
   /* Koyu bantta renkli çizim boğuluyor; orada biraz açılıyor. */
-  main > section.field:nth-of-type(odd)::before {
-    filter: brightness(1.35) saturate(1.15);
+  main > section.field::before {
+    filter: brightness(1.4) saturate(1.15);
+    opacity: 0.24;
+  }
+}
+
+/* Tablet ve telefonda üç motif yeter: ekran dar, altısı desen olur ve
+   metnin altına girer. */
+@media (min-width: 600px) and (max-width: 999px) {
+  main > section { position: relative; isolation: isolate; }
+  main > section.hero-video::before,
+  main > section.slider-wrapper::before { content: none !important; }
+  main > section::before {
+    content: '';
+    position: absolute; inset: 0;
+    z-index: -1; pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: right 2% top 8%, left 1% top 46%, right 4% bottom 6%;
+    background-size: 68px, 54px, 60px;
+    background-image:
+      url('/assets/img/botanik/yaprak.svg'),
+      url('/assets/img/botanik/gul.svg'),
+      url('/assets/img/botanik/cicek-organik.svg');
     opacity: 0.26;
   }
 }
