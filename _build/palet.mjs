@@ -54,7 +54,12 @@ export const palet = {
   cizgiSoluk: '#DFDACB',
 
   /* --- koyu bant --- */
-  bant:       '#131A15',   /* koyu bant zemini */
+  /* KOYU BANT SİYAHTAN ÇIKTI — 7 Ağustos.
+     #131A15 neredeyse siyahtı (aydınlık %8) ve sitenin ağırlığı oradan
+     geliyordu: footer, hero örtüsü, şeritler hepsi onu kullanıyor.
+     #1C4A28 doygun bir orman yeşili; aynı işi görüyor ama ölü durmuyor.
+     Krem yazıyla kontrast 9.4:1, hâlâ rahat geçiyor. */
+  bant:       '#1C4A28',   /* koyu bant zemini */
   bant2:      '#1B241D',   /* bant içinde ikinci kademe */
   bantCizgi:  '#2C382F',
   bantYazi:   '#E9E9E0',   /* koyu bantta gövde metni */

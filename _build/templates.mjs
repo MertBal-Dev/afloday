@@ -124,60 +124,54 @@ export function footer() {
        Alt bilgi bir kapanış afişi değil, bir künye. Formun yeri iletişim
        sayfası; footer'da ikinci kez sorulması gerekmiyor. */ ''}
 
+  ${/* FOOTER DERLİ TOPLU — Ceylan hanım, 7 Ağustos:
+       "Footer'dan her şey kalkacak, sadece adres ve takip etme kısmı
+        kalacak. Bir tık yakınız kısmı da kalkacak. Daha derli toplu
+        düzenli bir footer tasarımı olacak. Adres map buraya gelecek,
+        burada da görünecek iletişimdeki kısım."
+
+       Üç sütunluk bağlantı listesi (Geleceği Doğadan Tasarla, Kurumsal
+       Hizmetler başlıkları altında 12 bağlantı) kaldırıldı. O bir site
+       haritasıydı; menü zaten aynı işi yapıyor ve iki kez yapmasına
+       gerek yok.
+
+       Kalan üç şey: adres, harita, takip. Alt bilgi bir künye. */ ''}
   <div class="ftr-main">
     <div class="wrap ftr-cols">
-      <div class="stack">
+
+      <div class="ftr-kunye">
         <div class="ftr-logo"><img src="assets/img/brand/logo.png" alt="Afloday" width="360" height="120"></div>
-        <p class="ftr-head">İletişim Bilgileri</p>
-        <ul>
-          ${site.phones.map(p => `<li><a href="tel:${PHONE_E164[p]}">${p}</a></li>`).join('\n          ')}
-          <li><a href="mailto:${site.email}">${site.email}</a></li>
-        </ul>
         <address>
           ${site.address.street},<br>
           ${site.address.zip} ${site.address.locality} / ${site.address.region}
         </address>
+        <ul class="ftr-iletisim">
+          ${site.phones.map(p => `<li><a href="tel:${PHONE_E164[p]}">${p}</a></li>`).join('')}
+          <li><a href="mailto:${site.email}">${site.email}</a></li>
+        </ul>
+        <p class="ftr-head">Takip Et</p>
+        <ul class="ftr-takip">
+          <li><a href="${site.social.instagram}" rel="noopener">Instagram</a></li>
+          <li><a href="${site.social.youtube}" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+
+      ${/* Harita iletişim sayfasındakiyle aynı sorgu: işletme adıyla
+           başlıyor ve daire numarası düşüyor, yoksa Google adresi
+           çözemeyip iğne koymadan bölgeyi ortalıyor. */ ''}
+      <div class="ftr-harita">
+        <iframe title="Afloday ofis konumu — Google Haritalar" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=${encodeURIComponent(
+            `${site.name}, ${site.address.street.replace(/\s*No:\s*/i, ' ').replace(/\/\d+\s*$/, '')}, ${site.address.zip} ${site.address.locality}/${site.address.region}`
+          )}&z=16&output=embed"></iframe>
         <p><a class="link" href="${assets.maps}" rel="noopener">Yol tarifi için tıklayın</a></p>
       </div>
-      <!-- Sütun başlıkları menünün ana dallarını izliyor; iptal edilen
-           atölye kataloğu bağlantıları kalktı. -->
-      <div>
-        <p class="ftr-head">Geleceği Doğadan Tasarla</p>
-        <ul>
-          <li><a href="proje-gelecegi-yesil-tasarla.html">Geleceği Doğadan Tasarla Hareketi</a></li>
-          <li><a href="proje-gelecegi-yesil-tasarla.html#cevre">Çevre · Toprak</a></li>
-          <li><a href="proje-gelecegi-yesil-tasarla.html#kadin">Kadın · Su</a></li>
-          <li><a href="proje-gelecegi-yesil-tasarla.html#cocuk">Çocuk · Ateş</a></li>
-          <li><a href="proje-gelecegi-yesil-tasarla.html#is-dunyasi">İş Dünyası · Hava</a></li>
-          <li><a href="doga-temelli-egitimler.html">Doğa Temelli Eğitimlerimiz</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="ftr-head">Kurumsal Hizmetler</p>
-        <ul>
-          <li><a href="kurumsal.html#deneyimsel-ogrenme">Doğadan Deneyimsel Öğrenme Atölyeleri</a></li>
-          <li><a href="kurumsal-hobi-atolyeleri.html">Doğadan Etkinlik Atölye Deneyimleri</a></li>
-          <li><a href="sosyal-sorumluluk-is-danismanligi.html">Sosyal Sorumluluk &amp; İş Danışmanlığı</a></li>
-          <li><a href="hakkimizda.html">Afloday Hakkında</a></li>
-          <li><a href="hakkimizda.html#ekip">Ekibimiz</a></li>
-          <li><a href="surdurulebilirlik.html">Sürdürülebilirlik</a></li>
-        </ul>
-        <p class="ftr-head" style="margin-top:var(--s5)">Takip Edeyim</p>
-        <ul>
-          <li><a href="${site.social.instagram}" rel="noopener">instagram.com/afloday</a></li>
-          <li><a href="${site.social.youtube}" rel="noopener">youtube.com/afloday</a></li>
-          <li><a href="ik.html">İnsan Kaynakları</a></li>
-        </ul>
-      </div>
+
     </div>
     <div class="wrap ftr-base">
       <span>© <span data-year>2026</span> ${site.legal}</span>
-      <!-- Sağdaki yuva eskiden ByFlash Agency imzasının yeriydi. Şimdilik
-           boş: site.tagline buraya konunca "Doğadan Gelişim Atölyesi"
-           telif satırında zaten geçtiği için iki kez yazılıyordu.
-           Geliştirici imzası eklenecekse yeri burası.
-           NOT: bu blok bir şablon dizesinin içinde, yorumda ters tırnak
-           kullanma — dizeyi kapatıp derlemeyi kırıyor. -->
+      <a href="ik.html">İnsan Kaynakları</a>
     </div>
   </div>
 </footer>`;

@@ -1,3 +1,14 @@
+
+/* FOTOĞRAFLARIN DOYGUNLUĞU GERİ VERİLDİ — 7 Ağustos.
+
+   Sitedeki en renkli şey fotoğraflar: kuru çiçek, teraryum, turuncu,
+   pembe, mor. Ama her biri 0.88–0.95 arası doygunluk süzgecinden
+   geçiyordu ve üstlerinde koyu perdeler vardı. Yani sitenin kendi
+   rengini kendimiz bastırıyorduk.
+
+   Süzgeçler 1'e çekildi. Kontrast ayarlarına dokunulmadı — onlar
+   fotoğrafları birbirine yaklaştırmak için, rengi kısmak için değil.
+   Referans logolarındaki `grayscale` duruyor; o kasten renksiz. */
 /* ==========================================================================
    AFLODAY — Botanik Folyo
    Kavram: botanik folyo / herbaryum levhası. Sayfa bir baskı yayını gibi
@@ -26,7 +37,14 @@
   --odak:          #C6401A;
   --cizgi:         #CFC9B9;
   --cizgi-soluk:   #DFDACB;
-  --bant:          #131A15;
+  /* KOYU BANT SİYAHTAN ÇIKTI — 7 Ağustos.
+     #131A15 neredeyse siyahtı ve sitenin ağırlığı oradan geliyordu:
+     footer, hero örtüsü, şeritler hepsi bu tokenı kullanıyor.
+     #1C4A28 doygun bir orman yeşili — aynı işi görüyor ama ölü durmuyor.
+     Krem yazıyla kontrast hâlâ rahat geçiyor.
+     `--eylem` (düğme zemini) siyah kaldı: düğmenin işi vurgu yapmak,
+     orada koyuluk doğru. */
+  --bant:          #1C4A28;
   --bant2:         #1B241D;
   --bant-cizgi:    #2C382F;
   --bant-yazi:     #E9E9E0;
@@ -461,7 +479,7 @@ button { font: inherit; color: inherit; }
   width: 100%; height: 100%;
   object-fit: cover;
   /* Tek tip derece — farklı ışıkta çekilmiş kareleri aynı ailede tutar */
-  filter: saturate(0.88) contrast(1.06) brightness(1.02);
+  filter: saturate(1) contrast(1.06) brightness(1.02);
   transition: filter var(--t-state) var(--ease-io), transform var(--t-hover) var(--ease-io);
 }
 .mosaic a:hover img, .mosaic a:focus-visible img {
@@ -525,7 +543,7 @@ button { font: inherit; color: inherit; }
 .hero-cine-media img {
   width: 100%; height: 100%;
   object-fit: cover;
-  filter: saturate(0.95) contrast(1.03);
+  filter: saturate(1) contrast(1.03);
   transform: scale(1.05);
 }
 .js .hero-cine-media img { animation: heroIn 2600ms var(--ease-out) forwards; }
@@ -697,7 +715,7 @@ button { font: inherit; color: inherit; }
 .bleed-media img {
   width: 100%; height: 100%;
   object-fit: cover;
-  filter: saturate(0.94) contrast(1.04);
+  filter: saturate(1) contrast(1.04);
 }
 @media (max-width: 759px) { .bleed-media img + img { display: none; } }
 /* Metnin oturduğu sol-alt bölge kalabalık fotoğrafta da okunur kalmalı */
@@ -740,7 +758,7 @@ button { font: inherit; color: inherit; }
 .plate-frame img {
   width: 100%; height: 100%;
   object-fit: cover;
-  filter: saturate(0.92) contrast(1.04);
+  filter: saturate(1) contrast(1.04);
   transition: transform var(--t-hover) var(--ease-io), filter var(--t-hover) var(--ease-io);
 }
 a.plate:hover .plate-frame img,
@@ -816,7 +834,7 @@ a.ledger-row:hover, a.ledger-row:focus-visible { background: var(--plate); }
 }
 .ledger-shot img {
   width: 100%; height: 100%; object-fit: cover;
-  filter: saturate(0.94) contrast(1.03);
+  filter: saturate(1) contrast(1.03);
   transition: transform var(--t-hover) var(--ease-io);
 }
 a.ledger-row:hover .ledger-shot img { transform: scale(1.08); }
@@ -1388,8 +1406,34 @@ html { scroll-padding-top: calc(var(--hdr-h) + 16px); }
 .ftr-cta-in { display: grid; gap: var(--s6); align-items: end; }
 @media (min-width: 900px) { .ftr-cta-in { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--s8); } }
 .ftr-main { padding-block: clamp(48px, 6vw, 88px); }
+/* FOOTER İKİ SÜTUN — künye solda, harita sağda.
+
+   Üç sütunluk bağlantı listesi kalkınca ızgara `1.5fr 1fr 1fr` olarak
+   kalmıştı: iki çocuk, üç sütun, sağ taraf boş. Harita da 1fr'lik dar
+   sütuna sıkışıp küçücük kalıyordu.
+
+   Ceylan hanım: "sadece adres ve takip etme kısmı kalacak, adres map
+   buraya gelecek, daha derli toplu düzenli bir footer tasarımı olacak." */
 .ftr-cols { display: grid; gap: var(--s6); }
-@media (min-width: 760px) { .ftr-cols { grid-template-columns: 1.5fr 1fr 1fr; } }
+@media (min-width: 860px) {
+  .ftr-cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); align-items: start; }
+}
+
+.ftr-kunye address { font-style: normal; margin: var(--s4) 0 var(--s5); line-height: 1.7; }
+.ftr-iletisim, .ftr-takip { list-style: none; margin: 0; padding: 0; }
+.ftr-iletisim li + li { margin-top: 6px; }
+/* "Takip Et" başlığı e-postanın hemen dibindeydi; blok olarak ayrılıyor. */
+.ftr-kunye .ftr-head { margin-top: var(--s5); }
+.ftr-takip { display: flex; gap: var(--s4); margin-top: var(--s3); }
+
+/* Harita sütunu doldurur ve oranını korur; küçük bir kutu değil. */
+.ftr-harita iframe {
+  display: block; width: 100%; aspect-ratio: 16 / 10;
+  border: 0; border-radius: 4px;
+  filter: saturate(1);
+}
+.ftr-harita p { margin: var(--s4) 0 0; }
+@media (max-width: 859px) { .ftr-harita iframe { aspect-ratio: 3 / 2; } }
 .ftr h2 { color: var(--field-ink); }
 .ftr-head { font-family: var(--label); font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bronze-lift); margin: 0 0 var(--s4); }
 .ftr ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
@@ -1549,7 +1593,7 @@ html { scroll-padding-top: calc(var(--hdr-h) + 16px); }
 
 .galeri-hucre img {
   width: 100%; height: 100%; object-fit: cover; display: block;
-  filter: saturate(0.94);
+  filter: saturate(1);
   transition: transform 1100ms var(--ease-out), filter 500ms var(--ease-io);
 }
 
@@ -1790,7 +1834,7 @@ body.lb-acik { overflow: hidden; }
 }
 .slider-card-media img {
   width: 100%; height: 100%; object-fit: cover; display: block;
-  filter: saturate(0.92);
+  filter: saturate(1);
   transition: transform 700ms var(--ease-out), filter 400ms var(--ease-io);
 }
 
@@ -2194,7 +2238,7 @@ body:has(.hero-video) .hdr:not(.is-solid):has(.has-mega[data-acik="true"])::afte
 .slayt-kare img {
   width: 100%; height: 100%;
   object-fit: cover;
-  filter: saturate(0.92) contrast(1.04);
+  filter: saturate(1) contrast(1.04);
   transition: transform var(--t-hover) var(--ease-io), filter var(--t-hover) var(--ease-io);
 }
 a.slayt-kare:hover img,
@@ -2469,7 +2513,7 @@ a.slayt-kare:focus-visible img { transform: scale(1.04); filter: saturate(1) con
   width: 100%; height: 100%; object-fit: cover;
   /* object-position satır içi stille geliyor (data.mjs'teki `odak`);
      merkez kırpma birinci slaytta kadının yüzünü kesiyordu. */
-  filter: saturate(0.94) contrast(1.03);
+  filter: saturate(1) contrast(1.03);
 }
 
 .slide-scrim {
@@ -2677,7 +2721,7 @@ a.slayt-kare:focus-visible img { transform: scale(1.04); filter: saturate(1) con
 .deger-levha img {
   width: 100%; height: auto; display: block;
   aspect-ratio: auto; object-fit: fill;
-  filter: saturate(0.96);
+  filter: saturate(1);
 }
 
 @media (max-width: 860px) {
