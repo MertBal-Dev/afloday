@@ -3,8 +3,15 @@
 
 export const site = {
   name: 'Afloday',
-  legal: 'Afloday | Doğadan Gelişim Atölyesi',
-  tagline: 'Doğadan Gelişim Atölyesi',
+/* ŞİRKET TANIMI DEĞİŞTİ — Ceylan hanım, 7 Ağustos:
+     "Doğadan gelişim atölyesi yerine eğitim gelişim danışmanlık."
+
+     DİKKAT: yalnız ŞİRKET TANIMI değişti. "Doğadan Gelişim Atölyeleri"
+     ayrıca bir HİZMET adı ve 4 Ağustos belgesinde tanımlı — belge onu
+     "Doğadan Hobi Atölyeleri"nden ayırmak için kullanıyor. O geçişler
+     olduğu gibi duruyor; değiştirmek belgeyi bozardı. */
+  legal: 'Afloday | Eğitim Gelişim Danışmanlık',
+  tagline: 'Eğitim Gelişim Danışmanlık',
   /* Önizleme dağıtımlarında SITE_URL ile geçersiz kılınır; böylece
      og:image ve canonical yayınlandığı adrese işaret eder. */
   url: (process.env.SITE_URL || 'https://www.afloday.com').replace(/\/$/, ''),

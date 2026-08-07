@@ -57,7 +57,7 @@ const add = (file, html) => pages.push({ file, html });
 {
   const body = `
 ${heroVideo({
-    kicker: 'Afloday · Doğadan Gelişim Atölyesi',
+    kicker: 'Afloday · Eğitim Gelişim Danışmanlık',
     heading: 'Doğada öğrenilen,<br>elde kalan <em>bir gün</em>',
     lede: 'Bitkilerin, çiçeklerin başrolde; katılımcının yönetmen olduğu atölyeler tasarlıyoruz.',
     cta: '<a class="btn btn-primary" href="kurumsal.html">Kurumsal Teklif Al</a>',
@@ -257,13 +257,13 @@ ${heroSlayt(heroSlaytlari)}
 
   add('index.html', layout({
     title: 'Afloday — Doğadan Gelişim ve Hobi Atölyeleri',
-    desc: 'Afloday Doğadan Gelişim Atölyesi olarak; çiçeklerin, doğanın iyileştirici etkisini eğitimle, atölyeyle, özgün tasarımlarla iş ve yaşam alanlarına taşıyoruz.',
+    desc: 'Afloday Eğitim Gelişim Danışmanlık olarak; çiçeklerin, doğanın iyileştirici etkisini eğitimle, atölyeyle, özgün tasarımlarla iş ve yaşam alanlarına taşıyoruz.',
     /* Anasayfa menüde bir madde; boş `current` ile hiçbiri işaretlenmiyordu.
        Ekran okuyucu "şu an bu sayfadasınız" bilgisini buradan alıyor. */
     current: 'index.html', body, canonical: '',
     schema: {
       '@context': 'https://schema.org', '@type': 'Organization',
-      name: site.name, alternateName: 'Afloday Doğadan Gelişim Atölyesi',
+      name: site.name, alternateName: 'Afloday Eğitim Gelişim Danışmanlık',
       url: site.url + '/', logo: `${site.url}/assets/img/brand/logo.png`,
       description: 'Doğa temelli kurumsal gelişim atölyeleri ve hobi atölyeleri.',
       email: site.email, telephone: '+90 216 510 2809',

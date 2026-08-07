@@ -1121,23 +1121,43 @@ body.nav-open { overflow: hidden; }
   transition: opacity 300ms var(--ease-io), visibility 0s linear 300ms;
 }
 .drawer[data-open="true"] { visibility: visible; opacity: 1; transition-delay: 0s; }
-@media (min-width: 1200px) { .drawer { display: none !important; } }
+/* Eşik menüyle aynı olmak zorunda; 1200'de kalınca 1000-1199 arası
+   ikisi birden tanımlı oluyordu. */
+@media (min-width: 1000px) { .drawer { display: none !important; } }
 
-.drawer ul { list-style: none; margin: 0; padding: 0; }
+/* AÇILIR MENÜ DERLİ TOPLU VE ORTALI.
+
+   Önceki hâlinde satır `justify-content: space-between` idi: madde adı
+   sola, küçük etiket sağa gidiyor ve aradaki boşluk upuzun kalıyordu.
+   Kullanıcının sözü: "Hakkımızda yazıyor, yanında uzun bir çizgi var,
+   komple boş, bunlar büyük büyük geliyor." Punto da 40 pikseldi.
+
+   Şimdi: liste ortalanmış dar bir sütunda, madde ortalı, punto yarıya
+   indi, satır yüksekliği sıkıştı. Çizgiler de sütun kadar; ekranı
+   boydan boya kesmiyor. Menü bir afiş değil, gezinme aracı —
+   Ceylan hanımın "açılan ana menüde başlıklar çok büyük" maddesi. */
+.drawer ul {
+  list-style: none; margin: 0 auto; padding: 0;
+  width: min(100%, 420px);
+}
 .drawer li { border-top: 1px solid var(--rule); }
 .drawer li:last-child { border-bottom: 1px solid var(--rule); }
 .drawer li a {
-  display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
-  padding: clamp(14px, 3.4vw, 22px) 0;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: clamp(12px, 2.6vw, 16px) 0;
   font-family: var(--serif); font-weight: 300;
-  font-size: clamp(1.75rem, 8vw, 2.5rem); line-height: 1.05;
-  letter-spacing: -0.015em; text-decoration: none; color: inherit;
+  font-size: clamp(1.25rem, 4.6vw, 1.5rem); line-height: 1.15;
+  letter-spacing: -0.01em; text-decoration: none; color: inherit;
+  text-align: center;
 }
+/* Yan etiket artık maddenin altında, ortalı ve küçük. Sağa itilip
+   arada boşluk bırakmıyor. */
 .drawer li a > span {
   font-family: var(--label); font-weight: 500;
-  font-size: 0.625rem; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--bronze); flex: 0 0 auto; opacity: .85;
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--bronze); opacity: .8;
 }
+.drawer-foot { width: min(100%, 420px); margin-inline: auto; }
 /* Satırlar sırayla girer — menü bir liste değil, bir açılış hissi verir */
 .drawer[data-open="true"] li a,
 .drawer[data-open="true"] .drawer-foot { animation: navIn 520ms var(--ease-out) both; }

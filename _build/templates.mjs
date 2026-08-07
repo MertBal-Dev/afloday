@@ -855,7 +855,7 @@ export function layout({ title, desc, current, body, ogImage = 'assets/img/og/og
 <meta property="og:image" content="${site.url}/${ogImage}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Afloday — Çiçekli Bir Gün. Doğadan Gelişim Atölyesi.">
+<meta property="og:image:alt" content="Afloday — Çiçekli Bir Gün. Eğitim Gelişim Danışmanlık.">
 <meta property="og:url" content="${site.url}/${canonical}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#E9E9E0">
