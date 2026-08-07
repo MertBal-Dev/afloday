@@ -74,7 +74,8 @@ ${heroVideo({
     posterAlt: 'Sabah ışığının ağaçların arasından süzüldüğü orman; eğrelti otları, yosun ve pembe kır çiçekleri',
     /* Tanıtım filmi bölümü yeni anasayfa düzeninde yok; kaydırma oku
        artık ilk içerik bölümüne gidiyor. */
-    asagi: '#ne-yapiyoruz',
+    /* Hedef bölüm silindi (slaytla birleşti); ok artık slayta iniyor. */
+    asagi: '#slaytlar',
   })}
 
   <!-- SLAYT — video hero'nun hemen altında, cam kırılması geçişiyle.
@@ -83,31 +84,17 @@ ${heroVideo({
 ${heroSlayt(heroSlaytlari)}
 
   <!-- 2 · DEĞER ÖNERİSİ ŞERİDİ — belgede hero'nun hemen altı, 3 sütun -->
-  <section class="section rule-top" id="ne-yapiyoruz">
-    <div class="wrap">
-      <div class="deger">
-        ${degerOnerisi.sutunlar.map((s, i) => `<div class="deger-sutun" data-reveal="stagger">
-          <p class="deger-no">${String(i + 1).padStart(2, '0')}</p>
-          <h2 class="deger-ad">${s.baslik}</h2>
-          <p class="deger-metin">${s.metin}</p>
-        </div>`).join('\n        ')}
-      </div>
-      ${/* Belgede bu bölüm için bir görsel önerisi var
-           (earth-day-environment-concept-eco-concept: yeşilliklerden yapılmış
-           parmak izi). Konulmadı: belge görselleri "Görsel Önerisi" olarak
-           veriyor, zorunlu içerik değil. Kaynak dikey 4379x6569; yatay şeritte
-           yukarı ölçeklenip bulanıklaşıyor, fikri taşıyan parmak izi de
-           kırpılıp gidiyordu. Bölümün kendi başlığı zaten "3 Sütun" — üç
-           metin sütunu tek başına daha net duruyor.
-           Karar günlüğü: docs/afloday-sorular-2026-08-04.md · madde 22. */ ''}
-    </div>
-  </section>
+  ${/* "NE YAPIYORUZ" BÖLÜMÜ KALDIRILDI — Ceylan hanım, 7 Ağustos.
+       01/02/03 diye numaralanmış üç sütun vardı: Kurumsal Eğitim &
+       Gelişim, Doğadan Deneyimsel Öğrenme, Kişisel Sürdürülebilirlik.
+       Bunlar aslında yukarıdaki üç slaydın açıklamasıydı — slayt
+       kimlikleri (kurumsal-gelisim, deneyimsel-ogrenme,
+       kisisel-surdurulebilirlik) sütun başlıklarıyla birebir aynıydı.
 
-  <!-- 3 · NEDEN DOĞA TEMELLİ GELİŞİM? — 4 istatistik.
-       Belgedeki not: "Sade, büyük punto rakamlar + tek cümlelik açıklama;
-       arka planda hafif doğa dokusu, fotoğraf yoğunluğu düşük tutulmalı ki
-       veri okunabilir kalsın." Fotoğraf bu yüzden çok düşük görünürlükte
-       doku olarak duruyor, rakamların önüne geçmiyor. -->
+       Metinler slaytların içine taşındı (`data.mjs` → kartBaslik,
+       kartMetin). Aynı bilgi iki kez, iki ekranda duruyordu; şimdi
+       bir kez, kendi slaydının üstünde. Anasayfa bir bölüm kısaldı. */ ''}
+
   <section class="section field istatistik">
     <div class="istatistik-doku" aria-hidden="true">
       ${resim({ gorsel: istatistikler.gorsel, alt: '' })}

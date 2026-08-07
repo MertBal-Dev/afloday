@@ -363,6 +363,10 @@ export function heroSlayt(slaytlar) {
             <p class="slide-eyebrow">${s.etiket}</p>
             <h2 class="slide-title">${baslik}</h2>
             <p class="slide-description">${s.altBaslik}</p>
+            ${s.kartBaslik ? `<div class="slide-kart">
+              <p class="slide-kart-ad">${s.kartBaslik}</p>
+              <p class="slide-kart-metin">${s.kartMetin}</p>
+            </div>` : ''}
             ${butonlar.length
         ? `<div class="slide-actions">
               ${butonlar.map((b, n) => `<a class="btn ${n === 0 ? 'btn-primary' : 'btn-ghost'}" href="${b.href}"${i ? ' tabindex="-1"' : ''}>${b.yazi}</a>`).join('\n              ')}
@@ -371,7 +375,7 @@ export function heroSlayt(slaytlar) {
           </div>`;
   };
 
-  return `<section class="slider-wrapper" data-hslayt aria-roledescription="slayt"
+  return `<section class="slider-wrapper" id="slaytlar" data-hslayt aria-roledescription="slayt"
       aria-label="Afloday hizmet hatları">
     <canvas class="webgl-canvas" data-hslayt-tuval aria-hidden="true"></canvas>
 

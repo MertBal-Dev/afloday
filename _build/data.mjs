@@ -801,6 +801,12 @@ export const about = {
 export const heroSlaytlari = [
   {
     id: 'kurumsal-gelisim',
+    /* Bu iki alan eskiden ayrı bir bölümdü (`ne-yapiyoruz`, 01/02/03).
+       Ceylan hanım: o metinler aslında slaytların açıklaması, aynı ekranda
+       görünmeli. Slayt kimlikleri sütun başlıklarıyla zaten birebir
+       eşleşiyordu. Bölüm silindi, metinler buraya taşındı. */
+    kartBaslik: 'Kurumsal Eğitim & Gelişim Programları',
+    kartMetin: 'Doğadan ilhamla tasarlanmış, yetkinlik odaklı eğitim modülleriyle ekiplerinizin duygusal dayanıklılığını, iletişimini, iş birliğini ve yaratıcılığını güçlendiriyoruz.',
     etiket: 'DOĞADAN İLHAMLA KURUMSAL GELİŞİM',
     baslik: 'Geleceği Doğadan Tasarlıyoruz',
     altBaslik: 'Kurumlara, bireylere ve çocuklara; doğanın 3,8 milyar yıllık bilgeliğinden ilham alan, deneyimsel eğitim ve gelişim programları sunuyoruz.',
@@ -815,6 +821,12 @@ export const heroSlaytlari = [
   },
   {
     id: 'deneyimsel-ogrenme',
+    /* Bu iki alan eskiden ayrı bir bölümdü (`ne-yapiyoruz`, 01/02/03).
+       Ceylan hanım: o metinler aslında slaytların açıklaması, aynı ekranda
+       görünmeli. Slayt kimlikleri sütun başlıklarıyla zaten birebir
+       eşleşiyordu. Bölüm silindi, metinler buraya taşındı. */
+    kartBaslik: 'Doğadan Deneyimsel Öğrenme',
+    kartMetin: 'Aktif ve deneyimsel öğrenme prensipleriyle; doğadan malzemeler ve atölye pratikleriyle desteklenen, teoride kalmayan, kalıcı öğrenme deneyimleri sunuyoruz.',
     etiket: 'DOĞADAN İLHAMLA DENEYİMSEL ÖĞRENME',
     baslik: 'Öğrenmek Deneyimle Kalıcı Olur',
     altBaslik: 'Doğadan malzemelerle, aktif ve deneyimsel atölyelerle; eğitim programlarımızı teoride bırakmıyor, somut bir deneyime dönüştürüyoruz.',
@@ -827,6 +839,12 @@ export const heroSlaytlari = [
   },
   {
     id: 'kisisel-surdurulebilirlik',
+    /* Bu iki alan eskiden ayrı bir bölümdü (`ne-yapiyoruz`, 01/02/03).
+       Ceylan hanım: o metinler aslında slaytların açıklaması, aynı ekranda
+       görünmeli. Slayt kimlikleri sütun başlıklarıyla zaten birebir
+       eşleşiyordu. Bölüm silindi, metinler buraya taşındı. */
+    kartBaslik: 'Kişisel Sürdürülebilirlik',
+    kartMetin: 'Kadın, Çocuk, Çevre ve İş Dünyası penceresinden; bireylerin doğadan ilhamla kendi davranış ve alışkanlıklarını dönüştürmesine rehberlik ediyoruz.',
     etiket: 'DOĞADAN İLHAMLA KİŞİSEL SÜRDÜRÜLEBİLİRLİK',
     baslik: 'İnsan Kendi Senfonisini Kendi Tamamlamalı',
     altBaslik: 'Kurum stratejileri paralelinde; kurum çalışanlarına Kadın, Çocuk, Çevre ve İş Dünyası penceresinden; doğadan ilhamla kendi davranış ve alışkanlıklarını dönüştürmelerine rehberlik ediyoruz.',
