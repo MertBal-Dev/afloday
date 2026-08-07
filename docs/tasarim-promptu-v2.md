@@ -564,6 +564,61 @@ ama sitenin renk sistemini menüde de hissettiriyor.
 
 ---
 
+### P10 · Anlatı taşımak — kart destesi ve birleşme
+
+**Fikir: deste tek ekranda yaşar, sayfa kaydırılmaz.**
+Referans sitedeki kart destesi güzel ama orada her kart için bir ekran
+kaydırma harcanıyor; deste 20 ekranın sebebi bu. Bizde deste **bir ekranın
+içinde** duracak ve ilerleme sayfa kaydırmasıyla değil, **kartın kendisiyle**
+olacak: tıkla, sürükle ya da ok tuşuyla. Sayfa yerinde kalır, bütçe yanmaz.
+
+**Kart tipleri karışık olabilir** ve karışık olması iyidir:
+- yalnız yazı — bir cümle, iri, kartın ortasında
+- yalnız görsel — tam kanamalı fotoğraf, yazısız
+- görsel + yazı — fotoğraf üstte, tek satır altta
+
+Ritim buradan çıkıyor: yazı, görsel, yazı, görsel+yazı. Aynı tipte iki kart
+arka arkaya gelmesin.
+
+**Ve asıl hamle: son kartta deste dağılmıyor, BİRLEŞİYOR.**
+Son adımda kartlar üst üste durmayı bırakıp yelpaze gibi açılıyor ve
+ekranda bir kompozisyon kuruyorlar. O anda kartların üzerindeki metin
+parçaları da yan yana gelip **tek bir tam cümleye** dönüşüyor. Kullanıcı
+tek tek gördüğü parçaların aslında bir bütün olduğunu son karede anlıyor.
+
+Bu, "doğadan gelişim" fikriyle de örtüşüyor: parçalar birleşince anlam
+çıkıyor. Ve basılıda karşılığı yok — bir slaytta ya dağınık ya birleşik
+gösterebilirsin, ikisi arasındaki geçişi gösteremezsin.
+
+*Mekanik:* kartlar tek kapsayıcıda mutlak konumlu, her birinde
+`--i` sırası. Yığın hâli `translate(0, calc(var(--i) * -6px))
+rotate(calc(var(--i) * 1.2deg))`. Birleşme hâlinde her kart ızgaradaki
+hedef hücresine gider — konum değişimi FLIP ile ölçülüp `transform`a
+çevrilir, `top/left` animasyonu yapılmaz (o düzeni yeniden hesaplatır ve
+takılır). Metin birleşmesi: parçalar aynı satır kutusuna akar,
+`View Transitions API` ile aradaki fark yumuşatılır.
+
+*Erişilebilirlik:* kartların tamamı klavyeyle gezilebilir; `←` `→` ile
+ilerler. Animasyon olmadan da bütün metin DOM'da ve okunabilir durumda —
+`prefers-reduced-motion`'da deste doğrudan birleşmiş hâlinde başlar.
+Kaç kart olduğu her an görünür (`03 / 06`), kullanıcı ne kadar şey
+olduğunu bilir.
+
+**NEREDE KULLANILIR — burası kritik.**
+Deste doğası gereği kartları sırayla gösteriyor, yani "hepsi bir arada"
+kuralını gerginleştiriyor. O yüzden kullanım alanı sınırlı:
+
+- ✅ **Anlatı içeriği:** manifesto, yaklaşım, "biz kimiz", bir fikrin
+  adım adım kurulması. Burada sıra zaten anlamın parçası ve final
+  birleşmesi ödülü veriyor.
+- ❌ **Katalog içeriği:** kategoriler, atölyeler, eğitimler, ekip.
+  Bunlar seçim listesidir; kullanıcı hepsini görüp birini seçmek ister.
+  Sıraya sokmak seçim yapmayı zorlaştırır ve müşterinin maddesini ihlal eder.
+
+Kural tek cümle: **anlatı destelenir, katalog serilir.**
+
+---
+
 ### DAĞARCIĞIN KULLANIMI
 
 - Her fikri her sayfada kullanma. Bir sayfada **en fazla iki** güçlü fikir
@@ -597,7 +652,7 @@ harcanıyor. Ceylan hanımın istediği tam tersi: hepsi aynı anda, üç ekrand
 | Referanstaki | Olduğu gibi alınır mı | Bizde nasıl kullanılır |
 |---|---|---|
 | Kaydırınca yanlardan gelen kartlar | ✅ evet | **Giriş animasyonu olarak.** Kartlar sağdan/soldan gelip yerine oturur ve KALIR. Kaydırma ilerledikçe geri gitmez. Bir kez gelir, hepsi görünür durur. |
-| Üst üste yığılmış dönen kart destesi | ❌ hayır | Deste aynı anda bir kart gösteriyor — "hepsi bir arada" kuralının ihlali. **Yerine: destenin açılması.** Kartlar önce yığın hâlinde gelir, sonra tek harekette **yelpaze gibi açılıp** ızgaraya oturur. Deste metaforu kalır, saklama gider. |
+| Üst üste yığılmış dönen kart destesi | ⚠️ dönüştürülerek | Onlarda deste sayfayı kaydırarak ilerliyor ve her kart bir ekran yiyor. Bizde deste **tek ekranda** durur, ilerleme tıklama/sürükleme/ok tuşuyla olur, son adımda kartlar **birleşip** tek kompozisyona döner. Ayrıntı: **P10**. Yalnız anlatı içeriğinde; katalogda değil. |
 | Yumuşak kaydırma (Lenis) | ⚠️ dikkatli | Hissi iyi ama kaydırmayı ele geçiriyor ve erişilebilirlikte sorun çıkarabiliyor. Kullanılacaksa çok hafif ayarlanacak ve `prefers-reduced-motion`'da tamamen kapanacak. |
 | Sticky + kaydırmaya bağlı sahne | ⚠️ sayfada bir kez | Ekran bütçesini en hızlı yiyen şey bu: bir sahne için 3-4 ekran kaydırma harcanıyor. **Yalnız anasayfa açılışında, tek yerde.** |
 | Dev ince display tipografi | ✅ evet | Bizde de display iri ve ince olacak. Ama onlarınki koyu lacivert üzerine beyaz; bizimki cıvıl cıvıl yeşil. Renk hariç aynı cesaret. |
