@@ -4944,9 +4944,12 @@ a.index-row .index-meta::after,
   }
 
   /* Koyu bantta renkli çizim boğuluyor; orada biraz açılıyor. */
+  /* Koyu bantta renkli çizim boğuluyor: %24 opaklıkta ayçiçeği ve gül
+     zor seçiliyordu. Aydınlık ve doygunluk artırılıp opaklık %42'ye
+     çıkarıldı — açık zemindeki %32 ile aynı görünür ağırlığı veriyor. */
   main > section.field::before {
-    filter: brightness(1.4) saturate(1.15);
-    opacity: 0.24;
+    filter: brightness(1.75) saturate(1.35);
+    opacity: 0.42;
   }
 }
 
