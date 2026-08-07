@@ -58,3 +58,6 @@ public/
 
 # Claude Code makine-yerel ayarları — izin kayıtları oturuma özel, depoya girmez
 .claude/
+
+# Laboratuvar geçici çıktıları (tasarım v2 çalışması)
+_lab/cikti/

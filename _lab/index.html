@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Afloday — tasarım sistemi v2 · laboratuvar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sistem.css">
+<style>
+/* ══ P1 · YAŞAYAN MOZAİK ═══════════════════════════════════════════════
+   Yedi kategori tek ekranda, hiçbiri kırpılmadan.
+
+   Hizalı satır matematiği: satıra `aspect-ratio: Σoran`, kareye
+   `flex: <kendi oranı> 1 0`. Satır genişliği S ise yüksekliği S/Σ,
+   karenin genişliği S·oran/Σ; bölünce karenin oranı kendi oranına eşit
+   çıkıyor. Dinlenme hâlinde kırpma sıfır.
+
+   Yaşayan kısmı: imleç bir kareye gelince o kare komşularından yer
+   alıyor, komşular sıkışıyor. O an karenin çerçevesi fotoğrafın oranından
+   ayrılıyor ve fotoğraf hafifçe kırpılıyor — bilerek. Kırpma yalnız
+   etkileşim ânında var, duran görüntüde yok. Ceylan hanımın itirazı
+   duran görüntüyeydi.
+
+   Büyüme %18 ile sınırlı: daha fazlası komşuları okunmaz yapıyor ve
+   kırpmayı fark edilir hâle getiriyor. */
+.mozaik { display: flex; flex-direction: column; }
+
+.mz-satir {
+  display: flex;
+  aspect-ratio: var(--toplam);
+  /* Kareler uç uca; ayırmayı saç teli çizgi yapıyor, boşluk değil.
+     Boşluk eklenirse her kareden gap/n pay gider ve oran bozulur. */
+}
+
+.mz-kare {
+  position: relative;
+  flex: var(--oran) 1 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--murekkep);
+  background: var(--krem);
+  transition: flex-grow var(--gecis);
+}
+/* Fotograf kutusu: karenin ustunde, kendi oraninda. Etiket seridi altta
+   akiyor, foto onu itmiyor. */
+.mz-foto { position: relative; flex: 1 1 auto; overflow: hidden; }
+.mz-kare + .mz-kare { box-shadow: inset 1px 0 0 rgb(255 255 255 / 0.3); }
+.mz-satir + .mz-satir .mz-kare { box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.3); }
+.mz-satir + .mz-satir .mz-kare + .mz-kare {
+  box-shadow: inset 1px 0 0 rgb(255 255 255 / 0.3), inset 0 1px 0 rgb(255 255 255 / 0.3);
+}
+
+.mz-foto img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              filter var(--gecis);
+  /* Izgara fotoğrafı hafif renk yıkaması alıyor: yedi farklı yıl, yedi
+     farklı ışık tek aileye giriyor. Tam duotone değil — atölyenin
+     ürününün rengi (teraryumun yeşili, çiçeğin turuncusu) kaybolmasın. */
+  filter: saturate(0.82) contrast(1.04);
+}
+
+/* ETİKET FOTOĞRAFIN ÜSTÜNDE DEĞİL, ALTINDA.
+
+   İki deneme ölçümle elendi. Önce %88 perde: satır 1'in kareleri 170px
+   yüksekliğinde, iki satırlık etiket perdenin zayıf bölgesine düşüyor,
+   parlak fotoğrafta beyaz yazı en kötü durumda 1:1 kalıyordu. Sonra perde
+   güçlendirildi: bu sefer yeşil yıkama bütün fotoğrafı orta tona indirdi,
+   fotoğraflar öldü ve yazı hâlâ ~2.5:1'de kaldı. Yeşil bir örtü parlak
+   fotoğrafın üstünde koyu değil ORTA ton üretiyor; beyaz yazı orta tonda
+   hiçbir zaman geçmez.
+
+   Etiket kartın altına, kendi kremi zemine indi. Kazanç iki taraflı:
+   kontrast garanti (11.8:1) ve fotoğraflar hiç karartılmadan, tam
+   canlılıklarıyla duruyor. Marka "cıvıl cıvıl doğa" istiyor; fotoğrafın
+   üstüne örtü atmak bunun tam tersiydi. */
+.mz-ic {
+  display: block;
+  padding: var(--s3) var(--s3) var(--s4);
+  color: var(--murekkep);
+  background: var(--krem);
+  transition: background var(--gecis), color var(--gecis);
+}
+.mz-ad {
+  display: block;
+  font-family: var(--serif);
+  font-variation-settings: 'opsz' 72, 'SOFT' 50, 'WONK' 1;
+  font-weight: 400;
+  font-size: clamp(0.9375rem, 1.28vw, 1.375rem);
+  line-height: 1.12;
+}
+.mz-sayi {
+  display: block;
+  font-family: var(--sans);
+  font-size: var(--t-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--e-500);
+  margin-bottom: 2px;
+}
+
+/* Yaşayan kısım. `:has()` ile satırdaki DİĞER kareler küçülüyor —
+   JavaScript yok. */
+@media (hover: hover) and (min-width: 1000px) {
+  .mz-kare:hover,
+  .mz-kare:focus-visible { flex-grow: calc(var(--oran) * 1.18); }
+  .mz-satir:has(.mz-kare:hover) .mz-kare:not(:hover),
+  .mz-satir:has(.mz-kare:focus-visible) .mz-kare:not(:focus-visible) {
+    flex-grow: calc(var(--oran) * 0.94);
+  }
+  .mz-kare:hover .mz-foto img,
+  .mz-kare:focus-visible .mz-foto img { filter: saturate(1.06) contrast(1); transform: scale(1.04); }
+  /* Uzerine gelince etiket seridi elementin rengini aliyor. */
+  .mz-kare:hover .mz-ic,
+  .mz-kare:focus-visible .mz-ic { background: var(--e-700); color: var(--krem); }
+}
+
+/* Telefon ve tablet: kare küçülür, sayısı azalmaz. Satır kabı saydam
+   olur ve kareler doğrudan ızgaranın çocuğu hâline gelir. */
+@media (max-width: 999px) {
+  .mozaik { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+  .mz-satir { display: contents; }
+  .mz-kare { aspect-ratio: var(--oran); box-shadow: none; }
+  .mz-ic { padding: var(--s4); }
+}
+@media (max-width: 520px) {
+  .mozaik { grid-template-columns: repeat(2, 1fr); }
+  .mz-ad { font-size: 0.8125rem; }
+  .mz-ic { padding: var(--s3); }
+}
+
+/* ══ SİSTEM VİTRİNİ ═══════════════════════════════════════════════════ */
+.vitrin { padding-block: var(--s6); border-top: 1px solid var(--cizgi); }
+.merdivenler { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s5); }
+.aile { display: flex; flex-direction: column; gap: 2px; }
+.aile b { font-size: var(--t-eyebrow); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: var(--s2); }
+.kademe { height: 34px; display: flex; align-items: center; padding-inline: var(--s3); font-size: 11px; font-weight: 600; }
+@media (max-width: 760px) { .merdivenler { grid-template-columns: repeat(2, 1fr); } }
+
+.olcum {
+  position: fixed; right: 12px; bottom: 12px; z-index: 50;
+  background: var(--murekkep); color: var(--krem);
+  font: 600 11px/1.5 var(--sans);
+  padding: 8px 12px; border-radius: 6px;
+  letter-spacing: 0.04em;
+}
+.olcum b { color: var(--toprak-300); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- EKRAN 1 · kategoriler, yedisi bir arada -->
+  <section class="ekran" data-element="toprak">
+    <p class="eyebrow">Kurumsal Hizmetler</p>
+    <h1 class="baslik" style="margin-bottom: var(--s5)">
+      Doğadan Etkinlik
+      <span>Atölye Deneyimleri</span>
+    </h1>
+
+    <div class="mozaik">
+      <div class="mz-satir" style="--toplam: 5.722">
+        <a class="mz-kare" href="#" style="--oran: 1.500">
+          <span class="mz-foto"><img src="../site/assets/img/rev2/etkinlik/surdurulebilirlik-etkinlikleri-1.jpg" alt="" width="1600" height="1067"></span>
+          <span class="mz-ic"><span class="mz-sayi">01</span><span class="mz-ad">Sürdürülebilirlik Etkinlikleri</span></span>
+        </a>
+        <a class="mz-kare" href="#" style="--oran: 1.333">
+          <span class="mz-foto"><img src="../site/assets/img/rev2/etkinlik/motivasyon-ve-calisan-deneyimi-etkinlikleri-2.jpg" alt="" width="1600" height="1200"></span>
+          <span class="mz-ic"><span class="mz-sayi">02</span><span class="mz-ad">Motivasyon ve Çalışan Deneyimi</span></span>
+        </a>
+        <a class="mz-kare" href="#" style="--oran: 1.389">
+          <span class="mz-foto"><img src="../site/assets/img/rev2/etkinlik/ozel-gun-ve-donemsel-etkinlikleri-1.jpg" alt="" width="1600" height="1152"></span>
+          <span class="mz-ic"><span class="mz-sayi">03</span><span class="mz-ad">Özel Gün ve Dönemsel Etkinlikler</span></span>
+        </a>
+        <a class="mz-kare" href="#" style="--oran: 1.500">
+          <span class="mz-foto"><img src="../site/assets/img/rev2/etkinlik/takim-gelisim-etkinlikleri-5-jpg.jpg" alt="" width="1600" height="1067"></span>
+          <span class="mz-ic"><span class="mz-sayi">04</span><span class="mz-ad">Takım Gelişim Etkinlikleri</span></span>
+        </a>
+      </div>
+      <div class="mz-satir" style="--toplam: 4.550">
+        <a class="mz-kare" href="#" style="--oran: 1.501">
+          <span class="mz-foto"><img src="../site/assets/img/rev2/etkinlik/kurumsal-gonulluluk-etkinlikleri-6.jpg" alt="" width="1600" height="1066"></span>
+          <span class="mz-ic"><span class="mz-sayi">05</span><span class="mz-ad">Kurumsal Gönüllülük Etkinlikleri</span></span>
+        </a>
+        <a class="mz-kare" href="#" style="--oran: 1.569">
+          <span class="mz-foto"><img src="../site/assets/img/rev2/etkinlik/wellbeing-iyi-olus-etkinlikleri-7.jpg" alt="" width="1600" height="1020"></span>
+          <span class="mz-ic"><span class="mz-sayi">06</span><span class="mz-ad">Wellbeing İyi Oluş Etkinlikleri</span></span>
+        </a>
+        <a class="mz-kare" href="#" style="--oran: 1.480">
+          <span class="mz-foto"><img src="../site/assets/img/rev2/etkinlik/cocuk-atolye-etkinlikleri-1.jpg" alt="" width="1394" height="942"></span>
+          <span class="mz-ic"><span class="mz-sayi">07</span><span class="mz-ad">Çocuk Atölye Etkinlikleri</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SİSTEM VİTRİNİ -->
+  <section class="vitrin">
+    <p class="eyebrow">Sistem</p>
+    <h2 class="baslik" style="margin-bottom: var(--s5)">Dört element<span>dört renk ailesi</span></h2>
+    <div class="merdivenler">
+      <div class="aile" data-element="toprak">
+        <b style="color: var(--e-700)">Toprak · Çevre</b>
+        <div class="kademe" style="background: var(--e-900); color: #fff">900</div>
+        <div class="kademe" style="background: var(--e-700); color: #fff">700</div>
+        <div class="kademe" style="background: var(--e-500); color: #fff">500</div>
+        <div class="kademe" style="background: var(--e-300)">300</div>
+        <div class="kademe" style="background: var(--e-100)">100</div>
+      </div>
+      <div class="aile" data-element="su">
+        <b style="color: var(--e-700)">Su · Kadın</b>
+        <div class="kademe" style="background: var(--e-900); color: #fff">900</div>
+        <div class="kademe" style="background: var(--e-700); color: #fff">700</div>
+        <div class="kademe" style="background: var(--e-500); color: #fff">500</div>
+        <div class="kademe" style="background: var(--e-300)">300</div>
+        <div class="kademe" style="background: var(--e-100)">100</div>
+      </div>
+      <div class="aile" data-element="ates">
+        <b style="color: var(--e-700)">Ateş · Çocuk</b>
+        <div class="kademe" style="background: var(--e-900); color: #fff">900</div>
+        <div class="kademe" style="background: var(--e-700); color: #fff">700</div>
+        <div class="kademe" style="background: var(--e-500); color: #fff">500</div>
+        <div class="kademe" style="background: var(--e-300)">300</div>
+        <div class="kademe" style="background: var(--e-100)">100</div>
+      </div>
+      <div class="aile" data-element="hava">
+        <b style="color: var(--e-700)">Hava · İş Hayatı</b>
+        <div class="kademe" style="background: var(--e-900); color: #fff">900</div>
+        <div class="kademe" style="background: var(--e-700); color: #fff">700</div>
+        <div class="kademe" style="background: var(--e-500); color: #fff">500</div>
+        <div class="kademe" style="background: var(--e-300)">300</div>
+        <div class="kademe" style="background: var(--e-100)">100</div>
+      </div>
+    </div>
+
+    <div style="margin-top: var(--s6)" data-element="toprak">
+      <p class="eyebrow">Ton merdiveni</p>
+      <div class="merdiven">
+        <p>Doğanın ve yaşamın temel dinamiklerinden ilham alarak, kurumlara ve çalışanlarına iş ve sosyal yaşamlarında bütünsel farkındalık katıyoruz.</p>
+        <p>Z kuşağı çalışanlarının <b>%59'u</b> ve Y kuşağı çalışanlarının <b>%55'i</b>, iş teklifini kabul etmeden önce markanın çevresel etkisini araştırdığını ifade etmiştir.</p>
+        <p>Şirketlerin sürdürülebilirlik performansları, yetenek havuzunu çekme ve elde tutmada kritik rol oynamaktadır.</p>
+        <p>Bu kuşaklar için sürdürülebilirlik, işveren seçiminde belirleyici bir faktör olup sadece bir ekstra değildir.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="olcum" id="olcum">ölçülüyor…</div>
+
+<script>
+/* Ekran bütçesi göstergesi. Kural: hiçbir sayfa 3.0 ekranı geçmeyecek.
+   Tasarım sırasında sürekli görünsün ki bütçe unutulmasın. */
+(function () {
+  var kutu = document.getElementById('olcum');
+  function olc() {
+    var oran = document.documentElement.scrollHeight / window.innerHeight;
+    var gecti = oran > 3;
+    kutu.innerHTML = window.innerWidth + '×' + window.innerHeight +
+      ' · <b style="color:' + (gecti ? '#ff8a65' : '') + '">' + oran.toFixed(2) + ' ekran</b>' +
+      (gecti ? ' · BÜTÇE AŞILDI' : '');
+  }
+  olc();
+  addEventListener('resize', olc);
+  addEventListener('load', olc);
+})();
+</script>
+
+</body>
+</html>
