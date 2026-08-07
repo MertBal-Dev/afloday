@@ -1161,10 +1161,7 @@ ${folio({
        "Neden Doğa Temelli Gelişim?" dört istatistik kartı anasayfadaydı;
        kendi bağlamı burası. Anasayfa bir bölüm kısaldı, bu sayfa da
        eğitimlerin neden doğa temelli olduğunu kanıtla açıklıyor. */ ''}
-  <section class="section field istatistik">
-    <div class="istatistik-doku" aria-hidden="true">
-      ${resim({ gorsel: istatistikler.gorsel, alt: '' })}
-    </div>
+  <section class="section istatistik">
     <div class="wrap istatistik-in">
       <div class="opener" data-reveal>
         <div class="opener-head">

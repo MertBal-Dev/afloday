@@ -5120,43 +5120,53 @@ a.index-row .index-meta::after,
   .mtd-govde { transition: none; }
 }
 
-/* ══ İSTATİSTİK KARTLARI — dört element, dört renk ════════════════════
-   "Neden Doğa Temelli Gelişim?" bölümü anasayfadan eğitimler sayfasına
-   taşındı. Orada dört kart da aynı koyu yeşil zemindeydi ve rakamlar
-   krem tek renkti — ciddi ama sönük.
+/* ══ İSTATİSTİK KARTLARI — renk vurgu, dolgu değil ═══════════════════
+   İlk denemede dört kart dört doygun renkle DOLDURULMUŞTU ve koyu
+   fotoğraf bandının üstünde duruyordu. Renk kartelası gibi görünüyordu:
+   dört blok yan yana, renk renge biniyor, hiçbiri nefes almıyor.
 
-   Şimdi her kart bir elementin rengini alıyor. Renk bir süs değil, dört
-   elementin sitedeki karşılığı:
-     Toprak yeşil · Su mavi · Ateş turuncu · Hava lacivert
+   Premium olan az renk değil, doğru yerde renk. Şimdi:
+     · bölüm krem zeminde, koyu bant ve fotoğraf dokusu kalktı
+     · kart açık yüzeyde, üstünde 3 piksellik renkli çizgi
+     · rakam iri ve renkli — kartın tek renkli öğesi o
+     · metin mürekkep, kaynak soluk
+     · üzerine gelince çizgi kalınlaşıyor ve kart hafifçe yükseliyor
 
-   Rakam kartın en iri öğesi ve kendi renginde parlıyor; zemin o rengin
-   en koyu kademesi, yazı krem. Kart üstüne gelince zemin bir kademe
-   açılıyor ve rakam büyüyor. */
-.istatistik-kutu[data-element='toprak'] { --k: #7FB03F; --k-zemin: #1E4620; }
-.istatistik-kutu[data-element='su']     { --k: #5FB8D8; --k-zemin: #0B3A5C; }
-.istatistik-kutu[data-element='ates']   { --k: #F58B54; --k-zemin: #8A2A0C; }
-.istatistik-kutu[data-element='hava']   { --k: #8290E0; --k-zemin: #1B2470; }
+   Renk artık zemin değil imza. Dört element yine ayırt ediliyor ama
+   sayfayı bastırmıyor. */
+.istatistik { background: var(--paper, #F4F1E7); }
+
+.istatistik-kutu[data-element='toprak'] { --k: #2F6A2E; }
+.istatistik-kutu[data-element='su']     { --k: #12648F; }
+.istatistik-kutu[data-element='ates']   { --k: #C6401A; }
+.istatistik-kutu[data-element='hava']   { --k: #2E3E9E; }
 
 .istatistik-kutu {
-  background: var(--k-zemin);
-  padding: var(--s5);
-  transition: background var(--t-state) var(--ease-io),
-              transform var(--t-state) var(--ease-io);
+  position: relative;
+  background: var(--surface, #FBFAF3);
+  padding: var(--s6) var(--s5) var(--s5);
+  transition: transform var(--t-state) var(--ease-io),
+              box-shadow var(--t-state) var(--ease-io);
+}
+/* Üstteki renkli çizgi — kartın imzası. */
+.istatistik-kutu::before {
+  content: '';
+  position: absolute; inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--k);
+  transition: height var(--t-state) var(--ease-io);
 }
 .istatistik-kutu:hover {
-  background: color-mix(in srgb, var(--k-zemin) 78%, var(--k));
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgb(19 26 21 / 0.09);
 }
+.istatistik-kutu:hover::before { height: 6px; }
 
 .istatistik-rakam {
   color: var(--k);
-  transition: transform var(--t-state) var(--ease-io);
-  transform-origin: left bottom;
+  line-height: 0.92;
+  margin-bottom: var(--s4);
 }
-.istatistik-kutu:hover .istatistik-rakam { transform: scale(1.06); }
-
-.istatistik-metin { color: #F4F1E7; }
-.istatistik-kaynak { color: color-mix(in srgb, var(--k) 62%, #F4F1E7); }
-
-/* Kaynağı olmayan kartta boş satır yer kaplamasın. */
+.istatistik-metin { color: var(--ink); }
+.istatistik-kaynak { color: var(--soluk); }
 .istatistik-kaynak-yok { display: none; }
