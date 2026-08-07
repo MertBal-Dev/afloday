@@ -223,6 +223,17 @@ button { font: inherit; color: inherit; }
    1000 pikselin altında oran bırakılıyor: telefonda %76 sütun 274 piksele
    iner ve okunmaz olur; orada sabit küçük kenar boşluğu doğru olan. */
 .wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
+
+/* 1000-1279 ARASI SÜTUN DAHA GENİŞ: %88.
+
+   %76 dar masaüstünde menüyü dışarıda bırakıyordu. 1097'de sütun 834
+   piksel, ama logo + altı menü maddesi + düğme 940 istiyor. Menü sığsın
+   diye başlığı sütunun dışında bırakmıştım ve bu sefer hiza bozuldu:
+   başlık 46'dan, içerik 132'den başlıyordu — 83 piksel kayık.
+
+   Sütun bu aralıkta %88'e açılınca ikisi de sığıyor ve aynı çizgiden
+   başlıyor. Satır uzunluğu 58'den 63 karaktere çıkıyor, okunur aralık
+   (45-75) içinde kalıyor. 1280'den itibaren %76'ya dönüyor. */
 @media (min-width: 1000px) {
   .wrap { width: min(76vw, var(--wrap)); padding-inline: 0; }
   .wrap-narrow { width: min(62vw, 1100px); }
@@ -235,11 +246,49 @@ button { font: inherit; color: inherit; }
      kabı 834 pikselde kaldı ama içeriği (logo 102 + menü 953 + düğme 80)
      1135 piksel istiyordu ve taşıyordu — ölçümle yakalandı.
 
-     Bunlar kenar boşluğuyla tam genişlikte kalıyor. */
-  .hdr-in, .mega-in, .ftr-cta-in, .ftr-cols, .ftr-base, .hero-video-copy {
+     Bunlar kenar boşluğuyla tam genişlikte kalıyor.
+
+     `.hero-video-copy` BU LİSTEDE DEĞİL. Buraya yanlışlıkla konmuştu ve
+     hero metni her genişlikte kenardan başlıyordu (sol 0). Hero metni bir
+     bant değil, okuma metni — sütun kuralına uyar. */
+  .hdr-in, .mega-in, .ftr-cta-in, .ftr-cols, .ftr-base {
     width: 100%;
     max-width: none;
     padding-inline: var(--gutter);
+  }
+}
+
+/* 1280 VE ÜSTÜNDE MOBİLYA DA SÜTUNA GİRİYOR.
+
+   Yukarıdaki kural başlık ve alt bilgiyi kenar boşluğuyla tam genişlikte
+   bırakıyor. Geniş ekranda bu hizayı bozuyordu: 1920'de logo 86'dan,
+   içerik 240'tan başlıyor ve sayfa kaymış görünüyordu.
+
+   1280'den itibaren menü sütuna rahat sığıyor (ölçüldü: 1280'de içerik
+   ~940, sütun 973), o yüzden orada mobilya da sütuna giriyor ve her şey
+   aynı dikey çizgiden başlıyor. Altında sığmadığı için %88'lik geniş
+   sütun kuralı devrede — o da hizalı, sadece daha geniş. */
+/* 1000-1279: sütun %88, mobilya da aynı ölçüde. Bu kural yukarıda bir
+   kez daha yazılıydı ama genel mobilya bloğu ondan SONRA geliyordu ve
+   aynı özgüllükte olduğu için eziyordu; sonra gelen kazanıyor. Buraya,
+   hepsinin arkasına alındı. */
+@media (min-width: 1000px) and (max-width: 1279px) {
+  /* Sütun bu aralıkta %88: %76 dar masaüstünde menüyü taşırıyor. */
+  .wrap,
+  .hdr-in, .mega-in, .ftr-cta-in, .ftr-cols, .ftr-base {
+    width: min(88vw, var(--wrap));
+    max-width: var(--wrap);
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hdr-in, .mega-in, .ftr-cta-in, .ftr-cols, .ftr-base {
+    width: min(76vw, var(--wrap));
+    max-width: var(--wrap);
+    margin-inline: auto;
+    padding-inline: 0;
   }
 }
 .wrap-narrow { max-width: 1100px; }
@@ -1103,7 +1152,11 @@ body:has(.hero-video) .hdr:not(.is-solid) .hdr-logo img { filter: brightness(0) 
 .hdr.is-solid { box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 10px 30px -24px rgba(20,18,15,.5); }
 @media (min-width: 1000px) { .hdr.is-solid .hdr-in { height: 68px; } .hdr.is-solid .hdr-logo img { height: 28px; } }
 
-.nav { display: none; margin-left: auto; }
+/* MENÜ ORTALI. `margin-left: auto` menüyü sağa itiyordu ve logo ile ilk
+   madde arasında kocaman bir boşluk kalıyordu — "Anasayfa" maddesi
+   kalkınca bu daha da belirginleşti. `margin-inline: auto` menüyü logo
+   ile düğme arasında ortalıyor. */
+.nav { display: none; margin-inline: auto; }
 .nav > ul { display: flex; gap: clamp(14px, 1.5vw, 30px); list-style: none; margin: 0; padding: 0; }
 .nav > ul > li > a {
   position: relative; display: block;
@@ -1157,7 +1210,25 @@ body:has(.hero-video) .hdr:not(.is-solid) .hdr-cta .btn:hover { background: var(
    arası kademeli olarak sıkışıyor, 1200 üstünde normale dönüyor.
    Sabit kırılma noktası yerine akışkan geçiş — her dizüstü boyutunda
    çalışması gereken şey bu. */
-@media (min-width: 1000px) and (max-width: 1279px) {
+/* Sıkıştırma 1599'a kadar: 1280 ve 1440'ta mobilya sütuna girince
+   menüye kalan yer daraldı ve tam boy menü taşmaya başladı. */
+/* 1000-1099 EN DAR MASAÜSTÜ: başlık 27 piksel taşıyordu (kap 901,
+   gereken 928). Logo-menü-düğme arası boşluk ve madde arası burada
+   biraz daha kısalıyor; punto değişmiyor ki okunurluk düşmesin. */
+@media (min-width: 1000px) and (max-width: 1099px) {
+  /* En dar masaüstünde altı menü maddesi + logo + düğme sığmıyordu
+     (kap 901, gereken 928). Puntoyu 10 piksele indirmek 2 piksel açık
+     bırakıyor ve okunurluğu bozuyordu.
+
+     Düğme kaldırıldı: "Teklif Al" zaten hero'da ve alt bilgide duruyor,
+     başlıkta üçüncü kez görünmesi şart değil. 1100'den itibaren geri
+     geliyor. Menü puntosu 11'de kalıyor. */
+  .hdr-cta { display: none; }
+  .hdr-in { gap: 14px; }
+  .nav > ul { gap: 9px; }
+}
+
+@media (min-width: 1000px) and (max-width: 1599px) {
   .nav > ul { gap: clamp(9px, 1.05vw, 16px); }
   .nav > ul > li > a { font-size: 0.6875rem; letter-spacing: 0.045em; }
   .hdr-cta .btn { padding-inline: clamp(10px, 1.1vw, 16px); font-size: 0.6875rem; }
@@ -4804,3 +4875,55 @@ a.index-row .index-meta::after,
 }
 .slide-kart-metin { margin: 0; font-size: 0.9375rem; line-height: 1.55; color: var(--bant-yazi, #E9E9E0); }
 @media (max-width: 760px) { .slide-kart { padding: var(--s3); max-width: none; } .slide-kart-metin { font-size: 0.875rem; } }
+
+/* ══ BOTANİK ARKA PLAN ════════════════════════════════════════════════
+   Kullanıcının klasöründen gelen gerçek çizimler:
+   `site/assets/img/botanik/` — yaprak, bitki, organik çiçek, gül,
+   ayçiçeği, yeşil çiçek. Kendi renkleriyle duruyorlar.
+
+   Denge opaklıkla kuruluyor: yeterince görünür ki renk hissedilsin,
+   yeterince silik ki metinle yarışmasın.
+
+   ÇOCUKLARA DOKUNULMUYOR. Bir önceki denemede motifin altta kalması
+   için bölümün çocuklarına `position: relative` verilmişti; hero
+   1. bölüm olduğu için o kural hero'nun `position: absolute` video
+   katmanını kırdı, video akışa girdi ve metin aşağı düştü. Şimdi motif
+   `z-index: -1`e iniyor, bölüme `isolation: isolate` veriliyor ve
+   çocuklar olduğu gibi kalıyor.
+
+   Bölümler tek atlayarak motif alıyor; hepsine konursa desen olur. */
+@media (min-width: 1000px) {
+  main > section:nth-of-type(odd) { position: relative; isolation: isolate; }
+
+  /* Video hero ve slaytın kendi katman düzeni var; motif oraya girmez. */
+  main > section.hero-video::before,
+  main > section.slider-wrapper::before { content: none !important; }
+
+  main > section:nth-of-type(odd)::before {
+    content: '';
+    position: absolute; inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    /* Kenarlara yaslı: metin sütunu ortada, motifler dışındaki payda. */
+    background-position: right -4% top 6%, left -5% bottom 4%;
+    background-size: clamp(170px, 21vw, 320px), clamp(140px, 17vw, 250px);
+    background-image: url('/assets/img/botanik/yaprak.svg'),
+                      url('/assets/img/botanik/bitki.svg');
+    opacity: 0.3;
+  }
+  /* Motif seti bölümden bölüme değişiyor, tekrar hissi olmasın. */
+  main > section:nth-of-type(4n + 3)::before {
+    background-image: url('/assets/img/botanik/cicek-organik.svg'),
+                      url('/assets/img/botanik/gul.svg');
+  }
+  main > section:nth-of-type(6n + 5)::before {
+    background-image: url('/assets/img/botanik/aycicegi.svg'),
+                      url('/assets/img/botanik/cicek-yesil.svg');
+  }
+  /* Koyu bantta renkli çizim boğuluyor; orada biraz açılıyor. */
+  main > section.field:nth-of-type(odd)::before {
+    filter: brightness(1.35) saturate(1.15);
+    opacity: 0.26;
+  }
+}

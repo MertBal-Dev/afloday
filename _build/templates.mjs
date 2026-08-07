@@ -363,10 +363,13 @@ export function heroSlayt(slaytlar) {
             <p class="slide-eyebrow">${s.etiket}</p>
             <h2 class="slide-title">${baslik}</h2>
             <p class="slide-description">${s.altBaslik}</p>
-            ${s.kartBaslik ? `<div class="slide-kart">
-              <p class="slide-kart-ad">${s.kartBaslik}</p>
-              <p class="slide-kart-metin">${s.kartMetin}</p>
-            </div>` : ''}
+            ${/* Eski `ne-yapiyoruz` bölümünün metni. Önce dolu yeşil bir kutu
+                   içinde denendi ve iyi durmadı: slaytta zaten eyebrow, başlık
+                   ve açıklama var, kutu beşinci blok oluyordu; kutunun etiketi
+                   de eyebrow'u tekrar ediyordu; dolu panel fotoğrafın üstünde
+                   çıkartma gibi duruyordu. Şimdi açıklamanın ikinci paragrafı
+                   — aynı bilgi, kutusuz, bir kademe soluk. */ ''}
+            ${s.kartMetin ? `<p class="slide-description slide-description-alt">${s.kartMetin}</p>` : ''}
             ${butonlar.length
         ? `<div class="slide-actions">
               ${butonlar.map((b, n) => `<a class="btn ${n === 0 ? 'btn-primary' : 'btn-ghost'}" href="${b.href}"${i ? ' tabindex="-1"' : ''}>${b.yazi}</a>`).join('\n              ')}
