@@ -5275,54 +5275,116 @@ a.index-row .index-meta::after,
   .egitim-kart-yazi { padding: var(--s3); }
 }
 
-/* ══ VİTRİN KARTI — referans desenden alınan geometri ═════════════════
-   Kaynak: naya-studio-dubai (Cube Studio şablonu, lisansı alındı).
-   Playwright ile ölçülen değerler: köşe yarıçapı 21.94px, 1px kenarlık,
-   28.5px iç boşluk, üstte parantezli numara, altta küçük açıklama.
+/* ══ VİTRİN KARTI ═════════════════════════════════════════════════════
+   Geometri referanstan (Cube Studio, lisansı alındı): 22px köşe, 1px
+   kenarlık, parantezli sıra numarası. Palet bizim.
 
-   GEOMETRİ ALINDI, PALET ALINMADI. Referans koyu lacivert ve beyaz;
-   bizimki krem ve yeşil. Renk taşınırsa marka kaybolur, geometri
-   taşınırsa kart kazanır. */
+   GÖZLE BAKINCA ÇIKAN BEŞ KUSUR DÜZELTİLDİ:
+
+   1. Numara fotoğrafın üstündeydi ve açık gökyüzüne denk gelen kartlarda
+      okunmuyordu. Metin alanına indi, vurgu renginde.
+   2. Başlıklar 2-4 satır arasında değişiyordu; künye satırları kartlar
+      arasında hizasız kalıyordu. Başlık alanına en az yükseklik verildi,
+      künye hepsinde aynı hizada.
+   3. Künye "1–2 / GÜN" diye ikiye bölünüyordu. Harf aralığı düştü ve
+      satır kırılması engellendi.
+   4. 12 piksel büyük harf başlık dört satıra çıkınca blok gibi duruyor
+      ve okuması yoruyordu. Serif ve normal yazıma dönüldü — sitenin
+      editoryal sesi bu, büyük harf değil.
+   5. Kart 205×413'tü, neredeyse 1:2. Fotoğraf karesi 4/3'e indi,
+      oran yumuşadı. */
 .egitim-kart {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background: var(--surface, #FBFAF3);
   border-radius: 22px;
   border: 1px solid var(--rule);
-  overflow: hidden;
-  position: relative;
+  transition: transform var(--t-state) var(--ease-io),
+              box-shadow var(--t-state) var(--ease-io),
+              border-color var(--t-state) var(--ease-io);
 }
-.egitim-kart:hover { border-color: var(--e); }
+.egitim-kart:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgb(19 26 21 / 0.10);
+  border-color: var(--e);
+}
 
-/* Parantezli sıra numarası — referanstaki `(03)` deseni. */
-.egitim-kart::before {
+.egitim-kart-gorsel {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 21px 21px 0 0;
+}
+.egitim-kart-gorsel picture,
+.egitim-kart-gorsel img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform 800ms var(--ease-io);
+}
+.egitim-kart:hover .egitim-kart-gorsel img { transform: scale(1.05); }
+
+/* Fotoğrafın altındaki renk çizgisi — kartın imzası. */
+.egitim-kart-gorsel::after {
+  content: '';
+  position: absolute; inset: auto 0 0 0;
+  height: 4px;
+  background: var(--e);
+  transition: height var(--t-state) var(--ease-io);
+}
+.egitim-kart:hover .egitim-kart-gorsel::after { height: 9px; }
+
+.egitim-kart-yazi {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: var(--s4) var(--s4) var(--s5);
+}
+
+/* Sıra numarası artık fotoğrafın üstünde değil, metnin başında. */
+.egitim-kart-yazi::before {
   content: '(0' attr(data-sira) ')';
-  position: absolute; top: 12px; left: 0; right: 0;
-  z-index: 2;
-  text-align: center;
   font-family: var(--label);
   font-size: 0.5625rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
-  color: #F4F1E7;
-  text-shadow: 0 1px 8px rgb(19 26 21 / 0.6);
+  letter-spacing: 0.16em;
+  color: var(--e);
 }
 
-.egitim-kart-gorsel { border-radius: 21px 21px 0 0; }
-.egitim-kart-yazi {
-  padding: var(--s4) var(--s4) var(--s5);
-  text-align: center;
-}
-/* Başlık büyük harf ve harf aralıklı — referansın imza tipografisi.
-   Serif yerine label ailesi: büyük harf serif bu puntoda okunmuyor. */
+/* Başlık alanı sabit: künye bütün kartlarda aynı hizada başlıyor. */
 .egitim-kart-ad {
-  font-family: var(--label);
-  font-size: clamp(0.6875rem, 0.85vw, 0.8125rem);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.35;
+  display: block;
+  min-height: 3.6em;
+  font-family: var(--serif);
+  font-size: clamp(0.9375rem, 1.12vw, 1.125rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.2;
   color: var(--ink);
 }
 .egitim-kart-kunye {
-  font-size: 0.5625rem;
-  letter-spacing: 0.14em;
+  display: block;
+  font-family: var(--label);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
   color: var(--soluk);
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+}
+
+@media (max-width: 1000px) {
+  .egitim-vitrin { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .egitim-vitrin { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .egitim-kart-yazi { padding: var(--s3); }
+  .egitim-kart-ad { min-height: 0; }
 }

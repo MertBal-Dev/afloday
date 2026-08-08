@@ -163,7 +163,7 @@ ${heroSlayt(heroSlaytlari)}
           <span class="egitim-kart-gorsel">
             ${resim({ gorsel: e.vitrinGorsel || e.gorsel, alt: e.vitrinAlt || e.alt, kucuk: true })}
           </span>
-          <span class="egitim-kart-yazi">
+          <span class="egitim-kart-yazi" data-sira="${i + 1}">
             <span class="egitim-kart-ad">${e.vitrinAd}</span>
             <span class="egitim-kart-kunye">${e.format} · ${e.vitrinSure}</span>
           </span>
