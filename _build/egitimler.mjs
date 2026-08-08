@@ -180,20 +180,38 @@ export const egitimler = [
 export const deneyimVitrini = {
   ustEtiket: 'EĞİTİMİN SOMUT HALİ',
   baslik: 'Doğadan Deneyimsel Öğrenme Atölyeleri',
-  altBaslik: 'Eğitim programlarımız teoride kalmaz. Doğadan malzemelerle, aktif ve deneyimsel atölyelerle; kurumunuzun ve çalışanlarınızın öğrendiğini somut bir deneyime dönüştürüyoruz.',
+  altBaslik: 'Eğitim programlarımız teoride kalmaz; doğadan malzemeler ve somut metaforlarla kalıcı liderlik ve yaratıcılık deneyimlerine dönüşür.',
   kartlar: [
     {
-      ad: 'Bitki Dikim Saksı Değişimi Atölyesi',
-      bicim: 'Yüz Yüze / Online · Deneyim',
-      /* Belgede "ve" yok; eğitimin kendi adından farklı yazılmış, öyle bırakıldı. */
-      bagliEgitim: 'Değişimin Doğası Liderlik Ekosistemi Eğitimi Uygulaması',
-      metin: 'Değişim ve liderliği doğanın metaforlarıyla görünür kılan deneyimsel bir öğrenme uygulamasıdır. Katılımcılar; saksıyı değişim süreci, kökleri değerler ve konfor alanı, yeni toprağı kurum kültürü, su ve ışığı ise destek sistemleri ile motivasyon olarak ele alırken, seçtikleri doğal materyaller aracılığıyla kendi değişim yolculuklarını somutlaştırırlar.',
+      no: '01',
+      ad: 'Bitki Dikim & Saksı Değişimi Atölyesi',
+      gorsel: 'business-people-holding-plant-sprout-together-unity-as-csr-commitmentgyre',
+      bicim: 'Yüz Yüze / Online · Deneyimsel Uygulama',
+      bagliEgitim: 'Değişimin Doğası & Liderlik Ekosistemi Eğitimi',
+      ozet: 'Değişim ve liderlik yolculuğunu saksı, kök ve toprak metaforlarıyla görünür kılan uygulamalı öğrenme deneyimi.',
+      metaforlar: [
+        { simge: '🪴', terim: 'Saksı', anlam: 'Değişim Süreci' },
+        { simge: '🌱', terim: 'Kökler', anlam: 'Değerler & Konfor Alanı' },
+        { simge: '🌿', terim: 'Yeni Toprak', anlam: 'Kurum Kültürü' },
+        { simge: '💧', terim: 'Su & Işık', anlam: 'Destek ve Motivasyon' },
+      ],
+      metin: 'Katılımcılar; saksıyı değişim süreci, kökleri değerler ve konfor alanı, yeni toprağı kurum kültürü, su ve ışığı ise destek sistemleri olarak ele alırken, doğal materyallerle kendi değişim yolculuklarını somutlaştırırlar.',
     },
     {
+      no: '02',
       ad: 'Doğadan Mottolu Çerçeve Tasarım Atölyesi',
-      bicim: 'Yüz Yüze / Online · Deneyim',
+      gorsel: 'beautiful-landscape-contained-photo-frame',
+      bicim: 'Yüz Yüze / Online · Yaratıcı Tasarım',
       bagliEgitim: 'Doğanın İlhamıyla Yaratıcı Düşünme Eğitimi',
-      metin: 'Katılımcıların kurutulmuş çiçeklerle ilham veren bir mesajı tasarlarken yaratıcı düşünme ve tasarım odaklı düşünme becerilerini deneyimlediği uygulamalı bir öğrenme deneyimidir. Süreç içerisinde beklenmedik tasarım değişiklikleriyle karşılaşarak esneklik, farklı bakış açıları geliştirme ve birlikte üretme becerilerini de keşfederler.',
+      ozet: 'Kurutulmuş bitkilerle ilham veren bir mesaj tasarlarken esneklik, farklı bakış açıları ve birlikte üretmeyi keşfetme deneyimi.',
+      metaforlar: [
+        { simge: '🌸', terim: 'Kurutulmuş Çiçek', anlam: 'İlham Veren Mesaj' },
+        { simge: '🎨', terim: 'Tasarım Süreci', anlam: 'Yaratıcı Düşünme' },
+        { simge: '✨', terim: 'Beklenmedik Anlar', anlam: 'Esneklik & Çeviklik' },
+        { simge: '🖼️', terim: 'Çerçeveleme', anlam: 'Birlikte Üretme Gücü' },
+      ],
+      metin: 'Katılımcıların kurutulmuş çiçeklerle ilham veren bir mesaj tasarlarken tasarım odaklı düşünme, esneklik ve birlikte üretme becerilerini keşfettiği uygulamalı bir atölyedir.',
     },
   ],
 };
+

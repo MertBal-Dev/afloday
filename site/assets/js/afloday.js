@@ -173,7 +173,7 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && drawer.getAttribute('data-open') === 'true') { setDrawer(false); burger.focus(); }
     });
-    window.addEventListener('resize', function () { if (window.innerWidth >= 1200) setDrawer(false); });
+    window.addEventListener('resize', function () { if (window.innerWidth >= 1000) setDrawer(false); });
   }
 
   /* --- Kaydırma açığa çıkarma ------------------------------------------- */

@@ -79,35 +79,59 @@ export function header(current) {
 </header>
 
 <div class="drawer" id="drawer" data-open="false" aria-hidden="true">
-  <ul>
-    ${nav.map(n => {
-    if (!n.children) return `<li><a href="${n.href}">${n.label}${n.tag ? ` <span>${n.tag}</span>` : ''}</a></li>`;
-    const alt = n.children.map(c => {
-      const torun = c.children
-        ? `<ul class="drawer-alt2">${c.children.map(g => `<li><a href="${g.href}">${g.label}</a></li>`).join('')}</ul>` : '';
-      return `<li><a href="${c.href}">${c.label}</a>${torun}</li>`;
-    }).join('');
-    return `<li class="drawer-grup" data-acik="false">
-      <div class="drawer-satir">
-        <a href="${n.href}">${n.label}${n.tag ? ` <span>${n.tag}</span>` : ''}</a>
-        <button class="drawer-ac" type="button" aria-expanded="false"><span class="sr-only">${n.label} alt menüsü</span></button>
+  <!-- Botanik Arka Plan Süslemeleri -->
+  <svg class="drawer-botanic-bg drawer-botanic-tl" viewBox="0 0 160 160" fill="none" aria-hidden="true">
+    <path d="M10 10 Q 50 20, 70 60 Q 90 100, 130 110" stroke="#2D683A" stroke-width="2" stroke-linecap="round" opacity="0.25"/>
+    <path d="M40 25 C 25 15, 20 35, 40 25 Z" fill="#68C27B" opacity="0.2"/>
+    <path d="M60 45 C 75 35, 80 55, 60 45 Z" fill="#68C27B" opacity="0.2"/>
+    <path d="M85 80 C 70 70, 75 95, 85 80 Z" fill="#2D683A" opacity="0.2"/>
+    <circle cx="130" cy="110" r="6" fill="#D4AF37" opacity="0.4"/>
+    <circle cx="120" cy="100" r="4" fill="#D4AF37" opacity="0.3"/>
+    <circle cx="140" cy="105" r="4" fill="#D4AF37" opacity="0.3"/>
+  </svg>
+  <svg class="drawer-botanic-bg drawer-botanic-br" viewBox="0 0 180 180" fill="none" aria-hidden="true">
+    <path d="M170 170 Q 120 150, 100 110 Q 80 70, 30 50" stroke="#2D683A" stroke-width="2" stroke-linecap="round" opacity="0.25"/>
+    <path d="M130 145 C 145 155, 150 135, 130 145 Z" fill="#68C27B" opacity="0.2"/>
+    <path d="M110 120 C 95 130, 90 110, 110 120 Z" fill="#68C27B" opacity="0.2"/>
+    <path d="M80 85 C 95 95, 90 70, 80 85 Z" fill="#2D683A" opacity="0.2"/>
+    <circle cx="30" cy="50" r="7" fill="#D4AF37" opacity="0.4"/>
+    <circle cx="45" cy="45" r="4" fill="#D4AF37" opacity="0.3"/>
+    <circle cx="25" cy="65" r="4" fill="#D4AF37" opacity="0.3"/>
+  </svg>
+
+  <div class="drawer-inner">
+    <ul class="drawer-nav">
+      ${nav.map(n => `
+        <li>
+          <a href="${n.href}" class="drawer-link">
+            <span class="drawer-link-text">${n.label}</span>
+            ${n.tag ? `<span class="drawer-tag">${n.tag}</span>` : ''}
+          </a>
+        </li>
+      `).join('')}
+    </ul>
+
+    <div class="drawer-action">
+      <a class="btn btn-primary drawer-cta-btn" href="iletisim.html">
+        <span>Kurumsal Teklif Al</span>
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+
+    <div class="drawer-foot">
+      <div class="drawer-contact-row">
+        <a href="tel:${PHONE_E164[site.phones[0]]}">${site.phones[0]}</a>
+        <span class="drawer-dot">&bull;</span>
+        <a href="mailto:${site.email}">${site.email}</a>
       </div>
-      <div class="drawer-katman"><div><ul class="drawer-alt">${alt}</ul></div></div>
-    </li>`;
-  }).join('\n    ')}
-  </ul>
-  <div class="btn-row">
-    <a class="btn btn-primary" href="iletisim.html">Kurumsal Teklif Al</a>
-  </div>
-  <div class="drawer-foot">
-    <p class="eyebrow">İletişim</p>
-    <p><a href="tel:${PHONE_E164[site.phones[0]]}">${site.phones[0]}</a></p>
-    <p><a href="mailto:${site.email}">${site.email}</a></p>
-    <p class="drawer-foot-links">
-      <a href="${site.social.instagram}" rel="noopener">Instagram</a>
-      <a href="${site.social.youtube}" rel="noopener">YouTube</a>
-      <a href="ik.html">İnsan Kaynakları</a>
-    </p>
+      <div class="drawer-social-row">
+        <a href="${site.social.instagram}" target="_blank" rel="noopener">Instagram</a>
+        <span class="drawer-dot">&bull;</span>
+        <a href="${site.social.youtube}" target="_blank" rel="noopener">YouTube</a>
+        <span class="drawer-dot">&bull;</span>
+        <a href="ik.html">İnsan Kaynakları</a>
+      </div>
+    </div>
   </div>
 </div>`;
 }
@@ -116,62 +140,85 @@ export function header(current) {
    "İletişim Bilgileri", "Takip Edeyim", "Bir 'TIK' Yakındayız". */
 export function footer() {
   return `<footer class="ftr">
-  ${/* KAPANIŞ ÇAĞRISI KALDIRILDI — Ceylan hanım, 7 Ağustos:
-       "Footer'da bir tık yakındayız kısmı çıkacak, butonlar kalkacak,
-        iletişim formu da çıkacak. İletişim, yol tarifi ve takip kalacak.
-        İnsan kaynakları da kalıyor."
-
-       Alt bilgi bir kapanış afişi değil, bir künye. Formun yeri iletişim
-       sayfası; footer'da ikinci kez sorulması gerekmiyor. */ ''}
-
-  ${/* FOOTER DERLİ TOPLU — Ceylan hanım, 7 Ağustos:
-       "Footer'dan her şey kalkacak, sadece adres ve takip etme kısmı
-        kalacak. Bir tık yakınız kısmı da kalkacak. Daha derli toplu
-        düzenli bir footer tasarımı olacak. Adres map buraya gelecek,
-        burada da görünecek iletişimdeki kısım."
-
-       Üç sütunluk bağlantı listesi (Geleceği Doğadan Tasarla, Kurumsal
-       Hizmetler başlıkları altında 12 bağlantı) kaldırıldı. O bir site
-       haritasıydı; menü zaten aynı işi yapıyor ve iki kez yapmasına
-       gerek yok.
-
-       Kalan üç şey: adres, harita, takip. Alt bilgi bir künye. */ ''}
   <div class="ftr-main">
     <div class="wrap ftr-cols">
 
-      <div class="ftr-kunye">
+      <div class="ftr-card ftr-kunye">
         <div class="ftr-logo"><img src="assets/img/brand/logo.png" alt="Afloday" width="360" height="120"></div>
-        <address>
-          ${site.address.street},<br>
-          ${site.address.zip} ${site.address.locality} / ${site.address.region}
+        <p class="ftr-tagline">Doğadan İlham Alan Kurumsal Gelişim &amp; Atölye Deneyimleri</p>
+        <address class="ftr-address">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="ftr-ikon" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>${site.address.street}, ${site.address.zip} ${site.address.locality} / ${site.address.region}</span>
         </address>
         <ul class="ftr-iletisim">
-          ${site.phones.map(p => `<li><a href="tel:${PHONE_E164[p]}">${p}</a></li>`).join('')}
-          <li><a href="mailto:${site.email}">${site.email}</a></li>
+          ${site.phones.map(p => `<li>
+            <a href="tel:${PHONE_E164[p]}">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="ftr-ikon" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>${p}</span>
+            </a>
+          </li>`).join('')}
+          <li>
+            <a href="mailto:${site.email}">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="ftr-ikon" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <span>${site.email}</span>
+            </a>
+          </li>
         </ul>
-        <p class="ftr-head">Takip Et</p>
-        <ul class="ftr-takip">
-          <li><a href="${site.social.instagram}" rel="noopener">Instagram</a></li>
-          <li><a href="${site.social.youtube}" rel="noopener">YouTube</a></li>
-        </ul>
+        <div class="ftr-sosyal-wrap">
+          <p class="ftr-head">Bizi Takip Edin</p>
+          <ul class="ftr-takip">
+            <li><a href="${site.social.instagram}" rel="noopener" target="_blank" class="ftr-social-pill"><span>Instagram</span> ↗</a></li>
+            <li><a href="${site.social.youtube}" rel="noopener" target="_blank" class="ftr-social-pill"><span>YouTube</span> ↗</a></li>
+          </ul>
+        </div>
       </div>
 
-      ${/* Harita iletişim sayfasındakiyle aynı sorgu: işletme adıyla
-           başlıyor ve daire numarası düşüyor, yoksa Google adresi
-           çözemeyip iğne koymadan bölgeyi ortalıyor. */ ''}
-      <div class="ftr-harita">
-        <iframe title="Afloday ofis konumu — Google Haritalar" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=${encodeURIComponent(
-            `${site.name}, ${site.address.street.replace(/\s*No:\s*/i, ' ').replace(/\/\d+\s*$/, '')}, ${site.address.zip} ${site.address.locality}/${site.address.region}`
-          )}&z=16&output=embed"></iframe>
-        <p><a class="link" href="${assets.maps}" rel="noopener">Yol tarifi için tıklayın</a></p>
+      <div class="ftr-card ftr-harita-card">
+        <div class="ftr-map-header">
+          <span class="ftr-map-badge">Lokasyon</span>
+          <h4 class="ftr-map-title">Atölye &amp; Ofis Alanımız</h4>
+        </div>
+        <div class="ftr-harita-wrap">
+          <iframe title="Afloday ofis konumu — Google Haritalar" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=${encodeURIComponent(
+              `${site.name}, ${site.address.street.replace(/\s*No:\s*/i, ' ').replace(/\/\d+\s*$/, '')}, ${site.address.zip} ${site.address.locality}/${site.address.region}`
+            )}&z=16&output=embed"></iframe>
+        </div>
+        <div class="ftr-map-footer">
+          <a class="ftr-map-link" href="${assets.maps}" target="_blank" rel="noopener">
+            <span>Google Haritalar'da Yol Tarifi Al</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </a>
+        </div>
       </div>
 
     </div>
     <div class="wrap ftr-base">
-      <span>© <span data-year>2026</span> ${site.legal}</span>
-      <a href="ik.html">İnsan Kaynakları</a>
+      <div class="ftr-base-left">
+        <span>© <span data-year>2026</span> ${site.legal}</span>
+        <span class="ftr-base-dot" aria-hidden="true">·</span>
+        <span>Tüm Hakları Saklıdır</span>
+      </div>
+      <div class="ftr-base-right">
+        <a href="ik.html" class="ftr-base-link">İnsan Kaynakları</a>
+        <a href="#main" class="ftr-back-to-top" aria-label="Sayfa Başına Dön">
+          <span>Yukarı Çık</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M8 12V4M4 8l4-4 4 4"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </footer>`;
@@ -864,7 +911,7 @@ ${process.env.PREVIEW === '1' ? '<meta name="robots" content="noindex, nofollow"
 <link rel="icon" href="assets/img/brand/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/css/afloday.css?v=${CSS_DAMGA}">
 <script>document.documentElement.classList.add('js');</script>${jsonLd}
 </head>

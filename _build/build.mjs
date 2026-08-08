@@ -39,6 +39,151 @@ import { slug as gorselSlug } from './gorsel-hazirla.mjs';
 import { orijinalGorsel } from './gorseller.mjs';
 
 /* Meta açıklamaları kelime ortasında kesmez; sınırdan önceki son boşluktan böler. */
+/* ══════════════════════════════════════════════════════════════════════════
+   🌿 BOTANİK SARMAŞIK ÇERÇEVE SİSTEMİ (Awwwards Seviyesi Lüks Doğa Teması)
+   - 4 Köşe (TL, TR, BL, BR) + 2 Yan Sarmaşık Sürgünü
+   - 1:1 Aspect ratio ile ASLA basıklaşmayan/bozulmayan gerçek Hedera Helix yaprakları
+   - Zarif yaprak damarları, kıvrılan sarmaşık bıyıkları (tendrils) ve minik kır çiçekleri
+   - Kart içeriğini (metin, görsel, buton) asla kapatmayan, kenarları kusursuz saran geometri
+══════════════════════════════════════════════════════════════════════════ */
+
+const hederaLeaf = (cx, cy, scale, rot, dark = false) => `
+  <g transform="translate(${cx}, ${cy}) rotate(${rot}) scale(${scale})">
+    <g class="sarmasik-yaprak-wrap">
+      <!-- Ana Sarmaşık Yaprağı (3 Loblu Hedera Helix) -->
+      <path class="sarmasik-yaprak ${dark ? 'yaprak-koyu' : 'yaprak-canli'}"
+            d="M 0,-14 C 2,-11 4,-7 7,-5 C 11,-4 14,-2 13,3 C 12,7 8,8 7,10 C 6,13 4,15 0,17 C -4,15 -6,13 -7,10 C -8,8 -12,7 -13,3 C -14,-2 -11,-4 -7,-5 C -4,-7 -2,-11 0,-14 Z"/>
+      <!-- İnce Yaprak İçi Işığı -->
+      <path class="yaprak-isik" d="M 0,-12 C 1.5,-9 3,-5 5,-3 C 8,-2 10,0 9,3 C 8,6 5,7 4,9 C 2,11 0,13 0,13" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.7"/>
+      <!-- Orta Damar ve Yan Damarlar -->
+      <path class="yaprak-damar" d="M 0,-11 L 0,14 M 0,-2 L 5,-4 M 0,-2 L -5,-4 M 0,5 L 4,6 M 0,5 L -4,6" fill="none" stroke="rgba(200, 235, 202, 0.55)" stroke-width="0.6" stroke-linecap="round"/>
+    </g>
+  </g>
+`;
+
+const tenderTendril = (d) => `
+  <path class="sarmasik-biyik" d="${d}" fill="none" stroke="#528357" stroke-width="0.9" stroke-linecap="round"/>
+`;
+
+const botanicBlossom = (cx, cy, scale = 1, rot = 0) => `
+  <g transform="translate(${cx}, ${cy}) rotate(${rot}) scale(${scale})">
+    <g class="sarmasik-cicek">
+      <!-- 5 Pastel Taç Yaprak -->
+      <circle class="cicek-tac" cx="0" cy="-3.8" r="2.7"/>
+      <circle class="cicek-tac" cx="3.6" cy="-1.2" r="2.7"/>
+      <circle class="cicek-tac" cx="2.2" cy="3.1" r="2.7"/>
+      <circle class="cicek-tac" cx="-2.2" cy="3.1" r="2.7"/>
+      <circle class="cicek-tac" cx="-3.6" cy="-1.2" r="2.7"/>
+      <!-- Altın Çiçek Özü -->
+      <circle class="cicek-gobek" cx="0" cy="0" r="2.1"/>
+      <circle class="cicek-nokta" cx="0" cy="0" r="0.8"/>
+    </g>
+  </g>
+`;
+
+const botanicBud = (cx, cy, scale = 0.8, rot = 0) => `
+  <g transform="translate(${cx}, ${cy}) rotate(${rot}) scale(${scale})">
+    <g class="sarmasik-cicek sarmasik-tomurcuk">
+      <!-- 3 Yapraklı Minik Tomurcuk -->
+      <circle class="cicek-tac" cx="-2" cy="-1" r="2.2"/>
+      <circle class="cicek-tac" cx="2" cy="-1" r="2.2"/>
+      <circle class="cicek-tac" cx="0" cy="2" r="2.2"/>
+      <circle class="cicek-gobek" cx="0" cy="0" r="1.4"/>
+    </g>
+  </g>
+`;
+
+const createBotanicalFrameHTML = () => `
+  <div class="egitim-kart-sarmasik-cerceve" aria-hidden="true">
+    <!-- İç İnce Çerçeve Çizgisi (Pahlı Lüks Çerçeve) -->
+    <div class="sarmasik-ic-cizgi"></div>
+
+    <!-- 🌿 SOL ÜST KÖŞE -->
+    <svg class="sarmasik-kose sarmasik-tl" viewBox="0 0 76 76" preserveAspectRatio="xMidYMid meet">
+      <!-- Ana Dal (Köşe Kavisini Birebir Saran Bezier) -->
+      <path class="sarmasik-dal" d="M 3,74 C 3,42 8,22 24,7 C 42,3 74,3 74,3"/>
+      <path class="sarmasik-dal-ince" d="M 3,60 C 4,36 12,18 28,9 C 45,3 62,3 62,3"/>
+      <!-- Kıvrılan Sarmaşık Bıyığı -->
+      ${tenderTendril('M 18,18 C 14,14 10,12 8,15 C 6,18 9,21 12,20 C 14,19 14,17 12,16')}
+      <!-- Sarmaşık Yaprakları -->
+      ${hederaLeaf(24, 7, 0.95, -35)}
+      ${hederaLeaf(8, 28, 0.85, -75, true)}
+      ${hederaLeaf(50, 4, 0.75, 15)}
+      ${hederaLeaf(4, 52, 0.75, -90, true)}
+      <!-- Zarif Kır Çiçekleri (Ana Çiçek + Minik Tomurcuk) -->
+      ${botanicBlossom(25, 14, 1.05, 12)}
+      ${botanicBud(44, 10, 0.78, -25)}
+    </svg>
+
+    <!-- 🌿 SAĞ ÜST KÖŞE -->
+    <svg class="sarmasik-kose sarmasik-tr" viewBox="0 0 76 76" preserveAspectRatio="xMidYMid meet">
+      <!-- Ana Dal -->
+      <path class="sarmasik-dal" d="M 2,3 C 2,3 34,3 52,7 C 68,22 73,42 73,74"/>
+      <path class="sarmasik-dal-ince" d="M 14,3 C 31,3 48,9 64,18 C 72,36 73,60 73,60"/>
+      <!-- Kıvrılan Bıyık -->
+      ${tenderTendril('M 58,18 C 62,14 66,12 68,15 C 70,18 67,21 64,20 C 62,19 62,17 64,16')}
+      <!-- Yapraklar -->
+      ${hederaLeaf(52, 7, 0.95, 35)}
+      ${hederaLeaf(68, 28, 0.85, 75, true)}
+      ${hederaLeaf(26, 4, 0.75, -15)}
+      ${hederaLeaf(72, 52, 0.75, 90, true)}
+      <!-- Çiçekler -->
+      ${botanicBlossom(51, 14, 1.0, -10)}
+      ${botanicBud(32, 10, 0.78, 20)}
+    </svg>
+
+    <!-- 🌿 SOL ALT KÖŞE -->
+    <svg class="sarmasik-kose sarmasik-bl" viewBox="0 0 76 76" preserveAspectRatio="xMidYMid meet">
+      <!-- Ana Dal -->
+      <path class="sarmasik-dal" d="M 3,2 C 3,34 8,54 24,69 C 42,73 74,73 74,73"/>
+      <path class="sarmasik-dal-ince" d="M 3,16 C 4,40 12,58 28,67 C 45,73 62,73 62,73"/>
+      <!-- Bıyık -->
+      ${tenderTendril('M 18,58 C 14,62 10,64 8,61 C 6,58 9,55 12,56 C 14,57 14,59 12,60')}
+      <!-- Yapraklar -->
+      ${hederaLeaf(24, 69, 0.95, 35)}
+      ${hederaLeaf(8, 48, 0.85, 75, true)}
+      ${hederaLeaf(50, 72, 0.75, -15)}
+      ${hederaLeaf(4, 24, 0.75, 90, true)}
+      <!-- Çiçekler -->
+      ${botanicBlossom(25, 62, 1.05, -15)}
+      ${botanicBud(44, 66, 0.78, 30)}
+    </svg>
+
+    <!-- 🌿 SAĞ ALT KÖŞE -->
+    <svg class="sarmasik-kose sarmasik-br" viewBox="0 0 76 76" preserveAspectRatio="xMidYMid meet">
+      <!-- Ana Dal -->
+      <path class="sarmasik-dal" d="M 73,2 C 73,34 68,54 52,69 C 34,73 2,73 2,73"/>
+      <path class="sarmasik-dal-ince" d="M 73,16 C 72,40 64,58 48,67 C 31,73 14,73 14,73"/>
+      <!-- Bıyık -->
+      ${tenderTendril('M 58,58 C 62,62 66,64 68,61 C 70,58 67,55 64,56 C 62,57 62,59 64,60')}
+      <!-- Yapraklar -->
+      ${hederaLeaf(52, 69, 0.95, -35)}
+      ${hederaLeaf(68, 48, 0.85, -75, true)}
+      ${hederaLeaf(26, 72, 0.75, 15)}
+      ${hederaLeaf(72, 24, 0.75, -90, true)}
+      <!-- Çiçekler -->
+      ${botanicBlossom(51, 62, 1.05, 18)}
+      ${botanicBud(32, 66, 0.78, -20)}
+    </svg>
+
+    <!-- 🌿 SOL YAN SARMAŞIK SÜRGÜNÜ -->
+    <svg class="sarmasik-yan sarmasik-yan-sol" viewBox="0 0 24 60" preserveAspectRatio="xMidYMid meet">
+      <path class="sarmasik-dal-ince" d="M 3,0 C 2,20 4,40 3,60"/>
+      ${hederaLeaf(7, 18, 0.68, -80)}
+      ${botanicBud(8, 33, 0.72, 10)}
+      ${hederaLeaf(6, 46, 0.62, -70, true)}
+    </svg>
+
+    <!-- 🌿 SAĞ YAN SARMAŞIK SÜRGÜNÜ -->
+    <svg class="sarmasik-yan sarmasik-yan-sag" viewBox="0 0 24 60" preserveAspectRatio="xMidYMid meet">
+      <path class="sarmasik-dal-ince" d="M 21,0 C 22,20 20,40 21,60"/>
+      ${hederaLeaf(17, 18, 0.68, 80)}
+      ${botanicBud(16, 33, 0.72, -10)}
+      ${hederaLeaf(18, 46, 0.62, 70, true)}
+    </svg>
+  </div>
+`;
+
 const kirp = (t, n) => {
   const d = t.replace(/<[^>]+>/g, '').trim();
   if (d.length <= n) return d;
@@ -102,70 +247,78 @@ ${heroSlayt(heroSlaytlari)}
        Blok `doga-temelli-egitimler.html` sayfasına aynen taşındı. */ ''}
 
 
-  <!-- 4 · METODOLOJİ — Kök Sal · Sorumluluk Al · Birlikte Yeşer -->
-  <section class="section" id="metodoloji">
+  <!-- 4 · METODOLOJİ — Kök Sal · Sorumluluk Al · Birlikte Yeşer (2026 Biophilic Visual Bento) -->
+  <section class="section mtd-section" id="metodoloji">
     <div class="wrap">
       ${opener('Eğitim metodolojimiz', metodoloji.baslik.replace('Eğitim Metodolojimiz: ', ''), metodoloji.giris)}
-      ${/* ÜÇ AŞAMA TEK EKRANDA — bir bitkinin üç evresi.
-
-           Önceki düzen dikeydi: solda tek büyük fotoğraf, sağda üç aşama
-           alt alta. Üç ekrana yayılıyordu ve "her şey tek ekran daha
-           anlaşılır olacak" maddesini ihlal ediyordu.
-
-           Şimdi üçü yan yana. Metafor içeriğin kendisinden geliyor:
-           belge "bir bitkinin hayatta kalma ve serpilme sürecinden ilham
-           alan 3 aşamalı patern" diyor. Kartlar kök → gövde → yeşerme
-           sırasında ve aralarından geçen ince bir gövde onları bağlıyor.
-
-           METİN KISALTILMADI: kapalıyken slogan görünüyor, karta
-           tıklayınca tam paragraf açılıyor. Hem tek ekrana sığıyor hem
-           tek kelime kaybolmuyor. */ ''}
-      <ol class="mtd" style="margin-top:clamp(28px,3.4vw,52px)">
-        ${metodoloji.asamalar.map((a, i) => `<li class="mtd-kart" data-evre="${i + 1}" data-reveal="stagger">
-          <button class="mtd-ac" type="button" aria-expanded="false" aria-controls="mtd-${a.no}">
-            <span class="mtd-sira">${String(a.no).padStart(2, '0')}</span>
-            <span class="mtd-ad">${a.ad}</span>
-            <span class="mtd-slogan">${a.slogan}</span>
-            <span class="mtd-isaret" aria-hidden="true"></span>
-          </button>
-          <div class="mtd-govde" id="mtd-${a.no}">
-            <p>${a.metin}</p>
-          </div>
-        </li>`).join('')}
-      </ol>
+      <div class="mtd-vitrin-wrap" style="margin-top:clamp(28px,3.5vw,44px)">
+        <div class="mtd-vitrin">
+          ${metodoloji.asamalar.map((a, i) => {
+            const gorseller = [
+              'massive-network-tree-roots-dominating-forest-ground',
+              'man-hand-holding-compass-forest',
+              'business-people-holding-plant-sprout-together-unity-as-csr-commitmentgyre'
+            ];
+            const etiketler = [
+              'Öz Değerler · Kurum Kültürü',
+              'Proaktiflik · İnisiyatif',
+              'Kolektif Zeka · Sinerji'
+            ];
+            return `<article class="mtd-kart" data-evre="${i + 1}" data-reveal="stagger">
+              <div class="mtd-kart-foto-wrap">
+                <img src="assets/img/rev2/secilmis/${gorseller[i]}-800.webp" 
+                     alt="${a.ad} — ${a.slogan}" 
+                     class="mtd-kart-foto" 
+                     loading="lazy" 
+                     width="500" 
+                     height="320">
+                <span class="mtd-foto-overlay" aria-hidden="true"></span>
+                <span class="mtd-foto-rozet">
+                  <span class="mtd-rozet-no">0${a.no}</span>
+                  <span class="mtd-rozet-ayrac" aria-hidden="true">·</span>
+                  <span class="mtd-rozet-ad">${a.ad}</span>
+                </span>
+              </div>
+              <div class="mtd-kart-ic">
+                <h3 class="mtd-slogan">${a.slogan}</h3>
+                <div class="mtd-cizgi" aria-hidden="true"></div>
+                <p class="mtd-metin">${a.metin}</p>
+                <div class="mtd-kart-alt">
+                  <span class="mtd-takeaway">${etiketler[i]}</span>
+                </div>
+              </div>
+            </article>`;
+          }).join('')}
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- 5 · EĞİTİM PROGRAMLARI VİTRİNİ — 5 program.
-       Kartlar kısa; tam metin /doga-temelli-egitimlerimiz sayfasında.
-       Aynı uzun metni iki kez okutmuyoruz. -->
+  <!-- 5 · EĞİTİM PROGRAMLARI VİTRİNİ — 5 program (KULLANICI TALEBİYLE DOKUNULMADI) -->
   <section class="section rule-top" id="egitimler">
     <div class="wrap">
-      ${/* Başlık belgeden (satır 56). Alt metin yok — belge bu bölüme
-           açıklama yazmamış, uydurmuyoruz. */ ''}
       ${opener('Eğitim & Gelişim', 'Eğitim &amp; Gelişim Programlarımız', '')}
-      ${/* BEŞ PROGRAM TEK SIRADA — Ceylan hanım, 8 Ağustos:
-           "3'e 2 değil, 5'i de tek ekran görünecek şekilde."
-
-           Önceki düzen 3+2 ızgaraydı ve iki satıra yayılıyordu. Şimdi
-           beşi yan yana.
-
-           ÇERÇEVE KARE. Havuzun oranları 0.563'ten 1.839'a kadar
-           dağılıyor; hizalı satır matematiği burada çalışmıyor, çünkü
-           dikey kareler 77 piksele iniyor ve başlık sığmıyor. Kare
-           çerçeve iki uca da en az haksızlık eden orta yol.
-
-           Kart metni kısaldı: vitrin başlığı ve süre kaldı, uzun açıklama
-           çıktı. Tam metin zaten eğitimin kendi sayfasında; burada aynı
-           metni ikinci kez okutmuyoruz ve beş kart tek ekrana sığıyor. */ ''}
       <div class="egitim-vitrin" style="margin-top:clamp(28px,3.4vw,52px)">
         ${egitimler.map((e, i) => `<a class="egitim-kart" href="${egitimDosyasi(e)}" data-sira="${i + 1}" data-reveal="stagger">
-          <span class="egitim-kart-gorsel">
-            ${resim({ gorsel: e.vitrinGorsel || e.gorsel, alt: e.vitrinAlt || e.alt, kucuk: true })}
+          ${createBotanicalFrameHTML()}
+          <span class="egitim-kart-gorsel-wrap">
+            <span class="egitim-kart-foto" style="--foto:url('/assets/img/rev2/secilmis/${gorselSlug(e.vitrinGorsel || e.gorsel)}-800.webp')" aria-hidden="true"></span>
           </span>
-          <span class="egitim-kart-yazi" data-sira="${i + 1}">
+          <span class="egitim-kart-ic">
             <span class="egitim-kart-ad">${e.vitrinAd}</span>
-            <span class="egitim-kart-kunye">${e.format} · ${e.vitrinSure}</span>
+            <span class="egitim-kart-kunye">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" class="kunye-ikon" aria-hidden="true">
+                <circle cx="8" cy="8" r="6"/>
+                <path d="M8 4v4l2.5 2.5"/>
+              </svg>
+              ${e.format} · ${e.vitrinSure}
+            </span>
+            <span class="egitim-kart-dugme">
+              <span>İncele</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M5 12h14M13 5l7 7-7 7"/>
+              </svg>
+            </span>
           </span>
         </a>`).join('')}
       </div>
@@ -175,65 +328,101 @@ ${heroSlayt(heroSlaytlari)}
     </div>
   </section>
 
-  <!-- 6 · DOĞADAN DENEYİMSEL ÖĞRENME ATÖLYELERİ
-       Belge "Öne Çıkan 4 Deneyim" diyor ama metni yazılmış olan iki tanesi
-       var. Uydurma kart eklemek yerine ikisi konuldu; Afloday'e soruldu. -->
-  <section class="section field">
+  <!-- 6 · DOĞADAN DENEYİMSEL ÖĞRENME ATÖLYELERİ (Tam 1 Ekran Lüks Bento Vitrini) -->
+  <section class="section field atolye-section" id="deneyimsel-atolyeler">
     <div class="wrap">
-      <div class="opener" data-reveal>
-        <div class="opener-head">
+      <div class="atolye-header-bar" data-reveal>
+        <div class="atolye-header-left">
           <p class="eyebrow">${deneyimVitrini.ustEtiket}</p>
-          <h2 class="h2">${deneyimVitrini.baslik}</h2>
+          <h2 class="h2 atolye-sec-title">${deneyimVitrini.baslik}</h2>
+          <p class="lede atolye-sec-lede">${deneyimVitrini.altBaslik}</p>
         </div>
-        <p class="lede" style="color:var(--field-muted)">${deneyimVitrini.altBaslik}</p>
-        <div class="opener-rule"></div>
+        <div class="atolye-header-right">
+          <a class="btn btn-primary-light btn-compact" href="kurumsal-hobi-atolyeleri.html">
+            <span>Tüm Atölye Deneyimleri</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </a>
+        </div>
       </div>
-      <div class="deneyim-vitrin" style="margin-top:clamp(40px,5vw,72px)">
-        ${deneyimVitrini.kartlar.map((k, i) => `<article class="deneyim-kart" data-reveal="stagger">
-          <p class="deneyim-no">${String(i + 1).padStart(2, '0')}</p>
-          <div>
-            <h3 class="deneyim-ad">${k.ad}</h3>
-            <p class="deneyim-kunye">${k.bicim}</p>
-            <p class="deneyim-bagli">${k.bagliEgitim}</p>
-            <p class="deneyim-metin">${k.metin}</p>
+
+      <div class="atolye-vitrin">
+        ${deneyimVitrini.kartlar.map((k, i) => `<article class="atolye-kart" data-kart="${i + 1}" data-reveal="stagger">
+          <div class="atolye-kart-media">
+            <img src="assets/img/rev2/secilmis/${gorselSlug(k.gorsel)}-800.webp" 
+                 alt="${k.ad}" 
+                 class="atolye-media-img" 
+                 loading="lazy" 
+                 width="600" 
+                 height="360">
+            <span class="atolye-media-overlay" aria-hidden="true"></span>
+            <div class="atolye-media-top-tags">
+              <span class="atolye-media-bagli">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" class="atolye-yaprak-ikon" aria-hidden="true">
+                  <path d="M13 3C7 3 4 7 4 13C10 13 13 10 13 3Z" stroke-linejoin="round"/>
+                  <path d="M4 13L8 9"/>
+                </svg>
+                <span>${k.bagliEgitim}</span>
+              </span>
+            </div>
+            <div class="atolye-media-bot-tags">
+              <span class="atolye-sure-pill">${k.bicim.split('·')[0]?.trim()}</span>
+              <span class="atolye-format-pill">${k.bicim.split('·')[1]?.trim() || 'Yüz Yüze / Online'}</span>
+            </div>
+          </div>
+
+          <div class="atolye-kart-content">
+            <h3 class="atolye-baslik">${k.ad}</h3>
+            <p class="atolye-ozet">${k.ozet}</p>
+
+            <div class="atolye-metafor-alani">
+              <span class="atolye-metafor-baslik">Neyi Deneyimliyoruz?</span>
+              <div class="atolye-metafor-chipler">
+                ${k.metaforlar.map(m => `<div class="atolye-chip">
+                  <span class="chip-simge">${m.simge}</span>
+                  <div class="chip-content">
+                    <strong class="chip-terim">${m.terim}:</strong>
+                    <span class="chip-anlam">${m.anlam}</span>
+                  </div>
+                </div>`).join('')}
+              </div>
+            </div>
+
+            <div class="atolye-kart-alt">
+              <span class="atolye-bicim-tag">Deneyimsel Uygulama</span>
+              <a class="atolye-link-glow" href="kurumsal-hobi-atolyeleri.html">
+                <span>Atölyeyi İncele</span>
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M3 8h10M9 4l4 4-4 4"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </article>`).join('\n        ')}
-      </div>
-      <div class="btn-row" style="margin-top:clamp(32px,4vw,56px)" data-reveal>
-        <a class="btn btn-ghost" href="kurumsal-hobi-atolyeleri.html">Etkinlik atölye deneyimleri</a>
       </div>
     </div>
   </section>
 
-  <!-- 7 · GALERİ — menüde "Galeri" var, site haritasında ayrı sayfa yok.
-       Anasayfada bölüm olarak kuruldu; karar günlüğü madde 1. -->
-  ${/* Galerinin tamamı kendi sayfasında (/galeri, 21 kare). Burada tek
-       şeritlik tanıtım duruyor: 3 kare, oraya bağlanıyor.
-       Karar günlüğü: madde 23 (ayrı sayfa) ve madde 25 (şerit düzeni). */ ''}
-  ${/* ANASAYFA GALERİ VİTRİNİ KALDIRILDI — 7 Ağustos.
-
-       Ceylan hanım 5 Ağustos'ta "Galeri sayfasını kapatabiliriz" dedi;
-       sayfa kapatıldı ama anasayfadaki vitrin kalmıştı. Denetimde
-       anasayfanın en büyük fotoğraf yığını olarak çıktı: arka arkaya
-       42 kare, aralarında metin yok — tam olarak "görseller altta word
-       düzeni gibi olmuş" şikâyetinin biçimi.
-
-       Kullanıcı kararı: vitrin de kalksın, gerekirse geri eklenir.
-       Kareler silinmedi, `galeri-rev2.mjs` ve dosyalar duruyor. */ ''}
-
-  <!-- 8 · REFERANSLAR — orijinaldeki gibi logo duvarı.
-       Müşteri notu: "Marka logoları kalsın derim." -->
-  <section class="section rule-top">
+  <!-- 8 · REFERANSLAR — Temiz Monokrom Güven Bandı & Organik Footer Geçişi -->
+  <section class="section rule-top" id="referanslar" style="padding-bottom:0">
     <div class="wrap">
       <div class="opener" data-reveal>
         <div class="opener-head">
           <p class="eyebrow">Afloday</p>
           <h2 class="h2">Referanslarımız</h2>
         </div>
-        <div></div>
+        <p class="lede">Birlikte yeşerdiğimiz, doğanın iyileştirici gücünü ve atölye deneyimlerimizi paylaştığımız kurumsal iş ortaklarımız.</p>
         <div class="opener-rule"></div>
       </div>
-      ${logoWall(30)}
+    </div>
+    <div class="marquee-footer-wrap" style="margin-top:clamp(28px,3.5vw,48px)">
+      ${marquee(30)}
+    </div>
+    <div class="ftr-organic-curve" aria-hidden="true">
+      <svg viewBox="0 0 1440 64" fill="none" preserveAspectRatio="none">
+        <path d="M0,32 C360,64 720,0 1080,32 C1260,48 1380,40 1440,32 L1440,64 L0,64 Z" fill="#142B1A"/>
+      </svg>
     </div>
   </section>
 `;
@@ -586,24 +775,43 @@ ${folio({
     return [anlatiHtml[0], ikiliHtml, ...anlatiHtml.slice(1)].filter(Boolean).join('\n');
   })()}
 
-  ${marquee(30)}
+  ${(() => {
+    const teamOdak = {
+      'ceylan-kalyon': '50% 12%',
+      'tugce-hazinedar': '50% 20%',
+      'derya-akyazici-kalyon': '50% 26%',
+      'elif-celikkol-duman': '50% 8%',
+      'alara-apaydin-saruhan': '50% 15%',
+      'zeynep-altunhan': '50% 16%',
+      'muharrem-ozdemir': '50% 10%',
+    };
 
-  <section class="section" id="ekip">
+    return `<section class="section" id="ekip">
     <div class="wrap">
-      ${opener('Ekip', 'Ekibimiz', '')}
-      <div class="plates" style="margin-top:clamp(40px,5vw,72px)">
-        ${team.map(t => `<a class="plate" href="ekip-${t.slug}.html" data-reveal="stagger">
-          <div class="plate-frame plate-frame-tall"><img src="assets/img/team/${t.img}" alt="${t.alt}" loading="lazy" width="900" height="900"></div>
-          <div class="plate-label">
-            <p class="plate-acc"><span>Ekip</span><span>Profil →</span></p>
-            <h3 class="plate-name">${t.name}</h3>
-            <p class="caption" style="margin-bottom:var(--s3)">${t.role}</p>
-            <p class="plate-note">${t.paras[0]}</p>
+      ${opener('Ekip', 'Ekibimiz', 'Doğadan ilham alan, her biri kendi alanında uzman eğitmen ve danışman kadromuz.')}
+      <div class="ekip-vitrin" style="margin-top:clamp(24px,3vw,40px)">
+        ${team.map(t => `<a class="ekip-kart" href="ekip-${t.slug}.html" data-reveal="stagger">
+          <div class="ekip-foto-wrap">
+            <img src="assets/img/team/${t.img}" alt="${t.alt}" loading="lazy" width="200" height="200" class="ekip-foto" style="object-position: ${teamOdak[t.slug] || '50% 20%'}">
           </div>
+          <h3 class="ekip-ad">${t.name}</h3>
+          <p class="ekip-rol">${t.role}</p>
+          <span class="ekip-incele">
+            <span>Profili Gör</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4"/>
+            </svg>
+          </span>
         </a>`).join('\n        ')}
       </div>
     </div>
   </section>`;
+  })()}
+
+  <!-- Referanslar — Footer'ın hemen üzerinde kayan şerit -->
+  <div class="marquee-footer-wrap">
+    ${marquee(30)}
+  </div>`;
 
   add('hakkimizda.html', layout({
     title: 'Hakkımızda ve Ekibimiz — Afloday',
