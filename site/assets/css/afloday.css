@@ -5274,3 +5274,55 @@ a.index-row .index-meta::after,
   .egitim-vitrin { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .egitim-kart-yazi { padding: var(--s3); }
 }
+
+/* ══ VİTRİN KARTI — referans desenden alınan geometri ═════════════════
+   Kaynak: naya-studio-dubai (Cube Studio şablonu, lisansı alındı).
+   Playwright ile ölçülen değerler: köşe yarıçapı 21.94px, 1px kenarlık,
+   28.5px iç boşluk, üstte parantezli numara, altta küçük açıklama.
+
+   GEOMETRİ ALINDI, PALET ALINMADI. Referans koyu lacivert ve beyaz;
+   bizimki krem ve yeşil. Renk taşınırsa marka kaybolur, geometri
+   taşınırsa kart kazanır. */
+.egitim-kart {
+  border-radius: 22px;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  position: relative;
+}
+.egitim-kart:hover { border-color: var(--e); }
+
+/* Parantezli sıra numarası — referanstaki `(03)` deseni. */
+.egitim-kart::before {
+  content: '(0' attr(data-sira) ')';
+  position: absolute; top: 12px; left: 0; right: 0;
+  z-index: 2;
+  text-align: center;
+  font-family: var(--label);
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #F4F1E7;
+  text-shadow: 0 1px 8px rgb(19 26 21 / 0.6);
+}
+
+.egitim-kart-gorsel { border-radius: 21px 21px 0 0; }
+.egitim-kart-yazi {
+  padding: var(--s4) var(--s4) var(--s5);
+  text-align: center;
+}
+/* Başlık büyük harf ve harf aralıklı — referansın imza tipografisi.
+   Serif yerine label ailesi: büyük harf serif bu puntoda okunmuyor. */
+.egitim-kart-ad {
+  font-family: var(--label);
+  font-size: clamp(0.6875rem, 0.85vw, 0.8125rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.egitim-kart-kunye {
+  font-size: 0.5625rem;
+  letter-spacing: 0.14em;
+  color: var(--soluk);
+}
