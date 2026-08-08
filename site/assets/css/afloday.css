@@ -4995,9 +4995,15 @@ a.index-row .index-meta::after,
 }
 
 /* Evre renkleri — dört element paletinden. */
-.mtd-kart[data-evre='1'] { --evre: #2F6A2E; --evre-koyu: #1E4620; --evre-acik: #E4EFD9; }
-.mtd-kart[data-evre='2'] { --evre: #1F7FBF; --evre-koyu: #0B3A5C; --evre-acik: #DCEDF7; }
-.mtd-kart[data-evre='3'] { --evre: #D8481B; --evre-koyu: #8A2A0C; --evre-acik: #FBE4D8; }
+/* MARKA PALETİ — dört element rengi DEĞİL.
+
+   Element renkleri (Toprak-Su-Ateş-Hava) yalnız Geleceği Tasarla
+   sayfasına ait; oraya özel bir sistem ve başka yerde kullanılınca
+   anlamını yitiriyor. Burada üç evre bir bitkinin büyümesi: koyu yeşil
+   kök, yeşil gövde, turuncu çiçek. Hepsi logodan gelen marka renkleri. */
+.mtd-kart[data-evre='1'] { --evre: #1E4620; --evre-koyu: #143016; --evre-acik: #E2EBDD; }
+.mtd-kart[data-evre='2'] { --evre: #2F6A2E; --evre-koyu: #1E4620; --evre-acik: #E4EFD9; }
+.mtd-kart[data-evre='3'] { --evre: #C6401A; --evre-koyu: #8A2A0C; --evre-acik: #FBE4D8; }
 
 /* Kartların üstünden geçen gövde: üç rengin geçişi. Kaydırınca soldan
    sağa doluyor — "büyüme" fikri hareketin kendisinde. */
@@ -5005,7 +5011,7 @@ a.index-row .index-meta::after,
   content: '';
   position: absolute; left: 0; right: 0; top: 0;
   height: 3px;
-  background: linear-gradient(to right, #2F6A2E 0%, #1F7FBF 50%, #D8481B 100%);
+  background: linear-gradient(to right, #1E4620 0%, #2F6A2E 52%, #C6401A 100%);
   background-size: var(--mtd-dolum, 0%) 100%;
   background-repeat: no-repeat;
   transition: background-size 1500ms cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -5136,10 +5142,13 @@ a.index-row .index-meta::after,
    sayfayı bastırmıyor. */
 .istatistik { background: var(--paper, #F4F1E7); }
 
-.istatistik-kutu[data-element='toprak'] { --k: #2F6A2E; }
-.istatistik-kutu[data-element='su']     { --k: #12648F; }
-.istatistik-kutu[data-element='ates']   { --k: #C6401A; }
-.istatistik-kutu[data-element='hava']   { --k: #2E3E9E; }
+/* Element renkleri BURADA KULLANILMIYOR — onlar Geleceği Tasarla
+   sayfasına ait. Dört kart marka yeşilinin dört kademesinde; sıra
+   hissi korunuyor, renk sistemi karışmıyor. Son kart turuncu vurgu. */
+.istatistik-kutu:nth-child(1) { --k: #1E4620; }
+.istatistik-kutu:nth-child(2) { --k: #2F6A2E; }
+.istatistik-kutu:nth-child(3) { --k: #6B6340; }
+.istatistik-kutu:nth-child(4) { --k: #C6401A; }
 
 .istatistik-kutu {
   position: relative;
@@ -5188,11 +5197,14 @@ a.index-row .index-meta::after,
   gap: clamp(10px, 1.2vw, 20px);
 }
 
-.egitim-kart[data-sira='1'] { --e: #2F6A2E; }
-.egitim-kart[data-sira='2'] { --e: #12648F; }
-.egitim-kart[data-sira='3'] { --e: #C6401A; }
-.egitim-kart[data-sira='4'] { --e: #2E3E9E; }
-.egitim-kart[data-sira='5'] { --e: #6B6340; }
+/* Element renkleri BURADA KULLANILMIYOR. Beş kart marka yeşilinden
+   turuncuya giden bir kademe; ayırt ediyor ama element sistemini
+   taşımıyor. */
+.egitim-kart[data-sira='1'] { --e: #1E4620; }
+.egitim-kart[data-sira='2'] { --e: #2F6A2E; }
+.egitim-kart[data-sira='3'] { --e: #4C7A34; }
+.egitim-kart[data-sira='4'] { --e: #6B6340; }
+.egitim-kart[data-sira='5'] { --e: #C6401A; }
 
 .egitim-kart {
   display: grid;

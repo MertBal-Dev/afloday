@@ -1176,7 +1176,7 @@ ${folio({
         <div class="opener-rule"></div>
       </div>
       <div class="istatistik-kutular">
-        ${istatistikler.kutular.map((k, i) => `<div class="istatistik-kutu" data-element="${['toprak', 'su', 'ates', 'hava'][i % 4]}" data-reveal="stagger">
+        ${istatistikler.kutular.map(k => `<div class="istatistik-kutu" data-reveal="stagger">
           <p class="istatistik-rakam">${k.rakam}</p>
           <p class="istatistik-metin">${k.metin}</p>
           ${k.kaynak
