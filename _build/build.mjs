@@ -144,26 +144,30 @@ ${heroSlayt(heroSlaytlari)}
       ${/* Başlık belgeden (satır 56). Alt metin yok — belge bu bölüme
            açıklama yazmamış, uydurmuyoruz. */ ''}
       ${opener('Eğitim & Gelişim', 'Eğitim &amp; Gelişim Programlarımız', '')}
-      <div class="egitim-vitrin" style="margin-top:clamp(40px,5vw,72px)">
-        ${/* Anasayfa eğitim kartları KASITLI OLARAK dokunulmadı.
-             Vitrin görsellerinin ikisi dikey (900×1600, 1067×1600) ve
-             4/3 kartta %58'e varan kırpma oluyor. Ama Ceylan hanım bu
-             kartları gördü ve bir şey demedi; geri bildirimde yer almayan
-             bir yeri değiştirmek gereksiz risk. Karar kullanıcının.
-             Değiştirilecekse: kart oranını `gorselOlcuOku` ile fotoğrafın
-             kendi oranına bağlamak yeterli. */ ''}
-        ${egitimler.map(e => `<a class="egitim-kart" href="${egitimDosyasi(e)}" data-reveal="stagger">
-          <div class="egitim-kart-gorsel">
+      ${/* BEŞ PROGRAM TEK SIRADA — Ceylan hanım, 8 Ağustos:
+           "3'e 2 değil, 5'i de tek ekran görünecek şekilde."
+
+           Önceki düzen 3+2 ızgaraydı ve iki satıra yayılıyordu. Şimdi
+           beşi yan yana.
+
+           ÇERÇEVE KARE. Havuzun oranları 0.563'ten 1.839'a kadar
+           dağılıyor; hizalı satır matematiği burada çalışmıyor, çünkü
+           dikey kareler 77 piksele iniyor ve başlık sığmıyor. Kare
+           çerçeve iki uca da en az haksızlık eden orta yol.
+
+           Kart metni kısaldı: vitrin başlığı ve süre kaldı, uzun açıklama
+           çıktı. Tam metin zaten eğitimin kendi sayfasında; burada aynı
+           metni ikinci kez okutmuyoruz ve beş kart tek ekrana sığıyor. */ ''}
+      <div class="egitim-vitrin" style="margin-top:clamp(28px,3.4vw,52px)">
+        ${egitimler.map((e, i) => `<a class="egitim-kart" href="${egitimDosyasi(e)}" data-sira="${i + 1}" data-reveal="stagger">
+          <span class="egitim-kart-gorsel">
             ${resim({ gorsel: e.vitrinGorsel || e.gorsel, alt: e.vitrinAlt || e.alt, kucuk: true })}
-          </div>
-          <div class="egitim-kart-yazi">
-            <h3 class="egitim-kart-ad">${e.vitrinAd}</h3>
-            <p class="egitim-kart-vitrin">${e.vitrinBaslik}</p>
-            <p class="egitim-kart-metin">${e.vitrinMetin}</p>
-            <p class="egitim-kart-etiket">${e.etiketler.join(' · ')}</p>
-            <p class="egitim-kart-kunye">${e.format} · ${e.vitrinSure}</p>
-          </div>
-        </a>`).join('\n        ')}
+          </span>
+          <span class="egitim-kart-yazi">
+            <span class="egitim-kart-ad">${e.vitrinAd}</span>
+            <span class="egitim-kart-kunye">${e.format} · ${e.vitrinSure}</span>
+          </span>
+        </a>`).join('')}
       </div>
       <div class="btn-row" style="margin-top:clamp(32px,4vw,56px)" data-reveal>
         <a class="btn btn-ghost" href="doga-temelli-egitimler.html">Beş programın tamamını oku</a>

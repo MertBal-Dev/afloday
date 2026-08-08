@@ -5170,3 +5170,95 @@ a.index-row .index-meta::after,
 .istatistik-metin { color: var(--ink); }
 .istatistik-kaynak { color: var(--soluk); }
 .istatistik-kaynak-yok { display: none; }
+
+/* ══ EĞİTİM VİTRİNİ — beş program tek sırada ══════════════════════════
+   Önceki düzen 3+2 ızgaraydı, iki satıra yayılıyordu. Ceylan hanım:
+   "5'i de tek ekran görünecek şekilde."
+
+   Beş kart yan yana. Fotoğraf kare çerçevede: havuz 0.563'ten 1.839'a
+   dağıldığı için hizalı satır burada çalışmıyor (dikey kareler 77
+   piksele iniyor), kare iki uca da en az haksızlık eden orta yol.
+
+   Her karta bir element rengi: beş program, dört element döngüsü artı
+   bir. Renk kartın altındaki ince çizgide ve üzerine gelince beliren
+   perdede — fotoğrafı boyamıyor. */
+.egitim-vitrin {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(10px, 1.2vw, 20px);
+}
+
+.egitim-kart[data-sira='1'] { --e: #2F6A2E; }
+.egitim-kart[data-sira='2'] { --e: #12648F; }
+.egitim-kart[data-sira='3'] { --e: #C6401A; }
+.egitim-kart[data-sira='4'] { --e: #2E3E9E; }
+.egitim-kart[data-sira='5'] { --e: #6B6340; }
+
+.egitim-kart {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  text-decoration: none;
+  color: inherit;
+  background: var(--surface, #FBFAF3);
+  transition: transform var(--t-state) var(--ease-io),
+              box-shadow var(--t-state) var(--ease-io);
+}
+.egitim-kart:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgb(19 26 21 / 0.10);
+}
+
+.egitim-kart-gorsel {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.egitim-kart-gorsel picture,
+.egitim-kart-gorsel img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 800ms var(--ease-io);
+}
+.egitim-kart:hover .egitim-kart-gorsel img { transform: scale(1.05); }
+
+/* Üzerine gelince elementin rengi fotoğrafın altından yükseliyor. */
+.egitim-kart-gorsel::after {
+  content: '';
+  position: absolute; inset: auto 0 0 0;
+  height: 4px;
+  background: var(--e);
+  transition: height var(--t-state) var(--ease-io);
+}
+.egitim-kart:hover .egitim-kart-gorsel::after { height: 10px; }
+
+.egitim-kart-yazi {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: var(--s4) var(--s3) var(--s4);
+}
+.egitim-kart-ad {
+  font-family: var(--serif);
+  font-size: clamp(0.875rem, 1.05vw, 1.0625rem);
+  line-height: 1.2;
+  color: var(--ink);
+}
+.egitim-kart-kunye {
+  font-family: var(--label);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--soluk);
+}
+
+/* Tablet: üç sütun, son iki kart alt satırda ortalı değil — ızgara
+   akışı bozulmasın diye eşit kalıyor. */
+@media (max-width: 1000px) {
+  .egitim-vitrin { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .egitim-vitrin { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .egitim-kart-yazi { padding: var(--s3); }
+}
